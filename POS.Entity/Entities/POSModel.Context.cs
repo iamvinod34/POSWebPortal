@@ -20,6 +20,7 @@ namespace POS.Entity.Entities
         public POSEntities()
             : base("name=POSEntities")
         {
+            this.Database.CommandTimeout = 1 * 60;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
