@@ -1,0 +1,47 @@
+﻿@using POS.Entity.Entities;
+@using POS.Util.Model;
+@model SubCategoryModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+<script src="~/Scripts/jsSubCategory.js"></script>
+<div class="col-lg-12">
+    <h2 class="pad_1per ">Sub Category <button id="btnNewSCStore" title="Add New Store!" class="btn btn-default pull-right mar_top_1per bckcolor_green" type="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button></h2>
+</div>
+<div class="col-lg-12 mgn_0">
+    <div class="col-lg-3 noPadBrd">
+        <div class="input-group col-lg-12 ">
+            <input id="txtSubCategory" type="text" class="form-control col-lg-12 stre_maxWth  ht40" placeholder="Search for Sub Category ID \ Sub Category Description">
+
+        </div>
+        <div class="ovrflow">
+            @if (Model.SubCategory != null)
+            {
+                foreach (tbl_SubCategory subcategory in Model.SubCategory)
+                {
+                    <div class="locData pad_1per bg_blue">
+                        <a class="pointer MasterSCStore" data-subCategoryID="@subcategory.SubCategoryID" data-subCategotyDesc="@subcategory.SubCategoryDesc"><span class="">@subcategory.SubCategoryDesc</span></a>
+                    </div>
+                }
+                <small id="NoRecords" class="lead" style="display:none">
+                    No records found.
+                </small>
+            }
+            else
+            {
+                <small class="lead">
+                    No records found.
+                </small>
+            }
+        </div>
+    </div>
+    <div id="SubCategoryDetails" class="col-lg-9 noPadBrd">
+        @Html.Partial("~/Views/SubCategory/Partial/_SubCategoryDetailsPartial.cshtml", Model)
+    </div>
+
+</div>
+
+
+

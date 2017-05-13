@@ -1,0 +1,25 @@
+﻿@using POS.Entity.Entities
+@model List<pxSelectLatestSalesDetails_Result>
+
+
+<table id="RecentSalesGrid" class="table table-striped" style="border:1px solid #dddddd;">
+    <thead class="panel-heading tblHeader">
+        <tr><th class="panel-title"><strong>LocationID</strong></th><th class="panel-title"><strong>Location</strong></th><th class="panel-title"><strong>Terminal ID</strong></th><th class="panel-title"><strong>Date</strong></th><th class="panel-title"><strong>Net Value</strong></th><th class="panel-title"><strong>User</strong></th></tr>
+    </thead>
+    <tbody id="tbEnquiryGrid" class="tblBody">
+        @foreach (pxSelectLatestSalesDetails_Result sales in Model)
+        {
+            <tr>
+                <td class="panel-body">@sales.LocationID</td>
+                <td class="panel-body">@sales.LocationDesc</td>
+                <td class="panel-body">@sales.TerminalID</td>
+                <td class="panel-body">@sales.DocumentDate</td>
+                <td class="panel-body text-right">SAR @sales.NetValue.Value.ToString("F")</td>
+                <td class="panel-body">@sales.UserID</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <h5>Please <a href="../Enquiry/GetEnquiry" style="color: #8ccceb;">click here</a> to see more <b>Sales details</b>.</h5>
+</div>

@@ -1,0 +1,627 @@
+﻿@using POS.Entity.Entities;
+@model List<Proc_AllDocumentPrint_Result>
+
+@{
+    string Filter = @Model.FirstOrDefault().FilterName;
+}
+
+@if (Model.FirstOrDefault().FilterName == "PO Recieve")
+{
+    <div class="col-lg-12 udrline text-center text-capitalize">RECEIVED FROM SUPPLIER STOCK IN</div>
+    <div class="col-lg-12 udrline text-center ">سند استلام بضاعة</div>
+    <div class="col-lg-12"><div class="col-lg-offset-1"><img src="~/Images/NukalyReceiptLogo.png" /></div></div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">
+            <table class="table ">
+                <tr><td>@Model.FirstOrDefault().Address1</td></tr>
+                <tr><td>@Model.FirstOrDefault().City , @Model.FirstOrDefault().Country</td></tr>
+                <tr><td>@Model.FirstOrDefault().Phone</td></tr>
+            </table>
+        </div>
+        <div class="col-lg-6">
+            <table class="table">
+                <tr><td>PO Created By :</td><td>@Model.FirstOrDefault().POUserID</td></tr>
+                <tr><td>Date :</td><td>@Model.FirstOrDefault().DocumentDate</td></tr>
+                <tr><td>PO Number :</td><td>@Model.FirstOrDefault().PODocumentID</td></tr>
+                <tr><td>Stock IN DocumentID :</td><td>@Model.FirstOrDefault().DocumentID</td></tr>
+                <tr><td>PO Status :</td><td>@Model.FirstOrDefault().POStatus</td></tr>
+            </table>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">
+            <div class="col-lg-3">Vendor ID :</div>
+            <div class="col-lg-3">@Model.FirstOrDefault().VendorID</div>
+        </div>
+        <div class="col-lg-6">
+            <div class="col-lg-3">Store ID :</div>
+            <div class="col-lg-3">@Model.FirstOrDefault().LocationID S</div>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">
+            <table class="table">
+                <tr><td>@Model.FirstOrDefault().Name1</td></tr>
+                <tr><td>@Model.FirstOrDefault().Region , @Model.FirstOrDefault().City</td></tr>
+                <tr><td>@Model.FirstOrDefault().Country</td></tr>
+            </table>
+        </div>
+        <div class="col-lg-6">
+            <table class="table">
+                <tr><td>@Model.FirstOrDefault().LocationID</td></tr>
+                <tr><td>@Model.FirstOrDefault().LocationDesc</td></tr>
+                <tr><td>@Model.FirstOrDefault().City</td></tr>
+                <tr><td>@Model.FirstOrDefault().Region , @Model.FirstOrDefault().Country</td></tr>
+            </table>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <table class="popupGrid table">
+            <thead style="display:table-header-group">
+                <tr>
+                    <td>Material ID</td>
+                    <td>Material Description</td>
+                    <td>UOM</td>
+                    <td>Order Qty</td>
+                    <td>Trans Qty</td>
+                    <td>Cost</td>
+                    <td>Amount</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Proc_AllDocumentPrint_Result material in Model)
+                {
+                <tr>
+                    <td>@material.MaterialID</td>
+                    <td>@material.MaterialDesc1</td>
+                    <td>@material.UOM</td>
+                    <td>@material.OrderQty</td>
+                    <td>@material.TranQty</td>
+                    <td>@string.Format("{0:0.00}", Convert.ToDecimal(material.Cost))</td>
+                    <td>@string.Format("{0:0.00}", Convert.ToDecimal(material.Amount))</td>
+                </tr>
+                }
+            </tbody>
+            <thead>
+                <tr>
+                    <td>Total</td>
+                    <td></td>
+                    <td></td>
+                    <td>@string.Format("{0:0.00}", Convert.ToDecimal(Model.Sum(e => e.OrderQty))) </td>
+                    <td>@string.Format("{0:0.00}", Convert.ToDecimal(Model.Sum(e => e.TranQty))) </td>
+                    <td></td>
+                    <td>@string.Format("{0:0.00}", Convert.ToDecimal(Model.Sum(e => e.Amount)))</td>
+                </tr>
+            </thead>
+
+        </table>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">This is our signature that we (sales team) confirm receipt of the above goods by quantity, amount in good quality it will be under our complete responsibility. </div>
+        <div class="col-lg-6">استلمنا نحن موظفي الفرع البضاعة المدونة بعاليه كمية وقيمة بحالة جيدة ومسؤلين عنها مسؤلية كاملة</div>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">
+            <div class="col-lg-3">Received by <span>الاسم</span></div>.......................................
+            <div class="col-lg-3"> Signature <span>التوقيع</span>..........................................</div>
+        </div>
+        <div class="col-lg-6">
+            <div class="col-lg-3">Store Supervisor / Leader<span>الاسم</span>...............................</div>
+            <div class="col-lg-3">Signature <span>التوقيع</span>..........................................</div>
+        </div>
+    </div>
+}
+else if (Model.FirstOrDefault().FilterName == "Return To Supplier")
+{
+    <div class="col-lg-12 udrline text-center text-capitalize">RETURN TO SUPPLIER</div>
+    <div class="col-lg-12 udrline text-center ">مرتجع للمورد</div>
+    <div class="col-lg-12"><div class="col-lg-offset-1"><img src="~/Images/NukalyReceiptLogo.png" /></div></div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">
+            <table class="table ">
+                <tr><td>@Model.FirstOrDefault().Address1</td></tr>
+                <tr><td>@Model.FirstOrDefault().City , @Model.FirstOrDefault().Country</td></tr>
+                <tr><td>@Model.FirstOrDefault().Phone</td></tr>
+            </table>
+        </div>
+        <div class="col-lg-6">
+            <table class="table">
+                <tr><td>Return Created By :</td><td>@Model.FirstOrDefault().UserID</td></tr>
+                <tr><td>Date :</td><td>@Model.FirstOrDefault().DocumentDate</td></tr>
+                <tr><td>Return DocumentID :</td><td>@Model.FirstOrDefault().DocumentID</td></tr>
+            </table>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">From :</div>
+        <div class="col-lg-6">To :</div>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">
+            <div class="col-lg-3">Vendor ID :</div>
+            <div class="col-lg-3">@Model.FirstOrDefault().VendorID</div>
+        </div>
+        <div class="col-lg-6">
+            <div class="col-lg-3">Store ID :</div>
+            <div class="col-lg-3">@Model.FirstOrDefault().LocationID S</div>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">
+            <table class="table">
+                <tr><td>@Model.FirstOrDefault().Name1</td></tr>
+                <tr><td>@Model.FirstOrDefault().Region , @Model.FirstOrDefault().City</td></tr>
+                <tr><td>@Model.FirstOrDefault().Country</td></tr>
+            </table>
+        </div>
+        <div class="col-lg-6">
+            <table class="table">
+                <tr><td>@Model.FirstOrDefault().LocationID</td></tr>
+                <tr><td>@Model.FirstOrDefault().LocationDesc</td></tr>
+                <tr><td>@Model.FirstOrDefault().City</td></tr>
+                <tr><td>@Model.FirstOrDefault().Region , @Model.FirstOrDefault().Country</td></tr>
+            </table>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <table class="popupGrid table">
+            <thead style="display:table-header-group">
+                <tr>
+                    <td>Material ID</td>
+                    <td>Material Description</td>
+                    <td>UOM</td>
+                    <td>Return Qty</td>
+                    <td>Unit Price SAR</td>
+                    <td>Total Amount</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Proc_AllDocumentPrint_Result material in Model)
+                {
+                    <tr>
+                        <td>@material.MaterialID</td>
+                        <td>@material.MaterialDesc1</td>
+                        <td>@material.UOM</td>
+                        <td>@material.TranQty</td>
+                        <td>@string.Format("{0:0.00}", Convert.ToDecimal(material.Cost))</td>
+                        <td>@string.Format("{0:0.00}", Convert.ToDecimal(material.Amount))</td>
+                    </tr>
+                }
+            </tbody>
+            <thead>
+                <tr>
+                    <td>Total</td>
+                    <td></td>
+                    <td></td>
+                    <td>@string.Format("{0:0.00}", Convert.ToDecimal(Model.Sum(e => e.TranQty))) </td>
+                    <td></td>
+                    <td>@string.Format("{0:0.00}", Convert.ToDecimal(Model.Sum(e => e.Amount)))</td>
+                </tr>
+            </thead>
+
+        </table>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">I received the quantity above with the same situation mentioned above and I will be responsble to deliver to the main warehouse by the same quantity and situation and if any short will be under by my responsibility.</div>
+        <div class="col-lg-6">استلمت انا السائق البضاعة المدونة بعاليه كمية وقيمة باالحالة المدونة عالية واقر بأنني مسئول مسئولية كاملة عن الوفاء بتسليمها للمستودع بنفس الكمية والقيمة المدونة واكون مسئول عن اي عجز عند التسليم</div>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">
+            <div class="col-lg-3">Delivered by <span>الاسم</span></div>.......................................
+            <div class="col-lg-3"> Signature <span>التوقيع</span>..........................................</div>
+        </div>
+        <div class="col-lg-6">
+            <div class="col-lg-3">Store Supervisor / Leader<span>الاسم</span>...............................</div>
+            <div class="col-lg-3">Signature <span>التوقيع</span>..........................................</div>
+        </div>
+    </div>
+}
+else if (Model.FirstOrDefault().FilterName == "Transfter To Display")
+{
+    <div class="col-lg-12 udrline text-center text-capitalize">INTERNAL TRANSFER</div>
+    <div class="col-lg-12 udrline text-center ">تحويل داخل الفرع</div>
+    <div class="col-lg-12"><div class="col-lg-offset-1"><img src="~/Images/NukalyReceiptLogo.png" /></div></div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">
+            <table class="table ">
+                <tr><td>@Model.FirstOrDefault().Address1</td></tr>
+                <tr><td>@Model.FirstOrDefault().City , @Model.FirstOrDefault().Country</td></tr>
+                <tr><td>@Model.FirstOrDefault().Phone</td></tr>
+            </table>
+        </div>
+        <div class="col-lg-6">
+            <table class="table">
+                <tr><td>Return Created By :</td><td>@Model.FirstOrDefault().UserID</td></tr>
+                <tr><td>Date :</td><td>@Model.FirstOrDefault().DocumentDate</td></tr>
+                <tr><td>DocumentID :</td><td>@Model.FirstOrDefault().DocumentID</td></tr>
+            </table>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">From : Store</div>
+        <div class="col-lg-6">To : Display</div>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">
+            <div class="col-lg-3">Store  :</div>
+            <div class="col-lg-3">@Model.FirstOrDefault().LocationID S</div>
+        </div>
+        <div class="col-lg-6">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-3">@Model.FirstOrDefault().LocationID D</div>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">
+            <table class="table">
+                <tr><td>@Model.FirstOrDefault().LocationID</td></tr>
+                <tr><td>@Model.FirstOrDefault().LocationDesc</td></tr>
+                <tr><td>@Model.FirstOrDefault().City</td></tr>
+                <tr><td>@Model.FirstOrDefault().Region , @Model.FirstOrDefault().Country</td></tr>
+            </table>
+        </div>
+        <div class="col-lg-6">
+            <table class="table">
+                <tr><td>@Model.FirstOrDefault().LocationID</td></tr>
+                <tr><td>@Model.FirstOrDefault().LocationDesc</td></tr>
+                <tr><td>@Model.FirstOrDefault().City</td></tr>
+                <tr><td>@Model.FirstOrDefault().Region , @Model.FirstOrDefault().Country</td></tr>
+            </table>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <table class="popupGrid table">
+            <thead style="display:table-header-group">
+                <tr>
+                    <td>Material ID</td>
+                    <td>Material Description</td>
+                    <td>UOM</td>
+                    <td>Transfer Qty</td>
+                    <td>Unit Price SAR</td>
+                    <td>Total Amount</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Proc_AllDocumentPrint_Result material in Model)
+                {
+                    <tr>
+                        <td>@material.MaterialID</td>
+                        <td>@material.MaterialDesc1</td>
+                        <td>@material.UOM</td>
+                        <td>@material.TranQty</td>
+                        <td>@string.Format("{0:0.00}", Convert.ToDecimal(material.Cost))</td>
+                        <td>@string.Format("{0:0.00}", Convert.ToDecimal(material.Amount))</td>
+                    </tr>
+                }
+            </tbody>
+            <thead>
+                <tr>
+                    <td>Total</td>
+                    <td></td>
+                    <td></td>
+                    <td>@string.Format("{0:0.00}", Convert.ToDecimal(Model.Sum(e => e.TranQty))) </td>
+                    <td></td>
+                    <td>@string.Format("{0:0.00}", Convert.ToDecimal(Model.Sum(e => e.Amount)))</td>
+                </tr>
+            </thead>
+
+        </table>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">I received the quantity above with the same situation mentioned above and I will be responsble to deliver to the main warehouse by the same quantity and situation and if any short will be under by my responsibility.</div>
+        <div class="col-lg-6">استلمت انا السائق البضاعة المدونة بعاليه كمية وقيمة باالحالة المدونة عالية واقر بأنني مسئول مسئولية كاملة عن الوفاء بتسليمها للمستودع بنفس الكمية والقيمة المدونة واكون مسئول عن اي عجز عند التسليم</div>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">
+            <div class="col-lg-3">Issued by <span>الاسم</span></div>.......................................
+            <div class="col-lg-3"> Signature <span>التوقيع</span>..........................................</div>
+        </div>
+        <div class="col-lg-6">
+            <div class="col-lg-3">Store Supervisor / Leader<span>الاسم</span>...............................</div>
+            <div class="col-lg-3">Signature <span>التوقيع</span>..........................................</div>
+        </div>
+    </div>
+}
+else if (Model.FirstOrDefault().FilterName == "Physical Inventory")
+{
+    <div class="col-lg-12 udrline text-center text-capitalize">AUDIT CONTROL STOCK TAKEN 1/2</div>
+    <div class="col-lg-12"><div class="col-lg-offset-1"><img src="~/Images/NukalyReceiptLogo.png" /></div></div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">
+            <table class="table ">
+                <tr><td>@Model.FirstOrDefault().Address1</td></tr>
+                <tr><td>@Model.FirstOrDefault().City , @Model.FirstOrDefault().Country</td></tr>
+                <tr><td>@Model.FirstOrDefault().Phone</td></tr>
+            </table>
+        </div>
+        <div class="col-lg-6">
+            <table class="table">
+                <tr><td>Return Created By :</td><td>@Model.FirstOrDefault().UserID</td></tr>
+                <tr><td>Date :</td><td>@Model.FirstOrDefault().DocumentDate</td></tr>
+                <tr><td>DocumentID :</td><td>@Model.FirstOrDefault().DocumentID</td></tr>
+                <tr><td>Last Updated Date :</td><td>@Model.FirstOrDefault().UpdDate</td></tr>
+                <tr><td>Document Type</td><td>@Model.FirstOrDefault().Filter</td></tr>
+            </table>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">
+            <div class="col-lg-3">Store ID :</div>
+            <div class="col-lg-3">@Model.FirstOrDefault().LocationID    @Model.FirstOrDefault().StorageID</div>
+        </div>
+        <div class="col-lg-6">
+            
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">
+            <table class="table">
+                <tr><td>@Model.FirstOrDefault().LocationID</td></tr>
+                <tr><td>@Model.FirstOrDefault().LocationDesc</td></tr>
+                <tr><td>@Model.FirstOrDefault().City</td></tr>
+                <tr><td>@Model.FirstOrDefault().Region , @Model.FirstOrDefault().Country</td></tr>
+            </table>
+        </div>
+        <div class="col-lg-6">
+            <span class="text-center udrline">AUDIT TEAM NAMES</span>
+            <span>@Model.FirstOrDefault().UserID</span>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <table class="popupGrid table">
+            <thead style="display:table-header-group">
+                <tr>
+                    <td>Material ID</td>
+                    <td>Material Description</td>
+                    <td>UOM</td>
+                    <td>Store Quantity</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Proc_AllDocumentPrint_Result material in Model)
+                {
+                    <tr>
+                        <td>@material.MaterialID</td>
+                        <td>@material.MaterialDesc1</td>
+                        <td>@material.UOM</td>
+                        <td>@string.Format("{0:0.00}", Convert.ToDecimal(material.TranQty))</td>
+                    </tr>
+                }
+            </tbody>
+            <thead>
+                <tr>
+                    <td>Total</td>
+                    <td></td>
+                    <td></td>
+                    <td>@string.Format("{0:0.00}", Convert.ToDecimal(Model.Sum(e => e.TranQty)))</td>
+                </tr>
+            </thead>
+
+        </table>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">
+            <div class="col-lg-3">Delivered by <span>الاسم</span></div>.......................................
+            <div class="col-lg-3"> Signature <span>التوقيع</span>..........................................</div>
+        </div>
+        <div class="col-lg-6">
+            <div class="col-lg-3">Store Supervisor / Leader<span>الاسم</span>...............................</div>
+            <div class="col-lg-3">Signature <span>التوقيع</span>..........................................</div>
+        </div>
+    </div>
+}
+else if (Model.FirstOrDefault().FilterName == "Transfter IN")
+{
+    <div class="col-lg-12 udrline text-center text-capitalize">INTERNAL TRANSFER</div>
+    <div class="col-lg-12 udrline text-center ">تحويل داخل الفرع</div>
+    <div class="col-lg-12"><div class="col-lg-offset-1"><img src="~/Images/NukalyReceiptLogo.png" /></div></div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">
+            <table class="table ">
+                <tr><td>@Model.FirstOrDefault().Address1</td></tr>
+                <tr><td>@Model.FirstOrDefault().City , @Model.FirstOrDefault().Country</td></tr>
+                <tr><td>@Model.FirstOrDefault().Phone</td></tr>
+            </table>
+        </div>
+        <div class="col-lg-6">
+            <table class="table">
+                <tr><td>Return Created By :</td><td>@Model.FirstOrDefault().UserID</td></tr>
+                <tr><td>Date :</td><td>@Model.FirstOrDefault().DocumentDate</td></tr>
+                <tr><td>DocumentID :</td><td>@Model.FirstOrDefault().DocumentID</td></tr>
+            </table>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">From : Store</div>
+        <div class="col-lg-6">To : Display</div>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">
+            <div class="col-lg-3">Store  :</div>
+            <div class="col-lg-3">@Model.FirstOrDefault().FromLocation @Model.FirstOrDefault().FromStorageId</div>
+        </div>
+        <div class="col-lg-6">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-3">@Model.FirstOrDefault().LocationID @Model.FirstOrDefault().StorageID </div>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">
+            <table class="table">
+                <tr><td>@Model.FirstOrDefault().LocationID</td></tr>
+                <tr><td>@Model.FirstOrDefault().LocationDesc</td></tr>
+                <tr><td>@Model.FirstOrDefault().City</td></tr>
+                <tr><td>@Model.FirstOrDefault().Region , @Model.FirstOrDefault().Country</td></tr>
+            </table>
+        </div>
+        <div class="col-lg-6">
+            <table class="table">
+                <tr><td>@Model.FirstOrDefault().LocationID</td></tr>
+                <tr><td>@Model.FirstOrDefault().LocationDesc</td></tr>
+                <tr><td>@Model.FirstOrDefault().City</td></tr>
+                <tr><td>@Model.FirstOrDefault().Region , @Model.FirstOrDefault().Country</td></tr>
+            </table>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <table class="popupGrid table">
+            <thead style="display:table-header-group">
+                <tr>
+                    <td>Material ID</td>
+                    <td>Material Description</td>
+                    <td>UOM</td>
+                    <td>Transfer Qty</td>
+                    <td>Unit Price SAR</td>
+                    <td>Total Amount</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Proc_AllDocumentPrint_Result material in Model)
+                {
+                    <tr>
+                        <td>@material.MaterialID</td>
+                        <td>@material.MaterialDesc1</td>
+                        <td>@material.UOM</td>
+                        <td>@material.TranQty</td>
+                        <td>@string.Format("{0:0.00}", Convert.ToDecimal(material.Cost))</td>
+                        <td>@string.Format("{0:0.00}", Convert.ToDecimal(material.Amount))</td>
+                    </tr>
+                }
+            </tbody>
+            <thead>
+                <tr>
+                    <td>Total</td>
+                    <td></td>
+                    <td></td>
+                    <td>@string.Format("{0:0.00}", Convert.ToDecimal(Model.Sum(e => e.TranQty))) </td>
+                    <td></td>
+                    <td>@string.Format("{0:0.00}", Convert.ToDecimal(Model.Sum(e => e.Amount)))</td>
+                </tr>
+            </thead>
+
+        </table>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">I received the quantity above with the same situation mentioned above and I will be responsble to deliver to the main warehouse by the same quantity and situation and if any short will be under by my responsibility.</div>
+        <div class="col-lg-6">استلمت انا السائق البضاعة المدونة بعاليه كمية وقيمة باالحالة المدونة عالية واقر بأنني مسئول مسئولية كاملة عن الوفاء بتسليمها للمستودع بنفس الكمية والقيمة المدونة واكون مسئول عن اي عجز عند التسليم</div>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">
+            <div class="col-lg-3">Issued by <span>الاسم</span></div>.......................................
+            <div class="col-lg-3"> Signature <span>التوقيع</span>..........................................</div>
+        </div>
+        <div class="col-lg-6">
+            <div class="col-lg-3">Store Supervisor / Leader<span>الاسم</span>...............................</div>
+            <div class="col-lg-3">Signature <span>التوقيع</span>..........................................</div>
+        </div>
+    </div>
+}
+else if (Model.FirstOrDefault().FilterName == "Transfter OUT")
+{
+    <div class="col-lg-12 udrline text-center text-capitalize">INTERNAL TRANSFER</div>
+    <div class="col-lg-12 udrline text-center ">تحويل داخل الفرع</div>
+    <div class="col-lg-12"><div class="col-lg-offset-1"><img src="~/Images/NukalyReceiptLogo.png" /></div></div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">
+            <table class="table ">
+                <tr><td>@Model.FirstOrDefault().Address1</td></tr>
+                <tr><td>@Model.FirstOrDefault().City , @Model.FirstOrDefault().Country</td></tr>
+                <tr><td>@Model.FirstOrDefault().Phone</td></tr>
+            </table>
+        </div>
+        <div class="col-lg-6">
+            <table class="table">
+                <tr><td>Return Created By :</td><td>@Model.FirstOrDefault().UserID</td></tr>
+                <tr><td>Date :</td><td>@Model.FirstOrDefault().DocumentDate</td></tr>
+                <tr><td>DocumentID :</td><td>@Model.FirstOrDefault().DocumentID</td></tr>
+            </table>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">From : Store</div>
+        <div class="col-lg-6">To : Display</div>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">
+            <div class="col-lg-3">Store  :</div>
+            <div class="col-lg-3">@Model.FirstOrDefault().ToLocation @Model.FirstOrDefault().ToStorageId</div>
+        </div>
+        <div class="col-lg-6">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-3">@Model.FirstOrDefault().LocationID @Model.FirstOrDefault().StorageID</div>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">
+            <table class="table">
+                <tr><td>@Model.FirstOrDefault().LocationID</td></tr>
+                <tr><td>@Model.FirstOrDefault().LocationDesc</td></tr>
+                <tr><td>@Model.FirstOrDefault().City</td></tr>
+                <tr><td>@Model.FirstOrDefault().Region , @Model.FirstOrDefault().Country</td></tr>
+            </table>
+        </div>
+        <div class="col-lg-6">
+            <table class="table">
+                <tr><td>@Model.FirstOrDefault().LocationID</td></tr>
+                <tr><td>@Model.FirstOrDefault().LocationDesc</td></tr>
+                <tr><td>@Model.FirstOrDefault().City</td></tr>
+                <tr><td>@Model.FirstOrDefault().Region , @Model.FirstOrDefault().Country</td></tr>
+            </table>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <table class="popupGrid table">
+            <thead style="display:table-header-group">
+                <tr>
+                    <td>Material ID</td>
+                    <td>Material Description</td>
+                    <td>UOM</td>
+                    <td>Transfer Qty</td>
+                    <td>Unit Price SAR</td>
+                    <td>Total Amount</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Proc_AllDocumentPrint_Result material in Model)
+                {
+                    <tr>
+                        <td>@material.MaterialID</td>
+                        <td>@material.MaterialDesc1</td>
+                        <td>@material.UOM</td>
+                        <td>@material.TranQty</td>
+                        <td>@string.Format("{0:0.00}", Convert.ToDecimal(material.Cost))</td>
+                        <td>@string.Format("{0:0.00}", Convert.ToDecimal(material.Amount))</td>
+                    </tr>
+                }
+            </tbody>
+            <thead>
+                <tr>
+                    <td>Total</td>
+                    <td></td>
+                    <td></td>
+                    <td>@string.Format("{0:0.00}", Convert.ToDecimal(Model.Sum(e => e.TranQty))) </td>
+                    <td></td>
+                    <td>@string.Format("{0:0.00}", Convert.ToDecimal(Model.Sum(e => e.Amount)))</td>
+                </tr>
+            </thead>
+
+        </table>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">I received the quantity above with the same situation mentioned above and I will be responsble to deliver to the main warehouse by the same quantity and situation and if any short will be under by my responsibility.</div>
+        <div class="col-lg-6">استلمت انا السائق البضاعة المدونة بعاليه كمية وقيمة باالحالة المدونة عالية واقر بأنني مسئول مسئولية كاملة عن الوفاء بتسليمها للمستودع بنفس الكمية والقيمة المدونة واكون مسئول عن اي عجز عند التسليم</div>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-6">
+            <div class="col-lg-3">Issued by <span>الاسم</span></div>.......................................
+            <div class="col-lg-3"> Signature <span>التوقيع</span>..........................................</div>
+        </div>
+        <div class="col-lg-6">
+            <div class="col-lg-3">Store Supervisor / Leader<span>الاسم</span>...............................</div>
+            <div class="col-lg-3">Signature <span>التوقيع</span>..........................................</div>
+        </div>
+    </div>
+}
+
+
+

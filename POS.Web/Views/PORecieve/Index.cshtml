@@ -1,0 +1,88 @@
+﻿@using POS.Util.Model;
+@model TransactionModel
+    @{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<script>
+    $(document).ready(function () {
+
+        $("#fltrLocation").change(function () {
+            var id = $('#fltrLocation').val();
+            $('#tblPODetail > tbody').html('');
+            $('#poDate').val('');
+            $('#VendorID').val('');
+            $.ajax({
+                type: "POST",
+                url: "../PORecieve/GetPONumberByLocation",
+                data: { 'LocationID': id },
+                dataType: "json",
+                success: function (data) {
+                    $("#ddlPONumber").html('');
+                    $("#ddlPONumber").append($("<option/>").val("").text("--Select--"));
+                    $.each(data, function () {
+                        $("#ddlPONumber").append($("<option/>").val(this).text(this));
+                    });
+                },
+                failure: function () {
+                    var type = BootstrapDialog.TYPE_WARNING;
+                    BootstrapDialog.show({
+                        type: type,
+                        title: 'Error',
+                        message: 'Geting Data Error.Please try again.'
+                    });
+                }
+            });
+        });
+
+        $("#ddlPONumber").change(function () {
+            var id = $('#ddlPONumber').val();
+
+            $.getJSON("../PORecieve/GetPOByDocID",
+                  { DOCID: id },
+                  function (data) {
+                      console.log(data);
+                      $('#poDate').val(data.PostingDate);
+                      $('#VendorID').val(data.VendorID);
+                  });
+
+            $.ajax({
+                type: "POST",
+                url: "../PORecieve/PODetail",
+                data: { DOCID: id },
+                dataType: "html",
+                success: function (data) {
+                    $('#dvPODetail').html(data);
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert(thrownError);
+                }
+            });
+        });
+    });
+</script>
+<div class="container">
+    <span class="pad_1per">Transactions: PO Recieve</span>
+    <div class="col-lg-12">
+        <div class="col-lg-3">
+            <strong>Location : </strong>
+            @Html.DropDownList("fltrLocation", (IEnumerable<SelectListItem>)ViewBag.Location, "--Select--", new { @class = "form-control" })
+        </div>
+        <div class="col-lg-3">
+            <strong>
+                PO Number (Open Status) :
+            </strong>
+            <select id="ddlPONumber" class="form-control"></select>
+        </div>
+        <div class="col-lg-3">
+            Date: <input type="text" id="poDate" disabled class="form-control" />
+        </div>
+        <div class="col-lg-3">
+            Vendor ID: <input type="text" id="VendorID" disabled class="form-control" />
+        </div>
+    </div>
+    <div id="dvPODetail" class="col-lg-12 row" style="top:10px;height:400px;overflow:scroll;background-color:white;">
+        Please select Location and PO Number to see more details.
+    </div>
+</div>

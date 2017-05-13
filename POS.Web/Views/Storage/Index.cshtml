@@ -1,0 +1,44 @@
+﻿@using POS.Entity.Entities
+@using POS.Util.Model
+@model  LocationStorageModel
+
+@*View for Storage list. Created by Vinod *@
+@{
+    ViewBag.Title = "Storage";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+<script src="~/Scripts/jsStorage.js"></script>
+<div class="col-lg-12">
+
+    <h2 class="pad_1per ">Storage <button id="btnSNewStore" title="Add New Store!" class="btn btn-default pull-right mar_top_1per bckcolor_green" type="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button></h2>
+</div>
+<div class="col-lg-12 mgn_0">
+    <div class="col-lg-3 noPadBrd">
+        <div class="input-group col-lg-12 ">
+            <input id="txtSLocationSearch" type="text" class="form-control col-lg-12 stre_maxWth  ht40" placeholder="Search for  Store / Location / LocationID">
+        </div>
+        <div class="ovrflow_Stng">
+            @if (Model != null)
+            {
+                foreach (Proc_LoadGetLocationStorage_Result location in Model.StorageLocation)
+                {
+                    <div class="SlocData pad_1per bg_blue" >
+                        <a class="pointer MasterSStore" data-SLocationID="@location.LocationID" data-SCity="@location.City"><span class="bg_blue">@location.LocationDesc</span></a>
+                    </div>
+                }
+                <small id="NoRecords" class="lead" style="display:none">
+                    No records found.
+                </small>
+            }
+            else
+            {
+                <small class="lead">
+                    No records found.
+                </small>
+            }
+        </div>
+    </div>
+    <div id="StorageDetails" class="col-lg-9 noPadBrd">
+        @Html.Partial("~/Views/Storage/Partial/_StorageDetailsPartial.cshtml",Model);
+    </div>
+</div>

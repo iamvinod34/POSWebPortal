@@ -1,0 +1,27 @@
+﻿@using POS.Entity.Entities;
+@model List<Proc_TempDetailsData_Result>
+@foreach (var item in Model)
+{
+    <tr>
+        <td class="panel-body">
+            <button id="Deleterow">Delete</button>
+        </td>
+        <td class="panel-body">@item.MaterialID</td>
+        <td class="panel-body hidden-md hidden-sm hidden-xs">@item.MaterialDesc1</td>
+        <td class="panel-body">@item.UOM</td>
+        <td class="panel-body " id="txtQty">@Html.TextBox(item.MaterialID + "&" + item.UOM, item.TranQty, new { @class = "txtFoucs", id = item.UOM, value = item.TranQty })</td>
+        <td class="panel-body hidden-md hidden-sm hidden-xs">
+            @item.Price
+        <input type="hidden" value="@item.TempMasterID" class="TempMasterID" id="TempMasterID" />
+        <input type="hidden" value="@item.VendorID" id="hidVendorID" />
+        <input type="hidden" value="@item.StorageID" id="hidStorageID" />
+        <input type="hidden" value="@item.Filter" id="hidFilter" />
+        <input type="hidden" value="@item.Filter_Id" id="hidFilterID" />
+            <input type="hidden" value="@item.StorageID" id="FStorageID" />
+            <input type="hidden" value="@item.TLocationID" id="TLocationID" />
+            <input type="hidden" value="@item.TStorageID" id="TStorageID" />
+            
+    </td>
+
+</tr>
+}

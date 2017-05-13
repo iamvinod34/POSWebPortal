@@ -1,0 +1,42 @@
+﻿@using POS.Util.Model
+@using POS.Entity.Entities
+@model CustomerModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+<div class="col-lg-12">
+    <h2 class="pad_1per ">Customer <button id="btnNewStore" title="Add New Customer!" class="btn btn-default pull-right mar_top_1per bckcolor_green" type="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button></h2>
+</div>
+<div class="col-lg-12 mgn_0">
+    <div class="col-lg-3 noPadBrd">
+        <div class="input-group col-lg-12 ">
+            <input id="txtLocationSearch" type="text" class="form-control col-lg-12 stre_maxWth  ht40" placeholder="Search for  Store / Location / LocationID">
+
+        </div>
+        <div class="ovrflow">
+            @if (Model != null)
+            {
+                foreach (tbl_Customer customer in Model.lstCustomers)
+                {
+                    <div class="locData pad_1per bg_blue">
+                        <a class="pointer MasterStore" data-CustomerID="@customer.CustomerID" data-City="@customer.Name2"><span class="">@customer.Name1  @customer.Name2</span></a>
+                    </div>
+                }
+                <small id="NoRecords" class="lead" style="display:none">
+                    No records found.
+                </small>
+            }
+            else
+            {
+                <small class="lead">
+                    No records found.
+                </small>
+            }
+        </div>
+    </div>
+    <div id="CustomerDetails" class="col-lg-9 noPadBrd">
+       @Html.Partial("~/Views/Customer/Partial/CustomerDetails.cshtml",Model)
+    </div>
+
+</div>

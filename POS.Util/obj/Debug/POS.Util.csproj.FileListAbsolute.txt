@@ -1,0 +1,9 @@
+D:\WebPortal\POS.Util\bin\Debug\POS.Util.dll
+D:\WebPortal\POS.Util\bin\Debug\POS.Util.pdb
+D:\WebPortal\POS.Util\bin\Debug\POS.Entity.dll
+D:\WebPortal\POS.Util\bin\Debug\EntityFramework.dll
+D:\WebPortal\POS.Util\bin\Debug\POS.Entity.pdb
+D:\WebPortal\POS.Util\bin\Debug\EntityFramework.xml
+D:\WebPortal\POS.Util\obj\Debug\POS.Util.csprojResolveAssemblyReference.cache
+D:\WebPortal\POS.Util\obj\Debug\POS.Util.dll
+D:\WebPortal\POS.Util\obj\Debug\POS.Util.pdb

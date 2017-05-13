@@ -1,0 +1,240 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Report_Mater.master.cs" Inherits="POS.Web.ReportViewer.Report_Mater" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Report</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script src="../Scripts/jquery-1.12.4.js"></script>
+     <script src="../Scripts/bootstrap.js"></script>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/Site.css" rel="stylesheet" />
+    <link href="../Content/style.css" rel="stylesheet" />
+
+</head>
+<body>
+    <header>
+        <div id="stuck_container" class="stuck_container">
+            <div class="container">
+                <nav class="navbar navbar-default navbar-static-top ">
+                    <ul class="navbar-nav sf-menu" data-type="navbar">
+                        <li class="active">
+                            <a href="/Home">Home</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Master Data</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../Location">Location</a>
+                                </li>
+                                <li>
+                                    <a href="../Terminal">Terminal</a>
+                                </li>
+                                <li>
+                                    <a href="../Storage">Storage</a>
+                                </li>
+                                <li>
+                                    <a href="../Vendor">Vendor</a>
+                                </li>
+                                <li>
+                                    <a href="#">Customer</a>
+                                </li>
+                                <li>
+                                    <a href="../Category">Category </a>
+                                </li>
+                                <li>
+                                    <a href="../SubCategory">Sub Catergory</a>
+                                </li>
+                                <li>
+                                    <a href="#">UOM</a>
+                                </li>
+                                <li>
+                                    <a href="../Material">Material</a>
+                                </li>
+                                <li>
+                                    <a href="#">Price</a>
+                                </li>
+                                <li>
+                                    <a href="../LocationPrice">Location Price</a>
+                                </li>
+                                <li>
+                                    <a href="#">Users (POS)</a>
+                                </li>
+                                <li>
+                                    <a href="../City">City</a>
+                                </li>
+                                <li>
+                                    <a href="../Region">Region</a>
+                                </li>
+                                <li>
+                                    <a href="../Country">Country</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Trasactions</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">Sales Order</a>
+                                </li>
+                                <li>
+                                    <a href="/PORecieve">PO Recieve</a>
+                                </li>
+                                <li>
+                                    <a href="/ReturnToSupplier">Return to Supplier</a>
+                                </li>
+                                <li>
+                                    <a href="/TransactionTransfterToDisplay">Transfer to Display</a>
+                                </li>
+                                <li>
+                                    <a href="/PhysicalInventory">Physical Inventory </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Enquiry</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">Sales Enquiry</a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="/Enquiry/GetEnquiry">Sales Invoice</a>
+                                        </li>
+                                        <li>
+                                            <a href="/Enquiry/ReturnWithInvoice">Return With Invoice</a>
+                                        </li>
+                                        <li>
+                                            <a href="/Enquiry/ReturnWithoutInvoice">Return Without Invoice</a>
+                                        </li>
+                                        <li>
+                                            <a href="/Enquiry/GetUnHoldEnquiry">Hold Invoice</a>
+                                        </li>
+                                        <li>
+                                            <a href="/Enquiry/SalesDelete">Delete Items</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="/PO/Recieve">PO Recieve</a>
+                                </li>
+                                <li>
+                                    <a href="/PO/ReturnToSupplier">Return to Supplier</a>
+                                </li>
+                                <li>
+                                    <a href="/TransferToDisplay">Transfer to Display</a>
+                                </li>
+                                <li>
+                                    <a href="/TransferToDisplay/PhysicalInventory">Physical Inventory</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#">Reports</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="/POSReport" name="Category">Category</a>
+
+                                </li>
+                                <li>
+                                    <a href="/POSReport" name="Location">Location</a>
+                                </li>
+                                <li>
+                                    <a href="/POSReport" name="Material">Material</a>
+                                </li>
+                                <li>
+                                    <a href="/POSReport" name="PhysicalInventoryDetails">PhysicalInventoryDetails</a>
+                                </li>
+                                <li>
+                                    <a href="/POSReport" name="PhysicalInventoryDifferendeDetails">PhysicalInventoryDifferendeDetails</a>
+                                </li>
+                                <li>
+                                    <a href="/POSReport" name="POReceive">POReceive</a>
+                                </li>
+                                <li>
+                                    <a href="/POSReport" name="PriceFile">PriceFile</a>
+                                </li>
+                                <li>
+                                    <a href="/POSReport" name="ReturnToSupplier">ReturnToSupplier</a>
+                                </li>
+                                <li>
+                                    <a href="/POSReport" name="StockReceiveDetails">StockReceiveDetails</a>
+                                </li>
+                                <li>
+                                    <a href="/POSReport" name="SubCategory">SubCategory</a>
+                                </li>
+                                <li>
+                                    <a href="/POSReport" name="Terminal">Terminal</a>
+                                </li>
+                                <li>
+                                    <a href="/POSReport" name="TransferToDisplay">TransferToDisplay</a>
+                                </li>
+                                <li>
+                                    <a href="/POSReport" name="UOM">UOM</a>
+                                </li>
+                                <li>
+                                    <a href="/POSReport" name="Vendor">Vendor</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Setup</a>
+                        </li>
+                        <li>
+                            <a href="/Account/LogOff" title="LogOff"><span class="glyphicon glyphicon-off" aria-hidden="true"></span></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <section class="well well1 center991">
+            <div class="container">
+
+                <div class="navbar-header">
+                    <h1 class="navbar-brand">
+                        <a data-type='rd-navbar-brand' href="../">EasyPos
+                        </a>
+                        <small class="lead">best business<br />
+                            solutions
+                        </small>
+                    </h1>
+                </div>
+                <div class="social">
+
+                    <p class="lead">
+                        get in touch
+                    </p>
+
+                    <ul class="inline-list">
+                        <li>
+                            <a href="#" class="fa fa-facebook">facebook</a>
+                        </li>
+                        <li>
+                            <a href="#" class="fa fa-twitter">twitter</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+    </header>
+    <form id="form1" runat="server">
+        <div class="col-lg-12 ">
+            <div class="panel-primary container">
+                <div class="panel-heading">
+                    <h3 class="text-center white">Report-<%= Session["Reportname"] %></h3>
+                </div>
+            </div>
+            <div>
+                <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                <asp:ContentPlaceHolder ID="Report" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

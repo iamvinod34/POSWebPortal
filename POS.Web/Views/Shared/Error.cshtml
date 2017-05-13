@@ -1,0 +1,12 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Error";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+<div class="container">
+    <h1 class="text-danger">Error.</h1>
+    <h4 class="text-danger">An error occurred while processing your request. Please Go to </h4><span class="text-info">@Html.ActionLink("Home", "Home")</span> 
+
+</div>
+

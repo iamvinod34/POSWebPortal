@@ -1,0 +1,43 @@
+﻿@using POS.Util.Model
+@using POS.Entity.Entities
+@model VendorModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+<script src="~/Scripts/jsVendor.js"></script>
+<div class="col-lg-12">
+
+    <h2 class="pad_1per ">Vendor <button id="btnNewVendor" title="Add New Store!" class="btn btn-default pull-right mar_top_1per bckcolor_green" type="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button></h2>
+</div>
+
+<div class="col-lg-12 mgn_0">
+    <div class="col-lg-3 noPadBrd">
+        <div class="input-group col-lg-12 ">
+            <input id="txtVLocationSearch" type="text" class="form-control col-lg-12 stre_maxWth ht40" placeholder="Search for  Vendor">
+        </div>
+        <div class="ovrflow_Stng">
+            @if (Model.LVendor != null)
+            {
+                foreach (tbl_Vendor Vendor in Model.LVendor)
+                {
+                    <div class="VlocData pad_1per bg_blue">
+                        <a class="pointer MasterVStore" data-VendorID="@Vendor.VendorID"><span class="bg_blue">@Vendor.Name1</span></a>
+                    </div>
+                }
+                <small id="NoRecords" class="lead" style="display:none">
+                    No records found.
+                </small>
+            }
+            else
+            {
+                <small class="lead">
+                    No records found.
+                </small>
+            }
+        </div>
+    </div>
+    <div id="VendorDetails" class="col-lg-9 noPadBrd">
+        @Html.Partial("~/Views/Vendor/Partial/_VendorDetailsPartial.cshtml", Model)
+    </div>
+</div>

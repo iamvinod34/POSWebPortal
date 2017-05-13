@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FA36D0C7-AA6F-449D-BF9F-BB14F118AE7D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>POS.Business</RootNamespace>
+    <AssemblyName>POS.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessComponents\AuthenticationBL.cs" />
+    <Compile Include="BusinessComponents\CashCollection.cs" />
+    <Compile Include="BusinessComponents\CategoryBL.cs" />
+    <Compile Include="BusinessComponents\CityBL.cs" />
+    <Compile Include="BusinessComponents\CountryBL.cs" />
+    <Compile Include="BusinessComponents\CustomerBL.cs" />
+    <Compile Include="BusinessComponents\EODBL.cs" />
+    <Compile Include="BusinessComponents\LocationBL.cs" />
+    <Compile Include="BusinessComponents\LocationPriceBL.cs" />
+    <Compile Include="BusinessComponents\MaterialBL.cs" />
+    <Compile Include="BusinessComponents\PosUsersBL.cs" />
+    <Compile Include="BusinessComponents\ProductionOrder.cs" />
+    <Compile Include="BusinessComponents\RegionBL.cs" />
+    <Compile Include="BusinessComponents\Reprots.cs" />
+    <Compile Include="BusinessComponents\SalesBL.cs" />
+    <Compile Include="BusinessComponents\StorageBL.cs" />
+    <Compile Include="BusinessComponents\SubCategoryBL.cs" />
+    <Compile Include="BusinessComponents\TempStorage.cs" />
+    <Compile Include="BusinessComponents\TerminalBL.cs" />
+    <Compile Include="BusinessComponents\TransactionBL.cs" />
+    <Compile Include="BusinessComponents\TransferDisplayBL.cs" />
+    <Compile Include="BusinessComponents\VendorBL.cs" />
+    <Compile Include="Db.cs" />
+    <Compile Include="Interface\ControlPanel\IAuthentication.cs" />
+    <Compile Include="Interface\ICategory.cs" />
+    <Compile Include="Interface\ICity.cs" />
+    <Compile Include="Interface\ICountry.cs" />
+    <Compile Include="Interface\ICustomer.cs" />
+    <Compile Include="Interface\IEod.cs" />
+    <Compile Include="Interface\ILocation.cs" />
+    <Compile Include="Interface\ILocationPrice.cs" />
+    <Compile Include="Interface\IMaterial.cs" />
+    <Compile Include="Interface\IPosUsers.cs" />
+    <Compile Include="Interface\IRegion.cs" />
+    <Compile Include="Interface\ISales.cs" />
+    <Compile Include="Interface\IStorage.cs" />
+    <Compile Include="Interface\ISubCategory.cs" />
+    <Compile Include="Interface\ITerminal.cs" />
+    <Compile Include="Interface\IVendor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\POS.Entity\POS.Entity.csproj">
+      <Project>{ee935fbe-f10a-46ed-853d-48173beda900}</Project>
+      <Name>POS.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\POS.Repository\POS.Repository.csproj">
+      <Project>{1c5e5806-96e2-4735-ad55-10f97896e009}</Project>
+      <Name>POS.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\POS.Util\POS.Util.csproj">
+      <Project>{1fdc311e-b122-4c66-91e3-5653a6c26f75}</Project>
+      <Name>POS.Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

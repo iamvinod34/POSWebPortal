@@ -1,0 +1,3157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="POSEntitie.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Loc_Auth_Id" Type="bigint" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Loc_Auth_Id" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tbl_Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CategoryDesc" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CityName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_Company">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LongName" Type="nvarchar" MaxLength="70" />
+    <Property Name="ShortName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address3" Type="nvarchar" MaxLength="50" />
+    <Property Name="POBox" Type="nvarchar" MaxLength="50" />
+    <Property Name="Contact" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="Region" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" />
+    <Property Name="DefaultCurrency" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="tbl_Country">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="CustomerID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address3" Type="nvarchar" MaxLength="50" />
+    <Property Name="POBox" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="Region" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreditLimit" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="CustInt1" Type="int" />
+    <Property Name="CustInt2" Type="int" />
+    <Property Name="CustInt3" Type="int" />
+    <Property Name="CustText1" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustText2" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustText3" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustType" Type="nchar" MaxLength="10" />
+    <Property Name="TotalDue" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateOfBirth" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_CustType">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="CustType" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustType" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_EnquiryAuthentication">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Loc_Auth_Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Loc_Auth_Id" Type="bigint" Nullable="false" />
+    <Property Name="SalesOrder" Type="bit" />
+    <Property Name="POReceive" Type="bit" />
+    <Property Name="ReturnToSupplier" Type="bit" />
+    <Property Name="TranfterToDisplay" Type="bit" />
+    <Property Name="PhysicalInventory" Type="bit" />
+    <Property Name="TransfterIN" Type="bit" />
+    <Property Name="TransfterOUT" Type="bit" />
+    <Property Name="EOD" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_EOD">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="TerminialID" />
+      <PropertyRef Name="EODID" />
+    </Key>
+    <Property Name="LocationID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TerminialID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EODID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DocDate" Type="datetime" />
+    <Property Name="Loan" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="SystemCash" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="ActualCash" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="1" Type="int" />
+    <Property Name="5" Type="int" />
+    <Property Name="10" Type="int" />
+    <Property Name="20" Type="int" />
+    <Property Name="50" Type="int" />
+    <Property Name="100" Type="int" />
+    <Property Name="200" Type="int" />
+    <Property Name="500" Type="int" />
+    <Property Name="CashDiff" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="CashCount" Type="int" />
+    <Property Name="CreditAmt" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="DebitAmt" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="DebitCnt" Type="int" />
+    <Property Name="ReturnAmt" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="ReturnCnt" Type="int" />
+    <Property Name="DeleteAmt" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="DeleteCnt" Type="int" />
+    <Property Name="OnAccAmt" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="OnAccCnt" Type="int" />
+    <Property Name="Cust1Amt" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Cust1Cnt" Type="int" />
+    <Property Name="Cust2Amt" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Cust2Cnt" Type="int" />
+    <Property Name="CreditCnt" Type="int" />
+    <Property Name="Dataid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cash_Collection" Type="decimal" Precision="10" Scale="3" />
+  </EntityType>
+  <EntityType Name="tbl_EODFile">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyId" Type="nvarchar" MaxLength="50" />
+    <Property Name="TerminalId" Type="nvarchar" MaxLength="50" />
+    <Property Name="LocationId" Type="nvarchar" MaxLength="50" />
+    <Property Name="EODID" Type="nvarchar" MaxLength="50" />
+    <Property Name="FileByte" Type="image" />
+  </EntityType>
+  <EntityType Name="tbl_ImageDetails">
+    <Key>
+      <PropertyRef Name="ImageDetailsID" />
+    </Key>
+    <Property Name="ImageDetailsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FileName" Type="nchar" MaxLength="300" Nullable="false" />
+    <Property Name="RowCreatedDate" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Location">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="LocationID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="LocationDesc" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address3" Type="nvarchar" MaxLength="50" />
+    <Property Name="POBox" Type="nvarchar" MaxLength="50" />
+    <Property Name="Contact" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="Region" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" />
+    <Property Name="CostCenter" Type="nvarchar" MaxLength="20" />
+    <Property Name="BusinessArea" Type="nvarchar" MaxLength="20" />
+    <Property Name="FieldArea" Type="nvarchar" MaxLength="20" />
+    <Property Name="CashLoan" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="CustInt1" Type="int" />
+    <Property Name="CustInt2" Type="int" />
+    <Property Name="CustInt3" Type="int" />
+    <Property Name="CustText1" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustText2" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustText3" Type="nvarchar" MaxLength="50" />
+    <Property Name="TfrDisplay" Type="nvarchar" MaxLength="50" />
+    <Property Name="POReceive" Type="nvarchar" MaxLength="50" />
+    <Property Name="TfrIn" Type="nvarchar" MaxLength="50" />
+    <Property Name="TfrOut" Type="nvarchar" MaxLength="50" />
+    <Property Name="RtnVendor" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhyCount" Type="nvarchar" MaxLength="50" />
+    <Property Name="Prod_Order" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_LocationAuthentication">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="User_Locations" Type="nvarchar" MaxLength="1500" />
+    <Property Name="Manager_Locations" Type="nvarchar" MaxLength="1500" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="tbl_LocationPrice">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="EAN13" />
+    </Key>
+    <Property Name="LocationID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="EAN13" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MaterialID" Type="nvarchar" MaxLength="30" />
+    <Property Name="UOM" Type="nvarchar" MaxLength="10" />
+    <Property Name="Price" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="CustType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_LocationPrice_Temp">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="EAN13" />
+      <PropertyRef Name="TerminalID" />
+    </Key>
+    <Property Name="LocationID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="EAN13" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MaterialID" Type="nvarchar" MaxLength="30" />
+    <Property Name="UOM" Type="nvarchar" MaxLength="10" />
+    <Property Name="Price" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="TerminalID" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_ManagerUserAuthentication">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MID" Type="bigint" />
+    <Property Name="User_EmailID" Type="nvarchar" MaxLength="250" />
+    <Property Name="Manager_EmailID" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="tbl_MasterDataAuthentication">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Loc_Auth_Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Loc_Auth_Id" Type="bigint" Nullable="false" />
+    <Property Name="Location" Type="bit" />
+    <Property Name="Terminal" Type="bit" />
+    <Property Name="Storage" Type="bit" />
+    <Property Name="Vendor" Type="bit" />
+    <Property Name="Customer" Type="bit" />
+    <Property Name="Category" Type="bit" />
+    <Property Name="SubCategory" Type="bit" />
+    <Property Name="UOM" Type="bit" />
+    <Property Name="Material" Type="bit" />
+    <Property Name="Price" Type="bit" />
+    <Property Name="LocationPrice" Type="bit" />
+    <Property Name="Users" Type="bit" />
+    <Property Name="City" Type="bit" />
+    <Property Name="Region" Type="bit" />
+    <Property Name="Country" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_Material">
+    <Key>
+      <PropertyRef Name="MaterialID" />
+    </Key>
+    <Property Name="MaterialID" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="MaterialDesc1" Type="nvarchar" MaxLength="60" />
+    <Property Name="MaterialDesc2" Type="nvarchar" MaxLength="60" />
+    <Property Name="MaterialDesc3" Type="nvarchar" MaxLength="60" />
+    <Property Name="ProductURL" Type="nvarchar" MaxLength="50" />
+    <Property Name="CategoryID" Type="nvarchar" MaxLength="20" />
+    <Property Name="SubCategoryID" Type="nvarchar" MaxLength="20" />
+    <Property Name="BaseUOM" Type="nvarchar" MaxLength="10" />
+    <Property Name="Cost" Type="numeric" Precision="18" Scale="3" />
+    <Property Name="VendorID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustInt1" Type="int" />
+    <Property Name="CustInt2" Type="int" />
+    <Property Name="CustInt3" Type="int" />
+    <Property Name="CustDate1" Type="datetime" />
+    <Property Name="CustDate2" Type="datetime" />
+    <Property Name="CustDate3" Type="datetime" />
+    <Property Name="CustText1" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustText2" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustText3" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddDate" Type="date" />
+    <Property Name="UpdDate" Type="date" />
+    <Property Name="Dataid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sales_Comm" Type="numeric" Precision="10" Scale="3" />
+    <Property Name="Produc_Comm" Type="numeric" Precision="10" Scale="3" />
+  </EntityType>
+  <EntityType Name="tbl_Material_Temp">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="MaterialID" />
+      <PropertyRef Name="TerminalID" />
+    </Key>
+    <Property Name="LocationID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MaterialID" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="MaterialDesc1" Type="nvarchar" MaxLength="60" />
+    <Property Name="MaterialDesc2" Type="nvarchar" MaxLength="60" />
+    <Property Name="MaterialDesc3" Type="nvarchar" MaxLength="60" />
+    <Property Name="ProductURL" Type="nvarchar" MaxLength="50" />
+    <Property Name="CategoryID" Type="nvarchar" MaxLength="20" />
+    <Property Name="SubCategoryID" Type="nvarchar" MaxLength="20" />
+    <Property Name="BaseUOM" Type="nvarchar" MaxLength="10" />
+    <Property Name="Cost" Type="numeric" Precision="18" Scale="3" />
+    <Property Name="VendorID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustInt1" Type="int" />
+    <Property Name="CustInt2" Type="int" />
+    <Property Name="CustInt3" Type="int" />
+    <Property Name="CustDate1" Type="datetime" />
+    <Property Name="CustDate2" Type="datetime" />
+    <Property Name="CustDate3" Type="datetime" />
+    <Property Name="CustText1" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustText2" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustText3" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddDate" Type="date" />
+    <Property Name="UpdDate" Type="date" />
+    <Property Name="TerminalID" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_MaterialEAN">
+    <Key>
+      <PropertyRef Name="EAN13" />
+    </Key>
+    <Property Name="EAN13" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MaterialID" Type="nvarchar" MaxLength="30" />
+    <Property Name="UOM" Type="nvarchar" MaxLength="10" />
+    <Property Name="ConvertValue" Type="numeric" Precision="18" Scale="3" />
+    <Property Name="BaseUOM" Type="nvarchar" MaxLength="10" />
+    <Property Name="MaterialMix" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="tbl_MaterialEAN_Temp">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="EAN13" />
+      <PropertyRef Name="TerminalID" />
+    </Key>
+    <Property Name="LocationID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EAN13" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MaterialID" Type="nvarchar" MaxLength="30" />
+    <Property Name="UOM" Type="nvarchar" MaxLength="10" />
+    <Property Name="ConvertValue" Type="numeric" Precision="18" Scale="3" />
+    <Property Name="BaseUOM" Type="nvarchar" MaxLength="10" />
+    <Property Name="MaterialMix" Type="nvarchar" MaxLength="30" />
+    <Property Name="TerminalID" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_MaterialKit">
+    <Key>
+      <PropertyRef Name="KitID" />
+    </Key>
+    <Property Name="KitID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="KitDescription" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaterialLess" Type="nvarchar" MaxLength="30" />
+    <Property Name="UOMLess" Type="nvarchar" MaxLength="10" />
+    <Property Name="QuantityLess" Type="numeric" Precision="18" Scale="3" />
+    <Property Name="MaterialAdd" Type="nvarchar" MaxLength="30" />
+    <Property Name="UOMAdd" Type="nvarchar" MaxLength="10" />
+    <Property Name="QuantityAdd" Type="numeric" Precision="18" Scale="3" />
+  </EntityType>
+  <EntityType Name="tbl_PhoneCode">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PhoneCode" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="PhoneDigits" Type="int" Nullable="false" />
+    <Property Name="PhoneDescription" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Conread" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_PI_TimeTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PI_KeyWord" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="PI_Description" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Days" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="PI_DateTime" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="LocationID" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="StorageID" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="TerminalID" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ConRead" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_POS_Logs">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Name="LogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Proc_Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="Parameters" Type="nvarchar" MaxLength="350" />
+    <Property Name="Error_Message" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Row_Created_Date" Type="datetime" />
+    <Property Name="Error_Number" Type="nvarchar" MaxLength="100" />
+    <Property Name="Error_Line" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbl_POSException">
+    <Key>
+      <PropertyRef Name="POSExceptionID" />
+    </Key>
+    <Property Name="POSExceptionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExceptionType" Type="varchar" MaxLength="300" />
+    <Property Name="ExceptionModule" Type="varchar" MaxLength="300" />
+    <Property Name="ExceptionCode" Type="varchar" MaxLength="300" />
+    <Property Name="Source" Type="varchar" MaxLength="300" />
+    <Property Name="Message" Type="varchar(max)" />
+    <Property Name="QueryString" Type="varchar(max)" />
+    <Property Name="TargetSite" Type="varchar(max)" />
+    <Property Name="StrackTrace" Type="varchar(max)" />
+    <Property Name="ServerName" Type="varchar(max)" />
+    <Property Name="UserAgent" Type="varchar" MaxLength="300" />
+    <Property Name="UserIP" Type="varchar" MaxLength="300" />
+    <Property Name="UserAuthentication" Type="varchar" MaxLength="300" />
+    <Property Name="UserName" Type="varchar" MaxLength="300" />
+    <Property Name="RequestUrl" Type="varchar(max)" />
+    <Property Name="InvoiceID" Type="int" />
+    <Property Name="RowCreatedDateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_PreferUOM">
+    <Key>
+      <PropertyRef Name="MaterialID" />
+    </Key>
+    <Property Name="MaterialID" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="EAN13" Type="nvarchar" MaxLength="50" />
+    <Property Name="UOM" Type="nvarchar" MaxLength="10" />
+    <Property Name="Conv" Type="numeric" Precision="18" Scale="3" />
+  </EntityType>
+  <EntityType Name="tbl_PreferUOM_Temp">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="MaterialID" />
+      <PropertyRef Name="TerminalID" />
+    </Key>
+    <Property Name="LocationID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MaterialID" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="EAN13" Type="nvarchar" MaxLength="50" />
+    <Property Name="UOM" Type="nvarchar" MaxLength="10" />
+    <Property Name="Conv" Type="numeric" Precision="18" Scale="3" />
+    <Property Name="TerminalID" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_PriceFile">
+    <Key>
+      <PropertyRef Name="EAN13" />
+      <PropertyRef Name="CustType" />
+    </Key>
+    <Property Name="EAN13" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MaterialID" Type="nvarchar" MaxLength="30" />
+    <Property Name="UOM" Type="nvarchar" MaxLength="10" />
+    <Property Name="Price" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="CustType" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_PriceFile_Temp">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="EAN13" />
+      <PropertyRef Name="TerminalID" />
+    </Key>
+    <Property Name="LocationID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EAN13" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MaterialID" Type="nvarchar" MaxLength="30" />
+    <Property Name="UOM" Type="nvarchar" MaxLength="10" />
+    <Property Name="Price" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="TerminalID" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_ProductionOrder">
+    <Key>
+      <PropertyRef Name="DocumentID" />
+      <PropertyRef Name="CompanyID" />
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="DocumentID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PONumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LocationID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="StorageID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DocumentDate" Type="datetime" Nullable="false" />
+    <Property Name="PostingDate" Type="date" />
+    <Property Name="VendorID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DocDetail" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddDate" Type="date" />
+    <Property Name="Dataid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_ProductionOrder_Detail">
+    <Key>
+      <PropertyRef Name="DocumentID" />
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="StorageID" />
+      <PropertyRef Name="Counter" />
+    </Key>
+    <Property Name="DocumentID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CompanyID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LocationID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="StorageID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DocumentDate" Type="datetime" Nullable="false" />
+    <Property Name="PostingType" Type="nchar" MaxLength="10" />
+    <Property Name="PostingDate" Type="date" />
+    <Property Name="VendorID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Counter" Type="int" Nullable="false" />
+    <Property Name="CategoryID" Type="nvarchar" MaxLength="20" />
+    <Property Name="MaterialID" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="UOM" Type="nvarchar" MaxLength="10" />
+    <Property Name="TranQty" Type="numeric" Precision="18" Scale="3" />
+    <Property Name="BaseQty" Type="numeric" Precision="18" Scale="3" />
+    <Property Name="CreditQty" Type="numeric" Precision="18" Scale="3" />
+    <Property Name="Cost" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="DiscountRate" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="Amount" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="CreditAmount" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="50" />
+    <Property Name="PostKey" Type="int" Nullable="false" />
+    <Property Name="AddDate" Type="date" />
+    <Property Name="UpdDate" Type="date" />
+    <Property Name="Dataid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_ProductionOrderRequest">
+    <Key>
+      <PropertyRef Name="DocumentID" />
+      <PropertyRef Name="CompanyID" />
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="DocumentID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PONumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LocationID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="StorageID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DocumentDate" Type="datetime" Nullable="false" />
+    <Property Name="PostingDate" Type="date" />
+    <Property Name="VendorID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DocDetail" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddDate" Type="date" />
+    <Property Name="Dataid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_ProductionOrderRequest_Detail">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="DocumentID" />
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="StorageID" />
+      <PropertyRef Name="Counter" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DocumentID" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="CompanyID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LocationID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="StorageID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DocumentDate" Type="datetime" Nullable="false" />
+    <Property Name="PostingType" Type="nchar" MaxLength="10" />
+    <Property Name="PostingDate" Type="date" />
+    <Property Name="VendorID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Counter" Type="int" Nullable="false" />
+    <Property Name="CategoryID" Type="nvarchar" MaxLength="20" />
+    <Property Name="MaterialID" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="UOM" Type="nvarchar" MaxLength="10" />
+    <Property Name="TranQty" Type="numeric" Precision="18" Scale="3" />
+    <Property Name="BaseQty" Type="numeric" Precision="18" Scale="3" />
+    <Property Name="CreditQty" Type="numeric" Precision="18" Scale="3" />
+    <Property Name="Cost" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="DiscountRate" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="Amount" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="CreditAmount" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="50" />
+    <Property Name="PostKey" Type="int" Nullable="false" />
+    <Property Name="AddDate" Type="date" />
+    <Property Name="UpdDate" Type="date" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="TransDelQty" Type="numeric" Precision="18" Scale="3" />
+    <Property Name="BaseDelQty" Type="numeric" Precision="18" Scale="3" />
+  </EntityType>
+  <EntityType Name="tbl_PurchaseOrder">
+    <Key>
+      <PropertyRef Name="DocumentID" />
+      <PropertyRef Name="CompanyID" />
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="StorageID" />
+      <PropertyRef Name="DocumentDate" />
+      <PropertyRef Name="VendorID" />
+    </Key>
+    <Property Name="DocumentID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CompanyID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LocationID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="StorageID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DocumentDate" Type="datetime" Nullable="false" />
+    <Property Name="PostingDate" Type="date" />
+    <Property Name="VendorID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PODescription" Type="nvarchar" MaxLength="50" />
+    <Property Name="Amount" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="Discount" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="NetValue" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddDate" Type="date" />
+    <Property Name="Dataid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="POStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReferID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_PurchaseOrder_Detail">
+    <Key>
+      <PropertyRef Name="DocumentID" />
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="Counter" />
+    </Key>
+    <Property Name="DocumentID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CompanyID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LocationID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="StorageID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DocumentDate" Type="datetime" Nullable="false" />
+    <Property Name="PostingType" Type="nchar" MaxLength="10" />
+    <Property Name="PostingDate" Type="date" />
+    <Property Name="VendorID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Counter" Type="int" Nullable="false" />
+    <Property Name="CategoryID" Type="nvarchar" MaxLength="20" />
+    <Property Name="MaterialID" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="UOM" Type="nvarchar" MaxLength="10" />
+    <Property Name="TranQty" Type="numeric" Precision="18" Scale="3" />
+    <Property Name="BaseQty" Type="numeric" Precision="18" Scale="3" />
+    <Property Name="CreditQty" Type="numeric" Precision="18" Scale="3" />
+    <Property Name="Cost" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="DiscountRate" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="Amount" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="CreditAmount" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="50" />
+    <Property Name="PostKey" Type="int" Nullable="false" />
+    <Property Name="AddDate" Type="date" />
+    <Property Name="UpdDate" Type="date" />
+    <Property Name="Dataid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReferID" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReferCount" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_Region">
+    <Key>
+      <PropertyRef Name="RegionID" />
+    </Key>
+    <Property Name="RegionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RegionName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_SetupAuthentication">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Loc_Auth_Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Loc_Auth_Id" Type="bigint" Nullable="false" />
+    <Property Name="ChangePassword" Type="bit" />
+    <Property Name="AddUsers" Type="bit" />
+    <Property Name="UsersAuthentication" Type="bit" />
+    <Property Name="Reports" Type="bit" />
+    <Property Name="ProductionOrderStatusReport" Type="bit" />
+    <Property Name="LostOpporTunitySalesReport" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_StockReceive">
+    <Key>
+      <PropertyRef Name="DocumentID" />
+      <PropertyRef Name="CompanyID" />
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="DocumentID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PONumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LocationID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="StorageID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DocumentDate" Type="datetime" Nullable="false" />
+    <Property Name="PostingDate" Type="date" />
+    <Property Name="VendorID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DocDetail" Type="nvarchar" MaxLength="50" />
+    <Property Name="Amount" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="Discount" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="NetValue" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddDate" Type="date" />
+    <Property Name="Dataid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_StockReceive_Detail">
+    <Key>
+      <PropertyRef Name="DocumentID" />
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="Counter" />
+    </Key>
+    <Property Name="DocumentID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CompanyID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LocationID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="StorageID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DocumentDate" Type="datetime" Nullable="false" />
+    <Property Name="PostingType" Type="nchar" MaxLength="10" />
+    <Property Name="PostingDate" Type="date" />
+    <Property Name="VendorID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Counter" Type="int" Nullable="false" />
+    <Property Name="CategoryID" Type="nvarchar" MaxLength="20" />
+    <Property Name="MaterialID" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="UOM" Type="nvarchar" MaxLength="10" />
+    <Property Name="TranQty" Type="numeric" Precision="18" Scale="3" />
+    <Property Name="BaseQty" Type="numeric" Precision="18" Scale="3" />
+    <Property Name="CreditQty" Type="numeric" Precision="18" Scale="3" />
+    <Property Name="Cost" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="DiscountRate" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="Amount" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="CreditAmount" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="50" />
+    <Property Name="PostKey" Type="int" Nullable="false" />
+    <Property Name="AddDate" Type="date" />
+    <Property Name="UpdDate" Type="date" />
+    <Property Name="Dataid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderQty" Type="numeric" Precision="18" Scale="3" />
+  </EntityType>
+  <EntityType Name="tbl_Storage">
+    <Key>
+      <PropertyRef Name="StorageID" />
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="StorageID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="StorageName" Type="nvarchar" MaxLength="50" />
+    <Property Name="StorageType" Type="nvarchar" MaxLength="50" />
+    <Property Name="LocationID" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_SubCategory">
+    <Key>
+      <PropertyRef Name="SubCategoryID" />
+    </Key>
+    <Property Name="SubCategoryID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="SubCategoryDesc" Type="nvarchar" MaxLength="60" />
+    <Property Name="CategoryID" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="tbl_TempDetail">
+    <Key>
+      <PropertyRef Name="TempDetailID" />
+    </Key>
+    <Property Name="TempDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TempMasterID" Type="int" Nullable="false" />
+    <Property Name="DocumentID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CompanyID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LocationID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="StorageID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DocumentDate" Type="datetime" Nullable="false" />
+    <Property Name="PostingType" Type="nchar" MaxLength="10" />
+    <Property Name="PostingDate" Type="date" />
+    <Property Name="VendorID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Counter" Type="int" />
+    <Property Name="CategoryID" Type="nvarchar" MaxLength="20" />
+    <Property Name="MaterialID" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="UOM" Type="nvarchar" MaxLength="10" />
+    <Property Name="TranQty" Type="numeric" Precision="18" Scale="3" />
+    <Property Name="BaseQty" Type="numeric" Precision="18" Scale="3" />
+    <Property Name="CreditQty" Type="numeric" Precision="18" Scale="3" />
+    <Property Name="Cost" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="DiscountRate" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="Amount" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="CreditAmount" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="50" />
+    <Property Name="PostKey" Type="int" />
+    <Property Name="AddDate" Type="date" />
+    <Property Name="UpdDate" Type="date" />
+    <Property Name="OrderQty" Type="numeric" Precision="18" Scale="3" />
+    <Property Name="Type" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="tbl_TempMaster">
+    <Key>
+      <PropertyRef Name="TempMasterID" />
+    </Key>
+    <Property Name="TempMasterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DocumentID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PONumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyID" Type="nvarchar" MaxLength="50" />
+    <Property Name="LocationID" Type="nvarchar" MaxLength="20" />
+    <Property Name="StorageID" Type="nvarchar" MaxLength="20" />
+    <Property Name="DocumentDate" Type="datetime" />
+    <Property Name="PostingDate" Type="datetime" />
+    <Property Name="DocDetail" Type="nvarchar" MaxLength="50" />
+    <Property Name="Amount" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="Discount" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="NetValue" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddDate" Type="datetime" />
+    <Property Name="Filter" Type="nvarchar" MaxLength="50" />
+    <Property Name="Filter_Id" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="VendorID" Type="nvarchar" MaxLength="50" />
+    <Property Name="TLocationID" Type="nvarchar" MaxLength="50" />
+    <Property Name="TStorageID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_Terminal">
+    <Key>
+      <PropertyRef Name="TerminalID" />
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="TerminalID" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="LocationID" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_TransferIN">
+    <Key>
+      <PropertyRef Name="DocumentID" />
+    </Key>
+    <Property Name="DocumentID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PONumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LocationID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="StorageID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DocumentDate" Type="datetime" Nullable="false" />
+    <Property Name="PostingDate" Type="date" />
+    <Property Name="VendorID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DocDetail" Type="nvarchar" MaxLength="50" />
+    <Property Name="Amount" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="Discount" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="NetValue" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddDate" Type="date" />
+    <Property Name="Dataid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_TransferIN_Detail">
+    <Key>
+      <PropertyRef Name="DocumentID" />
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="Counter" />
+    </Key>
+    <Property Name="DocumentID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CompanyID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LocationID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="StorageID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DocumentDate" Type="datetime" Nullable="false" />
+    <Property Name="PostingType" Type="nchar" MaxLength="10" />
+    <Property Name="PostingDate" Type="date" />
+    <Property Name="VendorID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Counter" Type="int" Nullable="false" />
+    <Property Name="CategoryID" Type="nvarchar" MaxLength="20" />
+    <Property Name="MaterialID" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="UOM" Type="nvarchar" MaxLength="10" />
+    <Property Name="TranQty" Type="numeric" Precision="18" Scale="3" />
+    <Property Name="BaseQty" Type="numeric" Precision="18" Scale="3" />
+    <Property Name="CreditQty" Type="numeric" Precision="18" Scale="3" />
+    <Property Name="Cost" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="DiscountRate" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="Amount" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="CreditAmount" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="50" />
+    <Property Name="PostKey" Type="int" Nullable="false" />
+    <Property Name="AddDate" Type="date" />
+    <Property Name="UpdDate" Type="date" />
+    <Property Name="Dataid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderQty" Type="nvarchar" MaxLength="50" />
+    <Property Name="From_LocationID" Type="nvarchar" MaxLength="50" />
+    <Property Name="From_StorageID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_TransferOut">
+    <Key>
+      <PropertyRef Name="DocumentID" />
+    </Key>
+    <Property Name="DocumentID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PONumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LocationID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="StorageID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DocumentDate" Type="datetime" Nullable="false" />
+    <Property Name="PostingDate" Type="date" />
+    <Property Name="VendorID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DocDetail" Type="nvarchar" MaxLength="50" />
+    <Property Name="Amount" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="Discount" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="NetValue" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddDate" Type="date" />
+    <Property Name="Dataid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TO_Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="To_LocationID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_TransferOut_Detail">
+    <Key>
+      <PropertyRef Name="DocumentID" />
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="Counter" />
+    </Key>
+    <Property Name="DocumentID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CompanyID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LocationID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="StorageID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DocumentDate" Type="datetime" Nullable="false" />
+    <Property Name="PostingType" Type="nchar" MaxLength="10" />
+    <Property Name="PostingDate" Type="date" />
+    <Property Name="VendorID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Counter" Type="int" Nullable="false" />
+    <Property Name="CategoryID" Type="nvarchar" MaxLength="20" />
+    <Property Name="MaterialID" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="UOM" Type="nvarchar" MaxLength="10" />
+    <Property Name="TranQty" Type="numeric" Precision="18" Scale="3" />
+    <Property Name="BaseQty" Type="numeric" Precision="18" Scale="3" />
+    <Property Name="CreditQty" Type="numeric" Precision="18" Scale="3" />
+    <Property Name="Cost" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="DiscountRate" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="Amount" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="CreditAmount" Type="numeric" Precision="18" Scale="5" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="50" />
+    <Property Name="PostKey" Type="int" Nullable="false" />
+    <Property Name="AddDate" Type="date" />
+    <Property Name="UpdDate" Type="date" />
+    <Property Name="Dataid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TO_LocationID" Type="nvarchar" MaxLength="50" />
+    <Property Name="FROM_LOCATIONID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Stock" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="TO_StorageID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PosPK.dbo.tbl_TransfterDisplayDateTime' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbl_TransfterDisplayDateTime">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LocationID" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="Warning1" Type="time" Precision="7" />
+    <Property Name="Warning2" Type="time" Precision="7" />
+    <Property Name="Warning3" Type="time" Precision="7" />
+    <Property Name="Warning1Status" Type="bit" />
+    <Property Name="Warning2Status" Type="bit" />
+    <Property Name="Warning3Status" Type="bit" />
+    <Property Name="TDDocumentID" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="WLDbStatus" Type="bit" />
+    <Property Name="LDbStatus" Type="bit" />
+    <Property Name="SysDateTime" Type="datetime" />
+    <Property Name="TDDocumentIDStatus" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_TrasactionsAuthentication">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Loc_Auth_Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Loc_Auth_Id" Type="bigint" Nullable="false" />
+    <Property Name="SalesOrder" Type="bit" />
+    <Property Name="POReceive" Type="bit" />
+    <Property Name="ReturnToSupplier" Type="bit" />
+    <Property Name="TranfterToDisplay" Type="bit" />
+    <Property Name="TransfterIN" Type="bit" />
+    <Property Name="TransfterOUT" Type="bit" />
+    <Property Name="PhysicalInventory" Type="bit" />
+    <Property Name="PuchaseOrder" Type="bit" />
+    <Property Name="CashCollection" Type="bit" />
+    <Property Name="ProductionOrder" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_UOM">
+    <Key>
+      <PropertyRef Name="UOM" />
+    </Key>
+    <Property Name="UOM" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="UOMDesc" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="ConRead" />
+    </Key>
+    <Property Name="UserID" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="LocationID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Payment" Type="nchar" MaxLength="3" />
+    <Property Name="ReturnInv" Type="nchar" MaxLength="3" />
+    <Property Name="ReturnNoInv" Type="nchar" MaxLength="3" />
+    <Property Name="DeleteInv" Type="nchar" MaxLength="3" />
+    <Property Name="Cash" Type="nchar" MaxLength="3" />
+    <Property Name="CreditCard" Type="nchar" MaxLength="3" />
+    <Property Name="DebitCard" Type="nchar" MaxLength="3" />
+    <Property Name="OnAccount" Type="nchar" MaxLength="3" />
+    <Property Name="Den1" Type="nchar" MaxLength="3" />
+    <Property Name="Den5" Type="nchar" MaxLength="3" />
+    <Property Name="Den10" Type="nchar" MaxLength="3" />
+    <Property Name="Den20" Type="nchar" MaxLength="3" />
+    <Property Name="Den50" Type="nchar" MaxLength="3" />
+    <Property Name="Den100" Type="nchar" MaxLength="3" />
+    <Property Name="Den500" Type="nchar" MaxLength="3" />
+    <Property Name="HoldInv" Type="nchar" MaxLength="3" />
+    <Property Name="unholdInv" Type="nchar" MaxLength="3" />
+    <Property Name="Barcode" Type="nchar" MaxLength="3" />
+    <Property Name="Inventory" Type="nchar" MaxLength="3" />
+    <Property Name="POReceive" Type="nchar" MaxLength="3" />
+    <Property Name="ReturnSupp" Type="nchar" MaxLength="3" />
+    <Property Name="TransferDisp" Type="nchar" MaxLength="3" />
+    <Property Name="TransferIn" Type="nchar" MaxLength="3" />
+    <Property Name="TransferOut" Type="nchar" MaxLength="3" />
+    <Property Name="PhyInventory" Type="nchar" MaxLength="3" />
+    <Property Name="StockReport" Type="nchar" MaxLength="3" />
+    <Property Name="Settingbutt" Type="nchar" MaxLength="3" />
+    <Property Name="PrinterSetup" Type="nchar" MaxLength="3" />
+    <Property Name="EOD" Type="nchar" MaxLength="3" />
+    <Property Name="FavoritePannel" Type="nchar" MaxLength="3" />
+    <Property Name="LockUser" Type="nchar" MaxLength="3" />
+    <Property Name="DeleteItem" Type="nchar" MaxLength="3" />
+    <Property Name="Quantity" Type="nchar" MaxLength="3" />
+    <Property Name="OrderButton" Type="nchar" MaxLength="3" />
+    <Property Name="OrderTextBox" Type="nchar" MaxLength="3" />
+    <Property Name="SampleButton" Type="nvarchar" MaxLength="25" />
+    <Property Name="MaterialMenu" Type="nvarchar" MaxLength="25" />
+    <Property Name="ItemCardReportButton" Type="nvarchar" MaxLength="25" />
+    <Property Name="ProductionOrder" Type="nvarchar" MaxLength="25" />
+    <Property Name="Register" Type="nvarchar" MaxLength="25" />
+    <Property Name="TranfterOutToLocationID" Type="nvarchar" MaxLength="25" />
+    <Property Name="Button_Delivery" Type="nvarchar" MaxLength="25" />
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ConRead" Type="bit" Nullable="false" />
+    <Property Name="DeleteUserId" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_Vendor">
+    <Key>
+      <PropertyRef Name="VendorID" />
+    </Key>
+    <Property Name="VendorID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address3" Type="nvarchar" MaxLength="50" />
+    <Property Name="POBox" Type="nvarchar" MaxLength="50" />
+    <Property Name="Contact" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="Region" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustInt1" Type="int" />
+    <Property Name="CustInt2" Type="int" />
+    <Property Name="CustInt3" Type="int" />
+    <Property Name="CustText1" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustText2" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustText3" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_WebUsers">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_AspNetUserRoles_tbl_LocationAuthentication">
+    <End Role="tbl_LocationAuthentication" Type="Self.tbl_LocationAuthentication" Multiplicity="0..1" />
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_LocationAuthentication">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="Loc_Auth_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Category_tbl_Category">
+    <End Role="tbl_Category" Type="Self.tbl_Category" Multiplicity="1" />
+    <End Role="tbl_Category1" Type="Self.tbl_Category" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="tbl_Category1">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_City">
+    <End Role="tbl_City" Type="Self.tbl_City" Multiplicity="1" />
+    <End Role="tbl_City1" Type="Self.tbl_City" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_City">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="tbl_City1">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Company">
+    <End Role="tbl_Company" Type="Self.tbl_Company" Multiplicity="1" />
+    <End Role="tbl_Company1" Type="Self.tbl_Company" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="tbl_Company1">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Company_tbl_City">
+    <End Role="tbl_City" Type="Self.tbl_City" Multiplicity="0..1" />
+    <End Role="tbl_Company" Type="Self.tbl_Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_City">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="tbl_Company">
+        <PropertyRef Name="City" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Customer_tbl_City">
+    <End Role="tbl_City" Type="Self.tbl_City" Multiplicity="0..1" />
+    <End Role="tbl_Customer" Type="Self.tbl_Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_City">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="tbl_Customer">
+        <PropertyRef Name="City" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_EnquiryAuthentication_tbl_LocationAuthentication">
+    <End Role="tbl_LocationAuthentication" Type="Self.tbl_LocationAuthentication" Multiplicity="1" />
+    <End Role="tbl_EnquiryAuthentication" Type="Self.tbl_EnquiryAuthentication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_LocationAuthentication">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_EnquiryAuthentication">
+        <PropertyRef Name="Loc_Auth_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Location">
+    <End Role="tbl_Location" Type="Self.tbl_Location" Multiplicity="1" />
+    <End Role="tbl_Location1" Type="Self.tbl_Location" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Location">
+        <PropertyRef Name="LocationID" />
+      </Principal>
+      <Dependent Role="tbl_Location1">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Location_tbl_City">
+    <End Role="tbl_City" Type="Self.tbl_City" Multiplicity="0..1" />
+    <End Role="tbl_Location" Type="Self.tbl_Location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_City">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="tbl_Location">
+        <PropertyRef Name="City" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_LocationPrice_tbl_LocationPrice">
+    <End Role="tbl_LocationPrice" Type="Self.tbl_LocationPrice" Multiplicity="1" />
+    <End Role="tbl_LocationPrice1" Type="Self.tbl_LocationPrice" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_LocationPrice">
+        <PropertyRef Name="LocationID" />
+        <PropertyRef Name="EAN13" />
+      </Principal>
+      <Dependent Role="tbl_LocationPrice1">
+        <PropertyRef Name="LocationID" />
+        <PropertyRef Name="EAN13" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_MasterDataAuthentication_tbl_LocationAuthentication">
+    <End Role="tbl_LocationAuthentication" Type="Self.tbl_LocationAuthentication" Multiplicity="1" />
+    <End Role="tbl_MasterDataAuthentication" Type="Self.tbl_MasterDataAuthentication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_LocationAuthentication">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_MasterDataAuthentication">
+        <PropertyRef Name="Loc_Auth_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Material">
+    <End Role="tbl_Material" Type="Self.tbl_Material" Multiplicity="1" />
+    <End Role="tbl_Material1" Type="Self.tbl_Material" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Material">
+        <PropertyRef Name="MaterialID" />
+      </Principal>
+      <Dependent Role="tbl_Material1">
+        <PropertyRef Name="MaterialID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Material_tbl_Category">
+    <End Role="tbl_Category" Type="Self.tbl_Category" Multiplicity="0..1" />
+    <End Role="tbl_Material" Type="Self.tbl_Material" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="tbl_Material">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Material_tbl_SubCategory">
+    <End Role="tbl_SubCategory" Type="Self.tbl_SubCategory" Multiplicity="0..1" />
+    <End Role="tbl_Material" Type="Self.tbl_Material" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SubCategory">
+        <PropertyRef Name="SubCategoryID" />
+      </Principal>
+      <Dependent Role="tbl_Material">
+        <PropertyRef Name="SubCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Material_tbl_UOM">
+    <End Role="tbl_UOM" Type="Self.tbl_UOM" Multiplicity="0..1" />
+    <End Role="tbl_Material" Type="Self.tbl_Material" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_UOM">
+        <PropertyRef Name="UOM" />
+      </Principal>
+      <Dependent Role="tbl_Material">
+        <PropertyRef Name="BaseUOM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Material_tbl_Vendor">
+    <End Role="tbl_Vendor" Type="Self.tbl_Vendor" Multiplicity="1" />
+    <End Role="tbl_Material" Type="Self.tbl_Material" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Vendor">
+        <PropertyRef Name="VendorID" />
+      </Principal>
+      <Dependent Role="tbl_Material">
+        <PropertyRef Name="VendorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_MaterialEAN">
+    <End Role="tbl_MaterialEAN" Type="Self.tbl_MaterialEAN" Multiplicity="1" />
+    <End Role="tbl_MaterialEAN1" Type="Self.tbl_MaterialEAN" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_MaterialEAN">
+        <PropertyRef Name="EAN13" />
+      </Principal>
+      <Dependent Role="tbl_MaterialEAN1">
+        <PropertyRef Name="EAN13" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_MaterialEAN_tbl_BaseUOM">
+    <End Role="tbl_UOM" Type="Self.tbl_UOM" Multiplicity="0..1" />
+    <End Role="tbl_MaterialEAN" Type="Self.tbl_MaterialEAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_UOM">
+        <PropertyRef Name="UOM" />
+      </Principal>
+      <Dependent Role="tbl_MaterialEAN">
+        <PropertyRef Name="BaseUOM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_MaterialEAN_tbl_Material">
+    <End Role="tbl_Material" Type="Self.tbl_Material" Multiplicity="0..1" />
+    <End Role="tbl_MaterialEAN" Type="Self.tbl_MaterialEAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Material">
+        <PropertyRef Name="MaterialID" />
+      </Principal>
+      <Dependent Role="tbl_MaterialEAN">
+        <PropertyRef Name="MaterialID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_MaterialEAN_tbl_UOM">
+    <End Role="tbl_UOM" Type="Self.tbl_UOM" Multiplicity="0..1" />
+    <End Role="tbl_MaterialEAN" Type="Self.tbl_MaterialEAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_UOM">
+        <PropertyRef Name="UOM" />
+      </Principal>
+      <Dependent Role="tbl_MaterialEAN">
+        <PropertyRef Name="UOM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_MaterialKit">
+    <End Role="tbl_MaterialKit" Type="Self.tbl_MaterialKit" Multiplicity="1" />
+    <End Role="tbl_MaterialKit1" Type="Self.tbl_MaterialKit" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_MaterialKit">
+        <PropertyRef Name="KitID" />
+      </Principal>
+      <Dependent Role="tbl_MaterialKit1">
+        <PropertyRef Name="KitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_MaterialKit_tbl_MaterialAdd">
+    <End Role="tbl_Material" Type="Self.tbl_Material" Multiplicity="0..1" />
+    <End Role="tbl_MaterialKit" Type="Self.tbl_MaterialKit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Material">
+        <PropertyRef Name="MaterialID" />
+      </Principal>
+      <Dependent Role="tbl_MaterialKit">
+        <PropertyRef Name="MaterialAdd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_MaterialKit_tbl_MaterialLess">
+    <End Role="tbl_Material" Type="Self.tbl_Material" Multiplicity="0..1" />
+    <End Role="tbl_MaterialKit" Type="Self.tbl_MaterialKit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Material">
+        <PropertyRef Name="MaterialID" />
+      </Principal>
+      <Dependent Role="tbl_MaterialKit">
+        <PropertyRef Name="MaterialLess" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_MaterialKit_tbl_UOMAdd">
+    <End Role="tbl_UOM" Type="Self.tbl_UOM" Multiplicity="0..1" />
+    <End Role="tbl_MaterialKit" Type="Self.tbl_MaterialKit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_UOM">
+        <PropertyRef Name="UOM" />
+      </Principal>
+      <Dependent Role="tbl_MaterialKit">
+        <PropertyRef Name="UOMAdd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_MaterialKit_tbl_UOMLess">
+    <End Role="tbl_UOM" Type="Self.tbl_UOM" Multiplicity="0..1" />
+    <End Role="tbl_MaterialKit" Type="Self.tbl_MaterialKit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_UOM">
+        <PropertyRef Name="UOM" />
+      </Principal>
+      <Dependent Role="tbl_MaterialKit">
+        <PropertyRef Name="UOMLess" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_PreferUOM">
+    <End Role="tbl_PreferUOM" Type="Self.tbl_PreferUOM" Multiplicity="1" />
+    <End Role="tbl_PreferUOM1" Type="Self.tbl_PreferUOM" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_PreferUOM">
+        <PropertyRef Name="MaterialID" />
+      </Principal>
+      <Dependent Role="tbl_PreferUOM1">
+        <PropertyRef Name="MaterialID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_PreferUOM_tbl_Material">
+    <End Role="tbl_PreferUOM" Type="Self.tbl_PreferUOM" Multiplicity="1" />
+    <End Role="tbl_PreferUOM1" Type="Self.tbl_PreferUOM" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_PreferUOM">
+        <PropertyRef Name="MaterialID" />
+      </Principal>
+      <Dependent Role="tbl_PreferUOM1">
+        <PropertyRef Name="MaterialID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_PriceFile_tbl_Material">
+    <End Role="tbl_Material" Type="Self.tbl_Material" Multiplicity="0..1" />
+    <End Role="tbl_PriceFile" Type="Self.tbl_PriceFile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Material">
+        <PropertyRef Name="MaterialID" />
+      </Principal>
+      <Dependent Role="tbl_PriceFile">
+        <PropertyRef Name="MaterialID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_PriceFile_tbl_MaterialEAN">
+    <End Role="tbl_MaterialEAN" Type="Self.tbl_MaterialEAN" Multiplicity="1" />
+    <End Role="tbl_PriceFile" Type="Self.tbl_PriceFile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_MaterialEAN">
+        <PropertyRef Name="EAN13" />
+      </Principal>
+      <Dependent Role="tbl_PriceFile">
+        <PropertyRef Name="EAN13" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_PriceFile_tbl_UOM">
+    <End Role="tbl_UOM" Type="Self.tbl_UOM" Multiplicity="0..1" />
+    <End Role="tbl_PriceFile" Type="Self.tbl_PriceFile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_UOM">
+        <PropertyRef Name="UOM" />
+      </Principal>
+      <Dependent Role="tbl_PriceFile">
+        <PropertyRef Name="UOM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_PurchaseOrder">
+    <End Role="tbl_PurchaseOrder" Type="Self.tbl_PurchaseOrder" Multiplicity="1" />
+    <End Role="tbl_PurchaseOrder1" Type="Self.tbl_PurchaseOrder" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_PurchaseOrder">
+        <PropertyRef Name="DocumentID" />
+        <PropertyRef Name="CompanyID" />
+        <PropertyRef Name="LocationID" />
+        <PropertyRef Name="StorageID" />
+        <PropertyRef Name="DocumentDate" />
+        <PropertyRef Name="VendorID" />
+      </Principal>
+      <Dependent Role="tbl_PurchaseOrder1">
+        <PropertyRef Name="DocumentID" />
+        <PropertyRef Name="CompanyID" />
+        <PropertyRef Name="LocationID" />
+        <PropertyRef Name="StorageID" />
+        <PropertyRef Name="DocumentDate" />
+        <PropertyRef Name="VendorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_PurchaseOrder_Detail">
+    <End Role="tbl_PurchaseOrder_Detail" Type="Self.tbl_PurchaseOrder_Detail" Multiplicity="1" />
+    <End Role="tbl_PurchaseOrder_Detail1" Type="Self.tbl_PurchaseOrder_Detail" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_PurchaseOrder_Detail">
+        <PropertyRef Name="DocumentID" />
+        <PropertyRef Name="LocationID" />
+        <PropertyRef Name="Counter" />
+      </Principal>
+      <Dependent Role="tbl_PurchaseOrder_Detail1">
+        <PropertyRef Name="DocumentID" />
+        <PropertyRef Name="LocationID" />
+        <PropertyRef Name="Counter" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_PurchaseOrder_Detail_tbl_Location">
+    <End Role="tbl_Location" Type="Self.tbl_Location" Multiplicity="1" />
+    <End Role="tbl_PurchaseOrder_Detail" Type="Self.tbl_PurchaseOrder_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Location">
+        <PropertyRef Name="LocationID" />
+      </Principal>
+      <Dependent Role="tbl_PurchaseOrder_Detail">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_PurchaseOrder_Detail_tbl_Material">
+    <End Role="tbl_Material" Type="Self.tbl_Material" Multiplicity="1" />
+    <End Role="tbl_PurchaseOrder_Detail" Type="Self.tbl_PurchaseOrder_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Material">
+        <PropertyRef Name="MaterialID" />
+      </Principal>
+      <Dependent Role="tbl_PurchaseOrder_Detail">
+        <PropertyRef Name="MaterialID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_PurchaseOrder_Detail_tbl_PurchaseOrder_Detail">
+    <End Role="tbl_PurchaseOrder_Detail" Type="Self.tbl_PurchaseOrder_Detail" Multiplicity="1" />
+    <End Role="tbl_PurchaseOrder_Detail1" Type="Self.tbl_PurchaseOrder_Detail" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_PurchaseOrder_Detail">
+        <PropertyRef Name="DocumentID" />
+        <PropertyRef Name="LocationID" />
+        <PropertyRef Name="Counter" />
+      </Principal>
+      <Dependent Role="tbl_PurchaseOrder_Detail1">
+        <PropertyRef Name="DocumentID" />
+        <PropertyRef Name="LocationID" />
+        <PropertyRef Name="Counter" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_PurchaseOrder_Detail_tbl_UOM">
+    <End Role="tbl_UOM" Type="Self.tbl_UOM" Multiplicity="0..1" />
+    <End Role="tbl_PurchaseOrder_Detail" Type="Self.tbl_PurchaseOrder_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_UOM">
+        <PropertyRef Name="UOM" />
+      </Principal>
+      <Dependent Role="tbl_PurchaseOrder_Detail">
+        <PropertyRef Name="UOM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_PurchaseOrder_Detail_tbl_Vendor">
+    <End Role="tbl_Vendor" Type="Self.tbl_Vendor" Multiplicity="1" />
+    <End Role="tbl_PurchaseOrder_Detail" Type="Self.tbl_PurchaseOrder_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Vendor">
+        <PropertyRef Name="VendorID" />
+      </Principal>
+      <Dependent Role="tbl_PurchaseOrder_Detail">
+        <PropertyRef Name="VendorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_PurchaseOrder_tbl_Company">
+    <End Role="tbl_Company" Type="Self.tbl_Company" Multiplicity="1" />
+    <End Role="tbl_PurchaseOrder" Type="Self.tbl_PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="tbl_PurchaseOrder">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_PurchaseOrder_tbl_Location">
+    <End Role="tbl_Location" Type="Self.tbl_Location" Multiplicity="1" />
+    <End Role="tbl_PurchaseOrder" Type="Self.tbl_PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Location">
+        <PropertyRef Name="LocationID" />
+      </Principal>
+      <Dependent Role="tbl_PurchaseOrder">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_PurchaseOrder_tbl_Vendor">
+    <End Role="tbl_Vendor" Type="Self.tbl_Vendor" Multiplicity="1" />
+    <End Role="tbl_PurchaseOrder" Type="Self.tbl_PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Vendor">
+        <PropertyRef Name="VendorID" />
+      </Principal>
+      <Dependent Role="tbl_PurchaseOrder">
+        <PropertyRef Name="VendorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_SetupAuthentication_tbl_LocationAuthentication">
+    <End Role="tbl_LocationAuthentication" Type="Self.tbl_LocationAuthentication" Multiplicity="1" />
+    <End Role="tbl_SetupAuthentication" Type="Self.tbl_SetupAuthentication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_LocationAuthentication">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_SetupAuthentication">
+        <PropertyRef Name="Loc_Auth_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Storage_tbl_Location">
+    <End Role="tbl_Location" Type="Self.tbl_Location" Multiplicity="1" />
+    <End Role="tbl_Storage" Type="Self.tbl_Storage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Location">
+        <PropertyRef Name="LocationID" />
+      </Principal>
+      <Dependent Role="tbl_Storage">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_SubCategory">
+    <End Role="tbl_SubCategory" Type="Self.tbl_SubCategory" Multiplicity="1" />
+    <End Role="tbl_SubCategory1" Type="Self.tbl_SubCategory" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SubCategory">
+        <PropertyRef Name="SubCategoryID" />
+      </Principal>
+      <Dependent Role="tbl_SubCategory1">
+        <PropertyRef Name="SubCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_SubCategory_tbl_Category">
+    <End Role="tbl_Category" Type="Self.tbl_Category" Multiplicity="0..1" />
+    <End Role="tbl_SubCategory" Type="Self.tbl_SubCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="tbl_SubCategory">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Terminal_tbl_Location">
+    <End Role="tbl_Location" Type="Self.tbl_Location" Multiplicity="1" />
+    <End Role="tbl_Terminal" Type="Self.tbl_Terminal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Location">
+        <PropertyRef Name="LocationID" />
+      </Principal>
+      <Dependent Role="tbl_Terminal">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_TrasactionsAuthentication_tbl_LocationAuthentication">
+    <End Role="tbl_LocationAuthentication" Type="Self.tbl_LocationAuthentication" Multiplicity="1" />
+    <End Role="tbl_TrasactionsAuthentication" Type="Self.tbl_TrasactionsAuthentication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_LocationAuthentication">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_TrasactionsAuthentication">
+        <PropertyRef Name="Loc_Auth_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_UOM">
+    <End Role="tbl_UOM" Type="Self.tbl_UOM" Multiplicity="1" />
+    <End Role="tbl_UOM1" Type="Self.tbl_UOM" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_UOM">
+        <PropertyRef Name="UOM" />
+      </Principal>
+      <Dependent Role="tbl_UOM1">
+        <PropertyRef Name="UOM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Vendor">
+    <End Role="tbl_Vendor" Type="Self.tbl_Vendor" Multiplicity="1" />
+    <End Role="tbl_Vendor1" Type="Self.tbl_Vendor" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Vendor">
+        <PropertyRef Name="VendorID" />
+      </Principal>
+      <Dependent Role="tbl_Vendor1">
+        <PropertyRef Name="VendorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Vendor_tbl_City">
+    <End Role="tbl_City" Type="Self.tbl_City" Multiplicity="0..1" />
+    <End Role="tbl_Vendor" Type="Self.tbl_Vendor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_City">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="tbl_Vendor">
+        <PropertyRef Name="City" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="CSVToTable" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="InStr" Type="varchar(max)" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="id" Type="int" Nullable="false" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="f_split" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="param" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="delimiter" Type="char" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="val" Type="nvarchar(max)" />
+          <Property Name="seq" Type="int" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="fun_LocationSplit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationIDs" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Delimeter" Type="char" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="LocationID" Type="nvarchar(max)" />
+          <Property Name="LocationDesc" Type="nvarchar" MaxLength="250" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="Proc_AllDocumentPrint" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FilterName" Type="varchar" Mode="In" />
+    <Parameter Name="DOCID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_AspNetManagerLocations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmailID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_AspNetUsersLocations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmailID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_CashCollection" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="FromDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="ToDate" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_DeactiveCustomerRegistration" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_DeleteMasterCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CategoryID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_DeleteMasterLocation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_DeleteMasterMaterial" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaterialId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_DeleteMasterStorage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StorageId" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_DeleteMasterSubCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CategoryID" Type="nvarchar" Mode="In" />
+    <Parameter Name="SubCategoryId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_DeleteMasterTerminal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="TerminalId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_DeleteMasterVendor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="vendorId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_DeleteProductionOrderRequest_Detail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="Proc_DocumentdetailsTenderDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_EodByIdFile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EODID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_ExecMasterMaterial" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaterialId" Type="nvarchar" Mode="In" />
+    <Parameter Name="BaseUOM" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaterialMix" Type="nvarchar" Mode="In" />
+    <Parameter Name="Price" Type="nvarchar" Mode="In" />
+    <Parameter Name="EAN13" Type="nvarchar" Mode="In" />
+    <Parameter Name="UOM" Type="nvarchar" Mode="In" />
+    <Parameter Name="Convertvalue" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_FilterPOReceive" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="dateFrom" Type="datetime2" Mode="In" />
+    <Parameter Name="dateTo" Type="datetime2" Mode="In" />
+    <Parameter Name="TerminalIDs" Type="varchar" Mode="In" />
+    <Parameter Name="MaterialID" Type="varchar" Mode="In" />
+    <Parameter Name="EAN" Type="varchar" Mode="In" />
+    <Parameter Name="Category" Type="varchar" Mode="In" />
+    <Parameter Name="SubCategory" Type="varchar" Mode="In" />
+    <Parameter Name="UserID" Type="varchar" Mode="In" />
+    <Parameter Name="AmountFrom" Type="varchar" Mode="In" />
+    <Parameter Name="AmountTo" Type="varchar" Mode="In" />
+    <Parameter Name="Location" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_FilterReturnORTransferORPhysicalORTransInORTransOUT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FilterName" Type="nvarchar" Mode="In" />
+    <Parameter Name="dateFrom" Type="datetime2" Mode="In" />
+    <Parameter Name="dateTo" Type="datetime2" Mode="In" />
+    <Parameter Name="TerminalIDs" Type="varchar" Mode="In" />
+    <Parameter Name="MaterialID" Type="varchar" Mode="In" />
+    <Parameter Name="EAN" Type="varchar" Mode="In" />
+    <Parameter Name="Category" Type="varchar" Mode="In" />
+    <Parameter Name="SubCategory" Type="varchar" Mode="In" />
+    <Parameter Name="UserID" Type="varchar" Mode="In" />
+    <Parameter Name="AmountFrom" Type="varchar" Mode="In" />
+    <Parameter Name="AmountTo" Type="varchar" Mode="In" />
+    <Parameter Name="location" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="Proc_GetAllLTerminal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Proc_GetMasterCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CategoryID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_GetMasterMaterial" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaterialId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_GetMasterStorage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StorageId" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_GetMasterTerminal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_GetMasterVendor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="VendorId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_GetmaterialById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaterialID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_InsertCustomerRegistration" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="nvarchar" Mode="In" />
+    <Parameter Name="FirstName" Type="nvarchar" Mode="In" />
+    <Parameter Name="LastName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Address" Type="nvarchar" Mode="In" />
+    <Parameter Name="POBox" Type="nvarchar" Mode="In" />
+    <Parameter Name="Phone" Type="nvarchar" Mode="In" />
+    <Parameter Name="Fax" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="City" Type="nvarchar" Mode="In" />
+    <Parameter Name="Region" Type="nvarchar" Mode="In" />
+    <Parameter Name="Country" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreditLimit" Type="nvarchar" Mode="In" />
+    <Parameter Name="CustType" Type="nvarchar" Mode="In" />
+    <Parameter Name="Status" Type="bit" Mode="In" />
+    <Parameter Name="Password" Type="nvarchar" Mode="In" />
+    <Parameter Name="Gender" Type="nvarchar" Mode="In" />
+    <Parameter Name="DateOfBirth" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_InsertEODFile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CompanyId" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationId" Type="nvarchar" Mode="In" />
+    <Parameter Name="TerminalId" Type="nvarchar" Mode="In" />
+    <Parameter Name="Eodid" Type="nvarchar" Mode="In" />
+    <Parameter Name="FileByte" Type="image" Mode="In" />
+  </Function>
+  <Function Name="Proc_InsertMasterCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CategoryID" Type="nvarchar" Mode="In" />
+    <Parameter Name="CategoryDesc" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_InsertMasterLocation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="CostCenter" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Name" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Address1" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Address2" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Address3" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="POBOX" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="PostalCode" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="City" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Region" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Country" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="ContactPerson" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="TelePhone" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Fax" Type="nvarchar" Mode="In" />
+    <Parameter Name="Lan" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="LoanAmount" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="Proc_InsertMasterMaterial" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaterialId" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaterialDesc" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaterialDescArbirc" Type="nvarchar" Mode="In" />
+    <Parameter Name="CategoryId" Type="nvarchar" Mode="In" />
+    <Parameter Name="SubCategory" Type="nvarchar" Mode="In" />
+    <Parameter Name="Url" Type="nvarchar" Mode="In" />
+    <Parameter Name="VendorId" Type="nvarchar" Mode="In" />
+    <Parameter Name="BaseUOM" Type="nvarchar" Mode="In" />
+    <Parameter Name="Cost" Type="decimal" Mode="In" />
+    <Parameter Name="UserId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_InsertMasterMaterialEAN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaterialId" Type="nvarchar" Mode="In" />
+    <Parameter Name="EAN13" Type="nvarchar" Mode="In" />
+    <Parameter Name="UOM" Type="nvarchar" Mode="In" />
+    <Parameter Name="Convertvalue" Type="nvarchar" Mode="In" />
+    <Parameter Name="BaseUOM" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaterialMix" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_InsertMasterPreferUOM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaterialId" Type="nvarchar" Mode="In" />
+    <Parameter Name="EAN13" Type="nvarchar" Mode="In" />
+    <Parameter Name="UOM" Type="nvarchar" Mode="In" />
+    <Parameter Name="Conv" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_InsertMasterPriceFile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaterialId" Type="nvarchar" Mode="In" />
+    <Parameter Name="EAN13" Type="nvarchar" Mode="In" />
+    <Parameter Name="UOM" Type="nvarchar" Mode="In" />
+    <Parameter Name="Price" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_InsertMasterStorage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StorageId" Type="nvarchar" Mode="In" />
+    <Parameter Name="StorageName" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_InsertMasterSubCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CategoryID" Type="nvarchar" Mode="In" />
+    <Parameter Name="SubCategoryName" Type="nvarchar" Mode="In" />
+    <Parameter Name="SubCategoryId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_InsertMasterTerminal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="TerminalId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_InsertMasterVendor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="VendorID" Type="nvarchar" Mode="In" />
+    <Parameter Name="Name" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Address1" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Address2" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Address3" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="POBOX" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="PostalCode" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="City" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Region" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Country" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="ContactPerson" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="TelePhone" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Fax" Type="nvarchar" Mode="In" />
+    <Parameter Name="Lan" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="Proc_InsertOrderDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentID" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyID" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="StorageID" Type="nvarchar" Mode="In" />
+    <Parameter Name="TerminalID" Type="nvarchar" Mode="In" />
+    <Parameter Name="DocumentDate" Type="datetime" Mode="In" />
+    <Parameter Name="PostingType" Type="nchar" Mode="In" />
+    <Parameter Name="PostingDate" Type="date" Mode="In" />
+    <Parameter Name="CustomerID" Type="nvarchar" Mode="In" />
+    <Parameter Name="Counter" Type="int" Mode="In" />
+    <Parameter Name="CategoryID" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaterialID" Type="nvarchar" Mode="In" />
+    <Parameter Name="UOM" Type="nvarchar" Mode="In" />
+    <Parameter Name="TranQty" Type="numeric" Mode="In" />
+    <Parameter Name="BaseQty" Type="numeric" Mode="In" />
+    <Parameter Name="CreditQty" Type="numeric" Mode="In" />
+    <Parameter Name="Cost" Type="numeric" Mode="In" />
+    <Parameter Name="Price" Type="numeric" Mode="In" />
+    <Parameter Name="DiscountRate" Type="numeric" Mode="In" />
+    <Parameter Name="Amount" Type="numeric" Mode="In" />
+    <Parameter Name="CreditAmount" Type="numeric" Mode="In" />
+    <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+    <Parameter Name="PostKey" Type="int" Mode="In" />
+    <Parameter Name="AddDate" Type="date" Mode="In" />
+    <Parameter Name="UpdDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="Proc_InsertRtnSupplier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentID" Type="nvarchar" Mode="In" />
+    <Parameter Name="PONumber" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyID" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="StorageID" Type="nvarchar" Mode="In" />
+    <Parameter Name="DocumentDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="PostingDate" Type="datetime" Mode="In" />
+    <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+    <Parameter Name="AddDate" Type="datetime" Mode="In" />
+    <Parameter Name="VendorId" Type="nvarchar" Mode="In" />
+    <Parameter Name="DocDetail" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_InsertRtnSupplier_Details" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentID" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyID" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="DocumentDate" Type="datetime" Mode="In" />
+    <Parameter Name="PostingDate" Type="datetime" Mode="In" />
+    <Parameter Name="AddDate" Type="datetime" Mode="In" />
+    <Parameter Name="UpdDate" Type="datetime" Mode="In" />
+    <Parameter Name="MaterialId" Type="nvarchar" Mode="In" />
+    <Parameter Name="UOM" Type="nvarchar" Mode="In" />
+    <Parameter Name="TranQty" Type="nvarchar" Mode="In" />
+    <Parameter Name="BaseQty" Type="nvarchar" Mode="In" />
+    <Parameter Name="CategoryId" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+    <Parameter Name="ConvertFactor" Type="decimal" Mode="In" />
+    <Parameter Name="StorageId" Type="nvarchar" Mode="In" />
+    <Parameter Name="PostKey" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaterialMix" Type="nvarchar" Mode="In" />
+    <Parameter Name="VendorId" Type="nvarchar" Mode="In" />
+    <Parameter Name="Amount" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_InsertSalesCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentId" Type="nvarchar" Mode="In" />
+    <Parameter Name="CategoryName" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Amount" Type="nvarchar" Mode="In" />
+    <Parameter Name="Date" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyId" Type="nvarchar" Mode="In" />
+    <Parameter Name="TerminalId" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_InsertSalesDeleteLineItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentId" Type="nvarchar" Mode="In" />
+    <Parameter Name="CategotyId" Type="nvarchar" Mode="In" />
+    <Parameter Name="Amount" Type="nvarchar" Mode="In" />
+    <Parameter Name="UOM" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaterialId" Type="nvarchar" Mode="In" />
+    <Parameter Name="Date" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserId" Type="nvarchar" Mode="In" />
+    <Parameter Name="AddDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyId" Type="nvarchar" Mode="In" />
+    <Parameter Name="TerminalId" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_InsertsalesUnHold" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentId" Type="nvarchar" Mode="In" />
+    <Parameter Name="SalesOrder" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyId" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationId" Type="nvarchar" Mode="In" />
+    <Parameter Name="StorageId" Type="nvarchar" Mode="In" />
+    <Parameter Name="TerminalId" Type="nvarchar" Mode="In" />
+    <Parameter Name="DocDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="PostingType" Type="nvarchar" Mode="In" />
+    <Parameter Name="CustomerId" Type="nvarchar" Mode="In" />
+    <Parameter Name="Counter" Type="nvarchar" Mode="In" />
+    <Parameter Name="CategoryID" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaterialID" Type="nvarchar" Mode="In" />
+    <Parameter Name="UOM" Type="nvarchar" Mode="In" />
+    <Parameter Name="TranQty" Type="nvarchar" Mode="In" />
+    <Parameter Name="BaseQty" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreditQty" Type="nvarchar" Mode="In" />
+    <Parameter Name="Cost" Type="nvarchar" Mode="In" />
+    <Parameter Name="Price" Type="nvarchar" Mode="In" />
+    <Parameter Name="DiscountRate" Type="nvarchar" Mode="In" />
+    <Parameter Name="Amount" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreditAmount" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+    <Parameter Name="PostKey" Type="nvarchar" Mode="In" />
+    <Parameter Name="AddDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="UpdDate" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_InsertSalesUserTender_Detail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentId" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+    <Parameter Name="Amount" Type="nvarchar" Mode="In" />
+    <Parameter Name="DocDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="Counter" Type="nvarchar" Mode="In" />
+    <Parameter Name="TerminalId" Type="nvarchar" Mode="In" />
+    <Parameter Name="ChangeAmount" Type="nvarchar" Mode="In" />
+    <Parameter Name="PaidAmount" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyId" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_InsertStockReceviceDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DOCUMENTID" Type="nvarchar" Mode="In" />
+    <Parameter Name="COMPANYID" Type="nvarchar" Mode="In" />
+    <Parameter Name="LOCATIONID" Type="nvarchar" Mode="In" />
+    <Parameter Name="STORAGEID" Type="nvarchar" Mode="In" />
+    <Parameter Name="DOCUMENTDATE" Type="nvarchar" Mode="In" />
+    <Parameter Name="POSTINGTYPE" Type="nvarchar" Mode="In" />
+    <Parameter Name="POSTINGDATE" Type="nvarchar" Mode="In" />
+    <Parameter Name="VENDORID" Type="nvarchar" Mode="In" />
+    <Parameter Name="COUNTER" Type="nvarchar" Mode="In" />
+    <Parameter Name="CATEGORYID" Type="nvarchar" Mode="In" />
+    <Parameter Name="MATERIALID" Type="nvarchar" Mode="In" />
+    <Parameter Name="UOM" Type="nvarchar" Mode="In" />
+    <Parameter Name="TRANQTY" Type="nvarchar" Mode="In" />
+    <Parameter Name="BASEQTY" Type="nvarchar" Mode="In" />
+    <Parameter Name="CREDITQTY" Type="nvarchar" Mode="In" />
+    <Parameter Name="COST" Type="nvarchar" Mode="In" />
+    <Parameter Name="DISCOUNTRATE" Type="nvarchar" Mode="In" />
+    <Parameter Name="AMOUNT" Type="nvarchar" Mode="In" />
+    <Parameter Name="CREDITAMOUNT" Type="nvarchar" Mode="In" />
+    <Parameter Name="USERID" Type="nvarchar" Mode="In" />
+    <Parameter Name="POSTKEY" Type="nvarchar" Mode="In" />
+    <Parameter Name="ADDDATE" Type="nvarchar" Mode="In" />
+    <Parameter Name="UPDDATE" Type="nvarchar" Mode="In" />
+    <Parameter Name="OrderQty" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_InsertTranferDisplay_Ent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentID" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyID" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="DocumentDate" Type="datetime" Mode="In" />
+    <Parameter Name="PostingDate" Type="datetime" Mode="In" />
+    <Parameter Name="AddDate" Type="datetime" Mode="In" />
+    <Parameter Name="UpdDate" Type="datetime" Mode="In" />
+    <Parameter Name="MaterialId" Type="nvarchar" Mode="In" />
+    <Parameter Name="UOM" Type="nvarchar" Mode="In" />
+    <Parameter Name="TranQty" Type="nvarchar" Mode="In" />
+    <Parameter Name="BaseQty" Type="nvarchar" Mode="In" />
+    <Parameter Name="CategoryId" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_InsertTranferInDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentID" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyID" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="DocumentDate" Type="datetime" Mode="In" />
+    <Parameter Name="PostingDate" Type="datetime" Mode="In" />
+    <Parameter Name="AddDate" Type="datetime" Mode="In" />
+    <Parameter Name="UpdDate" Type="datetime" Mode="In" />
+    <Parameter Name="MaterialId" Type="nvarchar" Mode="In" />
+    <Parameter Name="UOM" Type="nvarchar" Mode="In" />
+    <Parameter Name="TranQty" Type="nvarchar" Mode="In" />
+    <Parameter Name="BaseQty" Type="nvarchar" Mode="In" />
+    <Parameter Name="StorageId" Type="nvarchar" Mode="In" />
+    <Parameter Name="PostKey" Type="int" Mode="In" />
+    <Parameter Name="CategoryId" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_InsertTranferOutDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentID" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyID" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="DocumentDate" Type="datetime" Mode="In" />
+    <Parameter Name="PostingDate" Type="datetime" Mode="In" />
+    <Parameter Name="AddDate" Type="datetime" Mode="In" />
+    <Parameter Name="UpdDate" Type="datetime" Mode="In" />
+    <Parameter Name="MaterialId" Type="nvarchar" Mode="In" />
+    <Parameter Name="UOM" Type="nvarchar" Mode="In" />
+    <Parameter Name="TranQty" Type="nvarchar" Mode="In" />
+    <Parameter Name="BaseQty" Type="nvarchar" Mode="In" />
+    <Parameter Name="StorageId" Type="nvarchar" Mode="In" />
+    <Parameter Name="PostKey" Type="int" Mode="In" />
+    <Parameter Name="CategoryId" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_InsertTranfterINDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DOCUMENTID" Type="nvarchar" Mode="In" />
+    <Parameter Name="COMPANYID" Type="nvarchar" Mode="In" />
+    <Parameter Name="LOCATIONID" Type="nvarchar" Mode="In" />
+    <Parameter Name="STORAGEID" Type="nvarchar" Mode="In" />
+    <Parameter Name="DOCUMENTDATE" Type="nvarchar" Mode="In" />
+    <Parameter Name="POSTINGTYPE" Type="nvarchar" Mode="In" />
+    <Parameter Name="POSTINGDATE" Type="nvarchar" Mode="In" />
+    <Parameter Name="VENDORID" Type="nvarchar" Mode="In" />
+    <Parameter Name="COUNTER" Type="nvarchar" Mode="In" />
+    <Parameter Name="CATEGORYID" Type="nvarchar" Mode="In" />
+    <Parameter Name="MATERIALID" Type="nvarchar" Mode="In" />
+    <Parameter Name="UOM" Type="nvarchar" Mode="In" />
+    <Parameter Name="TRANQTY" Type="nvarchar" Mode="In" />
+    <Parameter Name="BASEQTY" Type="nvarchar" Mode="In" />
+    <Parameter Name="CREDITQTY" Type="nvarchar" Mode="In" />
+    <Parameter Name="COST" Type="nvarchar" Mode="In" />
+    <Parameter Name="DISCOUNTRATE" Type="nvarchar" Mode="In" />
+    <Parameter Name="AMOUNT" Type="nvarchar" Mode="In" />
+    <Parameter Name="CREDITAMOUNT" Type="nvarchar" Mode="In" />
+    <Parameter Name="USERID" Type="nvarchar" Mode="In" />
+    <Parameter Name="POSTKEY" Type="nvarchar" Mode="In" />
+    <Parameter Name="ADDDATE" Type="nvarchar" Mode="In" />
+    <Parameter Name="UPDDATE" Type="nvarchar" Mode="In" />
+    <Parameter Name="OrderQty" Type="nvarchar" Mode="In" />
+    <Parameter Name="FromLocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="FromStorageID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_ItemCardReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="StorageId" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaterialID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_LoadGetLocationStorage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Proc_LoadMasterCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Proc_LoadMasterLocation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Proc_LoadMasterSubCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Proc_LoadMasterTerminal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Proc_LoadMasterVendor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Proc_LoadMaterialDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaterialID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_LoadOrderDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_LoadPhyCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SLocationId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_LoadRtnId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SLocationId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_LoadStorageGetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_LoadTranferInId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SLocationId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_LoadVendor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Proc_MaterialBarcodeSearch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaterialORBarCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="VendorID" Type="nvarchar" Mode="In" />
+    <Parameter Name="PageName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_MaterialCategorySearch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CategoryText" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaterialID" Type="nvarchar" Mode="In" />
+    <Parameter Name="CategoryID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_MaterialMix" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaterialId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_PhyInventory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentID" Type="nvarchar" Mode="In" />
+    <Parameter Name="PONumber" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyID" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="DocumentDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="PostingDate" Type="datetime" Mode="In" />
+    <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+    <Parameter Name="AddDate" Type="datetime" Mode="In" />
+    <Parameter Name="Filter" Type="nvarchar" Mode="In" />
+    <Parameter Name="FilterId" Type="nvarchar" Mode="In" />
+    <Parameter Name="StorageId" Type="nvarchar" Mode="In" />
+    <Parameter Name="DocDetail" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_PhyInventory_Detail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentID" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyID" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="DocumentDate" Type="datetime" Mode="In" />
+    <Parameter Name="PostingDate" Type="datetime" Mode="In" />
+    <Parameter Name="AddDate" Type="datetime" Mode="In" />
+    <Parameter Name="UpdDate" Type="datetime" Mode="In" />
+    <Parameter Name="MaterialId" Type="nvarchar" Mode="In" />
+    <Parameter Name="EntryBaseQty" Type="decimal" Mode="In" />
+    <Parameter Name="CategoryId" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+    <Parameter Name="StorageId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_PhyInventory_Entry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentID" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyID" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="DocumentDate" Type="datetime" Mode="In" />
+    <Parameter Name="PostingDate" Type="datetime" Mode="In" />
+    <Parameter Name="AddDate" Type="datetime" Mode="In" />
+    <Parameter Name="UpdDate" Type="datetime" Mode="In" />
+    <Parameter Name="MaterialId" Type="nvarchar" Mode="In" />
+    <Parameter Name="ConvertFactor" Type="decimal" Mode="In" />
+    <Parameter Name="UOM" Type="nvarchar" Mode="In" />
+    <Parameter Name="TranQty" Type="nvarchar" Mode="In" />
+    <Parameter Name="BaseQty" Type="nvarchar" Mode="In" />
+    <Parameter Name="CategoryId" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+    <Parameter Name="StorageId" Type="nvarchar" Mode="In" />
+    <Parameter Name="PostKey" Type="nvarchar" Mode="In" />
+    <Parameter Name="PostingType" Type="nvarchar" Mode="In" />
+    <Parameter Name="VendorId" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreditQty" Type="nvarchar" Mode="In" />
+    <Parameter Name="Cost" Type="nvarchar" Mode="In" />
+    <Parameter Name="DiscountRate" Type="nvarchar" Mode="In" />
+    <Parameter Name="Amount" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreditAmount" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_POS_Error_logs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Proc_Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="Parameters" Type="nvarchar" Mode="In" />
+    <Parameter Name="Error_Message" Type="nvarchar" Mode="In" />
+    <Parameter Name="Row_Created_Date" Type="datetime" Mode="In" />
+    <Parameter Name="Error_Number" Type="nvarchar" Mode="In" />
+    <Parameter Name="Error_Line" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_ProductionOrderDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationId" Type="nvarchar" Mode="In" />
+    <Parameter Name="StorageID" Type="nvarchar" Mode="In" />
+    <Parameter Name="BOMID" Type="nvarchar" Mode="In" />
+    <Parameter Name="UOM" Type="nvarchar" Mode="In" />
+    <Parameter Name="Quantity" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_ProductionOrderDetails_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationId" Type="nvarchar" Mode="In" />
+    <Parameter Name="StorageID" Type="nvarchar" Mode="In" />
+    <Parameter Name="BOMID" Type="nvarchar" Mode="In" />
+    <Parameter Name="UOM" Type="nvarchar" Mode="In" />
+    <Parameter Name="Quantity" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserId" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="Proc_ProductionOrderHeader" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="StorageId" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserId" Type="nvarchar" Mode="In" />
+    <Parameter Name="PONumber" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_ProductionOrderRequest_Derail_In_ProductionOrder" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="DocuemtId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_ProductionOrderRequestDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationId" Type="nvarchar" Mode="In" />
+    <Parameter Name="StorageID" Type="nvarchar" Mode="In" />
+    <Parameter Name="BOMID" Type="nvarchar" Mode="In" />
+    <Parameter Name="UOM" Type="nvarchar" Mode="In" />
+    <Parameter Name="Quantity" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_ProfitShortageReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationId" Type="nvarchar" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="Proc_ReportPhyInvDifferentReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="DocumentID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_ReportPHYSICALINVENTORYDETAILS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StorageID" Type="nvarchar" Mode="In" />
+    <Parameter Name="DocumentID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_ReportPHYSICALINVENTORYDIFFDETAILS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StorageID" Type="nvarchar" Mode="In" />
+    <Parameter Name="DocumentID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_ReportPORECEIVE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentID" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_ReportPRODUCTIONORDERDETAILS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="DocumentID" Type="nvarchar" Mode="In" />
+    <Parameter Name="Filter" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_REPORTProductionOrderStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="Proc_ReportRETURNTOSUPPLIER" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_ReportSTOCKRECEIVEDETAILS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentID" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="PROC_REPORTTRANSFER_DIS_OUT_IN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FILTERNAME" Type="nvarchar" Mode="In" />
+    <Parameter Name="DOCUMENTID" Type="nvarchar" Mode="In" />
+    <Parameter Name="LOCATIONID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_ReportTRANSFERTODISPLAY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentID" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_SearchBOMID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BOMID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_SearchEAN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EAN13" Type="nvarchar" Mode="In" />
+    <Parameter Name="UOM" Type="nvarchar" Mode="In" />
+    <Parameter Name="VendorID" Type="nvarchar" Mode="In" />
+    <Parameter Name="PageName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_SearchMasterTerminal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Search" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="Proc_SearchMasterVendor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Search" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="Proc_Select_ProductionOrder_Request_DocuemtnID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_SelectCustomerRegistration" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_SelectEODEnquiry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Proc_SelectProductionOrderRequest_Detail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_SelectUserAuthentication" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_SelectUserId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ManagerEmail" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_SlectStockS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_Sync_PhysicalInventoryNotIn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationId" Type="nvarchar" Mode="In" />
+    <Parameter Name="DocumentId" Type="nvarchar" Mode="In" />
+    <Parameter Name="Fillter" Type="nvarchar" Mode="In" />
+    <Parameter Name="StorageId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_SyncInsertEod" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LOCATIONID" Type="nvarchar" Mode="In" />
+    <Parameter Name="TERMINIALID" Type="nvarchar" Mode="In" />
+    <Parameter Name="EODID" Type="nvarchar" Mode="In" />
+    <Parameter Name="DOCDATE" Type="nvarchar" Mode="In" />
+    <Parameter Name="LOAN" Type="nvarchar" Mode="In" />
+    <Parameter Name="SYSTEMCASH" Type="nvarchar" Mode="In" />
+    <Parameter Name="ACTUALCASH" Type="nvarchar" Mode="In" />
+    <Parameter Name="p1" Type="nvarchar" Mode="In" />
+    <Parameter Name="p5" Type="nvarchar" Mode="In" />
+    <Parameter Name="p10" Type="nvarchar" Mode="In" />
+    <Parameter Name="p20" Type="nvarchar" Mode="In" />
+    <Parameter Name="p50" Type="nvarchar" Mode="In" />
+    <Parameter Name="p100" Type="nvarchar" Mode="In" />
+    <Parameter Name="p200" Type="nvarchar" Mode="In" />
+    <Parameter Name="p500" Type="nvarchar" Mode="In" />
+    <Parameter Name="CASHDIFF" Type="nvarchar" Mode="In" />
+    <Parameter Name="CASHCOUNT" Type="nvarchar" Mode="In" />
+    <Parameter Name="CREDITAMT" Type="nvarchar" Mode="In" />
+    <Parameter Name="DEBITAMT" Type="nvarchar" Mode="In" />
+    <Parameter Name="DEBITCNT" Type="nvarchar" Mode="In" />
+    <Parameter Name="RETURNAMT" Type="nvarchar" Mode="In" />
+    <Parameter Name="RETURNCNT" Type="nvarchar" Mode="In" />
+    <Parameter Name="DELETEAMT" Type="nvarchar" Mode="In" />
+    <Parameter Name="DELETECNT" Type="nvarchar" Mode="In" />
+    <Parameter Name="ONACCAMT" Type="nvarchar" Mode="In" />
+    <Parameter Name="ONACCCNT" Type="nvarchar" Mode="In" />
+    <Parameter Name="CREDITCNT" Type="nvarchar" Mode="In" />
+    <Parameter Name="Cust1Amt" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_SyncInsertEoddtls" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LOCATIONID" Type="nvarchar" Mode="In" />
+    <Parameter Name="TERMINALID" Type="nvarchar" Mode="In" />
+    <Parameter Name="EODID" Type="nvarchar" Mode="In" />
+    <Parameter Name="DOCDATE" Type="nvarchar" Mode="In" />
+    <Parameter Name="TRANSACTIONDATE" Type="nvarchar" Mode="In" />
+    <Parameter Name="TRANSACTIONTYPE" Type="nvarchar" Mode="In" />
+    <Parameter Name="TRANSACTIONID" Type="nvarchar" Mode="In" />
+    <Parameter Name="COUNT" Type="nvarchar" Mode="In" />
+    <Parameter Name="PAYTYPE" Type="nvarchar" Mode="In" />
+    <Parameter Name="AMOUNT" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_TempDetailsData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="Type" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_TempInsertTransferToDsiaplay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TMID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Proc_TempPhyInventory_Detail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TMID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Proc_TempPhysicalEntry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TMID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Proc_TempPhysicalInventoryDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TMID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Proc_TempProductionOrderDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TMID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Proc_TempTransfterOUTDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TMID" Type="int" Mode="In" />
+    <Parameter Name="ToLocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="ToStorageID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_TempTransfterToDisplayDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TMID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Proc_Terminal_Report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Proc_TranferDisplay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentID" Type="nvarchar" Mode="In" />
+    <Parameter Name="PONumber" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyID" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="StorageID" Type="nvarchar" Mode="In" />
+    <Parameter Name="DocumentDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="PostingDate" Type="datetime" Mode="In" />
+    <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+    <Parameter Name="AddDate" Type="datetime" Mode="In" />
+    <Parameter Name="DocDetals" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_TranferDisplayOUT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentID" Type="nvarchar" Mode="In" />
+    <Parameter Name="PONumber" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyID" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="StorageID" Type="nvarchar" Mode="In" />
+    <Parameter Name="DocumentDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="PostingDate" Type="datetime" Mode="In" />
+    <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+    <Parameter Name="AddDate" Type="datetime" Mode="In" />
+    <Parameter Name="TOStatus" Type="nvarchar" Mode="In" />
+    <Parameter Name="ToLocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="DocDetail" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_TransferDisplay_Details" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentID" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyID" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="DocumentDate" Type="datetime" Mode="In" />
+    <Parameter Name="PostingDate" Type="datetime" Mode="In" />
+    <Parameter Name="AddDate" Type="datetime" Mode="In" />
+    <Parameter Name="UpdDate" Type="datetime" Mode="In" />
+    <Parameter Name="MaterialId" Type="nvarchar" Mode="In" />
+    <Parameter Name="BaseQty" Type="nvarchar" Mode="In" />
+    <Parameter Name="CategoryId" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+    <Parameter Name="StorageId" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaterialMix" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_TransferDisplay_Ent_In_Out" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentID" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyID" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="DocumentDate" Type="datetime" Mode="In" />
+    <Parameter Name="PostingDate" Type="datetime" Mode="In" />
+    <Parameter Name="AddDate" Type="datetime" Mode="In" />
+    <Parameter Name="UpdDate" Type="datetime" Mode="In" />
+    <Parameter Name="MaterialId" Type="nvarchar" Mode="In" />
+    <Parameter Name="UOM" Type="nvarchar" Mode="In" />
+    <Parameter Name="TranQty" Type="nvarchar" Mode="In" />
+    <Parameter Name="BaseQty" Type="nvarchar" Mode="In" />
+    <Parameter Name="CategoryId" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+    <Parameter Name="ConvertFactor" Type="decimal" Mode="In" />
+    <Parameter Name="StorageId" Type="nvarchar" Mode="In" />
+    <Parameter Name="PostKey" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaterialMix" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_TransferDisplayOUT_Details" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentID" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyID" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="DocumentDate" Type="datetime" Mode="In" />
+    <Parameter Name="PostingDate" Type="datetime" Mode="In" />
+    <Parameter Name="AddDate" Type="datetime" Mode="In" />
+    <Parameter Name="UpdDate" Type="datetime" Mode="In" />
+    <Parameter Name="MaterialId" Type="nvarchar" Mode="In" />
+    <Parameter Name="UOM" Type="nvarchar" Mode="In" />
+    <Parameter Name="TranQty" Type="nvarchar" Mode="In" />
+    <Parameter Name="BaseQty" Type="nvarchar" Mode="In" />
+    <Parameter Name="CategoryId" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+    <Parameter Name="ConvertFactor" Type="decimal" Mode="In" />
+    <Parameter Name="StorageId" Type="nvarchar" Mode="In" />
+    <Parameter Name="PostKey" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaterialMix" Type="nvarchar" Mode="In" />
+    <Parameter Name="To_LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="To_StorageID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_Update_POStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_Update_TOStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_UpdateCustomerRegistration" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="nvarchar" Mode="In" />
+    <Parameter Name="FirstName" Type="nvarchar" Mode="In" />
+    <Parameter Name="LastName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Address" Type="nvarchar" Mode="In" />
+    <Parameter Name="POBox" Type="nvarchar" Mode="In" />
+    <Parameter Name="Phone" Type="nvarchar" Mode="In" />
+    <Parameter Name="Fax" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="City" Type="nvarchar" Mode="In" />
+    <Parameter Name="Region" Type="nvarchar" Mode="In" />
+    <Parameter Name="Country" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreditLimit" Type="numeric" Mode="In" />
+    <Parameter Name="CustType" Type="nvarchar" Mode="In" />
+    <Parameter Name="Password" Type="nvarchar" Mode="In" />
+    <Parameter Name="Gender" Type="nvarchar" Mode="In" />
+    <Parameter Name="DateOfBirth" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_UpdateDocId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationId" Type="nvarchar" Mode="In" />
+    <Parameter Name="TfrId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="Proc_UpdateEODCash_Collection" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EODID" Type="nvarchar" Mode="In" />
+    <Parameter Name="Cash_Collection" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_UpdateMasterCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CategoryID" Type="nvarchar" Mode="In" />
+    <Parameter Name="CategoryDesc" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_UpdateMasterLocation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="CostCenter" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Name" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Address1" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Address2" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Address3" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="POBOX" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="PostalCode" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="City" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Region" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Country" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="ContactPerson" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="TelePhone" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Fax" Type="nvarchar" Mode="In" />
+    <Parameter Name="Lan" Type="nvarchar" Mode="In" />
+    <Parameter Name="LoanAmount" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="Proc_UpdateMasterMaterial" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaterialId" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaterialDesc" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaterialDescArbirc" Type="nvarchar" Mode="In" />
+    <Parameter Name="CategoryId" Type="nvarchar" Mode="In" />
+    <Parameter Name="SubCategory" Type="nvarchar" Mode="In" />
+    <Parameter Name="Url" Type="nvarchar" Mode="In" />
+    <Parameter Name="VendorId" Type="nvarchar" Mode="In" />
+    <Parameter Name="BaseUOM" Type="nvarchar" Mode="In" />
+    <Parameter Name="Cost" Type="decimal" Mode="In" />
+    <Parameter Name="UserId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_UpdateMasterStorage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StorageId" Type="nvarchar" Mode="In" />
+    <Parameter Name="StorageName" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_updateMasterSubCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CategoryID" Type="nvarchar" Mode="In" />
+    <Parameter Name="SubCategoryName" Type="nvarchar" Mode="In" />
+    <Parameter Name="SubCategoryId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_UpdateMasterTerminal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="TerminalId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_UpdateMasterVendor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="VendorID" Type="nvarchar" Mode="In" />
+    <Parameter Name="Name" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Address1" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Address2" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Address3" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="POBOX" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="PostalCode" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="City" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Region" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Country" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="ContactPerson" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="TelePhone" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Fax" Type="nvarchar" Mode="In" />
+    <Parameter Name="Lan" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_UpdatePhyCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationId" Type="nvarchar" Mode="In" />
+    <Parameter Name="PhyCount" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_UpdatePhyInentoryStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentId" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_UpdateProductionOrder_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_UpdateProductionOrderRequestDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="nvarchar" Mode="In" />
+    <Parameter Name="Quantity" Type="nvarchar" Mode="In" />
+    <Parameter Name="Filter" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="proc_UpdateRtnVendorId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationId" Type="nvarchar" Mode="In" />
+    <Parameter Name="RtnVendorId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="proc_UpdateTranfterOUTDocId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationId" Type="nvarchar" Mode="In" />
+    <Parameter Name="Tfrout" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="procInsert_Category" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CategoryID" Type="nvarchar" Mode="In" />
+    <Parameter Name="CategoryDesc" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="procSearch_Category" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CategoryID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="procSelect_Category" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="procUpdate_Category" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CategoryID" Type="nvarchar" Mode="In" />
+    <Parameter Name="CategoryDesc" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pxAcceptTransaction" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TMID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="pxSelectCategoryPieChart" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="pxSelectDeleteDocumentMaterial" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DOCID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="pxSelectDeleteDocumentTender" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DOCID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="pxSelectDocumentMaterial" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DOCID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="pxSelectDocumentTender" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DOCID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="pxSelectFilterEodEnquiry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="dateFrom" Type="datetime2" Mode="In" />
+    <Parameter Name="dateTo" Type="datetime2" Mode="In" />
+    <Parameter Name="TerminalIDs" Type="varchar" Mode="In" />
+    <Parameter Name="MaterialID" Type="varchar" Mode="In" />
+    <Parameter Name="EAN" Type="varchar" Mode="In" />
+    <Parameter Name="Category" Type="varchar" Mode="In" />
+    <Parameter Name="SubCategory" Type="varchar" Mode="In" />
+    <Parameter Name="UserID" Type="varchar" Mode="In" />
+    <Parameter Name="AmountFrom" Type="varchar" Mode="In" />
+    <Parameter Name="AmountTo" Type="varchar" Mode="In" />
+    <Parameter Name="Location" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="pxSelectFilterReturnWithInvoice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="dateFrom" Type="datetime2" Mode="In" />
+    <Parameter Name="dateTo" Type="datetime2" Mode="In" />
+    <Parameter Name="TerminalIDs" Type="varchar" Mode="In" />
+    <Parameter Name="MaterialID" Type="varchar" Mode="In" />
+    <Parameter Name="EAN" Type="varchar" Mode="In" />
+    <Parameter Name="Category" Type="varchar" Mode="In" />
+    <Parameter Name="SubCategory" Type="varchar" Mode="In" />
+    <Parameter Name="UserID" Type="varchar" Mode="In" />
+    <Parameter Name="AmountFrom" Type="varchar" Mode="In" />
+    <Parameter Name="AmountTo" Type="varchar" Mode="In" />
+    <Parameter Name="location" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="pxSelectFilterReturnWithoutInvoice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="dateFrom" Type="datetime2" Mode="In" />
+    <Parameter Name="dateTo" Type="datetime2" Mode="In" />
+    <Parameter Name="TerminalIDs" Type="varchar" Mode="In" />
+    <Parameter Name="MaterialID" Type="varchar" Mode="In" />
+    <Parameter Name="EAN" Type="varchar" Mode="In" />
+    <Parameter Name="Category" Type="varchar" Mode="In" />
+    <Parameter Name="SubCategory" Type="varchar" Mode="In" />
+    <Parameter Name="UserID" Type="varchar" Mode="In" />
+    <Parameter Name="AmountFrom" Type="varchar" Mode="In" />
+    <Parameter Name="AmountTo" Type="varchar" Mode="In" />
+    <Parameter Name="location" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="pxSelectFilterSalesDeleteLineItemsEnquiry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="dateFrom" Type="datetime2" Mode="In" />
+    <Parameter Name="dateTo" Type="datetime2" Mode="In" />
+    <Parameter Name="TerminalIDs" Type="varchar" Mode="In" />
+    <Parameter Name="MaterialID" Type="varchar" Mode="In" />
+    <Parameter Name="EAN" Type="varchar" Mode="In" />
+    <Parameter Name="Category" Type="varchar" Mode="In" />
+    <Parameter Name="SubCategory" Type="varchar" Mode="In" />
+    <Parameter Name="UserID" Type="varchar" Mode="In" />
+    <Parameter Name="AmountFrom" Type="varchar" Mode="In" />
+    <Parameter Name="AmountTo" Type="varchar" Mode="In" />
+    <Parameter Name="Location" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="pxSelectFilterSalesEnquiry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="dateFrom" Type="datetime2" Mode="In" />
+    <Parameter Name="dateTo" Type="datetime2" Mode="In" />
+    <Parameter Name="TerminalIDs" Type="varchar" Mode="In" />
+    <Parameter Name="MaterialID" Type="varchar" Mode="In" />
+    <Parameter Name="EAN" Type="varchar" Mode="In" />
+    <Parameter Name="Category" Type="varchar" Mode="In" />
+    <Parameter Name="SubCategory" Type="varchar" Mode="In" />
+    <Parameter Name="UserID" Type="varchar" Mode="In" />
+    <Parameter Name="AmountFrom" Type="varchar" Mode="In" />
+    <Parameter Name="AmountTo" Type="varchar" Mode="In" />
+    <Parameter Name="Location" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="pxSelectFilterSalesUnHoldEnquiry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="dateFrom" Type="datetime2" Mode="In" />
+    <Parameter Name="dateTo" Type="datetime2" Mode="In" />
+    <Parameter Name="TerminalIDs" Type="varchar" Mode="In" />
+    <Parameter Name="MaterialID" Type="varchar" Mode="In" />
+    <Parameter Name="EAN" Type="varchar" Mode="In" />
+    <Parameter Name="Category" Type="varchar" Mode="In" />
+    <Parameter Name="SubCategory" Type="varchar" Mode="In" />
+    <Parameter Name="UserID" Type="varchar" Mode="In" />
+    <Parameter Name="AmountFrom" Type="varchar" Mode="In" />
+    <Parameter Name="AmountTo" Type="varchar" Mode="In" />
+    <Parameter Name="Location" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="pxSelectLatestSalesDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="pxSelectPhysicalDocument" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="pxSelectPORecieve" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="pxSelectPORecieveMaterial" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FilterName" Type="varchar" Mode="In" />
+    <Parameter Name="DOCID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="pxSelectPurchaseOrderDetailByDocId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DOCID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="pxSelectReturnSalesWithInvoice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="pxSelectReturnSalesWithoutInvoice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="pxSelectReturnToSupplier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="pxSelectSalesDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="pxSelectSalesEnquiry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="pxSelectSalesUnHoldEnquiry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="pxSelectTranfterOUTDetailByDocId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DOCID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="pxSelectTransferDocument" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="pxSelectTransfterIN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="pxSelectTransfterOUT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="POSEntitieStoreContainer">
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Category" EntityType="Self.tbl_Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_City" EntityType="Self.tbl_City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Company" EntityType="Self.tbl_Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Country" EntityType="Self.tbl_Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Customer" EntityType="Self.tbl_Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_CustType" EntityType="Self.tbl_CustType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_EnquiryAuthentication" EntityType="Self.tbl_EnquiryAuthentication" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_EOD" EntityType="Self.tbl_EOD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_EODFile" EntityType="Self.tbl_EODFile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ImageDetails" EntityType="Self.tbl_ImageDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Location" EntityType="Self.tbl_Location" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_LocationAuthentication" EntityType="Self.tbl_LocationAuthentication" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_LocationPrice" EntityType="Self.tbl_LocationPrice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_LocationPrice_Temp" EntityType="Self.tbl_LocationPrice_Temp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ManagerUserAuthentication" EntityType="Self.tbl_ManagerUserAuthentication" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_MasterDataAuthentication" EntityType="Self.tbl_MasterDataAuthentication" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Material" EntityType="Self.tbl_Material" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Material_Temp" EntityType="Self.tbl_Material_Temp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_MaterialEAN" EntityType="Self.tbl_MaterialEAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_MaterialEAN_Temp" EntityType="Self.tbl_MaterialEAN_Temp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_MaterialKit" EntityType="Self.tbl_MaterialKit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_PhoneCode" EntityType="Self.tbl_PhoneCode" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_PI_TimeTable" EntityType="Self.tbl_PI_TimeTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_POS_Logs" EntityType="Self.tbl_POS_Logs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_POSException" EntityType="Self.tbl_POSException" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_PreferUOM" EntityType="Self.tbl_PreferUOM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_PreferUOM_Temp" EntityType="Self.tbl_PreferUOM_Temp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_PriceFile" EntityType="Self.tbl_PriceFile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_PriceFile_Temp" EntityType="Self.tbl_PriceFile_Temp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ProductionOrder" EntityType="Self.tbl_ProductionOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ProductionOrder_Detail" EntityType="Self.tbl_ProductionOrder_Detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ProductionOrderRequest" EntityType="Self.tbl_ProductionOrderRequest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ProductionOrderRequest_Detail" EntityType="Self.tbl_ProductionOrderRequest_Detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_PurchaseOrder" EntityType="Self.tbl_PurchaseOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_PurchaseOrder_Detail" EntityType="Self.tbl_PurchaseOrder_Detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Region" EntityType="Self.tbl_Region" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_SetupAuthentication" EntityType="Self.tbl_SetupAuthentication" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_StockReceive" EntityType="Self.tbl_StockReceive" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_StockReceive_Detail" EntityType="Self.tbl_StockReceive_Detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Storage" EntityType="Self.tbl_Storage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_SubCategory" EntityType="Self.tbl_SubCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_TempDetail" EntityType="Self.tbl_TempDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_TempMaster" EntityType="Self.tbl_TempMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Terminal" EntityType="Self.tbl_Terminal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_TransferIN" EntityType="Self.tbl_TransferIN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_TransferIN_Detail" EntityType="Self.tbl_TransferIN_Detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_TransferOut" EntityType="Self.tbl_TransferOut" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_TransferOut_Detail" EntityType="Self.tbl_TransferOut_Detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_TrasactionsAuthentication" EntityType="Self.tbl_TrasactionsAuthentication" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_UOM" EntityType="Self.tbl_UOM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Users" EntityType="Self.tbl_Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Vendor" EntityType="Self.tbl_Vendor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_WebUsers" EntityType="Self.tbl_WebUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_TransfterDisplayDateTime" EntityType="Self.tbl_TransfterDisplayDateTime" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbl_TransfterDisplayDateTime].[ID] AS [ID], 
+    [tbl_TransfterDisplayDateTime].[LocationID] AS [LocationID], 
+    [tbl_TransfterDisplayDateTime].[CreateDate] AS [CreateDate], 
+    [tbl_TransfterDisplayDateTime].[Warning1] AS [Warning1], 
+    [tbl_TransfterDisplayDateTime].[Warning2] AS [Warning2], 
+    [tbl_TransfterDisplayDateTime].[Warning3] AS [Warning3], 
+    [tbl_TransfterDisplayDateTime].[Warning1Status] AS [Warning1Status], 
+    [tbl_TransfterDisplayDateTime].[Warning2Status] AS [Warning2Status], 
+    [tbl_TransfterDisplayDateTime].[Warning3Status] AS [Warning3Status], 
+    [tbl_TransfterDisplayDateTime].[TDDocumentID] AS [TDDocumentID], 
+    [tbl_TransfterDisplayDateTime].[UserID] AS [UserID], 
+    [tbl_TransfterDisplayDateTime].[CreatedDate] AS [CreatedDate], 
+    [tbl_TransfterDisplayDateTime].[WLDbStatus] AS [WLDbStatus], 
+    [tbl_TransfterDisplayDateTime].[LDbStatus] AS [LDbStatus], 
+    [tbl_TransfterDisplayDateTime].[SysDateTime] AS [SysDateTime], 
+    [tbl_TransfterDisplayDateTime].[TDDocumentIDStatus] AS [TDDocumentIDStatus]
+    FROM [dbo].[tbl_TransfterDisplayDateTime] AS [tbl_TransfterDisplayDateTime]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_AspNetUserRoles_tbl_LocationAuthentication" Association="Self.FK_AspNetUserRoles_tbl_LocationAuthentication">
+      <End Role="tbl_LocationAuthentication" EntitySet="tbl_LocationAuthentication" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Category_tbl_Category" Association="Self.FK_tbl_Category_tbl_Category">
+      <End Role="tbl_Category" EntitySet="tbl_Category" />
+      <End Role="tbl_Category1" EntitySet="tbl_Category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_City" Association="Self.FK_tbl_City">
+      <End Role="tbl_City" EntitySet="tbl_City" />
+      <End Role="tbl_City1" EntitySet="tbl_City" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Company" Association="Self.FK_tbl_Company">
+      <End Role="tbl_Company" EntitySet="tbl_Company" />
+      <End Role="tbl_Company1" EntitySet="tbl_Company" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Company_tbl_City" Association="Self.FK_tbl_Company_tbl_City">
+      <End Role="tbl_City" EntitySet="tbl_City" />
+      <End Role="tbl_Company" EntitySet="tbl_Company" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Customer_tbl_City" Association="Self.FK_tbl_Customer_tbl_City">
+      <End Role="tbl_City" EntitySet="tbl_City" />
+      <End Role="tbl_Customer" EntitySet="tbl_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_EnquiryAuthentication_tbl_LocationAuthentication" Association="Self.FK_tbl_EnquiryAuthentication_tbl_LocationAuthentication">
+      <End Role="tbl_LocationAuthentication" EntitySet="tbl_LocationAuthentication" />
+      <End Role="tbl_EnquiryAuthentication" EntitySet="tbl_EnquiryAuthentication" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Location" Association="Self.FK_tbl_Location">
+      <End Role="tbl_Location" EntitySet="tbl_Location" />
+      <End Role="tbl_Location1" EntitySet="tbl_Location" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Location_tbl_City" Association="Self.FK_tbl_Location_tbl_City">
+      <End Role="tbl_City" EntitySet="tbl_City" />
+      <End Role="tbl_Location" EntitySet="tbl_Location" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_LocationPrice_tbl_LocationPrice" Association="Self.FK_tbl_LocationPrice_tbl_LocationPrice">
+      <End Role="tbl_LocationPrice" EntitySet="tbl_LocationPrice" />
+      <End Role="tbl_LocationPrice1" EntitySet="tbl_LocationPrice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_MasterDataAuthentication_tbl_LocationAuthentication" Association="Self.FK_tbl_MasterDataAuthentication_tbl_LocationAuthentication">
+      <End Role="tbl_LocationAuthentication" EntitySet="tbl_LocationAuthentication" />
+      <End Role="tbl_MasterDataAuthentication" EntitySet="tbl_MasterDataAuthentication" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Material" Association="Self.FK_tbl_Material">
+      <End Role="tbl_Material" EntitySet="tbl_Material" />
+      <End Role="tbl_Material1" EntitySet="tbl_Material" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Material_tbl_Category" Association="Self.FK_tbl_Material_tbl_Category">
+      <End Role="tbl_Category" EntitySet="tbl_Category" />
+      <End Role="tbl_Material" EntitySet="tbl_Material" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Material_tbl_SubCategory" Association="Self.FK_tbl_Material_tbl_SubCategory">
+      <End Role="tbl_SubCategory" EntitySet="tbl_SubCategory" />
+      <End Role="tbl_Material" EntitySet="tbl_Material" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Material_tbl_UOM" Association="Self.FK_tbl_Material_tbl_UOM">
+      <End Role="tbl_UOM" EntitySet="tbl_UOM" />
+      <End Role="tbl_Material" EntitySet="tbl_Material" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Material_tbl_Vendor" Association="Self.FK_tbl_Material_tbl_Vendor">
+      <End Role="tbl_Vendor" EntitySet="tbl_Vendor" />
+      <End Role="tbl_Material" EntitySet="tbl_Material" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_MaterialEAN" Association="Self.FK_tbl_MaterialEAN">
+      <End Role="tbl_MaterialEAN" EntitySet="tbl_MaterialEAN" />
+      <End Role="tbl_MaterialEAN1" EntitySet="tbl_MaterialEAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_MaterialEAN_tbl_BaseUOM" Association="Self.FK_tbl_MaterialEAN_tbl_BaseUOM">
+      <End Role="tbl_UOM" EntitySet="tbl_UOM" />
+      <End Role="tbl_MaterialEAN" EntitySet="tbl_MaterialEAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_MaterialEAN_tbl_Material" Association="Self.FK_tbl_MaterialEAN_tbl_Material">
+      <End Role="tbl_Material" EntitySet="tbl_Material" />
+      <End Role="tbl_MaterialEAN" EntitySet="tbl_MaterialEAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_MaterialEAN_tbl_UOM" Association="Self.FK_tbl_MaterialEAN_tbl_UOM">
+      <End Role="tbl_UOM" EntitySet="tbl_UOM" />
+      <End Role="tbl_MaterialEAN" EntitySet="tbl_MaterialEAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_MaterialKit" Association="Self.FK_tbl_MaterialKit">
+      <End Role="tbl_MaterialKit" EntitySet="tbl_MaterialKit" />
+      <End Role="tbl_MaterialKit1" EntitySet="tbl_MaterialKit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_MaterialKit_tbl_MaterialAdd" Association="Self.FK_tbl_MaterialKit_tbl_MaterialAdd">
+      <End Role="tbl_Material" EntitySet="tbl_Material" />
+      <End Role="tbl_MaterialKit" EntitySet="tbl_MaterialKit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_MaterialKit_tbl_MaterialLess" Association="Self.FK_tbl_MaterialKit_tbl_MaterialLess">
+      <End Role="tbl_Material" EntitySet="tbl_Material" />
+      <End Role="tbl_MaterialKit" EntitySet="tbl_MaterialKit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_MaterialKit_tbl_UOMAdd" Association="Self.FK_tbl_MaterialKit_tbl_UOMAdd">
+      <End Role="tbl_UOM" EntitySet="tbl_UOM" />
+      <End Role="tbl_MaterialKit" EntitySet="tbl_MaterialKit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_MaterialKit_tbl_UOMLess" Association="Self.FK_tbl_MaterialKit_tbl_UOMLess">
+      <End Role="tbl_UOM" EntitySet="tbl_UOM" />
+      <End Role="tbl_MaterialKit" EntitySet="tbl_MaterialKit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_PreferUOM" Association="Self.FK_tbl_PreferUOM">
+      <End Role="tbl_PreferUOM" EntitySet="tbl_PreferUOM" />
+      <End Role="tbl_PreferUOM1" EntitySet="tbl_PreferUOM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_PreferUOM_tbl_Material" Association="Self.FK_tbl_PreferUOM_tbl_Material">
+      <End Role="tbl_PreferUOM" EntitySet="tbl_PreferUOM" />
+      <End Role="tbl_PreferUOM1" EntitySet="tbl_PreferUOM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_PriceFile_tbl_Material" Association="Self.FK_tbl_PriceFile_tbl_Material">
+      <End Role="tbl_Material" EntitySet="tbl_Material" />
+      <End Role="tbl_PriceFile" EntitySet="tbl_PriceFile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_PriceFile_tbl_MaterialEAN" Association="Self.FK_tbl_PriceFile_tbl_MaterialEAN">
+      <End Role="tbl_MaterialEAN" EntitySet="tbl_MaterialEAN" />
+      <End Role="tbl_PriceFile" EntitySet="tbl_PriceFile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_PriceFile_tbl_UOM" Association="Self.FK_tbl_PriceFile_tbl_UOM">
+      <End Role="tbl_UOM" EntitySet="tbl_UOM" />
+      <End Role="tbl_PriceFile" EntitySet="tbl_PriceFile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_PurchaseOrder" Association="Self.FK_tbl_PurchaseOrder">
+      <End Role="tbl_PurchaseOrder" EntitySet="tbl_PurchaseOrder" />
+      <End Role="tbl_PurchaseOrder1" EntitySet="tbl_PurchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_PurchaseOrder_Detail" Association="Self.FK_tbl_PurchaseOrder_Detail">
+      <End Role="tbl_PurchaseOrder_Detail" EntitySet="tbl_PurchaseOrder_Detail" />
+      <End Role="tbl_PurchaseOrder_Detail1" EntitySet="tbl_PurchaseOrder_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_PurchaseOrder_Detail_tbl_Location" Association="Self.FK_tbl_PurchaseOrder_Detail_tbl_Location">
+      <End Role="tbl_Location" EntitySet="tbl_Location" />
+      <End Role="tbl_PurchaseOrder_Detail" EntitySet="tbl_PurchaseOrder_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_PurchaseOrder_Detail_tbl_Material" Association="Self.FK_tbl_PurchaseOrder_Detail_tbl_Material">
+      <End Role="tbl_Material" EntitySet="tbl_Material" />
+      <End Role="tbl_PurchaseOrder_Detail" EntitySet="tbl_PurchaseOrder_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_PurchaseOrder_Detail_tbl_PurchaseOrder_Detail" Association="Self.FK_tbl_PurchaseOrder_Detail_tbl_PurchaseOrder_Detail">
+      <End Role="tbl_PurchaseOrder_Detail" EntitySet="tbl_PurchaseOrder_Detail" />
+      <End Role="tbl_PurchaseOrder_Detail1" EntitySet="tbl_PurchaseOrder_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_PurchaseOrder_Detail_tbl_UOM" Association="Self.FK_tbl_PurchaseOrder_Detail_tbl_UOM">
+      <End Role="tbl_UOM" EntitySet="tbl_UOM" />
+      <End Role="tbl_PurchaseOrder_Detail" EntitySet="tbl_PurchaseOrder_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_PurchaseOrder_Detail_tbl_Vendor" Association="Self.FK_tbl_PurchaseOrder_Detail_tbl_Vendor">
+      <End Role="tbl_Vendor" EntitySet="tbl_Vendor" />
+      <End Role="tbl_PurchaseOrder_Detail" EntitySet="tbl_PurchaseOrder_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_PurchaseOrder_tbl_Company" Association="Self.FK_tbl_PurchaseOrder_tbl_Company">
+      <End Role="tbl_Company" EntitySet="tbl_Company" />
+      <End Role="tbl_PurchaseOrder" EntitySet="tbl_PurchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_PurchaseOrder_tbl_Location" Association="Self.FK_tbl_PurchaseOrder_tbl_Location">
+      <End Role="tbl_Location" EntitySet="tbl_Location" />
+      <End Role="tbl_PurchaseOrder" EntitySet="tbl_PurchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_PurchaseOrder_tbl_Vendor" Association="Self.FK_tbl_PurchaseOrder_tbl_Vendor">
+      <End Role="tbl_Vendor" EntitySet="tbl_Vendor" />
+      <End Role="tbl_PurchaseOrder" EntitySet="tbl_PurchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_SetupAuthentication_tbl_LocationAuthentication" Association="Self.FK_tbl_SetupAuthentication_tbl_LocationAuthentication">
+      <End Role="tbl_LocationAuthentication" EntitySet="tbl_LocationAuthentication" />
+      <End Role="tbl_SetupAuthentication" EntitySet="tbl_SetupAuthentication" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Storage_tbl_Location" Association="Self.FK_tbl_Storage_tbl_Location">
+      <End Role="tbl_Location" EntitySet="tbl_Location" />
+      <End Role="tbl_Storage" EntitySet="tbl_Storage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_SubCategory" Association="Self.FK_tbl_SubCategory">
+      <End Role="tbl_SubCategory" EntitySet="tbl_SubCategory" />
+      <End Role="tbl_SubCategory1" EntitySet="tbl_SubCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_SubCategory_tbl_Category" Association="Self.FK_tbl_SubCategory_tbl_Category">
+      <End Role="tbl_Category" EntitySet="tbl_Category" />
+      <End Role="tbl_SubCategory" EntitySet="tbl_SubCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Terminal_tbl_Location" Association="Self.FK_tbl_Terminal_tbl_Location">
+      <End Role="tbl_Location" EntitySet="tbl_Location" />
+      <End Role="tbl_Terminal" EntitySet="tbl_Terminal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_TrasactionsAuthentication_tbl_LocationAuthentication" Association="Self.FK_tbl_TrasactionsAuthentication_tbl_LocationAuthentication">
+      <End Role="tbl_LocationAuthentication" EntitySet="tbl_LocationAuthentication" />
+      <End Role="tbl_TrasactionsAuthentication" EntitySet="tbl_TrasactionsAuthentication" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_UOM" Association="Self.FK_tbl_UOM">
+      <End Role="tbl_UOM" EntitySet="tbl_UOM" />
+      <End Role="tbl_UOM1" EntitySet="tbl_UOM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Vendor" Association="Self.FK_tbl_Vendor">
+      <End Role="tbl_Vendor" EntitySet="tbl_Vendor" />
+      <End Role="tbl_Vendor1" EntitySet="tbl_Vendor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Vendor_tbl_City" Association="Self.FK_tbl_Vendor_tbl_City">
+      <End Role="tbl_City" EntitySet="tbl_City" />
+      <End Role="tbl_Vendor" EntitySet="tbl_Vendor" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

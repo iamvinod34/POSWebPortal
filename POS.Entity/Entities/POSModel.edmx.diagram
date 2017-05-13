@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4aaf3a47370d46489379fbea3de987f3" Name="Diagram1">
+        <EntityTypeShape EntityType="POSEntitie.AspNetRole" Width="1.5" PointX="19.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.AspNetUserLogin" Width="1.5" PointX="22" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.AspNetUserRole" Width="1.5" PointX="22" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.AspNetUser" Width="1.5" PointX="19.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_Category" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_City" Width="1.5" PointX="1.5" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_Company" Width="1.5" PointX="3.75" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_Country" Width="1.5" PointX="4.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_Customer" Width="1.5" PointX="3.75" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_CustType" Width="1.5" PointX="6.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_EnquiryAuthentication" Width="1.5" PointX="19" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_EODFile" Width="1.5" PointX="8.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_ImageDetails" Width="1.5" PointX="10.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_Location" Width="1.5" PointX="9" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_LocationAuthentication" Width="1.5" PointX="16.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_LocationPrice" Width="1.5" PointX="2.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_LocationPrice_Temp" Width="1.5" PointX="12.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_ManagerUserAuthentication" Width="1.5" PointX="5.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_MasterDataAuthentication" Width="1.5" PointX="19" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_Material" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_Material_Temp" Width="1.5" PointX="13.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_MaterialEAN" Width="1.5" PointX="5.25" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_MaterialEAN_Temp" Width="1.5" PointX="15.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_MaterialKit" Width="1.5" PointX="8.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_PhoneCode" Width="1.5" PointX="13.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_PI_TimeTable" Width="1.5" PointX="15.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_POS_Logs" Width="1.5" PointX="5.75" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_POSException" Width="1.5" PointX="5.75" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_PreferUOM" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_PreferUOM_Temp" Width="1.5" PointX="11.75" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_PriceFile" Width="1.5" PointX="7.5" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_PriceFile_Temp" Width="1.5" PointX="13.75" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_ProductionOrder" Width="1.5" PointX="15.75" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_ProductionOrder_Detail" Width="1.5" PointX="7.75" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_ProductionOrderRequest" Width="1.5" PointX="21.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_ProductionOrderRequest_Detail" Width="1.5" PointX="21.75" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_PurchaseOrder" Width="1.5" PointX="14.25" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_PurchaseOrder_Detail" Width="1.5" PointX="11.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_Region" Width="1.5" PointX="21.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_SetupAuthentication" Width="1.5" PointX="19" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_StockReceive" Width="1.5" PointX="21.75" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_StockReceive_Detail" Width="1.5" PointX="9.75" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_TempDetail" Width="1.5" PointX="11.75" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_TempMaster" Width="1.5" PointX="0.75" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_Terminal" Width="1.5" PointX="11.25" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_TransferIN" Width="1.5" PointX="23.75" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_TransferIN_Detail" Width="1.5" PointX="17.75" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_TransferOut" Width="1.5" PointX="23.75" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_TransferOut_Detail" Width="1.5" PointX="24.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_TrasactionsAuthentication" Width="1.5" PointX="19" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_UOM" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_Users" Width="1.5" PointX="13.75" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_Vendor" Width="1.5" PointX="0.75" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_WebUsers" Width="1.5" PointX="24.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_TransfterDisplayDateTime" Width="1.5" PointX="23.75" PointY="27" IsExpanded="true" />
+        <AssociationConnector Association="POSEntitie.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_AspNetUserRoles_tbl_LocationAuthentication" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_Category_tbl_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_Material_tbl_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_City" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_Company_tbl_City" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_Customer_tbl_City" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_Location_tbl_City" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_Vendor_tbl_City" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_PurchaseOrder_tbl_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_EnquiryAuthentication_tbl_LocationAuthentication" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_Location" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_PurchaseOrder_Detail_tbl_Location" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_PurchaseOrder_tbl_Location" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_Terminal_tbl_Location" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_MasterDataAuthentication_tbl_LocationAuthentication" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_SetupAuthentication_tbl_LocationAuthentication" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_TrasactionsAuthentication_tbl_LocationAuthentication" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_LocationPrice_tbl_LocationPrice" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_Material_tbl_UOM" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_Material_tbl_Vendor" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_MaterialEAN_tbl_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_MaterialKit_tbl_MaterialAdd" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_MaterialKit_tbl_MaterialLess" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_PriceFile_tbl_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_PurchaseOrder_Detail_tbl_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_MaterialEAN" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_MaterialEAN_tbl_BaseUOM" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_MaterialEAN_tbl_UOM" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_PriceFile_tbl_MaterialEAN" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_MaterialKit" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_MaterialKit_tbl_UOMAdd" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_MaterialKit_tbl_UOMLess" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_PreferUOM" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_PreferUOM_tbl_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_PriceFile_tbl_UOM" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_PurchaseOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_PurchaseOrder_tbl_Vendor" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_PurchaseOrder_Detail" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_PurchaseOrder_Detail_tbl_PurchaseOrder_Detail" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_PurchaseOrder_Detail_tbl_UOM" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_PurchaseOrder_Detail_tbl_Vendor" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_UOM" ManuallyRouted="false" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_Vendor" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_EOD" Width="1.5" PointX="26.625" PointY="13.75" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_Storage" Width="1.5" PointX="11.5" PointY="33" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_Storage_tbl_Location" />
+        <EntityTypeShape EntityType="POSEntitie.tbl_SubCategory" Width="1.5" PointX="3.25" PointY="0.75" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_SubCategory_tbl_Category" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_Material_tbl_SubCategory" />
+        <AssociationConnector Association="POSEntitie.FK_tbl_SubCategory" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,47 @@
+﻿@using POS.Entity.Entities;
+@using POS.Util.Model;
+@model CityModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+<script src="~/Scripts/jsCity.js"></script>
+<div class="col-lg-12">
+    <h2 class="pad_1per ">City <button id="btnNewCityStore" title="Add New Store!" class="btn btn-default pull-right mar_top_1per bckcolor_green" type="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button></h2>
+</div>
+<div class="col-lg-12 mgn_0">
+    <div class="col-lg-3 noPadBrd">
+        <div class="input-group col-lg-12 ">
+            <input id="txtCity" type="text" class="form-control col-lg-12 stre_maxWth  ht40" placeholder="Search for  City ID / City Name">
+
+        </div>
+        <div class="ovrflow">
+            @if (Model.City != null)
+            {
+                foreach (tbl_City city in Model.lstCity)
+                {
+                    <div class="locData pad_1per bg_blue">
+                        <a class="pointer MasterCityStore" data-CityID="@city.CityID" data-CityName="@city.CityName"><span class="">@city.CityName</span></a>
+                    </div>
+                }
+                <small id="NoRecords" class="lead" style="display:none">
+                    No records found.
+                </small>
+            }
+            else
+            {
+                <small class="lead">
+                    No records found.
+                </small>
+            }
+        </div>
+    </div>
+    <div id="CityDetails" class="col-lg-9 noPadBrd">
+        @Html.Partial("~/Views/City/Partial/_CityDetailsPartial.cshtml", Model)
+    </div>
+
+</div>
+
+
+

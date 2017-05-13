@@ -1,0 +1,26 @@
+﻿@model List<Proc_MaterialBarcodeSearch_Result>
+@using POS.Entity.Entities
+<input type="hidden" id="MaterialIsList" value="true"/>
+<table id="tblReturntoSupplier" class="table table-striped" style="border:1px solid #dddddd;">
+    <thead class="panel-heading tblHeader">
+        <tr>
+            <th class="panel-title"><strong>Select</strong></th>
+            <th class="panel-title"><strong>EAN</strong></th>
+            <th class="panel-title"><strong>MaterialID</strong></th>
+            <th class="panel-title"><strong>Material Desc</strong></th>
+            <th class="panel-title"><strong>UOM</strong></th>
+        </tr>
+    </thead>
+    <tbody id="tblReturntoSupplierBody" class="tblBody">
+        @foreach (Proc_MaterialBarcodeSearch_Result item in Model)
+        {
+        <tr>
+            <td class="panel-body"><button id="@item.EAN13"  class="btnselectEAN" value="Select" name="Select"  >Select</button></td>
+            <td class="panel-body">@item.EAN13</td>
+            <td class="panel-body">@item.MaterialID</td>
+            <td class="panel-body">@item.MaterialDesc1</td>
+            <td class="panel-body">@item.MaterialEANUOM</td>
+        </tr>
+        }
+    </tbody>
+</table>

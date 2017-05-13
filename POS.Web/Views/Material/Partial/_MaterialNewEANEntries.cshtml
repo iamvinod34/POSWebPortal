@@ -1,0 +1,25 @@
+﻿@using POS.Entity.Entities;
+@using POS.Util.Model;
+@model MaterialModel
+@{
+    int index = Convert.ToInt32(ViewBag.NewEANIndex);
+
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+      
+    });
+</script>
+
+<table style="width:100%" id="@index" class="" >
+    <tr>
+        <td class="col-lg-1">@Html.TextBoxFor(e => e.EAN13, "", new { @class = "form-control", Name = "EAN13" + index,id= "EAN13" + index })</td>
+        <td class="col-lg-1">@Html.DropDownListFor(e => e.UOM, new SelectList(Model.MUOM, "UOM", "UOMDesc"), new { @class = "form-control", Name = "UOM" + index, id = "UOM" + index })</td>
+        <td class="col-lg-1">@Html.TextBoxFor(e => e.ConvertValue,"" , new { @class = "form-control", Name = "ConvertValue" + index, id = "ConvertValue" + index })</td>
+        <td class="col-lg-1">@Html.TextBoxFor(e => e.EBaseUOM,"" , new { @class = "form-control", Name = "EBaseUOM" + index, id = "EBaseUOM" + index })</td>
+        <td class="col-lg-1">@Html.TextBoxFor(e => e.MaterialMix,"" , new { @class = "form-control", Name = "MaterialMix" + index, id = "MaterialMix" + index })</td>
+        <td class="col-lg-1">@Html.TextBoxFor(e => e.Price,"" , new { @class = "form-control", Name = "Price" + index, id = "Price" + index })</td>
+        <td class="col-lg-1"><label class="col-lg-6"> @Html.RadioButtonFor(e => e.PreforUOM, index, new { @class = "radio", id = "PreforUOM" + index })P.U</label>@*<span  class="glyphicon glyphicon-trash" style="font-size:20px;color:red;top:7px;cursor:pointer" id="Delete @index"></span>*@</td>
+    </tr>
+
+</table>

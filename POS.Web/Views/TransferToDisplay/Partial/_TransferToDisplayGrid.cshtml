@@ -1,0 +1,178 @@
+﻿@using POS.Entity.Entities;
+@model List<pxSelectTransferDocument_Result>
+<script src="~/Scripts/DatatableExport/dataTables.buttons.min.js"></script>
+<script src="~/Scripts/DatatableExport/buttons.flash.min.js"></script>
+<script src="~/Scripts/DatatableExport/jszip.min.js"></script>
+<script src="~/Scripts/DatatableExport/pdfmake.min.js"></script>
+<script src="~/Scripts/DatatableExport/vfs_fonts.js"></script>
+<script src="~/Scripts/DatatableExport/buttons.html5.min.js"></script>
+<script src="~/Scripts/DatatableExport/buttons.print.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var d = new Date();
+        var month = d.getMonth() + 1;
+        var day = d.getDate();
+
+        var date = d.getFullYear() + '-' +
+            (month < 10 ? '0' : '') + month + '-' +
+            (day < 10 ? '0' : '') + day;
+
+        $('#EnquiryGrid').DataTable({
+            dom: 'Bfrtip',
+            dom: 'Bfrtip',
+            buttons: [
+                 {
+                     extend: 'print'
+                 },
+            {
+                extend: 'excel',
+                filename: 'Sales_Enquiry_' + date
+            },
+            {
+                extend: 'pdf',
+                filename: 'Sales_Enquiry_' + date
+            }
+            ]
+        });
+        var materialUrl = '';
+        var tenderUrl = '';
+        if ($('#ViewCategory').val() == 'Sales Delete') {
+            materialUrl = '../Enquiry/GetDeletedMaterial';
+            tenderUrl = '../Enquiry/GetDeletedTender';
+        }
+        else if ($('#ViewCategory').val() == 'PO Recieve' || $('#ViewCategory').val() == 'Return To Supplier') {
+            materialUrl = '../PO/GetPORecieveMaterial';
+        }
+        else
+        {
+            materialUrl = '../Enquiry/Material';
+            tenderUrl = '../Enquiry/Tender';
+        }
+
+        $(document).on("click", ".btnGridMaterial", function () {
+            $('#ModalMaterialDetail').modal('toggle');
+            var docID = $(this).attr('data-DocID');
+            $.ajax({
+                url: materialUrl,
+                data: { 'docid': docID },
+                type: "post",
+                cache: false,
+                success: function (data) {
+                    $('#ModalMaterialBody').html(data);
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    var type = BootstrapDialog.TYPE_WARNING;
+                    BootstrapDialog.show({
+                        type: type,
+                        title: 'Error',
+                        message: 'Error in geting data from server. Please try again.'
+                    });
+                }
+            });
+        });
+        $(document).on("click", ".btnGridTender", function () {
+
+            $('#ModalTenderDetail').modal('toggle');
+            var docID = $(this).attr('data-DocID');
+            $.ajax({
+                url: tenderUrl,
+                data: { 'docid': docID },
+                type: "post",
+                cache: false,
+                success: function (data) {
+                    $('#ModalTenderBody').html(data);
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    var type = BootstrapDialog.TYPE_WARNING;
+                    BootstrapDialog.show({
+                        type: type,
+                        title: 'Error',
+                        message: 'Error in geting data from server. Please try again.'
+                    });
+                }
+            });
+        });
+
+        $('.buttons-print').html('<span class="glyphicon glyphicon-print" aria-hidden="true"></span><span>Print</span>');
+        $('.buttons-excel').html('<span class="glyphicon glyphicon-save" aria-hidden="true"></span><span>Excel</span>');
+        $('.buttons-pdf').html('<span class="glyphicon glyphicon-save" aria-hidden="true"></span><span>PDF</span>');
+    });
+</script>
+<table id="EnquiryGrid" class="table ">
+    <thead class="panel-heading tblHeader">
+        <tr><th class="panel-title"><strong>DocumentID</strong></th><th class="panel-title"><strong>Location</strong></th><th class="panel-title"><strong>Date</strong></th><th class="panel-title"><strong>Customer</strong></th><th class="panel-title"><strong>Amount</strong></th><th class="panel-title"><strong>User</strong></th></tr>
+    </thead>
+    <tbody id="tbEnquiryGrid" class="tblBody">
+        @if (Model != null)
+        {
+            foreach (pxSelectTransferDocument_Result enquiry in Model)
+            {
+                <tr class="rowSearch">
+                    <td class="panel-body">
+                        @enquiry.DocumentID
+                        @if (ViewBag.Page != "PO Recieve")
+                        {
+                            <button title="Tender" class="btn btnGridTender" data-DocID="@enquiry.DocumentID"> <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span></button>
+                        }
+                        <button title="Material" class="btn btnGridMaterial" data-DocID="@enquiry.DocumentID"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></button>
+                    </td>
+                    <td class="panel-body">@enquiry.LocationDesc</td>
+                    <td class="panel-body">@enquiry.PostingDate</td>
+                    <td class="panel-body">@enquiry.Name1</td>
+                    <td class="panel-body">@enquiry.Amount ريال</td>
+                    <td class="panel-body">@enquiry.UserID</td>
+                </tr>
+            }
+
+        }
+        else
+        {
+            <tr class="lead">
+                <td colspan="6"> No records found.</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!--Material Modal -->
+<div id="ModalMaterialDetail" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="width:  65%;">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header blue-bg">
+                <button type="button" class="close " data-dismiss="modal">&times;</button>
+                <h3 class="modal-title text-center white">Material Details</h3>
+            </div>
+            <div id="ModalMaterialBody" class="modal-body">
+                Loading...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--Tender Modal -->
+<div id="ModalTenderDetail" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="width:50%;">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header orange-bg">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title text-center white">Tender Details</h3>
+            </div>
+            <div id="ModalTenderBody" class="modal-body">
+                Loading...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>

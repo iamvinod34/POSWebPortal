@@ -1,0 +1,54 @@
+﻿@model POS.Web.Models.LoginViewModel
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<script src="~/Scripts/jquery-1.12.4.min.js"></script>
+@*<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>*@
+<script src="~/Scripts/jsLocation.js"></script>
+<script src="~/Scripts/superfish.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        function OnSuccess()
+        {
+            //alert('OnSuccess');
+            //$('#dvSuperLogin').remove();
+            //$('#registerUser').show();
+        }
+    });
+</script>
+
+    <div id="dvSuperLogin" style="margin-left:6.5%">
+        <h2>@ViewBag.Title.</h2>
+        @using (Html.BeginForm("RegisterUser", "Account", FormMethod.Post,new { }))
+        {
+            <h3> Super Admin Login</h3>
+               <div class="col-lg-12">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Email :</label>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })@Html.ValidationMessageFor(m => m.Email, null, new { @class = "err_mgs", @data_toggle = "tooltip", @data_placement = "right", @title = "Please" })
+                    </div><br />
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Password :</label>
+                    <div class="col-md-10">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })@Html.ValidationMessageFor(m => m.Password, null, new { @class = "err_mgs", @data_toggle = "tooltip", @data_placement = "right", @title = "Please" })
+                    </div><br />
+                </div>
+                <div class="form-group">
+                    <br />
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" class="btn btn-success btn-lg" value="Login" />
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+<div id="registerUser">
+</div>
+            @*@section Scripts {
+                    @Scripts.Render("~/bundles/jqueryval")
+                }*@

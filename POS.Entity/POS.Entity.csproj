@@ -1,0 +1,538 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EE935FBE-F10A-46ED-853D-48173BEDA900}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>POS.Entity</RootNamespace>
+    <AssemblyName>POS.Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\AspNetRole.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AspNetUser.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AspNetUserLogin.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AspNetUserRole.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\CSVToTable_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\fun_LocationSplit_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\f_split_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POSModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POSModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POSModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\POSModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POSModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\procSelect_Category_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_AllDocumentPrint_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_AspNetManagerLocations_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_AspNetUsersLocations_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_CashCollection_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_DocumentdetailsTenderDetails_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_EodByIdFile_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_FilterPOReceive_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_FilterReturnORTransferORPhysicalORTransInORTransOUT_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_GetAllLTerminal_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_GetMasterCategory_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_GetMasterMaterial_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_GetMasterStorage_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_GetMasterTerminal_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_GetMasterVendor_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_GetmaterialById_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_ItemCardReport_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_LoadGetLocationStorage_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_LoadMasterCategory_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_LoadMasterLocation_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_LoadMasterSubCategory_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_LoadMasterTerminal_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_LoadMasterVendor_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_LoadMaterialDetails_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_LoadOrderDetails_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_LoadStorageGetById_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\proc_LoadTranferInId_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_LoadVendor_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_MaterialBarcodeSearch_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_MaterialCategorySearch_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_MaterialMix_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_ProductionOrderRequest_Derail_In_ProductionOrder_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_ProfitShortageReport_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_ReportPhyInvDifferentReport_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_ReportPHYSICALINVENTORYDETAILS_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_ReportPHYSICALINVENTORYDIFFDETAILS_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_ReportPORECEIVE_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_ReportPRODUCTIONORDERDETAILS_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_REPORTProductionOrderStatus_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_ReportRETURNTOSUPPLIER_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_ReportSTOCKRECEIVEDETAILS_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_ReportTRANSFERTODISPLAY_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\PROC_REPORTTRANSFER_DIS_OUT_IN_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_SearchBOMID_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_SearchEAN_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_SearchMasterTerminal_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_SearchMasterVendor_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_SelectCustomerRegistration_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_SelectEODEnquiry_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_SelectProductionOrderRequest_Detail_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_SelectUserAuthentication_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_SelectUserId_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_SlectStockS_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_Sync_PhysicalInventoryNotIn_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_TempDetailsData_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proc_Terminal_Report_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\pxSelectCategoryPieChart_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\pxSelectDeleteDocumentMaterial_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\pxSelectDeleteDocumentTender_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\pxSelectDocumentMaterial_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\pxSelectDocumentTender_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\pxSelectFilterEodEnquiry_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\pxSelectFilterReturnWithInvoice_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\pxSelectFilterReturnWithoutInvoice_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\pxSelectFilterSalesDeleteLineItemsEnquiry_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\pxSelectFilterSalesEnquiry_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\pxSelectFilterSalesUnHoldEnquiry_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\pxSelectLatestSalesDetails_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\pxSelectPhysicalDocument_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\pxSelectPORecieveMaterial_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\pxSelectPORecieve_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\pxSelectPurchaseOrderDetailByDocId_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\pxSelectReturnSalesWithInvoice_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\pxSelectReturnSalesWithoutInvoice_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\pxSelectReturnToSupplier_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\pxSelectSalesDelete_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\pxSelectSalesEnquiry_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\pxSelectSalesUnHoldEnquiry_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\pxSelectTranfterOUTDetailByDocId_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\pxSelectTransferDocument_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\pxSelectTransfterIN_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\pxSelectTransfterOUT_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\sp_helpdiagrams_Result.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_Category.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_City.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_Company.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_Country.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_Customer.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_CustType.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_EnquiryAuthentication.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_EOD.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_EODFile.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_ImageDetails.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_Location.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_LocationAuthentication.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_LocationPrice.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_LocationPrice_Temp.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_ManagerUserAuthentication.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_MasterDataAuthentication.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_Material.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_MaterialEAN.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_MaterialEAN_Temp.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_MaterialKit.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_Material_Temp.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_PhoneCode.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_PI_TimeTable.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_POSException.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_POS_Logs.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_PreferUOM.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_PreferUOM_Temp.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_PriceFile.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_PriceFile_Temp.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_ProductionOrder.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_ProductionOrderRequest.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_ProductionOrderRequest_Detail.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_ProductionOrder_Detail.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_PurchaseOrder.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_PurchaseOrder_Detail.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_Region.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_SetupAuthentication.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_StockReceive.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_StockReceive_Detail.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_Storage.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_SubCategory.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_TempDetail.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_TempMaster.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_Terminal.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_TransferIN.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_TransferIN_Detail.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_TransferOut.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_TransferOut_Detail.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_TransfterDisplayDateTime.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_TrasactionsAuthentication.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_UOM.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_Users.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_Vendor.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\tbl_WebUsers.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="Entities\POSModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>POSModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Entities\POSModel.edmx.diagram">
+      <DependentUpon>POSModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Entities\POSModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>POSModel.edmx</DependentUpon>
+      <LastGenOutput>POSModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entities\POSModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>POSModel.edmx</DependentUpon>
+      <LastGenOutput>POSModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

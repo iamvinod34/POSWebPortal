@@ -1,0 +1,130 @@
+﻿@using POS.Entity.Entities;
+@model List<pxSelectSalesEnquiry_Result>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+    });
+</script>
+<table id="EnquiryGrid" class="table ">
+    <thead class="panel-heading tblHeader">
+        <tr>
+            <th class="panel-title"><strong>DocumentID</strong></th>
+            <th class="panel-title"><strong>Location</strong></th>
+            <th class="panel-title"><strong>Date</strong></th>
+            <th class="panel-title"><strong>Customer</strong></th>
+            <th class="panel-title"><strong>Amount</strong></th>
+            <th class="panel-title"><strong>User</strong></th>
+        </tr>
+    </thead>
+    <tbody id="tbEnquiryGrid" class="tblBody">
+        @if (Model != null)
+        {
+            foreach (pxSelectSalesEnquiry_Result enquiry in Model)
+            {
+                <tr class="rowSearch">
+                    <td class="panel-body">
+                        @if (ViewBag.Page == "Return To Supplier" || ViewBag.Page == "Transfter To Display" || ViewBag.Page == "Physical Inventory" || ViewBag.Page == "PO Recieve" || ViewBag.Page == "Transfter IN" || ViewBag.Page == "Transfter OUT")
+                        {
+                            <a href="#" data-DocID="@enquiry.DocumentID" style="text-decoration:underline" class="AllDocumentDetails">@enquiry.DocumentID</a>
+                        }
+                        else if (ViewBag.Page == "EOD")
+                        {
+                            <a href="../Enquiry/GetByEodFile?docid=@enquiry.DocumentID" style="text-decoration:underline" target="_blank" data-DocID="@enquiry.DocumentID" class="EODDocumentDetails">@enquiry.DocumentID</a>
+                        }
+                        else if (ViewBag.Page == "Sales Hold Invoice")
+                        {
+                            <a href="#" data-DocID="@enquiry.DocumentID" style="text-decoration:underline" class="HSalesUnHoldDocuments">@enquiry.DocumentID</a>
+                        }
+                        else
+                        {
+                            <a href="#" data-DocID="@enquiry.DocumentID" style="text-decoration:underline" class="SalesDocumentDetails">@enquiry.DocumentID</a>
+                        }
+
+
+                        @if (ViewBag.Page != "PO Recieve")
+                        {
+                            if (ViewBag.Page == "Return To Supplier" || ViewBag.Page == "Transfter To Display" || ViewBag.Page == "Physical Inventory" || ViewBag.Page == "EOD" || ViewBag.Page== "Sales Hold Invoice" || ViewBag.Page=="Transfter IN" || ViewBag.Page == "Transfter OUT" || ViewBag.Page== "Sales Delete")
+                            {
+
+                            }
+                            else
+                            {
+                                <button title="Tender" class="btn btnGridTender" data-DocID="@enquiry.DocumentID"> <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span></button>
+                            }
+                        }
+                        @if (ViewBag.Page == "EOD" || ViewBag.Page == "Sales Hold Invoice")
+                        {
+
+                        }
+                        else
+                        {
+                            <button title="DocumentID" class="btn btnGridMaterial" data-DocID="@enquiry.DocumentID"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></button>
+                        }
+                    </td>
+                    <td class="panel-body">@enquiry.LocationDesc</td>
+                    <td class="panel-body">@enquiry.PostingDate</td>
+                    <td class="panel-body">@enquiry.Name1</td>
+                    <td class="panel-body">@string.Format("{0:0.00}", Convert.ToDecimal(enquiry.Amount))ريال</td>
+                    <td class="panel-body">@enquiry.UserID</td>
+                </tr>
+            }
+
+        }
+        else
+        {
+            <tr class="lead">
+                <td colspan="6"> No records found.</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="col-lg-12">
+    <div class="pull-right pad_1per">
+        Total Amount : SAR  @string.Format("{0:0.00}", Convert.ToDecimal(Model.Sum(e => e.Amount)))
+    </div>
+
+</div>
+
+<!--Material Modal -->
+<div id="ModalMaterialDetail" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="width:  65%;">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header blue-bg">
+                <button type="button" class="close " data-dismiss="modal">&times;</button>
+                <h3 class="modal-title text-center white">Material Details</h3>
+            </div>
+            <div id="ModalMaterialBody" class="modal-body">
+                Loading...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--Tender Modal -->
+<div id="ModalTenderDetail" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="width:50%;">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header orange-bg">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title text-center white">Tender Details</h3>
+            </div>
+            <div id="ModalTenderBody" class="modal-body">
+                Loading...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>

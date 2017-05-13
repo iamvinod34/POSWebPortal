@@ -1,0 +1,622 @@
+﻿@using POS.Util.Model;
+@using System.Web.Mvc;
+@model SalesEnquiryModel
+@{
+    ViewBag.Title = "EOD";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+
+    string filterActionName = "FilterEod";
+    string ControllerName = "Enquiry";
+    string ViewHeader = "EOD";
+}
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+<link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+@*<script src="~/Scripts/jquery-1.12.4.min.js"></script>*@
+@*<script src="~/Scripts/superfish.js"></script>*@
+@*<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>*@
+<script src="~/Scripts/jquery.dataTables.min.js"></script>
+@*<script src="~/Scripts/jquery-ui-1.12.0.js"></script>*@
+@*<script src="~/Scripts/bootstrap.js"></script>*@
+<script src="~/Scripts/DatatableExport/dataTables.buttons.min.js"></script>
+<script src="~/Scripts/DatatableExport/buttons.flash.min.js"></script>
+<script src="~/Scripts/DatatableExport/jszip.min.js"></script>
+<script src="~/Scripts/DatatableExport/pdfmake.min.js"></script>
+<script src="~/Scripts/jquery.base64.js"></script>
+<script src="~/Scripts/DatatableExport/vfs_fonts.js"></script>
+<script src="~/Scripts/DatatableExport/buttons.html5.min.js"></script>
+<script src="~/Scripts/DatatableExport/buttons.print.min.js"></script>
+<script src="~/Scripts/html2canvas.js"></script>
+<script src="~/Scripts/html2canvas.svg.js"></script>
+<script src="~/Scripts/jquery.PrintArea.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.btn-load').on('click', function () {
+            var $this = $(this);
+            $this.button('loading');
+            setTimeout(function () {
+                $this.button('reset');
+            }, 8000);
+        });
+        $("#FromDate").datepicker({
+            altFormat: "yy-mm-dd",
+            altField: "#FromDate"
+        });
+        $("#ToDate").datepicker({
+            altFormat: "yy-mm-dd",
+            altField: "#ToDate"
+        });
+        var hdnTermnl = '';
+        $('.terminalSelect').click(function (e) {
+            debugger;
+            if (hdnTermnl.trim() != '') {
+                var CheckedVal = $(this).val();
+                if ($(this).prop('checked') == true) {
+                    hdnTermnl = hdnTermnl + ',' + $(this).val();
+                }
+                else {
+                    hdnTermnl = hdnTermnl.replace(CheckedVal, '');
+                }
+            }
+            else {
+                debugger;
+                hdnTermnl = $(this).val();
+
+            }
+            $('#hdnTerminal').val(hdnTermnl);
+            e.stopPropagation();
+        });
+
+        //Location Moultiple Selection
+        var hdnLocations = '';
+        $(".LocationsSelect").each(function () {
+            if ($(this).val() != 'All') {
+                if (hdnLocations != '') {
+                    hdnLocations = hdnLocations + "&" + $(this).val();
+                }
+                else {
+                    hdnLocations = $(this).val();
+                }
+            }
+        });
+        //hdnLocations = hdnLocations + "'";
+        $('#hdnLocations').val(hdnLocations);
+        $('.LocationsSelect').click(function (e) {
+
+            if ($(this).val() == 'All') {
+                if ($(this).prop('checked') == false) {
+
+                    $('#hdnLocations').val('');
+                    $(".LocationsSelect").prop('checked', this.checked);
+                    hdnLocations = '';
+                    BootstrapDialog.alert('Please Select Any One Location..');
+                }
+                else {
+                    $(".LocationsSelect").prop('checked', this.checked);
+                    $(".LocationsSelect").each(function () {
+                        if ($(this).val() != 'All') {
+                            if (hdnLocations.trim() != '') {
+                                hdnLocations = hdnLocations + "&" + $(this).val();
+                            }
+                            else {
+                                hdnLocations = $(this).val();
+                            }
+                        }
+                    });
+                    $('#hdnLocations').val(hdnLocations);
+                }
+            }
+            else {
+                if ($(this).prop('checked') == true) {
+
+                    if (hdnLocations.trim() != '') {
+                        hdnLocations = hdnLocations + "&" + $(this).val();
+                    }
+                    else {
+                        hdnLocations = $(this).val();
+                    }
+                    $('#hdnLocations').val(hdnLocations);
+                }
+                else {
+                    var val = $(this).val();
+
+                    hdnLocations = hdnLocations.replace(val, '');
+                    $('#hdnLocations').val(hdnLocations);
+                    //uncheck -- need to remove location id from #hdnLocations
+                }
+            }
+            e.stopPropagation();
+        });
+        $('.page-refresh').click(function () {
+            window.location.reload();
+        });
+
+        $("#slider-range").slider({
+            range: true,
+            min: 0,
+            max: 100000,
+            values: [0, 100000],
+            slide: function (event, ui) {
+                $("#Amount").val(ui.values[0] + " - " + ui.values[1]);
+            }
+        });
+        $("#slider-range").addClass('pull-left wdAmountSlider');
+        $("#Amount").val($("#slider-range").slider("values", 0) +
+          " - " + $("#slider-range").slider("values", 1));
+
+        $('.fltrTerminal').click(function () {
+            $('#ulTerminal').toggle();
+        });
+        $('.fltrLocations').click(function () {
+            $('#ulLocations').toggle();
+        });
+        $("#fltrCategory").change(function () {
+            var id = $('#fltrCategory').val();
+            $.ajax({
+                url: '../Enquiry/GetSubCategory',
+                data: { 'categoryID': id },
+                type: "post",
+                cache: false,
+                success: function (data) {
+                    $('#dvSubCategory').html(data);
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    var type = BootstrapDialog.TYPE_WARNING;
+                    BootstrapDialog.show({
+                        type: type,
+                        title: 'Error',
+                        message: 'Error in geting data from server. Please try again.'
+                    });
+                }
+            });
+        });
+
+        //Print
+        var d = new Date();
+        var month = d.getMonth() + 1;
+        var day = d.getDate();
+
+        var date = d.getFullYear() + '-' +
+            (month < 10 ? '0' : '') + month + '-' +
+            (day < 10 ? '0' : '') + day;
+
+        $('#EnquiryGrid').DataTable({
+            dom: 'Bfrtip',
+            dom: 'Bfrtip',
+            buttons: [
+                 {
+                     extend: 'print'
+                 },
+            {
+                extend: 'excel',
+                filename: 'Sales_Enquiry_' + date
+            },
+            {
+                extend: 'pdf',
+                filename: 'Sales_Enquiry_' + date
+            }
+            ]
+        });
+
+        //material document tender links
+        var materialUrl = '';
+        var tenderUrl = '';
+        var FilterName = '@ViewBag.Page';
+        if ($('#ViewCategory').val() == 'Sales Delete') {
+            materialUrl = '../Enquiry/Material';
+            tenderUrl = '../Enquiry/GetDeletedTender';
+        }
+        else if ($('#ViewCategory').val() == 'PO Recieve' || $('#ViewCategory').val() == 'Return To Supplier' || $('#ViewCategory').val() == 'Transfter To Display' || $('#ViewCategory').val() == 'Physical Inventory') {
+            materialUrl = '../PO/GetPORecieveMaterial';
+        }
+        else {
+            materialUrl = '../Enquiry/Material';
+            tenderUrl = '../Enquiry/Tender';
+        }
+
+        $(document).on("click", ".btnGridMaterial", function () {
+
+            var docID = $(this).attr('data-DocID');
+            $.ajax({
+                url: materialUrl,
+                data: { 'docid': docID, 'FilterName': FilterName },
+                type: "post",
+                cache: false,
+                success: function (data) {
+                    $('#ModalMaterialBody').html(data);
+                    $('#ModalMaterialDetail').modal('toggle');
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    var type = BootstrapDialog.TYPE_WARNING;
+                    BootstrapDialog.show({
+                        type: type,
+                        title: 'Error',
+                        message: 'Error in geting data from server. Please try again.'
+                    });
+                }
+            });
+        });
+        $(document).on("click", ".btnGridTender", function () {
+
+
+            var docID = $(this).attr('data-DocID');
+            $.ajax({
+                url: tenderUrl,
+                data: { 'docid': docID },
+                type: "post",
+                cache: false,
+                success: function (data) {
+                    $('#ModalTenderBody').html(data);
+                    $('#ModalTenderDetail').modal('toggle');
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    var type = BootstrapDialog.TYPE_WARNING;
+                    BootstrapDialog.show({
+                        type: type,
+                        title: 'Error',
+                        message: 'Error in geting data from server. Please try again.'
+                    });
+                }
+            });
+        });
+
+        $(document).on("click", ".SalesDocumentDetails", function () {
+            debugger;
+            var docID = $(this).attr('data-DocID');
+            $.ajax({
+                url: "../Enquiry/PrintDocument",
+                data: { 'docid': docID },
+                type: "post",
+                cache: false,
+                success: function (data) {
+                    $('#PrintDocumenthtml').html(data);
+                    debugger;
+                    var count = $('#PrintDocumenthtml').find('tr').length;
+                    if (count > 0) {
+                        $('#PrintDocuemtModel').modal('toggle');
+                    }
+                    else {
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    var types = [BootstrapDialog.TYPE_DANGER]
+                    BootstrapDialog.show({
+                        type: types,
+                        title: 'Error',
+                        message: 'Error in geting data DocumentDetails and Tender Details from server. Please try again.'
+                    });
+                }
+            });
+        });
+
+        $(document).on("click", ".AllDocumentDetails", function () {
+            var docID = $(this).attr('data-DocID');
+            $.ajax({
+                url: "/PO/GetPORecieveMaterialPrintDocument",
+                data: { 'docid': docID, 'FilterName': FilterName },
+                type: "post",
+                cache: false,
+                success: function (data) {
+                    $('#PrintDocumenthtml').html(data);
+                    $('#PrintDocuemtModel').modal('toggle');
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    var types = [BootstrapDialog.TYPE_DANGER]
+                    BootstrapDialog.show({
+                        type: types,
+                        title: 'Error',
+                        message: 'Error in geting data DocumentDetails and Tender Details from server. Please try again.'
+                    });
+                }
+            });
+        });
+
+        $(document).on("click", ".SalesUnHoldDocuments", function () {
+            var docID = $(this).attr('data-DocID');
+            $.ajax({
+                url: "../Enquiry/PrintDocument",
+                data: { 'docid': docID, 'FilterName': FilterName },
+                type: "post",
+                cache: false,
+                success: function (data) {
+                    $('#PrintDocumenthtml').html(data);
+                    debugger;
+                    var count = $('#PrintDocumenthtml').find('tr').length;
+                    if (count > 0)
+                    {
+                        $('#PrintDocuemtModel').modal('toggle');
+                    }
+                    else
+                    {
+                    }
+
+
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    var types = [BootstrapDialog.TYPE_DANGER]
+                    BootstrapDialog.show({
+                        type: types,
+                        title: 'Error',
+                        message: 'Error in geting data DocumentDetails and Tender Details from server. Please try again.'
+                    });
+                }
+            });
+        });
+
+        $('#Print').click(function () {
+            debugger;
+            printContent('PrintDocumenthtml');
+
+        });
+
+        function printContent(el) {
+            //var restorepage = document.body.innerHTML;
+            var printcontent = document.getElementById(el).innerHTML;
+            //document.body.innerHTML = printcontent;
+            //window.print();
+            //document.body.innerHTML = restorepage;
+
+            html2canvas($("#PrintDocumenthtml"), {
+                onrendered: function (canvas) {
+                    debugger;
+                    canvas.id = "AllDocumentcanvas"
+                    canvas.width = 1200;
+                    theCanvas = canvas;
+                    var myImage = canvas.toDataURL();
+                    $('<img>', { src: myImage }).appendTo($('#PrintDocumenthtml'));
+                    debugger;
+                    $('#PrintDocumenthtml').printArea();
+                }
+            });
+        }
+        $('.buttons-print').html('<span class="glyphicon glyphicon-print" aria-hidden="true" ></span><span>Print</span>');
+        $('.buttons-excel').html('<span class="glyphicon glyphicon-save" aria-hidden="true" ></span><span>Excel</span>');
+        $('.buttons-pdf').html('<span class="glyphicon glyphicon-save" aria-hidden="true" ></span><span>PDF</span>');
+    });
+    function CloseModalLoading() {
+        $('#ModalLoading').modal('hide');
+
+        var Td = new Date();
+        var Tmonth = Td.getMonth() + 1;
+        var Tday = Td.getDate();
+
+        var Tdate = Td.getFullYear() + '-' +
+            (Tmonth < 10 ? '0' : '') + Tmonth + '-' +
+            (Tday < 10 ? '0' : '') + Tday;
+
+
+        $('#EnquiryGrid').DataTable({
+            dom: 'Bfrtip',
+            dom: 'Bfrtip',
+            buttons: [
+                 {
+                     extend: 'print'
+                 },
+            {
+                extend: 'excel',
+                filename: 'Sales_Enquiry_' + Tdate
+            },
+            {
+                extend: 'pdf',
+                filename: 'Sales_Enquiry_' + Tdate
+            }
+            ]
+        });
+    }
+
+</script>
+
+<style type="text/css">
+    #Loading {
+        color: white;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+        background-size: 200px,200px;
+        background: rgba( 255, 255, 255, 0.7 ) url(../../Images/Loading.gif) 50% 50% no-repeat;
+        border-radius: 10px;
+    }
+</style>
+
+<script type="text/javascript">
+
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+    });
+</script>
+
+<div class="container">
+    <input id="ViewCategory" type="hidden" value="@ViewBag.Page" />
+    <div>
+        <div>
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <h3 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="" aria-expanded="true" aria-controls="collapseOne">
+                                @ViewHeader
+                            </a>
+                            <a role="button" class="pull-right" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Advance Search
+                            </a>
+                        </h3>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        @using (Ajax.BeginForm(filterActionName, ControllerName, new { FilterName = ViewBag.Page }, new AjaxOptions
+                        {
+                            InsertionMode = InsertionMode.Replace,
+                            LoadingElementId = "Loading",
+                            UpdateTargetId = "SalesGrid",
+                            OnSuccess = "CloseModalLoading"
+                        }))
+                        {
+                            @*<h3 class="panel-heading">@ViewHeader</h3>*@
+                            <div class="panel-body form-group" style="margin-bottom:0;margin-top:0;padding-top: 0;">
+                                <div class="col-lg-12">
+                                    <div class="pull-left col-lg-2">
+                                        From Date :
+                                        @Html.TextBoxFor(e => e.FromDate, new { @class = "datepicker form-control", @placeholder = "Date From" })
+                                        @*<input id="frmDateEnquiry" type="text" placeholder="Date From" class="datepicker" />*@
+                                    </div>
+                                    <div class="pull-left col-lg-2">
+                                        To Date :
+                                        @Html.TextBoxFor(e => e.ToDate, new { @class = "datepicker form-control", @placeholder = "Date To" })
+                                        @*<input id="toDateEnquiry" type="text" placeholder="Date To" class="datepicker" />*@
+                                    </div>
+                                    <div class="pull-left col-lg-2">
+                                        @if (ViewBag.Page == "Return To Supplier" || ViewBag.Page == "Transfter To Display" || ViewBag.Page == "Physical Inventory")
+                                        {
+                                            //Emtpy
+                                        }
+                                        else
+                                        {
+                                            <label></label> Terminals:
+                                            <div class="btn-group">
+                                                <button id="fltrTerminal" type="button" class="btn btn-primary BtnTrm fltrTerminal">Terminal</button>
+                                                @Html.HiddenFor(e => e.Terminal, new { @id = "hdnTerminal" })
+                                                <button type="button" class="BtnTrm fltrTerminal btn-primary" style="margin:0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> <span class="caret"></span> <span class="sr-only">Toggle Dropdown</span> </button>
+                                                <ul id="ulTerminal" class="dropdown-menu small_ddl_menu">
+                                                    <li><input type="checkbox" class="terminalSelect" value="1" /><span class="badge">01</span></li>
+                                                    <li><input type="checkbox" class="terminalSelect" value="2" /><span class="badge">02</span></li>
+                                                    <li><input type="checkbox" class="terminalSelect" value="3" /><span class="badge">03</span></li>
+                                                    <li><input type="checkbox" class="terminalSelect" value="4" /><span class="badge">04</span></li>
+                                                </ul>
+                                            </div>
+                                        }
+                                    </div>
+                                    <div class="pull-left col-lg-2">
+                                        Material :
+                                        @Html.TextBoxFor(e => e.Material, new { @class = "form-control", @placeholder = "Material" })
+                                        @*<input id="fltrMaterial" type="text" placeholder="Material" class="" />*@
+                                    </div>
+                                    <div class="pull-left col-lg-2">
+                                        BarCode :
+                                        @Html.TextBoxFor(e => e.EAN, new { @class = "form-control", @placeholder = "EAN" })
+                                        @*<input id="fltrEAN" type="text" placeholder="EAN" class="" />*@
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="pull-left col-lg-2">
+                                        Category :
+                                        @Html.DropDownList("fltrCategory", (IEnumerable<SelectListItem>)ViewBag.Categories, "--Select--", new { @class = "form-control" })
+                                    </div>
+                                    <div id="dvSubCategory" class="pull-left col-lg-2" style="min-width: 160px;min-height: 48px;">
+                                        Sub Category :
+                                        <select style="width: 144px;" class="form-control">
+                                            <option>--Select--</option>
+                                        </select>
+
+                                    </div>
+                                    @if (ViewBag.Page == "Return To Supplier" || ViewBag.Page == "Transfter To Display" || ViewBag.Page == "Physical Inventory")
+                                    {
+                                        //Emtpy
+                                    }
+                                    else
+                                    {
+                                        <div class="pull-left ">
+
+                                            <p>
+                                                <label for="amount">Amount range:</label>
+                                                @Html.TextBoxFor(e => e.Amount, new { @class = "", @readonly = "true", @style = "border:0; color:#f6931f; font-weight:bold;max-width:72px" })
+                                            </p>
+
+                                        </div>
+                                        <div id="slider-range" style="width:400px;height:20px" class="btnblock-class col-lg-12"></div>
+                                    }
+                                </div>
+                                <div class="col-lg-12">
+                                    @*<div class="pull-left col-lg-2">
+                                            Locations :
+                                            @Html.DropDownList("fltrLocation", (IEnumerable<SelectListItem>)ViewBag.Locations, "--Select--",new { @class="form-control"})
+                                            @*<input type="text" placeholder="User" class="" />
+                                        </div>*@
+
+                                    <div class="pull-left">
+                                        <div class="btn-group">
+                                            <button id="fltrLocation" type="button" class="btn btn-primary BtnTrm fltrLocations" style="width:175px">Locations</button>
+                                            @Html.HiddenFor(e => e.Location, new { @id = "hdnLocations" })
+                                            <button type="button" class="btn btn-primary dropdown-toggle BtnTrm fltrLocations" style="margin:0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> <span class="caret"></span> <span class="sr-only">Toggle Dropdown</span> </button>
+                                            <ul id="ulLocations" class="dropdown-menu small_ddl_menu" style="width:200px;overflow-x:scroll;height: 400px;">
+                                                <li><input type="checkbox" checked="checked" class="LocationsSelect" value="All" /><span class="badge">Select All</span></li>
+                                                @foreach (SelectListItem item in ViewBag.Locations)
+                                                {
+                                                    <li><input type="checkbox" checked="checked" class="LocationsSelect" value="@item.Value" /><span class="badge">@item.Text</span></li>
+                                                }
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="pull-left col-lg-2" style="margin-left:0.2%">
+                                        Users :
+                                        @Html.TextBoxFor(e => e.User, new { @class = "form-control", @placeholder = "User" })
+                                        @*<input type="text" placeholder="User" class="" />*@
+                                    </div>
+                                    <div class="pull-left col-lg-2" style="top:15px">
+                                        <input id="btnFilterSales" type="submit" class="btn-filter btn btn-primary" aria-haspopup="true" aria-expanded="false" value="Filter" />
+                                    </div>
+                                    <div class="pull-left col-lg-2" style="top:15px">
+                                        <button type="button" style="color:white" class="btn page-refresh btn-load" aria-haspopup="true" aria-expanded="false" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Removing all Filters..."> <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Remove Filter</button>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="Loading1" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="Loading" style="display:none">
+            <h5>SEARCHING DATA......</h5>
+        </div>
+       <div id="SalesGrid" class="tblBase table-responsive">
+                @Html.Partial("~/Views/Sales/Partial/EodEnquiryDetails.cshtml",Model.EODEnquiries)
+            </div>
+    </div>
+</div>
+<!--Material Modal -->
+<div id="ModalMaterialDetail" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="width:  65%;">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header blue-bg">
+                <button type="button" class="close " data-dismiss="modal">&times;</button>
+                <h3 class="modal-title text-center white">Material Details</h3>
+            </div>
+            <div id="ModalMaterialBody" class="modal-body">
+                Loading...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--Tender Modal -->

@@ -1,0 +1,667 @@
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\ApplicationInsights.config
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\roslyn\csc.exe
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\roslyn\System.Collections.Immutable.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\roslyn\System.Reflection.Metadata.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\roslyn\vbc.exe
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\roslyn\VBCSCompiler.exe
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\roslyn\VBCSCompiler.exe.config
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\POS.Web.dll.config
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\POS.Web.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\POS.Web.pdb
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Antlr3.Runtime.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\EntityFramework.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\EntityFramework.SqlServer.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.AI.Agent.Intercept.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.AI.DependencyCollector.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.AI.PerfCounterCollector.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.AI.ServerTelemetryChannel.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.AI.Web.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.AI.WindowsServer.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.ApplicationInsights.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.AspNet.Identity.Core.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.Owin.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.Owin.Security.Cookies.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.Owin.Security.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.Owin.Security.Facebook.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.Owin.Security.Google.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.Owin.Security.OAuth.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.Owin.Security.Twitter.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.Web.Infrastructure.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Newtonsoft.Json.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Owin.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\System.Web.Helpers.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\System.Web.Mvc.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\System.Web.Optimization.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\System.Web.Razor.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\System.Web.WebPages.Deployment.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\System.Web.WebPages.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\System.Web.WebPages.Razor.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\WebGrease.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.AI.DependencyCollector.xml
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.AI.Web.xml
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.AI.WindowsServer.xml
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.ApplicationInsights.xml
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\System.Web.Helpers.xml
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\System.Web.Mvc.xml
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\System.Web.Optimization.xml
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\System.Web.Razor.xml
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\System.Web.WebPages.xml
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\System.Web.WebPages.Deployment.xml
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\System.Web.WebPages.Razor.xml
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Antlr3.Runtime.pdb
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Newtonsoft.Json.xml
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\EntityFramework.xml
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\EntityFramework.SqlServer.xml
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.AspNet.Identity.Core.xml
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.Owin.xml
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.Owin.Security.xml
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.Owin.Security.Facebook.xml
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.Owin.Security.Cookies.xml
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.Owin.Security.OAuth.xml
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.Owin.Security.Google.xml
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.Owin.Security.Twitter.xml
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\obj\Debug\POS.Web.csprojResolveAssemblyReference.cache
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\obj\Debug\POS.Web.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\obj\Debug\POS.Web.pdb
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\POS.Business.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\POS.Util.dll
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\POS.Business.pdb
+\\prodfclfs01\users2$\kotnala_srikanth\my documents\visual studio 2015\Projects\POS\POS.Web\bin\POS.Util.pdb
+D:\MyWork\pos\POS\POS.Web\bin\ApplicationInsights.config
+D:\MyWork\pos\POS\POS.Web\bin\roslyn\csc.exe
+D:\MyWork\pos\POS\POS.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\MyWork\pos\POS\POS.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\MyWork\pos\POS\POS.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\MyWork\pos\POS\POS.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\MyWork\pos\POS\POS.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\MyWork\pos\POS\POS.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\MyWork\pos\POS\POS.Web\bin\roslyn\System.Collections.Immutable.dll
+D:\MyWork\pos\POS\POS.Web\bin\roslyn\System.Reflection.Metadata.dll
+D:\MyWork\pos\POS\POS.Web\bin\roslyn\vbc.exe
+D:\MyWork\pos\POS\POS.Web\bin\roslyn\VBCSCompiler.exe
+D:\MyWork\pos\POS\POS.Web\bin\roslyn\VBCSCompiler.exe.config
+D:\MyWork\pos\POS\POS.Web\bin\POS.Web.dll.config
+D:\MyWork\pos\POS\POS.Web\bin\POS.Web.dll
+D:\MyWork\pos\POS\POS.Web\bin\POS.Web.pdb
+D:\MyWork\pos\POS\POS.Web\bin\Antlr3.Runtime.dll
+D:\MyWork\pos\POS\POS.Web\bin\EntityFramework.dll
+D:\MyWork\pos\POS\POS.Web\bin\EntityFramework.SqlServer.dll
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.AI.Agent.Intercept.dll
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.AI.DependencyCollector.dll
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.AI.Web.dll
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.AI.WindowsServer.dll
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.ApplicationInsights.dll
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.AspNet.Identity.Core.dll
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.Owin.dll
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.Owin.Security.Cookies.dll
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.Owin.Security.dll
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.Owin.Security.Facebook.dll
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.Owin.Security.Google.dll
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.Owin.Security.OAuth.dll
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.Owin.Security.Twitter.dll
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\MyWork\pos\POS\POS.Web\bin\Newtonsoft.Json.dll
+D:\MyWork\pos\POS\POS.Web\bin\Owin.dll
+D:\MyWork\pos\POS\POS.Web\bin\POS.Business.dll
+D:\MyWork\pos\POS\POS.Web\bin\POS.Util.dll
+D:\MyWork\pos\POS\POS.Web\bin\System.Web.Helpers.dll
+D:\MyWork\pos\POS\POS.Web\bin\System.Web.Mvc.dll
+D:\MyWork\pos\POS\POS.Web\bin\System.Web.Optimization.dll
+D:\MyWork\pos\POS\POS.Web\bin\System.Web.Razor.dll
+D:\MyWork\pos\POS\POS.Web\bin\System.Web.WebPages.Deployment.dll
+D:\MyWork\pos\POS\POS.Web\bin\System.Web.WebPages.dll
+D:\MyWork\pos\POS\POS.Web\bin\System.Web.WebPages.Razor.dll
+D:\MyWork\pos\POS\POS.Web\bin\WebGrease.dll
+D:\MyWork\pos\POS\POS.Web\bin\POS.Business.pdb
+D:\MyWork\pos\POS\POS.Web\bin\POS.Util.pdb
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.AI.DependencyCollector.xml
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.AI.Web.xml
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.AI.WindowsServer.xml
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.ApplicationInsights.xml
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\MyWork\pos\POS\POS.Web\bin\System.Web.Helpers.xml
+D:\MyWork\pos\POS\POS.Web\bin\System.Web.Mvc.xml
+D:\MyWork\pos\POS\POS.Web\bin\System.Web.Optimization.xml
+D:\MyWork\pos\POS\POS.Web\bin\System.Web.Razor.xml
+D:\MyWork\pos\POS\POS.Web\bin\System.Web.WebPages.xml
+D:\MyWork\pos\POS\POS.Web\bin\System.Web.WebPages.Deployment.xml
+D:\MyWork\pos\POS\POS.Web\bin\System.Web.WebPages.Razor.xml
+D:\MyWork\pos\POS\POS.Web\bin\Antlr3.Runtime.pdb
+D:\MyWork\pos\POS\POS.Web\bin\Newtonsoft.Json.xml
+D:\MyWork\pos\POS\POS.Web\bin\EntityFramework.xml
+D:\MyWork\pos\POS\POS.Web\bin\EntityFramework.SqlServer.xml
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.AspNet.Identity.Core.xml
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.Owin.xml
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.Owin.Security.xml
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.Owin.Security.Facebook.xml
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.Owin.Security.Cookies.xml
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.Owin.Security.OAuth.xml
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.Owin.Security.Google.xml
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.Owin.Security.Twitter.xml
+D:\MyWork\pos\POS\POS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\MyWork\pos\POS\POS.Web\obj\Debug\POS.Web.csprojResolveAssemblyReference.cache
+D:\MyWork\pos\POS\POS.Web\obj\Debug\POS.Web.dll
+D:\MyWork\pos\POS\POS.Web\obj\Debug\POS.Web.pdb
+D:\MyWork\pos\POS\POS.Web\bin\POS.Repository.dll
+D:\MyWork\pos\POS\POS.Web\bin\POS.Entity.dll
+D:\MyWork\pos\POS\POS.Web\bin\POS.Repository.pdb
+D:\MyWork\pos\POS\POS.Web\bin\POS.Entity.pdb
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\ApplicationInsights.config
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\roslyn\csc.exe
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\roslyn\vbc.exe
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\roslyn\VBCSCompiler.exe
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\POS.Web.dll.config
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\POS.Web.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\POS.Web.pdb
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Antlr3.Runtime.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\EntityFramework.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\EntityFramework.SqlServer.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.AI.Web.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Newtonsoft.Json.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Owin.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\POS.Business.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\POS.Entity.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\POS.Util.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\System.Web.Helpers.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\System.Web.Mvc.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\System.Web.Optimization.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\System.Web.Razor.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\System.Web.WebPages.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\WebGrease.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\POS.Repository.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\POS.Business.pdb
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\POS.Entity.pdb
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\POS.Util.pdb
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.AI.Web.xml
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\System.Web.Helpers.xml
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\System.Web.Mvc.xml
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\System.Web.Optimization.xml
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\System.Web.Razor.xml
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\System.Web.WebPages.xml
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Antlr3.Runtime.pdb
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Newtonsoft.Json.xml
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\EntityFramework.xml
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\EntityFramework.SqlServer.xml
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.xml
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.xml
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\bin\POS.Repository.pdb
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\obj\Debug\POS.Web.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\obj\Debug\POS.Web.dll
+C:\Users\Admin\Documents\GitHub\POS\POS\POS_Source_Code\POS.Web\obj\Debug\POS.Web.pdb
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\ApplicationInsights.config
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\roslyn\csc.exe
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\roslyn\vbc.exe
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\roslyn\VBCSCompiler.exe
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\POS.Web.dll.config
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\POS.Web.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\POS.Web.pdb
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Antlr3.Runtime.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\EntityFramework.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\EntityFramework.SqlServer.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.AI.Web.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.ApplicationInsights.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Newtonsoft.Json.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Owin.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\POS.Business.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\POS.Entity.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\POS.Util.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\System.Web.Helpers.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\System.Web.Mvc.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\System.Web.Optimization.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\System.Web.Razor.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\System.Web.WebPages.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\WebActivatorEx.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\WebGrease.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\POS.Repository.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\POS.Business.pdb
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\POS.Entity.pdb
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\POS.Util.pdb
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.AI.Web.xml
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.ApplicationInsights.xml
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\System.Web.Helpers.xml
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\System.Web.Mvc.xml
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\System.Web.Optimization.xml
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\System.Web.Razor.xml
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\System.Web.WebPages.xml
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Antlr3.Runtime.pdb
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Newtonsoft.Json.xml
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\EntityFramework.xml
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\EntityFramework.SqlServer.xml
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.xml
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.xml
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\POS.Repository.pdb
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\obj\Debug\POS.Web.csprojResolveAssemblyReference.cache
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\obj\Debug\POS.Web.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\obj\Debug\POS.Web.pdb
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\System.Net.Http.Formatting.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\System.Web.Http.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\System.Web.Http.WebHost.dll
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\System.Net.Http.Formatting.xml
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\System.Web.Http.xml
+C:\Users\admin\Documents\GitHub\POS\POS_Source_Code\POS.Web\bin\System.Web.Http.WebHost.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\ApplicationInsights.config
+D:\Project\POS\POS_Source_Code\POS.Web\bin\roslyn\csc.exe
+D:\Project\POS\POS_Source_Code\POS.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Project\POS\POS_Source_Code\POS.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Project\POS\POS_Source_Code\POS.Web\bin\roslyn\System.Collections.Immutable.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\roslyn\System.Reflection.Metadata.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\roslyn\vbc.exe
+D:\Project\POS\POS_Source_Code\POS.Web\bin\roslyn\VBCSCompiler.exe
+D:\Project\POS\POS_Source_Code\POS.Web\bin\roslyn\VBCSCompiler.exe.config
+D:\Project\POS\POS_Source_Code\POS.Web\bin\POS.Web.dll.config
+D:\Project\POS\POS_Source_Code\POS.Web\bin\POS.Web.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\POS.Web.pdb
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Antlr3.Runtime.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\EntityFramework.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\EntityFramework.SqlServer.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.AI.DependencyCollector.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.AI.Web.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.AI.WindowsServer.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.ApplicationInsights.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.Google.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Newtonsoft.Json.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Owin.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\POS.Business.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\POS.Entity.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\POS.Util.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\System.Net.Http.Formatting.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\System.Web.Helpers.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\System.Web.Http.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\System.Web.Http.WebHost.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\System.Web.Mvc.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\System.Web.Optimization.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\System.Web.Razor.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\System.Web.WebPages.Deployment.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\System.Web.WebPages.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\System.Web.WebPages.Razor.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\WebActivatorEx.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\WebGrease.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\POS.Repository.dll
+D:\Project\POS\POS_Source_Code\POS.Web\bin\POS.Business.pdb
+D:\Project\POS\POS_Source_Code\POS.Web\bin\POS.Entity.pdb
+D:\Project\POS\POS_Source_Code\POS.Web\bin\POS.Util.pdb
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.AI.DependencyCollector.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.AI.Web.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.AI.WindowsServer.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.ApplicationInsights.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\System.Net.Http.Formatting.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\System.Web.Http.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\System.Web.Http.WebHost.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\System.Web.Helpers.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\System.Web.Mvc.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\System.Web.Optimization.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\System.Web.Razor.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\System.Web.WebPages.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\System.Web.WebPages.Deployment.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\System.Web.WebPages.Razor.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Antlr3.Runtime.pdb
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Newtonsoft.Json.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\EntityFramework.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\EntityFramework.SqlServer.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.Google.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Project\POS\POS_Source_Code\POS.Web\bin\POS.Repository.pdb
+D:\Project\POS\POS_Source_Code\POS.Web\obj\Debug\POS.Web.csprojResolveAssemblyReference.cache
+D:\Project\POS\POS_Source_Code\POS.Web\obj\Debug\POS.Web.dll
+D:\Project\POS\POS_Source_Code\POS.Web\obj\Debug\POS.Web.pdb
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\ApplicationInsights.config
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\roslyn\csc.exe
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\roslyn\vbc.exe
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\roslyn\VBCSCompiler.exe
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\POS.Web.dll.config
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\POS.Web.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\POS.Web.pdb
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Antlr3.Runtime.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\EntityFramework.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\EntityFramework.SqlServer.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.AI.Web.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.Owin.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.Owin.Security.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Newtonsoft.Json.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Owin.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\POS.Business.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\POS.Entity.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\POS.Util.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\System.Net.Http.Formatting.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\System.Web.Helpers.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\System.Web.Http.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\System.Web.Http.WebHost.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\System.Web.Mvc.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\System.Web.Optimization.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\System.Web.Razor.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\System.Web.WebPages.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\WebActivatorEx.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\WebGrease.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\POS.Repository.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\POS.Business.pdb
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\POS.Entity.pdb
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\POS.Util.pdb
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.AI.Web.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\System.Net.Http.Formatting.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\System.Web.Http.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\System.Web.Http.WebHost.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\System.Web.Helpers.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\System.Web.Mvc.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\System.Web.Optimization.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\System.Web.Razor.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\System.Web.WebPages.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Antlr3.Runtime.pdb
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Newtonsoft.Json.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\EntityFramework.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\EntityFramework.SqlServer.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.Owin.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.Owin.Security.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\POS.Repository.pdb
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\obj\Debug\POS.Web.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\obj\Debug\POS.Web.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\obj\Debug\POS.Web.pdb
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.ReportViewer.WebForms.DLL
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\ReportViewerForMvc.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.ReportViewer.Common.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.Build.Utilities.v3.5.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\ADODB.dll
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.Build.Utilities.v3.5.xml
+C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Web\bin\Microsoft.SqlServer.Types.dll
+D:\WebPortal\POS.Web\bin\ApplicationInsights.config
+D:\WebPortal\POS.Web\bin\roslyn\csc.exe
+D:\WebPortal\POS.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\WebPortal\POS.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\WebPortal\POS.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\WebPortal\POS.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\WebPortal\POS.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\WebPortal\POS.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\WebPortal\POS.Web\bin\roslyn\System.Collections.Immutable.dll
+D:\WebPortal\POS.Web\bin\roslyn\System.Reflection.Metadata.dll
+D:\WebPortal\POS.Web\bin\roslyn\vbc.exe
+D:\WebPortal\POS.Web\bin\roslyn\VBCSCompiler.exe
+D:\WebPortal\POS.Web\bin\roslyn\VBCSCompiler.exe.config
+D:\WebPortal\POS.Web\bin\POS.Web.dll.config
+D:\WebPortal\POS.Web\bin\POS.Web.dll
+D:\WebPortal\POS.Web\bin\POS.Web.pdb
+D:\WebPortal\POS.Web\bin\Antlr3.Runtime.dll
+D:\WebPortal\POS.Web\bin\EntityFramework.dll
+D:\WebPortal\POS.Web\bin\EntityFramework.SqlServer.dll
+D:\WebPortal\POS.Web\bin\Microsoft.AI.Agent.Intercept.dll
+D:\WebPortal\POS.Web\bin\Microsoft.AI.DependencyCollector.dll
+D:\WebPortal\POS.Web\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\WebPortal\POS.Web\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\WebPortal\POS.Web\bin\Microsoft.AI.Web.dll
+D:\WebPortal\POS.Web\bin\Microsoft.AI.WindowsServer.dll
+D:\WebPortal\POS.Web\bin\Microsoft.ApplicationInsights.dll
+D:\WebPortal\POS.Web\bin\Microsoft.AspNet.Identity.Core.dll
+D:\WebPortal\POS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\WebPortal\POS.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\WebPortal\POS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\WebPortal\POS.Web\bin\Microsoft.Owin.dll
+D:\WebPortal\POS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\WebPortal\POS.Web\bin\Microsoft.Owin.Security.Cookies.dll
+D:\WebPortal\POS.Web\bin\Microsoft.Owin.Security.dll
+D:\WebPortal\POS.Web\bin\Microsoft.Owin.Security.Facebook.dll
+D:\WebPortal\POS.Web\bin\Microsoft.Owin.Security.Google.dll
+D:\WebPortal\POS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\WebPortal\POS.Web\bin\Microsoft.Owin.Security.OAuth.dll
+D:\WebPortal\POS.Web\bin\Microsoft.Owin.Security.Twitter.dll
+D:\WebPortal\POS.Web\bin\Microsoft.ReportViewer.Common.dll
+D:\WebPortal\POS.Web\bin\Microsoft.ReportViewer.WebForms.dll
+D:\WebPortal\POS.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\WebPortal\POS.Web\bin\Newtonsoft.Json.dll
+D:\WebPortal\POS.Web\bin\Owin.dll
+D:\WebPortal\POS.Web\bin\POS.Business.dll
+D:\WebPortal\POS.Web\bin\POS.Entity.dll
+D:\WebPortal\POS.Web\bin\POS.Util.dll
+D:\WebPortal\POS.Web\bin\ReportViewerForMvc.dll
+D:\WebPortal\POS.Web\bin\System.Net.Http.Formatting.dll
+D:\WebPortal\POS.Web\bin\System.Web.Helpers.dll
+D:\WebPortal\POS.Web\bin\System.Web.Http.dll
+D:\WebPortal\POS.Web\bin\System.Web.Http.WebHost.dll
+D:\WebPortal\POS.Web\bin\System.Web.Mvc.dll
+D:\WebPortal\POS.Web\bin\System.Web.Optimization.dll
+D:\WebPortal\POS.Web\bin\System.Web.Razor.dll
+D:\WebPortal\POS.Web\bin\System.Web.WebPages.Deployment.dll
+D:\WebPortal\POS.Web\bin\System.Web.WebPages.dll
+D:\WebPortal\POS.Web\bin\System.Web.WebPages.Razor.dll
+D:\WebPortal\POS.Web\bin\WebActivatorEx.dll
+D:\WebPortal\POS.Web\bin\WebGrease.dll
+D:\WebPortal\POS.Web\bin\POS.Repository.dll
+D:\WebPortal\POS.Web\bin\POS.Business.pdb
+D:\WebPortal\POS.Web\bin\POS.Entity.pdb
+D:\WebPortal\POS.Web\bin\POS.Util.pdb
+D:\WebPortal\POS.Web\bin\Microsoft.AI.DependencyCollector.xml
+D:\WebPortal\POS.Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\WebPortal\POS.Web\bin\Microsoft.AI.Web.xml
+D:\WebPortal\POS.Web\bin\Microsoft.AI.WindowsServer.xml
+D:\WebPortal\POS.Web\bin\Microsoft.ApplicationInsights.xml
+D:\WebPortal\POS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\WebPortal\POS.Web\bin\System.Net.Http.Formatting.xml
+D:\WebPortal\POS.Web\bin\System.Web.Http.xml
+D:\WebPortal\POS.Web\bin\System.Web.Http.WebHost.xml
+D:\WebPortal\POS.Web\bin\System.Web.Helpers.xml
+D:\WebPortal\POS.Web\bin\System.Web.Mvc.xml
+D:\WebPortal\POS.Web\bin\System.Web.Optimization.xml
+D:\WebPortal\POS.Web\bin\System.Web.Razor.xml
+D:\WebPortal\POS.Web\bin\System.Web.WebPages.xml
+D:\WebPortal\POS.Web\bin\System.Web.WebPages.Deployment.xml
+D:\WebPortal\POS.Web\bin\System.Web.WebPages.Razor.xml
+D:\WebPortal\POS.Web\bin\Antlr3.Runtime.pdb
+D:\WebPortal\POS.Web\bin\Newtonsoft.Json.xml
+D:\WebPortal\POS.Web\bin\EntityFramework.xml
+D:\WebPortal\POS.Web\bin\EntityFramework.SqlServer.xml
+D:\WebPortal\POS.Web\bin\Microsoft.AspNet.Identity.Core.xml
+D:\WebPortal\POS.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\WebPortal\POS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\WebPortal\POS.Web\bin\Microsoft.Owin.xml
+D:\WebPortal\POS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\WebPortal\POS.Web\bin\Microsoft.Owin.Security.xml
+D:\WebPortal\POS.Web\bin\Microsoft.Owin.Security.Facebook.xml
+D:\WebPortal\POS.Web\bin\Microsoft.Owin.Security.Cookies.xml
+D:\WebPortal\POS.Web\bin\Microsoft.Owin.Security.OAuth.xml
+D:\WebPortal\POS.Web\bin\Microsoft.Owin.Security.Google.xml
+D:\WebPortal\POS.Web\bin\Microsoft.Owin.Security.Twitter.xml
+D:\WebPortal\POS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\WebPortal\POS.Web\bin\POS.Repository.pdb
+D:\WebPortal\POS.Web\obj\Debug\POS.Web.csprojResolveAssemblyReference.cache
+D:\WebPortal\POS.Web\obj\Debug\POS.Web.dll
+D:\WebPortal\POS.Web\obj\Debug\POS.Web.pdb
+D:\WebPortal\POS.Web\bin\Microsoft.Build.Utilities.v3.5.dll
+D:\WebPortal\POS.Web\bin\ADODB.dll
+D:\WebPortal\POS.Web\bin\Microsoft.Build.Utilities.v3.5.xml

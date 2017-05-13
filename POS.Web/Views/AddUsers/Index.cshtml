@@ -1,0 +1,25 @@
+﻿@using POS.Util.Model
+@model UserAuthenticationModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+<script type="text/javascript">
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+
+    function Success(data)
+    {
+        alert("Successfully Inserted...");
+        window.location.reload();
+    }
+
+</script>
+<div class="container">
+    <h5>Add Users</h5>
+    <div class="col-lg-12" id="">
+        @Html.Partial("~/Views/AddUsers/Partial/Users.cshtml", Model);
+        </div>
+    </div>

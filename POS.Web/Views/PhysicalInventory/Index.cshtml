@@ -1,0 +1,587 @@
+﻿@using POS.Util.Model;
+@model TransactionModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('input[type=radio][name=Radio]').change(function () {
+            var RadioValue = $(this).val();
+            if (RadioValue == "By  Category") {
+                $.ajax({
+                    url: "../PhysicalInventory/GetCategory",
+                    type: "post",
+                    cache: false,
+                    success: function (data) {
+                        $('#dvCategory').html(data);
+                        var filter_ID = $('#hidFilterID').val();
+                        if (filter_ID.length >= 1) {
+                            $('#fltrCategory').val(filter_ID);
+                        }
+                        CheckRows();
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        var type = BootstrapDialog.TYPE_WARNING;
+                        BootstrapDialog.show({
+                            type: type,
+                            title: 'Error',
+                            message: 'Error in geting data Storage from server. Please try again.'
+                        });
+                    }
+                });
+            }
+            else {
+                $('#fltrCategory').val("");
+                $('#fltrCategory').attr('disabled', true);
+            }
+        });
+
+        $('#fltrPLocation').change(function () {
+            var id = $('#fltrPLocation').val();
+            $.ajax({
+                url: '../PhysicalInventory/GetStorage',
+                data: { 'LocationID': id, 'type': 'TPI' },
+                type: "post",
+                cache: false,
+                success: function (data) {
+                    $('#dvPStorage').html(data);
+
+                    CheckRows();
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    var type = BootstrapDialog.TYPE_WARNING;
+                    BootstrapDialog.show({
+                        type: type,
+                        title: 'Error',
+                        message: 'Error in geting data Storage from server. Please try again.'
+                    });
+                }
+            });
+            $.ajax({
+                url: '../ReturnToSupplier/GetTempDetails',
+                data: { 'LocationID': id, 'Type': "TPI" },
+                type: "post",
+                cache: false,
+                success: function (data) {
+                    $('#tblReturntoSupplierBody').html(data);
+                    var DetailsTempMasterID = $('#TempMasterID').val();
+                    $('#TempMasterIDFirst').val(DetailsTempMasterID);
+                    if (data.length >= 1) {
+                        FilterSetting(data)
+                        CheckRows();
+                    }
+
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    var type = BootstrapDialog.TYPE_WARNING;
+                    BootstrapDialog.show({
+                        type: type,
+                        title: 'Error',
+                        message: 'Error in geting data Storage from server. Please try again.'
+                    });
+                }
+            });
+        });
+
+        function FilterSetting(data) {
+            var filter = $('#hidFilter').val();
+            var filter_ID = $('#hidFilterID').val();
+
+            if (filter == "Full Count") {
+                $('#IDfullcount').prop('checked', true);
+            }
+            else if (filter = "By Category") {
+                $('#IDByCategory').prop('checked', true);
+            }
+            else if (filter == "By Material") {
+                $('#IDByMaterial').prop('checked', true);
+            }
+        }
+
+        $("#PHYMaterialIDBarcode").keyup(function (e) {
+
+            var key = e.which;
+            if (key == 13)  // the enter key code
+            {
+                var LocationID = $('#fltrPLocation').val();
+                var StorageID = $('#fltrStorage').val();
+                var CategoryID = $('#fltrCategory').val();
+                if (LocationID != "" && StorageID != "") {
+                    var MatrialOrBarcode = $(this).val();
+
+                    if ($(this).val().length > 0) {
+                        var Radio = $('input[type=radio][name=Radio]:checked').val();
+
+                        //Full Count
+                        if (Radio == "Full Count") {
+
+                            var Code = $(this).val().substring(0, 2);
+
+                            if (Code == "20") {
+                                var EAN13 = $(this).val().substring(2, 7);
+                                var KG = $(this).val().substring(7, 9);
+                                if (KG.indexOf('0') == 0) {
+                                    KG = KG.replace('0', '');
+                                }
+                                var Weight = $(this).val().substring(9, 12);
+                                $.ajax({
+                                    url: '../PhysicalInventory/GetEAN',
+                                    data: { 'EAN13': EAN13, 'VendorID': null, 'UOM': 'KG' },
+                                    type: "post",
+                                    cache: false,
+                                    success: function (data) {
+                                        if (data.length > 0) {
+                                            $('#tblReturntoSupplierBody').append(data).find('tr:last').find('input').val(KG + "." + Weight).attr('readonly', true);
+                                            $('#PHYMaterialIDBarcode').val("");
+
+                                            InsertAppend(Radio);
+                                            CheckRows();
+                                        }
+                                        else {
+                                            alert('Please Enter Valied BarCode...!!!');
+                                            $('#PHYMaterialIDBarcode').val("");
+                                        }
+
+                                    },
+                                    error: function (xhr, ajaxOptions, thrownError) {
+                                        var type = BootstrapDialog.TYPE_WARNING;
+                                        BootstrapDialog.show({
+                                            type: type,
+                                            title: 'Error',
+                                            message: 'Error in geting data EAN13 from server. Please try again.'
+                                        });
+                                    }
+                                });
+
+                            }
+                            else {
+
+                                $.ajax({
+                                    url: '../ReturnToSupplier/GetMaterial',
+                                    data: { 'MatrialOrBarcode': MatrialOrBarcode, 'VendorID': null },
+                                    type: "post",
+                                    cache: false,
+                                    success: function (data) {
+                                        var isList = $(data).find('#MaterialIsList').text.length;
+                                        if (isList >= 1) {
+                                            $('#ModalMaterialBody').html(data);
+                                            $('#ModalMaterial').modal('show');
+                                        }
+                                        else {
+                                            $('#tblReturntoSupplierBody').append(data).find('tr:last').find('input').focus();;
+
+                                        }
+
+                                    },
+                                    error: function (xhr, ajaxOptions, thrownError) {
+                                        var type = BootstrapDialog.TYPE_WARNING;
+                                        BootstrapDialog.show({
+                                            type: type,
+                                            title: 'Error',
+                                            message: 'Error in geting data from server. Please try again.'
+                                        });
+                                    }
+                                });
+                            }
+                        }
+                        else if (Radio == "By Category") {
+                            var CategoryID = $('#fltrCategory').val();
+                            if ($('#fltrCategory').val().length > 0) {
+                                var Code = $(this).val().substring(0, 2);
+                                if (Code == "20") {
+                                    var EAN13 = $(this).val().substring(2, 7);
+                                    var KG = $(this).val().substring(7, 9);
+                                    var Weight = $(this).val().substring(9, 12);
+                                    if (KG.indexOf('0') == 0) {
+                                        KG = KG.replace('0', '');
+                                    }
+                                    $.ajax({
+                                        url: '../PhysicalInventory/GetCategoryMaterial',
+                                        data: { 'MaterialID': null, 'CategoryID': CategoryID, 'CategoryText': EAN13 },
+                                        type: "post",
+                                        cache: false,
+                                        success: function (data) {
+                                            if (data.length > 0) {
+
+                                                $('#tblReturntoSupplierBody').append(data).find('tr:last').find('input').val(KG + "." + Weight).attr('readonly', true);
+                                                //var tr = $('#tblReturntoSupplierBody').find('tr:last');
+                                                //tr.find('input').val(KG + "." + Weight);
+                                                $('#PHYMaterialIDBarcode').val("");
+                                                InsertAppend(Radio);
+                                            }
+                                            else {
+                                                alert('Please Enter Valied BarCode...!!!');
+                                                $('#PHYMaterialIDBarcode').val("");
+                                            }
+
+                                        },
+                                        error: function (xhr, ajaxOptions, thrownError) {
+                                            var type = BootstrapDialog.TYPE_WARNING;
+                                            BootstrapDialog.show({
+                                                type: type,
+                                                title: 'Error',
+                                                message: 'Error in geting data EAN13 from server. Please try again.'
+                                            });
+                                        }
+                                    });
+
+                                }
+                                else {
+                                    $.ajax({
+                                        url: '../ReturnToSupplier/GetMaterial',
+                                        data: { 'MatrialOrBarcode': MatrialOrBarcode, 'VendorID': null },
+                                        type: "post",
+                                        cache: false,
+                                        success: function (data) {
+                                            var isList = $(data).find('#MaterialIsList').text.length;
+                                            if (data.length > 0) {
+                                                if (data.length > 1) {
+                                                    $('#ModalMaterialBody').html(data);
+                                                    $('#ModalMaterial').modal('show');
+                                                }
+                                                else {
+                                                    $('#tblReturntoSupplierBody').append(data).find('tr:last').find('input').focus();
+                                                    $('#PHYMaterialIDBarcode').val("");
+                                                }
+                                            }
+                                            else {
+                                                alert('Please Enter Vaild BarCode OR Material...!!!!');
+                                            }
+
+                                        },
+                                        error: function (xhr, ajaxOptions, thrownError) {
+                                            var type = BootstrapDialog.TYPE_WARNING;
+                                            BootstrapDialog.show({
+                                                type: type,
+                                                title: 'Error',
+                                                message: 'Error in geting data from server. Please try again.'
+                                            });
+                                        }
+                                    });
+                                }
+                            }
+                            else {
+                                alert('Please Select Category...!!!');
+                            }
+                        }
+                        else if (Radio == "By Material") {
+                            $.ajax({
+                                url: '../ReturnToSupplier/GetMaterial',
+                                data: { 'MatrialOrBarcode': MatrialOrBarcode, 'VendorID': null },
+                                type: "post",
+                                cache: false,
+                                success: function (data) {
+
+                                    var isList = $(data).find('#MaterialIsList').text.length;
+                                    if (data.length > 1) {
+                                        $('#ModalMaterialBody').html(data);
+                                        $('#ModalMaterial').modal('show');
+                                    }
+                                    else {
+                                        $('#tblReturntoSupplierBody').append(data).append(data).find('tr:last').find('input').focus();;
+                                        $('#PHYMaterialIDBarcode').val("");
+                                        InsertAppend(Radio);
+                                    }
+
+                                },
+                                error: function (xhr, ajaxOptions, thrownError) {
+                                    var type = BootstrapDialog.TYPE_WARNING;
+                                    BootstrapDialog.show({
+                                        type: type,
+                                        title: 'Error',
+                                        message: 'Error in geting data from server. Please try again.'
+                                    });
+                                }
+                            });
+                        }
+                    }
+                    else {
+                        alert('Please Enter BarCode OR MaterialID...!!!');
+                    }
+
+                }
+                else {
+                    alert('Please Select Location and Storage...!!!');
+                }
+            }
+        });
+
+        $(document).on('click', ".btnselectEAN", function (e) {
+            var id = $(this).attr('id');
+            var Radio = $('input[type=radio][name=Radio]:checked').val();
+            var MatrialOrBarcode = id;
+            $.ajax({
+                url: '../ReturnToSupplier/GetMaterial',
+                data: { 'MatrialOrBarcode': MatrialOrBarcode, 'VendorID': null },
+                type: "post",
+                cache: false,
+                success: function (data) {
+                    var isList = $(data).find('#MaterialIsList').text.length;
+                    $('#ModalMaterial').modal('hide');
+                    $('#tblReturntoSupplierBody').append(data).find('tr:last').find('input').focus();
+                    $('#PHYMaterialIDBarcode').val("");
+                    InsertAppend(Radio);
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    var type = BootstrapDialog.TYPE_WARNING;
+                    BootstrapDialog.show({
+                        type: type,
+                        title: 'Error',
+                        message: 'Error in geting data from server. Please try again.'
+                    });
+                }
+            });
+        });
+
+        $(document).on('keyup', ".txtFoucs", function (e) {
+            var key = e.which;
+            if (key == 13)  // the enter key code
+            {
+                if ($(this).val() == "") {
+                    alert('Please Enter Quantity...!!!');
+                }
+                else {
+                    var intRegex = /^\d+$/;
+                    var floatRegex = /^((\d+(\.\d *)?)|((\d*\.)?\d+))$/;
+                    var Value = $(this).val();
+                    if (intRegex.test(Value) || floatRegex.test(Value)) {
+                        if (Value.length > 0) {
+                            var Radio = $('input[type=radio][name=Radio]:checked').val();
+                            InsertAppend(Radio);
+                            $('#PHYMaterialIDBarcode').focus();
+                        }
+                    }
+                    else {
+                        alert('Please Enter Valid Number...!!!');
+                        $(this).focus();
+                        $(this).val("");
+                    }
+                }
+            }
+        });
+
+        function InsertAppend(Radio) {
+
+            var AppendData = $('#tblReturntoSupplierBody').find('tr:last').text();
+            var inputval = $('#tblReturntoSupplierBody').find('tr:last').find('input').val();
+            if (inputval == null || inputval == "") {
+                inputval = 0;
+            }
+            var LocationID = $('#fltrPLocation').val();
+            var StorageID = $('#fltrStorage').val();
+            var CategoryID = $('#fltrCategory').val();
+            if (AppendData.length > 0) {
+                $.ajax({
+                    url: '../PhysicalInventory/InsertTempData',
+                    data: { 'data': AppendData, 'inputval': inputval, 'LocationID': LocationID, 'StorageID': StorageID, 'Radio': Radio, 'CategoryID': CategoryID },
+                    type: "post",
+                    cache: false,
+                    success: function (result) {
+                        var DetailsTempMasterID = result;
+                        $('#TempMasterIDFirst').val(DetailsTempMasterID);
+                        CheckRows();
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        var type = BootstrapDialog.TYPE_WARNING;
+                        BootstrapDialog.show({
+                            type: type,
+                            title: 'Error',
+                            message: 'Error in geting data Storage from server. Please try again.'
+                        });
+                    }
+                });
+            }
+            else {
+                var type = BootstrapDialog.TYPE_WARNING;
+                BootstrapDialog.show({
+                    type: type,
+                    title: 'Error',
+                    message: 'Error'
+                });
+            }
+        }
+
+        $('#tblReturntoSupplierBody').on('click', '#Deleterow', function () {
+            var data = $(this).closest('tr').text();
+            var CurrentTextVal = $(this).closest('tr').find('input').val();
+            var LocationID = $('#fltrPLocation').val();
+            $.ajax({
+                url: '../PhysicalInventory/DeleteRow',
+                data: { 'data': data, 'inputval': CurrentTextVal, 'LocationID': LocationID },
+                type: "post",
+                cache: false,
+                success: function (result) {
+                    //    alert(result + ' Deleted');
+                    $(this).closest('tr').remove();
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    var type = BootstrapDialog.TYPE_WARNING;
+                    BootstrapDialog.show({
+                        type: type,
+                        title: 'Error',
+                        message: 'Error in geting data Storage from server. Please try again.'
+                    });
+                }
+            });
+
+        });
+
+        //function CheckRows() {
+        //    var Rows = $('#tblReturntoSupplierBody').children('tr').length;
+        //    if (Rows >= 1) {
+        //     //   $('#fltrPLocation').prop("disabled", true);
+        //        $('#fltrStorage').prop("disabled", true);
+        //        $('#BtnSubmit').prop("disabled", false);
+        //     //   $('input[type=radio][name=Radio]').attr("disabled", true);
+        //        var hidStorageID = $('#hidStorageID').val();
+        //        if (hidStorageID != "") {
+        //            $('#fltrStorage').val($("#hidStorageID").val());
+        //        }
+        //    }
+        //    else {
+        //      //  $('input[type=radio][name=Radio]').attr("disabled", false);
+        //        $('#fltrPLocation').prop("disabled", false);
+        //        $('#fltrStorage').prop("disabled", false);
+        //        $('#BtnSubmit').prop("disabled", true);
+        //    }
+        //}
+
+        $('#BtnSubmit').click(function () {
+            var TempMasterID = $('#TempMasterIDFirst').val();
+            if (TempMasterID == "") {
+                TempMasterID = $('#TempMasterID').val();
+                // alert('Inside');
+            }
+            $('#BtnSubmit').prop('disabled', false);
+            if (TempMasterID != "") {
+                $.ajax({
+                    url: '../ReturnToSupplier/Accept',
+                    data: { 'ID': TempMasterID },
+                    type: "post",
+                    cache: false,
+                    success: function (result) {
+                        var type = BootstrapDialog.TYPE_SUCCESS;
+                        BootstrapDialog.show({
+                            type: type,
+                            closable: false,
+                            title: 'Insert Success',
+                            message: result + ' Inserted Successfully....!!!!',
+                            buttons: [{
+                                label: 'Ok',
+                                action: function (dialogRef) {
+                                    dialogRef.close();
+                                }
+                            }],
+                        });
+                        window.location.reload();
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        window.location.reload();
+                        var type = BootstrapDialog.TYPE_WARNING;
+                        BootstrapDialog.show({
+                            type: type,
+                            title: 'Error',
+                            message: 'Error in geting data Submit Button Storage from server. Please try again.'
+                        });
+                    }
+                });
+            }
+
+            $('#ProcessingData').modal('show');
+        });
+    });
+</script>
+
+
+<div class="container">
+    <span class="pad_1per">Transaction:PHYSICAL INVENTORY</span>
+    <div class="col-lg-12  col-sm-12 col-xs-12 col-md-12 ">
+        <div class="col-lg-offset-3">
+            <div class="panel panel-info panel-collapse col-lg-3  ">
+                <div class="panel-body">
+                    <span>Select :</span>
+                    <div class="input-group radio  col-sm-12 col-xs-12 col-md-12">
+                        <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12"><input type="radio" id="IDfullcount" class="" value="Full Count" text="Full Count" name="Radio" checked="checked"> Full Count </div>
+                        <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12"><input type="radio" id="IDByCategory" class="" value="By  Category" name="Radio"> Category -<div class="col-lg-12 col-sm-12 col-xs-12 col-md-12" id="dvCategory"><select id="" class="form-control"><option disabled="disabled" id="SelCategory">--Select---</option></select> </div></div>
+                        <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12"><input type="radio" id="IDByMaterial" class="" value="By Material" name="Radio"> Material </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="col-lg-offset-1">
+            <div class="pull-left col-lg-3 col-sm-12 col-xs-12 col-md-12">
+                Location : @Html.DropDownList("fltrPLocation", (IEnumerable<SelectListItem>)ViewBag.Location, "--Select--", new { @class = "form-control" })
+            </div>
+            <div class="pull-left col-lg-2 col-sm-12 col-xs-12 col-md-12 " id="dvPStorage">
+                Storage ID
+                <select style="width: 144px;" class="form-control">
+                    <option>--Select--</option>
+                </select>
+            </div>
+            <div class="pull-left col-lg-3 col-sm-12 col-xs-12 col-md-12">
+                Material ID / Barcode  :
+                <input type="text" id="PHYMaterialIDBarcode" class="upp_case form-control" />
+            </div>
+            <div class="pull-left col-lg-3 col-sm-12 col-xs-12 col-md-12">
+                Date :
+                <input type="text" id="PHYMaterialIDBarcode" class="datepicker form-control" disabled="disabled" value="@DateTime.Now.ToString("MM/dd/yyyy")" />
+            </div>
+            <div class="">
+                <input type="hidden" id="TempMasterIDFirst" />
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12" style="top:5px">
+        <div id="buttons" class="col-lg-12 row col-sm-12 col-xs-12 col-md-12">
+            <div id="buttons" class="col-lg-offset-6">
+                <input type="submit" value="Accept" class="btn btn-primary btn-lg btnblock-class" id="BtnSubmit" style="margin-top: 21px;" />
+                <input type="button" id="btnAccpet" class="btn btn-danger btn-lg btnblock-class" value="Clear" />
+                @Html.ActionLink("Print", "Index", "POSReport", new { name = "PhysicalInventoryDetails", Report = "PhysicalInventoryDetails" }, new { @class = "btn btn-success btn-lg btnblock-class" })
+            </div>
+        </div>
+    </div>
+    <div id="dvPhysicalInventory" class="col-lg-12 row" style="top:10px;height:400px;overflow:scroll;background-color:white;">
+        <table id="tblReturntoSupplier" class="table table-striped table-bordered" style="border:1px solid #dddddd;">
+            <thead class="panel-heading tblHeader">
+                <tr>
+                    <th class="panel-title"><strong>Delete</strong></th>
+                    <th class="panel-title"><strong>MaterialID</strong></th>
+                    <th class="panel-title hidden-md hidden-sm hidden-xs"><strong>Material Desc</strong></th>
+                    <th class="panel-title"><strong>UOM</strong></th>
+                    <th class="panel-title"><strong>Quantity</strong></th>
+                    <th class="panel-title hidden-md hidden-sm hidden-xs"><strong>Price</strong></th>
+                </tr>
+            </thead>
+            <tbody id="tblReturntoSupplierBody" class="tblBody" style="border:1px;background-color:white;"></tbody>
+        </table>
+    </div>
+</div>
+
+<!--Material Modal -->
+<div id="ModalMaterial" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="width:50%;">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header orange-bg">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title text-center white">Physical inventory Material Details</h3>
+            </div>
+            <div id="ModalMaterialBody" class="modal-body">
+                Loading...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+

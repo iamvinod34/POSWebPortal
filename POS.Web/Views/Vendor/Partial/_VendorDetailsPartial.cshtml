@@ -1,0 +1,75 @@
+﻿
+@using POS.Entity.Entities;
+@using POS.Util.Model;
+@model VendorModel
+
+<script type="text/javascript">
+    function Success(data) {
+        alert(data);
+        window.location.reload();
+    }
+</script>
+
+@*Partial view for location details. Created by Srikanth.*@
+<div id="updatedMessage"></div>
+<div id="loader" style="display:none">Loading...</div>
+
+@{ string disabled = string.Empty;}
+@if (Model != null)
+{
+    if (!string.IsNullOrEmpty(Model.VendorID))
+    {
+        disabled = "disabled";
+        <div class="mrg_left_5per"><h3>Update "@Model.Name1" Details</h3> </div>
+    }
+    else
+    {
+        <div class="mrg_left_5per"><span class="font_med">Add New Vendor</span></div>
+    }
+}
+else
+{
+    <div class="mrg_left_5per"><span class="font_med">Add New Vendor</span></div>
+}
+@using (Ajax.BeginForm("InsertOrUpdateVendor", "Vendor", new AjaxOptions
+{
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "updatedMessage",
+    LoadingElementId = "loader",
+    OnSuccess= "Success(data)"
+}))
+{
+
+    <div class="col-lg-12 pad_2per spn_lebl">
+        <div class="col-lg-12 pad_1perdiv spn_lebl">
+            <div class="col-lg-12"><div class="col-lg-3"><span>Vendor ID :</span></div><div class="col-lg-6">@Html.TextBoxFor(e => e.VendorID, new { @class = "bold form-control", @title = "Please Enter Location ID" })</div>@Html.ValidationMessageFor(e => e.VendorID, null, new { @class = "err_mgs" })</div>
+            <div class="col-lg-12 "><div class="col-lg-3"><span>Vendor Name :</span></div><div class="col-lg-6">@Html.TextBoxFor(e => e.Name1,new { @class="form-control"})</div>@Html.ValidationMessageFor(e => e.Name1, null, new { @class = "err_mgs" })</div>
+        </div>
+        <div class="col-lg-12 pad_1perdiv">
+            <div class="col-lg-12"><div class="col-lg-3"><span>Address :</span></div><div class="col-lg-6">@Html.TextBoxFor(e => e.Address1, new { @class = "form-control" })</div>@Html.ValidationMessageFor(e => e.Address1, null, new { @class = "err_mgs" })</div>
+            <div class="col-lg-12"><div class="col-lg-3"><h5></h5></div><div class="col-lg-6">@Html.TextBoxFor(e => e.Address2, new { @class = "form-control" })</div></div>
+            <div class="col-lg-12"><div class="col-lg-3"><h5></h5></div><div class="col-lg-6">@Html.TextBoxFor(e => e.Address3, new { @class = "form-control" })</div></div>
+            <div class="col-lg-12"><div class="col-lg-3"><span>Postal Code:</span></div><div class="col-lg-6">@Html.TextBoxFor(e => e.POBox, new { @class = "form-control" })</div>@Html.ValidationMessageFor(e => e.POBox, null, new { @class = "err_mgs" })</div>
+            <div class="col-lg-12"><div class="col-lg-3"><span>Region:</span></div><div class="col-lg-6">@Html.DropDownListFor(e => e.Region,new SelectList(Model.LRegion,"RegionId", "RegionName"), new { @class = "form-control" })</div>@Html.ValidationMessageFor(e => e.Region, null, new { @class = "err_mgs" })</div>
+            <div class="col-lg-12"><div class="col-lg-3"><span>City:</span></div><div class="col-lg-6">@Html.DropDownListFor(e=>e.City,new SelectList(Model.LCity,"CityID","CityName"), new { @class = "form-control" })</div>@Html.ValidationMessageFor(e => e.City, null, new { @class = "err_mgs" })</div>
+            <div class="col-lg-12"><div class="col-lg-3"><span>Country:</span></div><div class="col-lg-6">@Html.DropDownListFor(e => e.Country,new SelectList(Model.LCountry,"CountryId", "CountryName"), new { @class = "form-control" })</div>@Html.ValidationMessageFor(e => e.Country, null, new { @class = "err_mgs" })</div>
+        </div>
+        <div class="col-lg-12">
+            <div>
+                @*Google Maps*@
+            </div>
+            <div class="pad_1perdiv spn_lebl">
+                <div class="col-lg-12"><div class="col-lg-3"><span>Contact Person :</span></div><div class="col-lg-6">@Html.TextBoxFor(e => e.Contact, new { @class = "form-control" })</div></div>
+                <div class="col-lg-12"><div class="col-lg-3"><span>Telephone :</span></div><div class="col-lg-6">@Html.TextBoxFor(e => e.Phone, new { @class = "form-control" })</div>@Html.ValidationMessageFor(e => e.Phone, null, new { @class = "err_mgs" })</div>
+                <div class="col-lg-12"><div class="col-lg-3"><span>Fax :</span></div><div class="col-lg-6">@Html.TextBoxFor(e => e.Fax, new { @class = "form-control" })</div>@Html.ValidationMessageFor(e => e.Fax, null, new { @class = "err_mgs" })</div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="col-lg-3"><h5></h5></div>
+            <div class="btn-group-lg" role="group" aria-label="Large button group">
+                <div class="col-lg-1"><input type="submit" class="btn btn-default btn_inpt_sumbit" value="Save" /></div>
+                <div class="col-lg-1"><button type="button" class="btn btn-default btn_inpt_cancel">Cancel</button></div>
+            </div>
+        </div>
+    </div>
+}

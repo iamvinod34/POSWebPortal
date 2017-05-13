@@ -1,0 +1,2697 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="POSEntitieStoreContainer" CdmEntityContainer="POSEntities">
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="POSEntitie.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="POSEntitie.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserRoles">
+      <EntityTypeMapping TypeName="POSEntitie.AspNetUserRole">
+        <MappingFragment StoreEntitySet="AspNetUserRoles">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="Loc_Auth_Id" ColumnName="Loc_Auth_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="POSEntitie.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Loc_Auth_Id" ColumnName="Loc_Auth_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Category">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_Category">
+        <MappingFragment StoreEntitySet="tbl_Category">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryDesc" ColumnName="CategoryDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_City">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_City">
+        <MappingFragment StoreEntitySet="tbl_City">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Company">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_Company">
+        <MappingFragment StoreEntitySet="tbl_Company">
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="LongName" ColumnName="LongName" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="POBox" ColumnName="POBox" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="DefaultCurrency" ColumnName="DefaultCurrency" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Country">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_Country">
+        <MappingFragment StoreEntitySet="tbl_Country">
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Customer">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_Customer">
+        <MappingFragment StoreEntitySet="tbl_Customer">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Name1" ColumnName="Name1" />
+          <ScalarProperty Name="Name2" ColumnName="Name2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="POBox" ColumnName="POBox" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="CreditLimit" ColumnName="CreditLimit" />
+          <ScalarProperty Name="CustInt1" ColumnName="CustInt1" />
+          <ScalarProperty Name="CustInt2" ColumnName="CustInt2" />
+          <ScalarProperty Name="CustInt3" ColumnName="CustInt3" />
+          <ScalarProperty Name="CustText1" ColumnName="CustText1" />
+          <ScalarProperty Name="CustText2" ColumnName="CustText2" />
+          <ScalarProperty Name="CustText3" ColumnName="CustText3" />
+          <ScalarProperty Name="CustType" ColumnName="CustType" />
+          <ScalarProperty Name="TotalDue" ColumnName="TotalDue" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_CustType">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_CustType">
+        <MappingFragment StoreEntitySet="tbl_CustType">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CustType" ColumnName="CustType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_EnquiryAuthentication">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_EnquiryAuthentication">
+        <MappingFragment StoreEntitySet="tbl_EnquiryAuthentication">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Loc_Auth_Id" ColumnName="Loc_Auth_Id" />
+          <ScalarProperty Name="SalesOrder" ColumnName="SalesOrder" />
+          <ScalarProperty Name="POReceive" ColumnName="POReceive" />
+          <ScalarProperty Name="ReturnToSupplier" ColumnName="ReturnToSupplier" />
+          <ScalarProperty Name="TranfterToDisplay" ColumnName="TranfterToDisplay" />
+          <ScalarProperty Name="PhysicalInventory" ColumnName="PhysicalInventory" />
+          <ScalarProperty Name="TransfterIN" ColumnName="TransfterIN" />
+          <ScalarProperty Name="TransfterOUT" ColumnName="TransfterOUT" />
+          <ScalarProperty Name="EOD" ColumnName="EOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_EODFile">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_EODFile">
+        <MappingFragment StoreEntitySet="tbl_EODFile">
+          <ScalarProperty Name="SNO" ColumnName="SNO" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="TerminalId" ColumnName="TerminalId" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="EODID" ColumnName="EODID" />
+          <ScalarProperty Name="FileByte" ColumnName="FileByte" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ImageDetails">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_ImageDetails">
+        <MappingFragment StoreEntitySet="tbl_ImageDetails">
+          <ScalarProperty Name="ImageDetailsID" ColumnName="ImageDetailsID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="RowCreatedDate" ColumnName="RowCreatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Location">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_Location">
+        <MappingFragment StoreEntitySet="tbl_Location">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="POBox" ColumnName="POBox" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="CostCenter" ColumnName="CostCenter" />
+          <ScalarProperty Name="BusinessArea" ColumnName="BusinessArea" />
+          <ScalarProperty Name="FieldArea" ColumnName="FieldArea" />
+          <ScalarProperty Name="CashLoan" ColumnName="CashLoan" />
+          <ScalarProperty Name="CustInt1" ColumnName="CustInt1" />
+          <ScalarProperty Name="CustInt2" ColumnName="CustInt2" />
+          <ScalarProperty Name="CustInt3" ColumnName="CustInt3" />
+          <ScalarProperty Name="CustText1" ColumnName="CustText1" />
+          <ScalarProperty Name="CustText2" ColumnName="CustText2" />
+          <ScalarProperty Name="CustText3" ColumnName="CustText3" />
+          <ScalarProperty Name="TfrDisplay" ColumnName="TfrDisplay" />
+          <ScalarProperty Name="POReceive" ColumnName="POReceive" />
+          <ScalarProperty Name="TfrIn" ColumnName="TfrIn" />
+          <ScalarProperty Name="TfrOut" ColumnName="TfrOut" />
+          <ScalarProperty Name="RtnVendor" ColumnName="RtnVendor" />
+          <ScalarProperty Name="PhyCount" ColumnName="PhyCount" />
+          <ScalarProperty Name="Prod_Order" ColumnName="Prod_Order" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_LocationAuthentication">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_LocationAuthentication">
+        <MappingFragment StoreEntitySet="tbl_LocationAuthentication">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="User_Locations" ColumnName="User_Locations" />
+          <ScalarProperty Name="Manager_Locations" ColumnName="Manager_Locations" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_LocationPrice">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_LocationPrice">
+        <MappingFragment StoreEntitySet="tbl_LocationPrice">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="EAN13" ColumnName="EAN13" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="CustType" ColumnName="CustType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_LocationPrice_Temp">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_LocationPrice_Temp">
+        <MappingFragment StoreEntitySet="tbl_LocationPrice_Temp">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="EAN13" ColumnName="EAN13" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="TerminalID" ColumnName="TerminalID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ManagerUserAuthentication">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_ManagerUserAuthentication">
+        <MappingFragment StoreEntitySet="tbl_ManagerUserAuthentication">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MID" ColumnName="MID" />
+          <ScalarProperty Name="User_EmailID" ColumnName="User_EmailID" />
+          <ScalarProperty Name="Manager_EmailID" ColumnName="Manager_EmailID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_MasterDataAuthentication">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_MasterDataAuthentication">
+        <MappingFragment StoreEntitySet="tbl_MasterDataAuthentication">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Loc_Auth_Id" ColumnName="Loc_Auth_Id" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Terminal" ColumnName="Terminal" />
+          <ScalarProperty Name="Storage" ColumnName="Storage" />
+          <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+          <ScalarProperty Name="Customer" ColumnName="Customer" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="SubCategory" ColumnName="SubCategory" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="Material" ColumnName="Material" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="LocationPrice" ColumnName="LocationPrice" />
+          <ScalarProperty Name="Users" ColumnName="Users" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Material">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_Material">
+        <MappingFragment StoreEntitySet="tbl_Material">
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="MaterialDesc1" ColumnName="MaterialDesc1" />
+          <ScalarProperty Name="MaterialDesc2" ColumnName="MaterialDesc2" />
+          <ScalarProperty Name="MaterialDesc3" ColumnName="MaterialDesc3" />
+          <ScalarProperty Name="ProductURL" ColumnName="ProductURL" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+          <ScalarProperty Name="BaseUOM" ColumnName="BaseUOM" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="CustInt1" ColumnName="CustInt1" />
+          <ScalarProperty Name="CustInt2" ColumnName="CustInt2" />
+          <ScalarProperty Name="CustInt3" ColumnName="CustInt3" />
+          <ScalarProperty Name="CustDate1" ColumnName="CustDate1" />
+          <ScalarProperty Name="CustDate2" ColumnName="CustDate2" />
+          <ScalarProperty Name="CustDate3" ColumnName="CustDate3" />
+          <ScalarProperty Name="CustText1" ColumnName="CustText1" />
+          <ScalarProperty Name="CustText2" ColumnName="CustText2" />
+          <ScalarProperty Name="CustText3" ColumnName="CustText3" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="UpdDate" ColumnName="UpdDate" />
+          <ScalarProperty Name="Dataid" ColumnName="Dataid" />
+          <ScalarProperty Name="Sales_Comm" ColumnName="Sales_Comm" />
+          <ScalarProperty Name="Produc_Comm" ColumnName="Produc_Comm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Material_Temp">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_Material_Temp">
+        <MappingFragment StoreEntitySet="tbl_Material_Temp">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="MaterialDesc1" ColumnName="MaterialDesc1" />
+          <ScalarProperty Name="MaterialDesc2" ColumnName="MaterialDesc2" />
+          <ScalarProperty Name="MaterialDesc3" ColumnName="MaterialDesc3" />
+          <ScalarProperty Name="ProductURL" ColumnName="ProductURL" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+          <ScalarProperty Name="BaseUOM" ColumnName="BaseUOM" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="CustInt1" ColumnName="CustInt1" />
+          <ScalarProperty Name="CustInt2" ColumnName="CustInt2" />
+          <ScalarProperty Name="CustInt3" ColumnName="CustInt3" />
+          <ScalarProperty Name="CustDate1" ColumnName="CustDate1" />
+          <ScalarProperty Name="CustDate2" ColumnName="CustDate2" />
+          <ScalarProperty Name="CustDate3" ColumnName="CustDate3" />
+          <ScalarProperty Name="CustText1" ColumnName="CustText1" />
+          <ScalarProperty Name="CustText2" ColumnName="CustText2" />
+          <ScalarProperty Name="CustText3" ColumnName="CustText3" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="UpdDate" ColumnName="UpdDate" />
+          <ScalarProperty Name="TerminalID" ColumnName="TerminalID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_MaterialEAN">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_MaterialEAN">
+        <MappingFragment StoreEntitySet="tbl_MaterialEAN">
+          <ScalarProperty Name="EAN13" ColumnName="EAN13" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="ConvertValue" ColumnName="ConvertValue" />
+          <ScalarProperty Name="BaseUOM" ColumnName="BaseUOM" />
+          <ScalarProperty Name="MaterialMix" ColumnName="MaterialMix" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_MaterialEAN_Temp">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_MaterialEAN_Temp">
+        <MappingFragment StoreEntitySet="tbl_MaterialEAN_Temp">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="EAN13" ColumnName="EAN13" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="ConvertValue" ColumnName="ConvertValue" />
+          <ScalarProperty Name="BaseUOM" ColumnName="BaseUOM" />
+          <ScalarProperty Name="MaterialMix" ColumnName="MaterialMix" />
+          <ScalarProperty Name="TerminalID" ColumnName="TerminalID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_MaterialKit">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_MaterialKit">
+        <MappingFragment StoreEntitySet="tbl_MaterialKit">
+          <ScalarProperty Name="KitID" ColumnName="KitID" />
+          <ScalarProperty Name="KitDescription" ColumnName="KitDescription" />
+          <ScalarProperty Name="MaterialLess" ColumnName="MaterialLess" />
+          <ScalarProperty Name="UOMLess" ColumnName="UOMLess" />
+          <ScalarProperty Name="QuantityLess" ColumnName="QuantityLess" />
+          <ScalarProperty Name="MaterialAdd" ColumnName="MaterialAdd" />
+          <ScalarProperty Name="UOMAdd" ColumnName="UOMAdd" />
+          <ScalarProperty Name="QuantityAdd" ColumnName="QuantityAdd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_PhoneCode">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_PhoneCode">
+        <MappingFragment StoreEntitySet="tbl_PhoneCode">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PhoneCode" ColumnName="PhoneCode" />
+          <ScalarProperty Name="PhoneDigits" ColumnName="PhoneDigits" />
+          <ScalarProperty Name="PhoneDescription" ColumnName="PhoneDescription" />
+          <ScalarProperty Name="Conread" ColumnName="Conread" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_PI_TimeTable">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_PI_TimeTable">
+        <MappingFragment StoreEntitySet="tbl_PI_TimeTable">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PI_KeyWord" ColumnName="PI_KeyWord" />
+          <ScalarProperty Name="PI_Description" ColumnName="PI_Description" />
+          <ScalarProperty Name="Days" ColumnName="Days" />
+          <ScalarProperty Name="PI_DateTime" ColumnName="PI_DateTime" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="TerminalID" ColumnName="TerminalID" />
+          <ScalarProperty Name="ConRead" ColumnName="ConRead" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_POS_Logs">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_POS_Logs">
+        <MappingFragment StoreEntitySet="tbl_POS_Logs">
+          <ScalarProperty Name="LogID" ColumnName="LogID" />
+          <ScalarProperty Name="Proc_Name" ColumnName="Proc_Name" />
+          <ScalarProperty Name="Parameters" ColumnName="Parameters" />
+          <ScalarProperty Name="Error_Message" ColumnName="Error_Message" />
+          <ScalarProperty Name="Row_Created_Date" ColumnName="Row_Created_Date" />
+          <ScalarProperty Name="Error_Number" ColumnName="Error_Number" />
+          <ScalarProperty Name="Error_Line" ColumnName="Error_Line" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_POSException">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_POSException">
+        <MappingFragment StoreEntitySet="tbl_POSException">
+          <ScalarProperty Name="POSExceptionID" ColumnName="POSExceptionID" />
+          <ScalarProperty Name="ExceptionType" ColumnName="ExceptionType" />
+          <ScalarProperty Name="ExceptionModule" ColumnName="ExceptionModule" />
+          <ScalarProperty Name="ExceptionCode" ColumnName="ExceptionCode" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="QueryString" ColumnName="QueryString" />
+          <ScalarProperty Name="TargetSite" ColumnName="TargetSite" />
+          <ScalarProperty Name="StrackTrace" ColumnName="StrackTrace" />
+          <ScalarProperty Name="ServerName" ColumnName="ServerName" />
+          <ScalarProperty Name="UserAgent" ColumnName="UserAgent" />
+          <ScalarProperty Name="UserIP" ColumnName="UserIP" />
+          <ScalarProperty Name="UserAuthentication" ColumnName="UserAuthentication" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="RequestUrl" ColumnName="RequestUrl" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="RowCreatedDateTime" ColumnName="RowCreatedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_PreferUOM">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_PreferUOM">
+        <MappingFragment StoreEntitySet="tbl_PreferUOM">
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="EAN13" ColumnName="EAN13" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="Conv" ColumnName="Conv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_PreferUOM_Temp">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_PreferUOM_Temp">
+        <MappingFragment StoreEntitySet="tbl_PreferUOM_Temp">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="EAN13" ColumnName="EAN13" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="Conv" ColumnName="Conv" />
+          <ScalarProperty Name="TerminalID" ColumnName="TerminalID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_PriceFile">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_PriceFile">
+        <MappingFragment StoreEntitySet="tbl_PriceFile">
+          <ScalarProperty Name="EAN13" ColumnName="EAN13" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="CustType" ColumnName="CustType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_PriceFile_Temp">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_PriceFile_Temp">
+        <MappingFragment StoreEntitySet="tbl_PriceFile_Temp">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="EAN13" ColumnName="EAN13" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="TerminalID" ColumnName="TerminalID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ProductionOrder">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_ProductionOrder">
+        <MappingFragment StoreEntitySet="tbl_ProductionOrder">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="PONumber" ColumnName="PONumber" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="DocDetail" ColumnName="DocDetail" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="Dataid" ColumnName="Dataid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ProductionOrder_Detail">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_ProductionOrder_Detail">
+        <MappingFragment StoreEntitySet="tbl_ProductionOrder_Detail">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="PostingType" ColumnName="PostingType" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="Counter" ColumnName="Counter" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="TranQty" ColumnName="TranQty" />
+          <ScalarProperty Name="BaseQty" ColumnName="BaseQty" />
+          <ScalarProperty Name="CreditQty" ColumnName="CreditQty" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="DiscountRate" ColumnName="DiscountRate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CreditAmount" ColumnName="CreditAmount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PostKey" ColumnName="PostKey" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="UpdDate" ColumnName="UpdDate" />
+          <ScalarProperty Name="Dataid" ColumnName="Dataid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ProductionOrderRequest">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_ProductionOrderRequest">
+        <MappingFragment StoreEntitySet="tbl_ProductionOrderRequest">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="PONumber" ColumnName="PONumber" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="DocDetail" ColumnName="DocDetail" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="Dataid" ColumnName="Dataid" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ProductionOrderRequest_Detail">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_ProductionOrderRequest_Detail">
+        <MappingFragment StoreEntitySet="tbl_ProductionOrderRequest_Detail">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="PostingType" ColumnName="PostingType" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="Counter" ColumnName="Counter" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="TranQty" ColumnName="TranQty" />
+          <ScalarProperty Name="BaseQty" ColumnName="BaseQty" />
+          <ScalarProperty Name="CreditQty" ColumnName="CreditQty" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="DiscountRate" ColumnName="DiscountRate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CreditAmount" ColumnName="CreditAmount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PostKey" ColumnName="PostKey" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="UpdDate" ColumnName="UpdDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TransDelQty" ColumnName="TransDelQty" />
+          <ScalarProperty Name="BaseDelQty" ColumnName="BaseDelQty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_PurchaseOrder">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_PurchaseOrder">
+        <MappingFragment StoreEntitySet="tbl_PurchaseOrder">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="PODescription" ColumnName="PODescription" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="NetValue" ColumnName="NetValue" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="Dataid" ColumnName="Dataid" />
+          <ScalarProperty Name="POStatus" ColumnName="POStatus" />
+          <ScalarProperty Name="ReferID" ColumnName="ReferID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_PurchaseOrder_Detail">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_PurchaseOrder_Detail">
+        <MappingFragment StoreEntitySet="tbl_PurchaseOrder_Detail">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="PostingType" ColumnName="PostingType" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="Counter" ColumnName="Counter" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="TranQty" ColumnName="TranQty" />
+          <ScalarProperty Name="BaseQty" ColumnName="BaseQty" />
+          <ScalarProperty Name="CreditQty" ColumnName="CreditQty" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="DiscountRate" ColumnName="DiscountRate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CreditAmount" ColumnName="CreditAmount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PostKey" ColumnName="PostKey" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="UpdDate" ColumnName="UpdDate" />
+          <ScalarProperty Name="Dataid" ColumnName="Dataid" />
+          <ScalarProperty Name="ReferID" ColumnName="ReferID" />
+          <ScalarProperty Name="ReferCount" ColumnName="ReferCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Region">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_Region">
+        <MappingFragment StoreEntitySet="tbl_Region">
+          <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+          <ScalarProperty Name="RegionName" ColumnName="RegionName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SetupAuthentication">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_SetupAuthentication">
+        <MappingFragment StoreEntitySet="tbl_SetupAuthentication">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Loc_Auth_Id" ColumnName="Loc_Auth_Id" />
+          <ScalarProperty Name="ChangePassword" ColumnName="ChangePassword" />
+          <ScalarProperty Name="AddUsers" ColumnName="AddUsers" />
+          <ScalarProperty Name="UsersAuthentication" ColumnName="UsersAuthentication" />
+          <ScalarProperty Name="Reports" ColumnName="Reports" />
+          <ScalarProperty Name="ProductionOrderStatusReport" ColumnName="ProductionOrderStatusReport" />
+          <ScalarProperty Name="LostOpporTunitySalesReport" ColumnName="LostOpporTunitySalesReport" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_StockReceive">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_StockReceive">
+        <MappingFragment StoreEntitySet="tbl_StockReceive">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="PONumber" ColumnName="PONumber" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="DocDetail" ColumnName="DocDetail" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="NetValue" ColumnName="NetValue" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="Dataid" ColumnName="Dataid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_StockReceive_Detail">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_StockReceive_Detail">
+        <MappingFragment StoreEntitySet="tbl_StockReceive_Detail">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="PostingType" ColumnName="PostingType" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="Counter" ColumnName="Counter" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="TranQty" ColumnName="TranQty" />
+          <ScalarProperty Name="BaseQty" ColumnName="BaseQty" />
+          <ScalarProperty Name="CreditQty" ColumnName="CreditQty" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="DiscountRate" ColumnName="DiscountRate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CreditAmount" ColumnName="CreditAmount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PostKey" ColumnName="PostKey" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="UpdDate" ColumnName="UpdDate" />
+          <ScalarProperty Name="Dataid" ColumnName="Dataid" />
+          <ScalarProperty Name="OrderQty" ColumnName="OrderQty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_TempDetail">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_TempDetail">
+        <MappingFragment StoreEntitySet="tbl_TempDetail">
+          <ScalarProperty Name="TempDetailID" ColumnName="TempDetailID" />
+          <ScalarProperty Name="TempMasterID" ColumnName="TempMasterID" />
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="PostingType" ColumnName="PostingType" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="Counter" ColumnName="Counter" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="TranQty" ColumnName="TranQty" />
+          <ScalarProperty Name="BaseQty" ColumnName="BaseQty" />
+          <ScalarProperty Name="CreditQty" ColumnName="CreditQty" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="DiscountRate" ColumnName="DiscountRate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CreditAmount" ColumnName="CreditAmount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PostKey" ColumnName="PostKey" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="UpdDate" ColumnName="UpdDate" />
+          <ScalarProperty Name="OrderQty" ColumnName="OrderQty" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_TempMaster">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_TempMaster">
+        <MappingFragment StoreEntitySet="tbl_TempMaster">
+          <ScalarProperty Name="TempMasterID" ColumnName="TempMasterID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="PONumber" ColumnName="PONumber" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="DocDetail" ColumnName="DocDetail" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="NetValue" ColumnName="NetValue" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="Filter" ColumnName="Filter" />
+          <ScalarProperty Name="Filter_Id" ColumnName="Filter_Id" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="TLocationID" ColumnName="TLocationID" />
+          <ScalarProperty Name="TStorageID" ColumnName="TStorageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Terminal">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_Terminal">
+        <MappingFragment StoreEntitySet="tbl_Terminal">
+          <ScalarProperty Name="TerminalID" ColumnName="TerminalID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_TransferIN">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_TransferIN">
+        <MappingFragment StoreEntitySet="tbl_TransferIN">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="PONumber" ColumnName="PONumber" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="DocDetail" ColumnName="DocDetail" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="NetValue" ColumnName="NetValue" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="Dataid" ColumnName="Dataid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_TransferIN_Detail">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_TransferIN_Detail">
+        <MappingFragment StoreEntitySet="tbl_TransferIN_Detail">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="PostingType" ColumnName="PostingType" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="Counter" ColumnName="Counter" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="TranQty" ColumnName="TranQty" />
+          <ScalarProperty Name="BaseQty" ColumnName="BaseQty" />
+          <ScalarProperty Name="CreditQty" ColumnName="CreditQty" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="DiscountRate" ColumnName="DiscountRate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CreditAmount" ColumnName="CreditAmount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PostKey" ColumnName="PostKey" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="UpdDate" ColumnName="UpdDate" />
+          <ScalarProperty Name="Dataid" ColumnName="Dataid" />
+          <ScalarProperty Name="OrderQty" ColumnName="OrderQty" />
+          <ScalarProperty Name="From_LocationID" ColumnName="From_LocationID" />
+          <ScalarProperty Name="From_StorageID" ColumnName="From_StorageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_TransferOut">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_TransferOut">
+        <MappingFragment StoreEntitySet="tbl_TransferOut">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="PONumber" ColumnName="PONumber" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="DocDetail" ColumnName="DocDetail" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="NetValue" ColumnName="NetValue" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="Dataid" ColumnName="Dataid" />
+          <ScalarProperty Name="TO_Status" ColumnName="TO_Status" />
+          <ScalarProperty Name="To_LocationID" ColumnName="To_LocationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_TransferOut_Detail">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_TransferOut_Detail">
+        <MappingFragment StoreEntitySet="tbl_TransferOut_Detail">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="PostingType" ColumnName="PostingType" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="Counter" ColumnName="Counter" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="TranQty" ColumnName="TranQty" />
+          <ScalarProperty Name="BaseQty" ColumnName="BaseQty" />
+          <ScalarProperty Name="CreditQty" ColumnName="CreditQty" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="DiscountRate" ColumnName="DiscountRate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CreditAmount" ColumnName="CreditAmount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PostKey" ColumnName="PostKey" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="UpdDate" ColumnName="UpdDate" />
+          <ScalarProperty Name="Dataid" ColumnName="Dataid" />
+          <ScalarProperty Name="TO_LocationID" ColumnName="TO_LocationID" />
+          <ScalarProperty Name="FROM_LOCATIONID" ColumnName="FROM_LOCATIONID" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
+          <ScalarProperty Name="TO_StorageID" ColumnName="TO_StorageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_TrasactionsAuthentication">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_TrasactionsAuthentication">
+        <MappingFragment StoreEntitySet="tbl_TrasactionsAuthentication">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Loc_Auth_Id" ColumnName="Loc_Auth_Id" />
+          <ScalarProperty Name="SalesOrder" ColumnName="SalesOrder" />
+          <ScalarProperty Name="POReceive" ColumnName="POReceive" />
+          <ScalarProperty Name="ReturnToSupplier" ColumnName="ReturnToSupplier" />
+          <ScalarProperty Name="TranfterToDisplay" ColumnName="TranfterToDisplay" />
+          <ScalarProperty Name="TransfterIN" ColumnName="TransfterIN" />
+          <ScalarProperty Name="TransfterOUT" ColumnName="TransfterOUT" />
+          <ScalarProperty Name="PhysicalInventory" ColumnName="PhysicalInventory" />
+          <ScalarProperty Name="PuchaseOrder" ColumnName="PuchaseOrder" />
+          <ScalarProperty Name="CashCollection" ColumnName="CashCollection" />
+          <ScalarProperty Name="ProductionOrder" ColumnName="ProductionOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_UOM">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_UOM">
+        <MappingFragment StoreEntitySet="tbl_UOM">
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="UOMDesc" ColumnName="UOMDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Users">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_Users">
+        <MappingFragment StoreEntitySet="tbl_Users">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="Payment" ColumnName="Payment" />
+          <ScalarProperty Name="ReturnInv" ColumnName="ReturnInv" />
+          <ScalarProperty Name="ReturnNoInv" ColumnName="ReturnNoInv" />
+          <ScalarProperty Name="DeleteInv" ColumnName="DeleteInv" />
+          <ScalarProperty Name="Cash" ColumnName="Cash" />
+          <ScalarProperty Name="CreditCard" ColumnName="CreditCard" />
+          <ScalarProperty Name="DebitCard" ColumnName="DebitCard" />
+          <ScalarProperty Name="OnAccount" ColumnName="OnAccount" />
+          <ScalarProperty Name="Den1" ColumnName="Den1" />
+          <ScalarProperty Name="Den5" ColumnName="Den5" />
+          <ScalarProperty Name="Den10" ColumnName="Den10" />
+          <ScalarProperty Name="Den20" ColumnName="Den20" />
+          <ScalarProperty Name="Den50" ColumnName="Den50" />
+          <ScalarProperty Name="Den100" ColumnName="Den100" />
+          <ScalarProperty Name="Den500" ColumnName="Den500" />
+          <ScalarProperty Name="HoldInv" ColumnName="HoldInv" />
+          <ScalarProperty Name="unholdInv" ColumnName="unholdInv" />
+          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+          <ScalarProperty Name="Inventory" ColumnName="Inventory" />
+          <ScalarProperty Name="POReceive" ColumnName="POReceive" />
+          <ScalarProperty Name="ReturnSupp" ColumnName="ReturnSupp" />
+          <ScalarProperty Name="TransferDisp" ColumnName="TransferDisp" />
+          <ScalarProperty Name="TransferIn" ColumnName="TransferIn" />
+          <ScalarProperty Name="TransferOut" ColumnName="TransferOut" />
+          <ScalarProperty Name="PhyInventory" ColumnName="PhyInventory" />
+          <ScalarProperty Name="StockReport" ColumnName="StockReport" />
+          <ScalarProperty Name="Settingbutt" ColumnName="Settingbutt" />
+          <ScalarProperty Name="PrinterSetup" ColumnName="PrinterSetup" />
+          <ScalarProperty Name="EOD" ColumnName="EOD" />
+          <ScalarProperty Name="FavoritePannel" ColumnName="FavoritePannel" />
+          <ScalarProperty Name="LockUser" ColumnName="LockUser" />
+          <ScalarProperty Name="DeleteItem" ColumnName="DeleteItem" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="OrderButton" ColumnName="OrderButton" />
+          <ScalarProperty Name="OrderTextBox" ColumnName="OrderTextBox" />
+          <ScalarProperty Name="SampleButton" ColumnName="SampleButton" />
+          <ScalarProperty Name="MaterialMenu" ColumnName="MaterialMenu" />
+          <ScalarProperty Name="ItemCardReportButton" ColumnName="ItemCardReportButton" />
+          <ScalarProperty Name="ProductionOrder" ColumnName="ProductionOrder" />
+          <ScalarProperty Name="Register" ColumnName="Register" />
+          <ScalarProperty Name="TranfterOutToLocationID" ColumnName="TranfterOutToLocationID" />
+          <ScalarProperty Name="Button_Delivery" ColumnName="Button_Delivery" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ConRead" ColumnName="ConRead" />
+          <ScalarProperty Name="DeleteUserId" ColumnName="DeleteUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Vendor">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_Vendor">
+        <MappingFragment StoreEntitySet="tbl_Vendor">
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="Name1" ColumnName="Name1" />
+          <ScalarProperty Name="Name2" ColumnName="Name2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="POBox" ColumnName="POBox" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="CustInt1" ColumnName="CustInt1" />
+          <ScalarProperty Name="CustInt2" ColumnName="CustInt2" />
+          <ScalarProperty Name="CustInt3" ColumnName="CustInt3" />
+          <ScalarProperty Name="CustText1" ColumnName="CustText1" />
+          <ScalarProperty Name="CustText2" ColumnName="CustText2" />
+          <ScalarProperty Name="CustText3" ColumnName="CustText3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_WebUsers">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_WebUsers">
+        <MappingFragment StoreEntitySet="tbl_WebUsers">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_TransfterDisplayDateTime">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_TransfterDisplayDateTime">
+        <MappingFragment StoreEntitySet="tbl_TransfterDisplayDateTime">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Warning1" ColumnName="Warning1" />
+          <ScalarProperty Name="Warning2" ColumnName="Warning2" />
+          <ScalarProperty Name="Warning3" ColumnName="Warning3" />
+          <ScalarProperty Name="Warning1Status" ColumnName="Warning1Status" />
+          <ScalarProperty Name="Warning2Status" ColumnName="Warning2Status" />
+          <ScalarProperty Name="Warning3Status" ColumnName="Warning3Status" />
+          <ScalarProperty Name="TDDocumentID" ColumnName="TDDocumentID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="WLDbStatus" ColumnName="WLDbStatus" />
+          <ScalarProperty Name="LDbStatus" ColumnName="LDbStatus" />
+          <ScalarProperty Name="SysDateTime" ColumnName="SysDateTime" />
+          <ScalarProperty Name="TDDocumentIDStatus" ColumnName="TDDocumentIDStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionName="POSEntitie.Store.CSVToTable" FunctionImportName="CSVToTable">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.CSVToTable_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="POSEntitie.Store.f_split" FunctionImportName="f_split">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.f_split_Result">
+          <ScalarProperty Name="val" ColumnName="val" />
+          <ScalarProperty Name="seq" ColumnName="seq" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="POSEntitie.Store.fun_LocationSplit" FunctionImportName="fun_LocationSplit">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.fun_LocationSplit_Result">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_AllDocumentPrint" FunctionName="POSEntitie.Store.Proc_AllDocumentPrint">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_AllDocumentPrint_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="PODocumentID" ColumnName="PODocumentID" />
+          <ScalarProperty Name="POStatus" ColumnName="POStatus" />
+          <ScalarProperty Name="POUserID" ColumnName="POUserID" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="Name1" ColumnName="Name1" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="MaterialDesc1" ColumnName="MaterialDesc1" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="OrderQty" ColumnName="OrderQty" />
+          <ScalarProperty Name="TranQty" ColumnName="TranQty" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="PostKey" ColumnName="PostKey" />
+          <ScalarProperty Name="FilterName" ColumnName="FilterName" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="PostingType" ColumnName="PostingType" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="Counter" ColumnName="Counter" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="BaseQty" ColumnName="BaseQty" />
+          <ScalarProperty Name="CreditQty" ColumnName="CreditQty" />
+          <ScalarProperty Name="DiscountRate" ColumnName="DiscountRate" />
+          <ScalarProperty Name="CreditAmount" ColumnName="CreditAmount" />
+          <ScalarProperty Name="Filter" ColumnName="Filter" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="UpdDate" ColumnName="UpdDate" />
+          <ScalarProperty Name="FromLocation" ColumnName="FromLocation" />
+          <ScalarProperty Name="ToLocation" ColumnName="ToLocation" />
+          <ScalarProperty Name="FromStorageId" ColumnName="FromStorageId" />
+          <ScalarProperty Name="ToStorageId" ColumnName="ToStorageId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_AspNetManagerLocations" FunctionName="POSEntitie.Store.Proc_AspNetManagerLocations">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_AspNetManagerLocations_Result">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_AspNetUsersLocations" FunctionName="POSEntitie.Store.Proc_AspNetUsersLocations">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_AspNetUsersLocations_Result">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_CashCollection" FunctionName="POSEntitie.Store.Proc_CashCollection">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_CashCollection_Result">
+          <ScalarProperty Name="EODID" ColumnName="EODID" />
+          <ScalarProperty Name="TerminialID" ColumnName="TerminialID" />
+          <ScalarProperty Name="DocDate" ColumnName="DocDate" />
+          <ScalarProperty Name="Loan" ColumnName="Loan" />
+          <ScalarProperty Name="SystemCash" ColumnName="SystemCash" />
+          <ScalarProperty Name="ActualCash" ColumnName="ActualCash" />
+          <ScalarProperty Name="Cash_Collection" ColumnName="Cash_Collection" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_DeactiveCustomerRegistration" FunctionName="POSEntitie.Store.Proc_DeactiveCustomerRegistration" />
+    <FunctionImportMapping FunctionImportName="Proc_DeleteMasterCategory" FunctionName="POSEntitie.Store.Proc_DeleteMasterCategory" />
+    <FunctionImportMapping FunctionImportName="Proc_DeleteMasterLocation" FunctionName="POSEntitie.Store.Proc_DeleteMasterLocation" />
+    <FunctionImportMapping FunctionImportName="Proc_DeleteMasterMaterial" FunctionName="POSEntitie.Store.Proc_DeleteMasterMaterial" />
+    <FunctionImportMapping FunctionImportName="Proc_DeleteMasterStorage" FunctionName="POSEntitie.Store.Proc_DeleteMasterStorage" />
+    <FunctionImportMapping FunctionImportName="Proc_DeleteMasterSubCategory" FunctionName="POSEntitie.Store.Proc_DeleteMasterSubCategory" />
+    <FunctionImportMapping FunctionImportName="Proc_DeleteMasterTerminal" FunctionName="POSEntitie.Store.Proc_DeleteMasterTerminal" />
+    <FunctionImportMapping FunctionImportName="Proc_DeleteMasterVendor" FunctionName="POSEntitie.Store.Proc_DeleteMasterVendor" />
+    <FunctionImportMapping FunctionImportName="Proc_DeleteProductionOrderRequest_Detail" FunctionName="POSEntitie.Store.Proc_DeleteProductionOrderRequest_Detail" />
+    <FunctionImportMapping FunctionImportName="Proc_DocumentdetailsTenderDetails" FunctionName="POSEntitie.Store.Proc_DocumentdetailsTenderDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_DocumentdetailsTenderDetails_Result">
+          <ScalarProperty Name="DocDetail" ColumnName="DocDetail" />
+          <ScalarProperty Name="MaterialDesc1" ColumnName="MaterialDesc1" />
+          <ScalarProperty Name="MaterialDesc2" ColumnName="MaterialDesc2" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="SDAmount" ColumnName="SDAmount" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="RtnQty" ColumnName="RtnQty" />
+          <ScalarProperty Name="TerminalID" ColumnName="TerminalID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ChangeAmount" ColumnName="ChangeAmount" />
+          <ScalarProperty Name="PaidAmount" ColumnName="PaidAmount" />
+          <ScalarProperty Name="TenderID" ColumnName="TenderID" />
+          <ScalarProperty Name="TransCode" ColumnName="TransCode" />
+          <ScalarProperty Name="SalesOrder" ColumnName="SalesOrder" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_EodByIdFile" FunctionName="POSEntitie.Store.Proc_EodByIdFile">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_EodByIdFile_Result">
+          <ScalarProperty Name="EODID" ColumnName="EODID" />
+          <ScalarProperty Name="FileByte" ColumnName="FileByte" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_ExecMasterMaterial" FunctionName="POSEntitie.Store.Proc_ExecMasterMaterial" />
+    <FunctionImportMapping FunctionImportName="Proc_FilterPOReceive" FunctionName="POSEntitie.Store.Proc_FilterPOReceive">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_FilterPOReceive_Result">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_FilterReturnORTransferORPhysicalORTransInORTransOUT" FunctionName="POSEntitie.Store.Proc_FilterReturnORTransferORPhysicalORTransInORTransOUT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_FilterReturnORTransferORPhysicalORTransInORTransOUT_Result">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_GetAllLTerminal" FunctionName="POSEntitie.Store.Proc_GetAllLTerminal">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_GetAllLTerminal_Result">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="TerminalID" ColumnName="TerminalID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="City" ColumnName="City" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_GetMasterCategory" FunctionName="POSEntitie.Store.Proc_GetMasterCategory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_GetMasterCategory_Result">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryDesc" ColumnName="CategoryDesc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_GetMasterMaterial" FunctionName="POSEntitie.Store.Proc_GetMasterMaterial">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_GetMasterMaterial_Result">
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="MaterialDesc1" ColumnName="MaterialDesc1" />
+          <ScalarProperty Name="MaterialDesc2" ColumnName="MaterialDesc2" />
+          <ScalarProperty Name="MaterialDesc3" ColumnName="MaterialDesc3" />
+          <ScalarProperty Name="ProductURL" ColumnName="ProductURL" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+          <ScalarProperty Name="BaseUOM" ColumnName="BaseUOM" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="CustInt1" ColumnName="CustInt1" />
+          <ScalarProperty Name="CustInt2" ColumnName="CustInt2" />
+          <ScalarProperty Name="CustInt3" ColumnName="CustInt3" />
+          <ScalarProperty Name="CustDate1" ColumnName="CustDate1" />
+          <ScalarProperty Name="CustDate2" ColumnName="CustDate2" />
+          <ScalarProperty Name="CustDate3" ColumnName="CustDate3" />
+          <ScalarProperty Name="CustText1" ColumnName="CustText1" />
+          <ScalarProperty Name="CustText2" ColumnName="CustText2" />
+          <ScalarProperty Name="CustText3" ColumnName="CustText3" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="UpdDate" ColumnName="UpdDate" />
+          <ScalarProperty Name="Dataid" ColumnName="Dataid" />
+          <ScalarProperty Name="Sales_Comm" ColumnName="Sales_Comm" />
+          <ScalarProperty Name="Produc_Comm" ColumnName="Produc_Comm" />
+          <ScalarProperty Name="Name1" ColumnName="Name1" />
+          <ScalarProperty Name="SubCategoryDesc" ColumnName="SubCategoryDesc" />
+          <ScalarProperty Name="CategoryDesc" ColumnName="CategoryDesc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_GetMasterStorage" FunctionName="POSEntitie.Store.Proc_GetMasterStorage">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_GetMasterStorage_Result">
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="StorageName" ColumnName="StorageName" />
+          <ScalarProperty Name="StorageType" ColumnName="StorageType" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_GetMasterTerminal" FunctionName="POSEntitie.Store.Proc_GetMasterTerminal">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_GetMasterTerminal_Result">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="TerminalID" ColumnName="TerminalID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_GetMasterVendor" FunctionName="POSEntitie.Store.Proc_GetMasterVendor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_GetMasterVendor_Result">
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="Name1" ColumnName="Name1" />
+          <ScalarProperty Name="Name2" ColumnName="Name2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="POBox" ColumnName="POBox" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="CustInt1" ColumnName="CustInt1" />
+          <ScalarProperty Name="CustInt2" ColumnName="CustInt2" />
+          <ScalarProperty Name="CustInt3" ColumnName="CustInt3" />
+          <ScalarProperty Name="CustText1" ColumnName="CustText1" />
+          <ScalarProperty Name="CustText2" ColumnName="CustText2" />
+          <ScalarProperty Name="CustText3" ColumnName="CustText3" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_GetmaterialById" FunctionName="POSEntitie.Store.Proc_GetmaterialById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_GetmaterialById_Result">
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="MaterialDesc1" ColumnName="MaterialDesc1" />
+          <ScalarProperty Name="MaterialDesc2" ColumnName="MaterialDesc2" />
+          <ScalarProperty Name="ProductURL" ColumnName="ProductURL" />
+          <ScalarProperty Name="BaseUOM" ColumnName="BaseUOM" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="CategoryDesc" ColumnName="CategoryDesc" />
+          <ScalarProperty Name="SubCategoryDesc" ColumnName="SubCategoryDesc" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="EAN13" ColumnName="EAN13" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="BaseUOM1" ColumnName="BaseUOM1" />
+          <ScalarProperty Name="MaterialMix" ColumnName="MaterialMix" />
+          <ScalarProperty Name="PreEAN13" ColumnName="PreEAN13" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_InsertCustomerRegistration" FunctionName="POSEntitie.Store.Proc_InsertCustomerRegistration" />
+    <FunctionImportMapping FunctionImportName="Proc_InsertEODFile" FunctionName="POSEntitie.Store.Proc_InsertEODFile" />
+    <FunctionImportMapping FunctionImportName="Proc_InsertMasterCategory" FunctionName="POSEntitie.Store.Proc_InsertMasterCategory" />
+    <FunctionImportMapping FunctionImportName="Proc_InsertMasterLocation" FunctionName="POSEntitie.Store.Proc_InsertMasterLocation" />
+    <FunctionImportMapping FunctionImportName="Proc_InsertMasterMaterial" FunctionName="POSEntitie.Store.Proc_InsertMasterMaterial" />
+    <FunctionImportMapping FunctionImportName="Proc_InsertMasterMaterialEAN" FunctionName="POSEntitie.Store.Proc_InsertMasterMaterialEAN" />
+    <FunctionImportMapping FunctionImportName="Proc_InsertMasterPreferUOM" FunctionName="POSEntitie.Store.Proc_InsertMasterPreferUOM" />
+    <FunctionImportMapping FunctionImportName="Proc_InsertMasterPriceFile" FunctionName="POSEntitie.Store.Proc_InsertMasterPriceFile" />
+    <FunctionImportMapping FunctionImportName="Proc_InsertMasterStorage" FunctionName="POSEntitie.Store.Proc_InsertMasterStorage" />
+    <FunctionImportMapping FunctionImportName="Proc_InsertMasterSubCategory" FunctionName="POSEntitie.Store.Proc_InsertMasterSubCategory" />
+    <FunctionImportMapping FunctionImportName="Proc_InsertMasterTerminal" FunctionName="POSEntitie.Store.Proc_InsertMasterTerminal" />
+    <FunctionImportMapping FunctionImportName="Proc_InsertMasterVendor" FunctionName="POSEntitie.Store.Proc_InsertMasterVendor" />
+    <FunctionImportMapping FunctionImportName="Proc_InsertOrderDetails" FunctionName="POSEntitie.Store.Proc_InsertOrderDetails" />
+    <FunctionImportMapping FunctionImportName="Proc_InsertRtnSupplier" FunctionName="POSEntitie.Store.Proc_InsertRtnSupplier" />
+    <FunctionImportMapping FunctionImportName="Proc_InsertRtnSupplier_Details" FunctionName="POSEntitie.Store.Proc_InsertRtnSupplier_Details" />
+    <FunctionImportMapping FunctionImportName="Proc_InsertSalesCategory" FunctionName="POSEntitie.Store.Proc_InsertSalesCategory" />
+    <FunctionImportMapping FunctionImportName="Proc_InsertSalesDeleteLineItem" FunctionName="POSEntitie.Store.Proc_InsertSalesDeleteLineItem" />
+    <FunctionImportMapping FunctionImportName="Proc_InsertsalesUnHold" FunctionName="POSEntitie.Store.Proc_InsertsalesUnHold" />
+    <FunctionImportMapping FunctionImportName="Proc_InsertSalesUserTender_Detail" FunctionName="POSEntitie.Store.Proc_InsertSalesUserTender_Detail" />
+    <FunctionImportMapping FunctionImportName="Proc_InsertStockReceviceDetails" FunctionName="POSEntitie.Store.Proc_InsertStockReceviceDetails" />
+    <FunctionImportMapping FunctionImportName="proc_InsertTranferDisplay_Ent" FunctionName="POSEntitie.Store.proc_InsertTranferDisplay_Ent" />
+    <FunctionImportMapping FunctionImportName="proc_InsertTranferInDetail" FunctionName="POSEntitie.Store.proc_InsertTranferInDetail" />
+    <FunctionImportMapping FunctionImportName="proc_InsertTranferOutDetail" FunctionName="POSEntitie.Store.proc_InsertTranferOutDetail" />
+    <FunctionImportMapping FunctionImportName="Proc_InsertTranfterINDetails" FunctionName="POSEntitie.Store.Proc_InsertTranfterINDetails" />
+    <FunctionImportMapping FunctionImportName="Proc_ItemCardReport" FunctionName="POSEntitie.Store.Proc_ItemCardReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_ItemCardReport_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="DocDetail" ColumnName="DocDetail" />
+          <ScalarProperty Name="TransQty" ColumnName="TransQty" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="BaseQty" ColumnName="BaseQty" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="BalQty" ColumnName="BalQty" />
+          <ScalarProperty Name="TBalanceQty" ColumnName="TBalanceQty" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_LoadGetLocationStorage" FunctionName="POSEntitie.Store.Proc_LoadGetLocationStorage">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_LoadGetLocationStorage_Result">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="StorageName" ColumnName="StorageName" />
+          <ScalarProperty Name="StorageType" ColumnName="StorageType" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="City" ColumnName="City" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_LoadMasterCategory" FunctionName="POSEntitie.Store.Proc_LoadMasterCategory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_LoadMasterCategory_Result">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryDesc" ColumnName="CategoryDesc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_LoadMasterLocation" FunctionName="POSEntitie.Store.Proc_LoadMasterLocation">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_LoadMasterLocation_Result">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="POBox" ColumnName="POBox" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="CostCenter" ColumnName="CostCenter" />
+          <ScalarProperty Name="BusinessArea" ColumnName="BusinessArea" />
+          <ScalarProperty Name="FieldArea" ColumnName="FieldArea" />
+          <ScalarProperty Name="CashLoan" ColumnName="CashLoan" />
+          <ScalarProperty Name="CustInt1" ColumnName="CustInt1" />
+          <ScalarProperty Name="CustInt2" ColumnName="CustInt2" />
+          <ScalarProperty Name="CustInt3" ColumnName="CustInt3" />
+          <ScalarProperty Name="CustText1" ColumnName="CustText1" />
+          <ScalarProperty Name="CustText2" ColumnName="CustText2" />
+          <ScalarProperty Name="CustText3" ColumnName="CustText3" />
+          <ScalarProperty Name="TfrDisplay" ColumnName="TfrDisplay" />
+          <ScalarProperty Name="POReceive" ColumnName="POReceive" />
+          <ScalarProperty Name="TfrIn" ColumnName="TfrIn" />
+          <ScalarProperty Name="TfrOut" ColumnName="TfrOut" />
+          <ScalarProperty Name="RtnVendor" ColumnName="RtnVendor" />
+          <ScalarProperty Name="PhyCount" ColumnName="PhyCount" />
+          <ScalarProperty Name="Prod_Order" ColumnName="Prod_Order" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_LoadMasterSubCategory" FunctionName="POSEntitie.Store.Proc_LoadMasterSubCategory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_LoadMasterSubCategory_Result">
+          <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+          <ScalarProperty Name="SubCategoryDesc" ColumnName="SubCategoryDesc" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_LoadMasterTerminal" FunctionName="POSEntitie.Store.Proc_LoadMasterTerminal">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_LoadMasterTerminal_Result">
+          <ScalarProperty Name="TerminalID" ColumnName="TerminalID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_LoadMasterVendor" FunctionName="POSEntitie.Store.Proc_LoadMasterVendor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_LoadMasterVendor_Result">
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="Name1" ColumnName="Name1" />
+          <ScalarProperty Name="Name2" ColumnName="Name2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="POBox" ColumnName="POBox" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="CustInt1" ColumnName="CustInt1" />
+          <ScalarProperty Name="CustInt2" ColumnName="CustInt2" />
+          <ScalarProperty Name="CustInt3" ColumnName="CustInt3" />
+          <ScalarProperty Name="CustText1" ColumnName="CustText1" />
+          <ScalarProperty Name="CustText2" ColumnName="CustText2" />
+          <ScalarProperty Name="CustText3" ColumnName="CustText3" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_LoadMaterialDetails" FunctionName="POSEntitie.Store.Proc_LoadMaterialDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_LoadMaterialDetails_Result">
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="MaterialDesc1" ColumnName="MaterialDesc1" />
+          <ScalarProperty Name="MaterialDesc2" ColumnName="MaterialDesc2" />
+          <ScalarProperty Name="ProductURL" ColumnName="ProductURL" />
+          <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="BaseUOM" ColumnName="BaseUOM" />
+          <ScalarProperty Name="ConvertValue" ColumnName="ConvertValue" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EAN13" ColumnName="EAN13" />
+          <ScalarProperty Name="MaterialMix" ColumnName="MaterialMix" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="PreforUOMMaterialID" ColumnName="PreforUOMMaterialID" />
+          <ScalarProperty Name="PreforUOMEAN13" ColumnName="PreforUOMEAN13" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_LoadOrderDetails" FunctionName="POSEntitie.Store.Proc_LoadOrderDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_LoadOrderDetails_Result">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="TerminalID" ColumnName="TerminalID" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="PostingType" ColumnName="PostingType" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Counter" ColumnName="Counter" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="TranQty" ColumnName="TranQty" />
+          <ScalarProperty Name="BaseQty" ColumnName="BaseQty" />
+          <ScalarProperty Name="CreditQty" ColumnName="CreditQty" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="DiscountRate" ColumnName="DiscountRate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CreditAmount" ColumnName="CreditAmount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PostKey" ColumnName="PostKey" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="UpdDate" ColumnName="UpdDate" />
+          <ScalarProperty Name="Dataid" ColumnName="Dataid" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_LoadPhyCount" FunctionName="POSEntitie.Store.proc_LoadPhyCount" />
+    <FunctionImportMapping FunctionImportName="proc_LoadRtnId" FunctionName="POSEntitie.Store.proc_LoadRtnId" />
+    <FunctionImportMapping FunctionImportName="Proc_LoadStorageGetById" FunctionName="POSEntitie.Store.Proc_LoadStorageGetById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_LoadStorageGetById_Result">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="StorageName" ColumnName="StorageName" />
+          <ScalarProperty Name="StorageType" ColumnName="StorageType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_LoadTranferInId" FunctionName="POSEntitie.Store.proc_LoadTranferInId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.proc_LoadTranferInId_Result">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="POBox" ColumnName="POBox" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="CostCenter" ColumnName="CostCenter" />
+          <ScalarProperty Name="BusinessArea" ColumnName="BusinessArea" />
+          <ScalarProperty Name="FieldArea" ColumnName="FieldArea" />
+          <ScalarProperty Name="CashLoan" ColumnName="CashLoan" />
+          <ScalarProperty Name="CustInt1" ColumnName="CustInt1" />
+          <ScalarProperty Name="CustInt2" ColumnName="CustInt2" />
+          <ScalarProperty Name="CustInt3" ColumnName="CustInt3" />
+          <ScalarProperty Name="CustText1" ColumnName="CustText1" />
+          <ScalarProperty Name="CustText2" ColumnName="CustText2" />
+          <ScalarProperty Name="CustText3" ColumnName="CustText3" />
+          <ScalarProperty Name="TfrDisplay" ColumnName="TfrDisplay" />
+          <ScalarProperty Name="POReceive" ColumnName="POReceive" />
+          <ScalarProperty Name="TfrIn" ColumnName="TfrIn" />
+          <ScalarProperty Name="TfrOut" ColumnName="TfrOut" />
+          <ScalarProperty Name="RtnVendor" ColumnName="RtnVendor" />
+          <ScalarProperty Name="PhyCount" ColumnName="PhyCount" />
+          <ScalarProperty Name="Prod_Order" ColumnName="Prod_Order" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_LoadVendor" FunctionName="POSEntitie.Store.Proc_LoadVendor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_LoadVendor_Result">
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="Name1" ColumnName="Name1" />
+          <ScalarProperty Name="Name2" ColumnName="Name2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="POBox" ColumnName="POBox" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="CustInt1" ColumnName="CustInt1" />
+          <ScalarProperty Name="CustInt2" ColumnName="CustInt2" />
+          <ScalarProperty Name="CustInt3" ColumnName="CustInt3" />
+          <ScalarProperty Name="CustText1" ColumnName="CustText1" />
+          <ScalarProperty Name="CustText2" ColumnName="CustText2" />
+          <ScalarProperty Name="CustText3" ColumnName="CustText3" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_MaterialBarcodeSearch" FunctionName="POSEntitie.Store.Proc_MaterialBarcodeSearch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_MaterialBarcodeSearch_Result">
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="EAN13" ColumnName="EAN13" />
+          <ScalarProperty Name="MaterialEANUOM" ColumnName="MaterialEANUOM" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="MaterialDesc1" ColumnName="MaterialDesc1" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_MaterialCategorySearch" FunctionName="POSEntitie.Store.Proc_MaterialCategorySearch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_MaterialCategorySearch_Result">
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="EAN13" ColumnName="EAN13" />
+          <ScalarProperty Name="MaterialEANUOM" ColumnName="MaterialEANUOM" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="MaterialDesc1" ColumnName="MaterialDesc1" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_MaterialMix" FunctionName="POSEntitie.Store.Proc_MaterialMix">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_MaterialMix_Result">
+          <ScalarProperty Name="EAN13" ColumnName="EAN13" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="ConvertValue" ColumnName="ConvertValue" />
+          <ScalarProperty Name="BaseUOM" ColumnName="BaseUOM" />
+          <ScalarProperty Name="MaterialMix" ColumnName="MaterialMix" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_PhyInventory" FunctionName="POSEntitie.Store.Proc_PhyInventory" />
+    <FunctionImportMapping FunctionImportName="Proc_PhyInventory_Detail" FunctionName="POSEntitie.Store.Proc_PhyInventory_Detail" />
+    <FunctionImportMapping FunctionImportName="Proc_PhyInventory_Entry" FunctionName="POSEntitie.Store.Proc_PhyInventory_Entry" />
+    <FunctionImportMapping FunctionImportName="Proc_POS_Error_logs" FunctionName="POSEntitie.Store.Proc_POS_Error_logs" />
+    <FunctionImportMapping FunctionImportName="Proc_ProductionOrderDetails" FunctionName="POSEntitie.Store.Proc_ProductionOrderDetails" />
+    <FunctionImportMapping FunctionImportName="Proc_ProductionOrderDetails_Update" FunctionName="POSEntitie.Store.Proc_ProductionOrderDetails_Update" />
+    <FunctionImportMapping FunctionImportName="Proc_ProductionOrderHeader" FunctionName="POSEntitie.Store.Proc_ProductionOrderHeader" />
+    <FunctionImportMapping FunctionImportName="Proc_ProductionOrderRequest_Derail_In_ProductionOrder" FunctionName="POSEntitie.Store.Proc_ProductionOrderRequest_Derail_In_ProductionOrder">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_ProductionOrderRequest_Derail_In_ProductionOrder_Result">
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="BaseDelQty" ColumnName="BaseDelQty" />
+          <ScalarProperty Name="BaseQty" ColumnName="BaseQty" />
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="TranQty" ColumnName="TranQty" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="MaterialDesc1" ColumnName="MaterialDesc1" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="PostingDate1" ColumnName="PostingDate1" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TransDelQty" ColumnName="TransDelQty" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_ProductionOrderRequestDetails" FunctionName="POSEntitie.Store.Proc_ProductionOrderRequestDetails" />
+    <FunctionImportMapping FunctionImportName="Proc_ProfitShortageReport" FunctionName="POSEntitie.Store.Proc_ProfitShortageReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_ProfitShortageReport_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CateogtyId" ColumnName="CateogtyId" />
+          <ScalarProperty Name="CategotyDesc" ColumnName="CategotyDesc" />
+          <ScalarProperty Name="TotalTransAmount" ColumnName="TotalTransAmount" />
+          <ScalarProperty Name="TotalTransDelAmont" ColumnName="TotalTransDelAmont" />
+          <ScalarProperty Name="DeliveredPer" ColumnName="DeliveredPer" />
+          <ScalarProperty Name="ShortageAmount" ColumnName="ShortageAmount" />
+          <ScalarProperty Name="ShortagePer" ColumnName="ShortagePer" />
+          <ScalarProperty Name="ProfitAmount" ColumnName="ProfitAmount" />
+          <ScalarProperty Name="ShareOnShortPer" ColumnName="ShareOnShortPer" />
+          <ScalarProperty Name="ShareonProfitPer" ColumnName="ShareonProfitPer" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_ReportPhyInvDifferentReport" FunctionName="POSEntitie.Store.Proc_ReportPhyInvDifferentReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_ReportPhyInvDifferentReport_Result">
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="PostingType" ColumnName="PostingType" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="Counter" ColumnName="Counter" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="TranQty" ColumnName="TranQty" />
+          <ScalarProperty Name="BaseQty" ColumnName="BaseQty" />
+          <ScalarProperty Name="CreditQty" ColumnName="CreditQty" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="DiscountRate" ColumnName="DiscountRate" />
+          <ScalarProperty Name="SalesAmount" ColumnName="SalesAmount" />
+          <ScalarProperty Name="CreditAmount" ColumnName="CreditAmount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PostKey" ColumnName="PostKey" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="UpdDate" ColumnName="UpdDate" />
+          <ScalarProperty Name="Dataid" ColumnName="Dataid" />
+          <ScalarProperty Name="OrderQty" ColumnName="OrderQty" />
+          <ScalarProperty Name="DiffQty" ColumnName="DiffQty" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
+          <ScalarProperty Name="EntryBaseQty" ColumnName="EntryBaseQty" />
+          <ScalarProperty Name="EntryTransQty" ColumnName="EntryTransQty" />
+          <ScalarProperty Name="StockTransQty" ColumnName="StockTransQty" />
+          <ScalarProperty Name="CostAmount" ColumnName="CostAmount" />
+          <ScalarProperty Name="SalesPrice" ColumnName="SalesPrice" />
+          <ScalarProperty Name="MaterialDesc1" ColumnName="MaterialDesc1" />
+          <ScalarProperty Name="Different" ColumnName="Different" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_ReportPHYSICALINVENTORYDETAILS" FunctionName="POSEntitie.Store.Proc_ReportPHYSICALINVENTORYDETAILS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_ReportPHYSICALINVENTORYDETAILS_Result">
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="PostingType" ColumnName="PostingType" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="Counter" ColumnName="Counter" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="TranQty" ColumnName="TranQty" />
+          <ScalarProperty Name="BaseQty" ColumnName="BaseQty" />
+          <ScalarProperty Name="CreditQty" ColumnName="CreditQty" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="DiscountRate" ColumnName="DiscountRate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CreditAmount" ColumnName="CreditAmount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PostKey" ColumnName="PostKey" />
+          <ScalarProperty Name="Filter" ColumnName="Filter" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="UpdDate" ColumnName="UpdDate" />
+          <ScalarProperty Name="Dataid" ColumnName="Dataid" />
+          <ScalarProperty Name="MaterialDesc1" ColumnName="MaterialDesc1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_ReportPHYSICALINVENTORYDIFFDETAILS" FunctionName="POSEntitie.Store.Proc_ReportPHYSICALINVENTORYDIFFDETAILS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_ReportPHYSICALINVENTORYDIFFDETAILS_Result">
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="PostingType" ColumnName="PostingType" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="Counter" ColumnName="Counter" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="TranQty" ColumnName="TranQty" />
+          <ScalarProperty Name="BaseQty" ColumnName="BaseQty" />
+          <ScalarProperty Name="CreditQty" ColumnName="CreditQty" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="DiscountRate" ColumnName="DiscountRate" />
+          <ScalarProperty Name="SalesAmount" ColumnName="SalesAmount" />
+          <ScalarProperty Name="CreditAmount" ColumnName="CreditAmount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PostKey" ColumnName="PostKey" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="UpdDate" ColumnName="UpdDate" />
+          <ScalarProperty Name="Dataid" ColumnName="Dataid" />
+          <ScalarProperty Name="OrderQty" ColumnName="OrderQty" />
+          <ScalarProperty Name="DiffQty" ColumnName="DiffQty" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
+          <ScalarProperty Name="EntryBaseQty" ColumnName="EntryBaseQty" />
+          <ScalarProperty Name="EntryTransQty" ColumnName="EntryTransQty" />
+          <ScalarProperty Name="StockTransQty" ColumnName="StockTransQty" />
+          <ScalarProperty Name="CostAmount" ColumnName="CostAmount" />
+          <ScalarProperty Name="SalesPrice" ColumnName="SalesPrice" />
+          <ScalarProperty Name="MaterialDesc1" ColumnName="MaterialDesc1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_ReportPORECEIVE" FunctionName="POSEntitie.Store.Proc_ReportPORECEIVE">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_ReportPORECEIVE_Result">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="PO" ColumnName="PO" />
+          <ScalarProperty Name="POStatus" ColumnName="POStatus" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="Name1" ColumnName="Name1" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="MaterialDesc1" ColumnName="MaterialDesc1" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="OrderQty" ColumnName="OrderQty" />
+          <ScalarProperty Name="TranQty" ColumnName="TranQty" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+          <ScalarProperty Name="Expr4" ColumnName="Expr4" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="Expr5" ColumnName="Expr5" />
+          <ScalarProperty Name="PostKey" ColumnName="PostKey" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_ReportPRODUCTIONORDERDETAILS" FunctionName="POSEntitie.Store.Proc_ReportPRODUCTIONORDERDETAILS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_ReportPRODUCTIONORDERDETAILS_Result">
+          <ScalarProperty Name="DOCUMENTID" ColumnName="DOCUMENTID" />
+          <ScalarProperty Name="LOCATIONID" ColumnName="LOCATIONID" />
+          <ScalarProperty Name="STORAGEID" ColumnName="STORAGEID" />
+          <ScalarProperty Name="DOCUMENTDATE" ColumnName="DOCUMENTDATE" />
+          <ScalarProperty Name="MATERIALID" ColumnName="MATERIALID" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="BASEQTY" ColumnName="BASEQTY" />
+          <ScalarProperty Name="TRANQTY" ColumnName="TRANQTY" />
+          <ScalarProperty Name="POSTKEY" ColumnName="POSTKEY" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="ADDDATE" ColumnName="ADDDATE" />
+          <ScalarProperty Name="UPDDATE" ColumnName="UPDDATE" />
+          <ScalarProperty Name="DOCDETAIL" ColumnName="DOCDETAIL" />
+          <ScalarProperty Name="LOCATIONDESC" ColumnName="LOCATIONDESC" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="CONTACT" ColumnName="CONTACT" />
+          <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="MATERIALDESC1" ColumnName="MATERIALDESC1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_ReportRETURNTOSUPPLIER" FunctionName="POSEntitie.Store.Proc_ReportRETURNTOSUPPLIER">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_ReportRETURNTOSUPPLIER_Result">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="Name1" ColumnName="Name1" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="MaterialDesc1" ColumnName="MaterialDesc1" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="OrderQty" ColumnName="OrderQty" />
+          <ScalarProperty Name="TranQty" ColumnName="TranQty" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="BaseQty" ColumnName="BaseQty" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+          <ScalarProperty Name="Expr4" ColumnName="Expr4" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Expr5" ColumnName="Expr5" />
+          <ScalarProperty Name="PostKey" ColumnName="PostKey" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_ReportSTOCKRECEIVEDETAILS" FunctionName="POSEntitie.Store.Proc_ReportSTOCKRECEIVEDETAILS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_ReportSTOCKRECEIVEDETAILS_Result">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="PO" ColumnName="PO" />
+          <ScalarProperty Name="POStatus" ColumnName="POStatus" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="Name1" ColumnName="Name1" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="MaterialDesc1" ColumnName="MaterialDesc1" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="OrderQty" ColumnName="OrderQty" />
+          <ScalarProperty Name="TranQty" ColumnName="TranQty" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+          <ScalarProperty Name="Expr4" ColumnName="Expr4" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="Expr5" ColumnName="Expr5" />
+          <ScalarProperty Name="PostKey" ColumnName="PostKey" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PROC_REPORTTRANSFER_DIS_OUT_IN" FunctionName="POSEntitie.Store.PROC_REPORTTRANSFER_DIS_OUT_IN">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.PROC_REPORTTRANSFER_DIS_OUT_IN_Result">
+          <ScalarProperty Name="DOCUMENTID" ColumnName="DOCUMENTID" />
+          <ScalarProperty Name="FROMLOCATION" ColumnName="FROMLOCATION" />
+          <ScalarProperty Name="FROMLOCATIONDESC" ColumnName="FROMLOCATIONDESC" />
+          <ScalarProperty Name="FROMADDRESS1" ColumnName="FROMADDRESS1" />
+          <ScalarProperty Name="FROMCITY" ColumnName="FROMCITY" />
+          <ScalarProperty Name="FROMREGION" ColumnName="FROMREGION" />
+          <ScalarProperty Name="FROMCOUNTRY" ColumnName="FROMCOUNTRY" />
+          <ScalarProperty Name="FromStorageID" ColumnName="FromStorageID" />
+          <ScalarProperty Name="ToStorageID" ColumnName="ToStorageID" />
+          <ScalarProperty Name="MATERIALID" ColumnName="MATERIALID" />
+          <ScalarProperty Name="MATERIALDESC1" ColumnName="MATERIALDESC1" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="TRANQTY" ColumnName="TRANQTY" />
+          <ScalarProperty Name="COST" ColumnName="COST" />
+          <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="DOCUMENTDATE" ColumnName="DOCUMENTDATE" />
+          <ScalarProperty Name="POSTKEY" ColumnName="POSTKEY" />
+          <ScalarProperty Name="TOLOCATION" ColumnName="TOLOCATION" />
+          <ScalarProperty Name="TOLOCATIONDESC" ColumnName="TOLOCATIONDESC" />
+          <ScalarProperty Name="TOADDRESS1" ColumnName="TOADDRESS1" />
+          <ScalarProperty Name="TOCITY" ColumnName="TOCITY" />
+          <ScalarProperty Name="TOREGION" ColumnName="TOREGION" />
+          <ScalarProperty Name="TOCOUNTRY" ColumnName="TOCOUNTRY" />
+          <ScalarProperty Name="DocDetail" ColumnName="DocDetail" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_ReportTRANSFERTODISPLAY" FunctionName="POSEntitie.Store.Proc_ReportTRANSFERTODISPLAY">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_ReportTRANSFERTODISPLAY_Result">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="MaterialDesc1" ColumnName="MaterialDesc1" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="TranQty" ColumnName="TranQty" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="PostKey" ColumnName="PostKey" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_SearchBOMID" FunctionName="POSEntitie.Store.Proc_SearchBOMID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_SearchBOMID_Result">
+          <ScalarProperty Name="BOMID" ColumnName="BOMID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="BOMQty" ColumnName="BOMQty" />
+          <ScalarProperty Name="MaterialDesc1" ColumnName="MaterialDesc1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_SearchEAN" FunctionName="POSEntitie.Store.Proc_SearchEAN">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_SearchEAN_Result">
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="EAN13" ColumnName="EAN13" />
+          <ScalarProperty Name="MaterialEANUOM" ColumnName="MaterialEANUOM" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="MaterialDesc1" ColumnName="MaterialDesc1" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_SearchMasterTerminal" FunctionName="POSEntitie.Store.Proc_SearchMasterTerminal">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_SearchMasterTerminal_Result">
+          <ScalarProperty Name="TerminalID" ColumnName="TerminalID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_SearchMasterVendor" FunctionName="POSEntitie.Store.Proc_SearchMasterVendor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_SearchMasterVendor_Result">
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="Name1" ColumnName="Name1" />
+          <ScalarProperty Name="Name2" ColumnName="Name2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="POBox" ColumnName="POBox" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="CustInt1" ColumnName="CustInt1" />
+          <ScalarProperty Name="CustInt2" ColumnName="CustInt2" />
+          <ScalarProperty Name="CustInt3" ColumnName="CustInt3" />
+          <ScalarProperty Name="CustText1" ColumnName="CustText1" />
+          <ScalarProperty Name="CustText2" ColumnName="CustText2" />
+          <ScalarProperty Name="CustText3" ColumnName="CustText3" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_Select_ProductionOrder_Request_DocuemtnID" FunctionName="POSEntitie.Store.Proc_Select_ProductionOrder_Request_DocuemtnID" />
+    <FunctionImportMapping FunctionImportName="Proc_SelectCustomerRegistration" FunctionName="POSEntitie.Store.Proc_SelectCustomerRegistration">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_SelectCustomerRegistration_Result">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Name1" ColumnName="Name1" />
+          <ScalarProperty Name="Name2" ColumnName="Name2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="POBox" ColumnName="POBox" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="CreditLimit" ColumnName="CreditLimit" />
+          <ScalarProperty Name="CustInt1" ColumnName="CustInt1" />
+          <ScalarProperty Name="CustInt2" ColumnName="CustInt2" />
+          <ScalarProperty Name="CustInt3" ColumnName="CustInt3" />
+          <ScalarProperty Name="CustText1" ColumnName="CustText1" />
+          <ScalarProperty Name="CustText2" ColumnName="CustText2" />
+          <ScalarProperty Name="CustText3" ColumnName="CustText3" />
+          <ScalarProperty Name="CustType" ColumnName="CustType" />
+          <ScalarProperty Name="TotalDue" ColumnName="TotalDue" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_SelectEODEnquiry" FunctionName="POSEntitie.Store.Proc_SelectEODEnquiry">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_SelectEODEnquiry_Result">
+          <ScalarProperty Name="EODID" ColumnName="EODID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="DocDate" ColumnName="DocDate" />
+          <ScalarProperty Name="Loan" ColumnName="Loan" />
+          <ScalarProperty Name="SystemCash" ColumnName="SystemCash" />
+          <ScalarProperty Name="ActualCash" ColumnName="ActualCash" />
+          <ScalarProperty Name="C_1" ColumnName="_1" />
+          <ScalarProperty Name="C_5" ColumnName="_5" />
+          <ScalarProperty Name="C_10" ColumnName="_10" />
+          <ScalarProperty Name="C_20" ColumnName="_20" />
+          <ScalarProperty Name="C_50" ColumnName="_50" />
+          <ScalarProperty Name="C_100" ColumnName="_100" />
+          <ScalarProperty Name="C_200" ColumnName="_200" />
+          <ScalarProperty Name="C_500" ColumnName="_500" />
+          <ScalarProperty Name="CashDiff" ColumnName="CashDiff" />
+          <ScalarProperty Name="CashCount" ColumnName="CashCount" />
+          <ScalarProperty Name="Cust1Amt" ColumnName="Cust1Amt" />
+          <ScalarProperty Name="Cash_Collection" ColumnName="Cash_Collection" />
+          <ScalarProperty Name="DebitAmt" ColumnName="DebitAmt" />
+          <ScalarProperty Name="CreditAmt" ColumnName="CreditAmt" />
+          <ScalarProperty Name="OnAccAmt" ColumnName="OnAccAmt" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_SelectProductionOrderRequest_Detail" FunctionName="POSEntitie.Store.Proc_SelectProductionOrderRequest_Detail">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_SelectProductionOrderRequest_Detail_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="BOMID" ColumnName="BOMID" />
+          <ScalarProperty Name="BOMDesc" ColumnName="BOMDesc" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_SelectUserAuthentication" FunctionName="POSEntitie.Store.Proc_SelectUserAuthentication">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_SelectUserAuthentication_Result">
+          <ScalarProperty Name="LId" ColumnName="LId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Manager_Locations" ColumnName="Manager_Locations" />
+          <ScalarProperty Name="User_Locations" ColumnName="User_Locations" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Customer" ColumnName="Customer" />
+          <ScalarProperty Name="MId" ColumnName="MId" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="LocationPrice" ColumnName="LocationPrice" />
+          <ScalarProperty Name="Material" ColumnName="Material" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Storage" ColumnName="Storage" />
+          <ScalarProperty Name="SubCategory" ColumnName="SubCategory" />
+          <ScalarProperty Name="Terminal" ColumnName="Terminal" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="Users" ColumnName="Users" />
+          <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+          <ScalarProperty Name="TCashCollection" ColumnName="TCashCollection" />
+          <ScalarProperty Name="TId" ColumnName="TId" />
+          <ScalarProperty Name="TPhysicalInventory" ColumnName="TPhysicalInventory" />
+          <ScalarProperty Name="TPOReceive" ColumnName="TPOReceive" />
+          <ScalarProperty Name="TProductionOrder" ColumnName="TProductionOrder" />
+          <ScalarProperty Name="TPuchaseOrder" ColumnName="TPuchaseOrder" />
+          <ScalarProperty Name="TReturnToSupplier" ColumnName="TReturnToSupplier" />
+          <ScalarProperty Name="TSalesOrder" ColumnName="TSalesOrder" />
+          <ScalarProperty Name="TTranfterToDisplay" ColumnName="TTranfterToDisplay" />
+          <ScalarProperty Name="TTransfterIN" ColumnName="TTransfterIN" />
+          <ScalarProperty Name="TTransfterOUT" ColumnName="TTransfterOUT" />
+          <ScalarProperty Name="EOD" ColumnName="EOD" />
+          <ScalarProperty Name="EId" ColumnName="EId" />
+          <ScalarProperty Name="POReceive" ColumnName="POReceive" />
+          <ScalarProperty Name="ReturnToSupplier" ColumnName="ReturnToSupplier" />
+          <ScalarProperty Name="SalesOrder" ColumnName="SalesOrder" />
+          <ScalarProperty Name="TranfterToDisplay" ColumnName="TranfterToDisplay" />
+          <ScalarProperty Name="PhysicalInventory" ColumnName="PhysicalInventory" />
+          <ScalarProperty Name="TransfterIN" ColumnName="TransfterIN" />
+          <ScalarProperty Name="TransfterOUT" ColumnName="TransfterOUT" />
+          <ScalarProperty Name="AddUsers" ColumnName="AddUsers" />
+          <ScalarProperty Name="ChangePassword" ColumnName="ChangePassword" />
+          <ScalarProperty Name="UsersAuthentication" ColumnName="UsersAuthentication" />
+          <ScalarProperty Name="ANURUserRoleId" ColumnName="ANURUserRoleId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Reports" ColumnName="Reports" />
+          <ScalarProperty Name="ProductionOrderStatusReport" ColumnName="ProductionOrderStatusReport" />
+          <ScalarProperty Name="LostOpporTunitySalesReport" ColumnName="LostOpporTunitySalesReport" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_SelectUserId" FunctionName="POSEntitie.Store.Proc_SelectUserId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_SelectUserId_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_SlectStockS" FunctionName="POSEntitie.Store.Proc_SlectStockS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_SlectStockS_Result">
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="StockValue" ColumnName="StockValue" />
+          <ScalarProperty Name="CreditQty" ColumnName="CreditQty" />
+          <ScalarProperty Name="CreditAmount" ColumnName="CreditAmount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_Sync_PhysicalInventoryNotIn" FunctionName="POSEntitie.Store.Proc_Sync_PhysicalInventoryNotIn">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_Sync_PhysicalInventoryNotIn_Result">
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="StockValue" ColumnName="StockValue" />
+          <ScalarProperty Name="CreditQty" ColumnName="CreditQty" />
+          <ScalarProperty Name="CreditAmount" ColumnName="CreditAmount" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_SyncInsertEod" FunctionName="POSEntitie.Store.Proc_SyncInsertEod" />
+    <FunctionImportMapping FunctionImportName="Proc_SyncInsertEoddtls" FunctionName="POSEntitie.Store.Proc_SyncInsertEoddtls" />
+    <FunctionImportMapping FunctionImportName="Proc_TempDetailsData" FunctionName="POSEntitie.Store.Proc_TempDetailsData">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_TempDetailsData_Result">
+          <ScalarProperty Name="TempDetailID" ColumnName="TempDetailID" />
+          <ScalarProperty Name="MaterialDesc1" ColumnName="MaterialDesc1" />
+          <ScalarProperty Name="BaseQty" ColumnName="BaseQty" />
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="Filter" ColumnName="Filter" />
+          <ScalarProperty Name="Filter_Id" ColumnName="Filter_Id" />
+          <ScalarProperty Name="TLocationID" ColumnName="TLocationID" />
+          <ScalarProperty Name="TStorageID" ColumnName="TStorageID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="TempMasterID" ColumnName="TempMasterID" />
+          <ScalarProperty Name="TranQty" ColumnName="TranQty" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_TempInsertTransferToDsiaplay" FunctionName="POSEntitie.Store.Proc_TempInsertTransferToDsiaplay" />
+    <FunctionImportMapping FunctionImportName="Proc_TempPhyInventory_Detail" FunctionName="POSEntitie.Store.Proc_TempPhyInventory_Detail" />
+    <FunctionImportMapping FunctionImportName="Proc_TempPhysicalEntry" FunctionName="POSEntitie.Store.Proc_TempPhysicalEntry" />
+    <FunctionImportMapping FunctionImportName="Proc_TempPhysicalInventoryDetails" FunctionName="POSEntitie.Store.Proc_TempPhysicalInventoryDetails" />
+    <FunctionImportMapping FunctionImportName="Proc_TempProductionOrderDetails" FunctionName="POSEntitie.Store.Proc_TempProductionOrderDetails" />
+    <FunctionImportMapping FunctionImportName="Proc_TempTransfterOUTDetails" FunctionName="POSEntitie.Store.Proc_TempTransfterOUTDetails" />
+    <FunctionImportMapping FunctionImportName="Proc_TempTransfterToDisplayDetails" FunctionName="POSEntitie.Store.Proc_TempTransfterToDisplayDetails" />
+    <FunctionImportMapping FunctionImportName="Proc_Terminal_Report" FunctionName="POSEntitie.Store.Proc_Terminal_Report">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_Terminal_Report_Result">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="TerminalID" ColumnName="TerminalID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_TranferDisplay" FunctionName="POSEntitie.Store.Proc_TranferDisplay" />
+    <FunctionImportMapping FunctionImportName="Proc_TranferDisplayOUT" FunctionName="POSEntitie.Store.Proc_TranferDisplayOUT" />
+    <FunctionImportMapping FunctionImportName="Proc_TransferDisplay_Details" FunctionName="POSEntitie.Store.Proc_TransferDisplay_Details" />
+    <FunctionImportMapping FunctionImportName="Proc_TransferDisplay_Ent_In_Out" FunctionName="POSEntitie.Store.Proc_TransferDisplay_Ent_In_Out" />
+    <FunctionImportMapping FunctionImportName="Proc_TransferDisplayOUT_Details" FunctionName="POSEntitie.Store.Proc_TransferDisplayOUT_Details" />
+    <FunctionImportMapping FunctionImportName="Proc_Update_POStatus" FunctionName="POSEntitie.Store.Proc_Update_POStatus" />
+    <FunctionImportMapping FunctionImportName="Proc_Update_TOStatus" FunctionName="POSEntitie.Store.Proc_Update_TOStatus" />
+    <FunctionImportMapping FunctionImportName="Proc_UpdateCustomerRegistration" FunctionName="POSEntitie.Store.Proc_UpdateCustomerRegistration" />
+    <FunctionImportMapping FunctionImportName="proc_UpdateDocId" FunctionName="POSEntitie.Store.proc_UpdateDocId" />
+    <FunctionImportMapping FunctionImportName="Proc_UpdateEODCash_Collection" FunctionName="POSEntitie.Store.Proc_UpdateEODCash_Collection" />
+    <FunctionImportMapping FunctionImportName="Proc_UpdateMasterCategory" FunctionName="POSEntitie.Store.Proc_UpdateMasterCategory" />
+    <FunctionImportMapping FunctionImportName="Proc_UpdateMasterLocation" FunctionName="POSEntitie.Store.Proc_UpdateMasterLocation" />
+    <FunctionImportMapping FunctionImportName="Proc_UpdateMasterMaterial" FunctionName="POSEntitie.Store.Proc_UpdateMasterMaterial" />
+    <FunctionImportMapping FunctionImportName="Proc_UpdateMasterStorage" FunctionName="POSEntitie.Store.Proc_UpdateMasterStorage" />
+    <FunctionImportMapping FunctionImportName="Proc_updateMasterSubCategory" FunctionName="POSEntitie.Store.Proc_updateMasterSubCategory" />
+    <FunctionImportMapping FunctionImportName="Proc_UpdateMasterTerminal" FunctionName="POSEntitie.Store.Proc_UpdateMasterTerminal" />
+    <FunctionImportMapping FunctionImportName="Proc_UpdateMasterVendor" FunctionName="POSEntitie.Store.Proc_UpdateMasterVendor" />
+    <FunctionImportMapping FunctionImportName="proc_UpdatePhyCount" FunctionName="POSEntitie.Store.proc_UpdatePhyCount" />
+    <FunctionImportMapping FunctionImportName="Proc_UpdatePhyInentoryStatus" FunctionName="POSEntitie.Store.Proc_UpdatePhyInentoryStatus" />
+    <FunctionImportMapping FunctionImportName="Proc_UpdateProductionOrder_ID" FunctionName="POSEntitie.Store.Proc_UpdateProductionOrder_ID" />
+    <FunctionImportMapping FunctionImportName="Proc_UpdateProductionOrderRequestDetail" FunctionName="POSEntitie.Store.Proc_UpdateProductionOrderRequestDetail" />
+    <FunctionImportMapping FunctionImportName="proc_UpdateRtnVendorId" FunctionName="POSEntitie.Store.proc_UpdateRtnVendorId" />
+    <FunctionImportMapping FunctionImportName="proc_UpdateTranfterOUTDocId" FunctionName="POSEntitie.Store.proc_UpdateTranfterOUTDocId" />
+    <FunctionImportMapping FunctionImportName="procInsert_Category" FunctionName="POSEntitie.Store.procInsert_Category" />
+    <FunctionImportMapping FunctionImportName="procSearch_Category" FunctionName="POSEntitie.Store.procSearch_Category" />
+    <FunctionImportMapping FunctionImportName="procSelect_Category" FunctionName="POSEntitie.Store.procSelect_Category">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.procSelect_Category_Result">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryDesc" ColumnName="CategoryDesc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="procUpdate_Category" FunctionName="POSEntitie.Store.procUpdate_Category" />
+    <FunctionImportMapping FunctionImportName="pxAcceptTransaction" FunctionName="POSEntitie.Store.pxAcceptTransaction" />
+    <FunctionImportMapping FunctionImportName="pxSelectCategoryPieChart" FunctionName="POSEntitie.Store.pxSelectCategoryPieChart">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.pxSelectCategoryPieChart_Result">
+          <ScalarProperty Name="CategoryDesc" ColumnName="CategoryDesc" />
+          <ScalarProperty Name="NetSales" ColumnName="NetSales" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pxSelectDeleteDocumentMaterial" FunctionName="POSEntitie.Store.pxSelectDeleteDocumentMaterial">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.pxSelectDeleteDocumentMaterial_Result">
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="MaterialDesc1" ColumnName="MaterialDesc1" />
+          <ScalarProperty Name="CategoryDesc" ColumnName="CategoryDesc" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="TranQty" ColumnName="TranQty" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pxSelectDeleteDocumentTender" FunctionName="POSEntitie.Store.pxSelectDeleteDocumentTender">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.pxSelectDeleteDocumentTender_Result">
+          <ScalarProperty Name="TenderName" ColumnName="TenderName" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="PaidAmount" ColumnName="PaidAmount" />
+          <ScalarProperty Name="ChangeAmount" ColumnName="ChangeAmount" />
+          <ScalarProperty Name="TransCode" ColumnName="TransCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pxSelectDocumentMaterial" FunctionName="POSEntitie.Store.pxSelectDocumentMaterial">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.pxSelectDocumentMaterial_Result">
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="MaterialDesc1" ColumnName="MaterialDesc1" />
+          <ScalarProperty Name="CategoryDesc" ColumnName="CategoryDesc" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="TranQty" ColumnName="TranQty" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pxSelectDocumentTender" FunctionName="POSEntitie.Store.pxSelectDocumentTender">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.pxSelectDocumentTender_Result">
+          <ScalarProperty Name="TenderName" ColumnName="TenderName" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="PaidAmount" ColumnName="PaidAmount" />
+          <ScalarProperty Name="ChangeAmount" ColumnName="ChangeAmount" />
+          <ScalarProperty Name="TransCode" ColumnName="TransCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pxSelectFilterEodEnquiry" FunctionName="POSEntitie.Store.pxSelectFilterEodEnquiry">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.pxSelectFilterEodEnquiry_Result">
+          <ScalarProperty Name="EODID" ColumnName="EODID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="DocDate" ColumnName="DocDate" />
+          <ScalarProperty Name="Loan" ColumnName="Loan" />
+          <ScalarProperty Name="SystemCash" ColumnName="SystemCash" />
+          <ScalarProperty Name="ActualCash" ColumnName="ActualCash" />
+          <ScalarProperty Name="C_1" ColumnName="_1" />
+          <ScalarProperty Name="C_5" ColumnName="_5" />
+          <ScalarProperty Name="C_10" ColumnName="_10" />
+          <ScalarProperty Name="C_20" ColumnName="_20" />
+          <ScalarProperty Name="C_50" ColumnName="_50" />
+          <ScalarProperty Name="C_100" ColumnName="_100" />
+          <ScalarProperty Name="C_200" ColumnName="_200" />
+          <ScalarProperty Name="C_500" ColumnName="_500" />
+          <ScalarProperty Name="CashDiff" ColumnName="CashDiff" />
+          <ScalarProperty Name="CashCount" ColumnName="CashCount" />
+          <ScalarProperty Name="Cust1Amt" ColumnName="Cust1Amt" />
+          <ScalarProperty Name="Cash_Collection" ColumnName="Cash_Collection" />
+          <ScalarProperty Name="DebitAmt" ColumnName="DebitAmt" />
+          <ScalarProperty Name="CreditAmt" ColumnName="CreditAmt" />
+          <ScalarProperty Name="OnAccAmt" ColumnName="OnAccAmt" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pxSelectFilterReturnWithInvoice" FunctionName="POSEntitie.Store.pxSelectFilterReturnWithInvoice">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.pxSelectFilterReturnWithInvoice_Result">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="Name1" ColumnName="Name1" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pxSelectFilterReturnWithoutInvoice" FunctionName="POSEntitie.Store.pxSelectFilterReturnWithoutInvoice">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.pxSelectFilterReturnWithoutInvoice_Result">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="Name1" ColumnName="Name1" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pxSelectFilterSalesDeleteLineItemsEnquiry" FunctionName="POSEntitie.Store.pxSelectFilterSalesDeleteLineItemsEnquiry">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.pxSelectFilterSalesDeleteLineItemsEnquiry_Result">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pxSelectFilterSalesEnquiry" FunctionName="POSEntitie.Store.pxSelectFilterSalesEnquiry">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.pxSelectFilterSalesEnquiry_Result">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="Name1" ColumnName="Name1" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pxSelectFilterSalesUnHoldEnquiry" FunctionName="POSEntitie.Store.pxSelectFilterSalesUnHoldEnquiry">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.pxSelectFilterSalesUnHoldEnquiry_Result">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="DocDate" ColumnName="DocDate" />
+          <ScalarProperty Name="Name1" ColumnName="Name1" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pxSelectLatestSalesDetails" FunctionName="POSEntitie.Store.pxSelectLatestSalesDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.pxSelectLatestSalesDetails_Result">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="TerminalID" ColumnName="TerminalID" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="NetValue" ColumnName="NetValue" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pxSelectPhysicalDocument" FunctionName="POSEntitie.Store.pxSelectPhysicalDocument">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.pxSelectPhysicalDocument_Result">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pxSelectPORecieve" FunctionName="POSEntitie.Store.pxSelectPORecieve">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.pxSelectPORecieve_Result">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="Name1" ColumnName="Name1" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pxSelectPORecieveMaterial" FunctionName="POSEntitie.Store.pxSelectPORecieveMaterial">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.pxSelectPORecieveMaterial_Result">
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="MaterialDesc1" ColumnName="MaterialDesc1" />
+          <ScalarProperty Name="CategoryDesc" ColumnName="CategoryDesc" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="TranQty" ColumnName="TranQty" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pxSelectPurchaseOrderDetailByDocId" FunctionName="POSEntitie.Store.pxSelectPurchaseOrderDetailByDocId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.pxSelectPurchaseOrderDetailByDocId_Result">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="MaterialDesc1" ColumnName="MaterialDesc1" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="TranQty" ColumnName="TranQty" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pxSelectReturnSalesWithInvoice" FunctionName="POSEntitie.Store.pxSelectReturnSalesWithInvoice">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.pxSelectReturnSalesWithInvoice_Result">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="Name1" ColumnName="Name1" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pxSelectReturnSalesWithoutInvoice" FunctionName="POSEntitie.Store.pxSelectReturnSalesWithoutInvoice">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.pxSelectReturnSalesWithoutInvoice_Result">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="Name1" ColumnName="Name1" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pxSelectReturnToSupplier" FunctionName="POSEntitie.Store.pxSelectReturnToSupplier">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.pxSelectReturnToSupplier_Result">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="Name1" ColumnName="Name1" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pxSelectSalesDelete" FunctionName="POSEntitie.Store.pxSelectSalesDelete">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.pxSelectSalesDelete_Result">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="Name1" ColumnName="Name1" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pxSelectSalesEnquiry" FunctionName="POSEntitie.Store.pxSelectSalesEnquiry">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.pxSelectSalesEnquiry_Result">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="Name1" ColumnName="Name1" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pxSelectSalesUnHoldEnquiry" FunctionName="POSEntitie.Store.pxSelectSalesUnHoldEnquiry">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.pxSelectSalesUnHoldEnquiry_Result">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="DocDate" ColumnName="DocDate" />
+          <ScalarProperty Name="Name1" ColumnName="Name1" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pxSelectTranfterOUTDetailByDocId" FunctionName="POSEntitie.Store.pxSelectTranfterOUTDetailByDocId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.pxSelectTranfterOUTDetailByDocId_Result">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="MaterialDesc1" ColumnName="MaterialDesc1" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="TranQty" ColumnName="TranQty" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pxSelectTransferDocument" FunctionName="POSEntitie.Store.pxSelectTransferDocument">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.pxSelectTransferDocument_Result">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pxSelectTransfterIN" FunctionName="POSEntitie.Store.pxSelectTransfterIN">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.pxSelectTransfterIN_Result">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pxSelectTransfterOUT" FunctionName="POSEntitie.Store.pxSelectTransfterOUT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.pxSelectTransfterOUT_Result">
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="LocationDesc" ColumnName="LocationDesc" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="POSEntitie.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="POSEntitie.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="POSEntitie.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="POSEntitie.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="POSEntitie.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="POSEntitie.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="POSEntitie.Store.sp_upgraddiagrams" />
+    <EntitySetMapping Name="tbl_EOD">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_EOD">
+        <MappingFragment StoreEntitySet="tbl_EOD">
+          <ScalarProperty Name="Cash_Collection" ColumnName="Cash_Collection" />
+          <ScalarProperty Name="Dataid" ColumnName="Dataid" />
+          <ScalarProperty Name="CreditCnt" ColumnName="CreditCnt" />
+          <ScalarProperty Name="Cust2Cnt" ColumnName="Cust2Cnt" />
+          <ScalarProperty Name="Cust2Amt" ColumnName="Cust2Amt" />
+          <ScalarProperty Name="Cust1Cnt" ColumnName="Cust1Cnt" />
+          <ScalarProperty Name="Cust1Amt" ColumnName="Cust1Amt" />
+          <ScalarProperty Name="OnAccCnt" ColumnName="OnAccCnt" />
+          <ScalarProperty Name="OnAccAmt" ColumnName="OnAccAmt" />
+          <ScalarProperty Name="DeleteCnt" ColumnName="DeleteCnt" />
+          <ScalarProperty Name="DeleteAmt" ColumnName="DeleteAmt" />
+          <ScalarProperty Name="ReturnCnt" ColumnName="ReturnCnt" />
+          <ScalarProperty Name="ReturnAmt" ColumnName="ReturnAmt" />
+          <ScalarProperty Name="DebitCnt" ColumnName="DebitCnt" />
+          <ScalarProperty Name="DebitAmt" ColumnName="DebitAmt" />
+          <ScalarProperty Name="CreditAmt" ColumnName="CreditAmt" />
+          <ScalarProperty Name="CashCount" ColumnName="CashCount" />
+          <ScalarProperty Name="CashDiff" ColumnName="CashDiff" />
+          <ScalarProperty Name="C500" ColumnName="500" />
+          <ScalarProperty Name="C200" ColumnName="200" />
+          <ScalarProperty Name="C100" ColumnName="100" />
+          <ScalarProperty Name="C50" ColumnName="50" />
+          <ScalarProperty Name="C20" ColumnName="20" />
+          <ScalarProperty Name="C10" ColumnName="10" />
+          <ScalarProperty Name="C5" ColumnName="5" />
+          <ScalarProperty Name="C1" ColumnName="1" />
+          <ScalarProperty Name="ActualCash" ColumnName="ActualCash" />
+          <ScalarProperty Name="SystemCash" ColumnName="SystemCash" />
+          <ScalarProperty Name="Loan" ColumnName="Loan" />
+          <ScalarProperty Name="DocDate" ColumnName="DocDate" />
+          <ScalarProperty Name="EODID" ColumnName="EODID" />
+          <ScalarProperty Name="TerminialID" ColumnName="TerminialID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Storage">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_Storage">
+        <MappingFragment StoreEntitySet="tbl_Storage">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="StorageType" ColumnName="StorageType" />
+          <ScalarProperty Name="StorageName" ColumnName="StorageName" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SubCategory">
+      <EntityTypeMapping TypeName="POSEntitie.tbl_SubCategory">
+        <MappingFragment StoreEntitySet="tbl_SubCategory">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="SubCategoryDesc" ColumnName="SubCategoryDesc" />
+          <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Proc_REPORTProductionOrderStatus" FunctionName="POSEntitie.Store.Proc_REPORTProductionOrderStatus">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="POSEntitie.Proc_REPORTProductionOrderStatus_Result">
+          <ScalarProperty Name="MaterialDesc1" ColumnName="MaterialDesc1" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="StorageID" ColumnName="StorageID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TotalTransQty" ColumnName="TotalTransQty" />
+          <ScalarProperty Name="TotalDeliveryQty" ColumnName="TotalDeliveryQty" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,64 @@
+﻿@using POS.Web.Models
+@model ChangePassword
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+<script type="text/javascript">
+    function Success(data) {
+        var type = BootstrapDialog.TYPE_SUCCESS;
+        BootstrapDialog.alert({
+            type: type,
+            title: 'Change Password',
+            message: 'User Security Password Updated....',
+            callback: function (result) {
+                if (result) {
+                    window.location.reload();
+                    $('#logoff span').trigger('click');
+                }
+                else {
+                    window.location.reload();
+                    $('#logoff span').trigger('click');
+                }
+            }
+        });
+
+    }
+
+    function CheckPassword(data)
+    {
+        debugger;
+        if (data == 'Incorrect password.')
+        {
+            OnFailure(data);
+        }
+        else
+        {
+            Success(data);
+        }
+    }
+
+    function OnFailure(data) {
+        var type = BootstrapDialog.TYPE_DANGER;
+        BootstrapDialog.alert({
+            type: type,
+            title: 'Change Password',
+            message: 'User Security Password Not Updated....',
+            callback: function (result) {
+                if (result) {
+                    window.location.reload();
+                }
+                else {
+                    window.location.reload();
+                }
+            }
+        });
+        
+    }
+</script>
+<div class="container">
+    <h5>Change Password</h5>
+    <div class="col-lg-12" id="">
+@Html.Partial("~/Views/ChangePassword/Partial/ChangePassword.cshtml", Model);
+</div>
+    </div>
