@@ -1,0 +1,32 @@
+﻿@using POS.Util.Model
+@model UserAuthenticationModel
+
+<div class="col-lg-12">
+
+    @using (Ajax.BeginForm("SaveUser", "AddUsers", new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "updatedMessage",
+        LoadingElementId = "loader",
+        OnSuccess = "Success(data)"
+
+    }, new { id = "Validation" }))
+    {
+        <label>
+            Your Email Id :
+            <input name="ManagerName" id="ManagerName" value="@User.Identity.Name" disabled="disabled" class="form-control" />
+        </label><br />
+        <label>
+            User EmailID :
+            @Html.TextBoxFor(m => m.User_EmailID, new { @class = "from-Control" })
+        </label>@Html.ValidationMessageFor(m => m.User_EmailID, null, new { @class = "err_mgs" })
+        <br /><label>
+            User Password :
+            @Html.PasswordFor(m => m.Password, new { @class = "from-Control" })
+        </label>@Html.ValidationMessageFor(m => m.Password, null, new { @class = "err_mgs" })
+        <div class="btn-group-lg" role="group" aria-label="Large button group">
+            <div class="col-lg-1"><input type="submit" class="btn btn-default btn_inpt_sumbit" value="Add User"></div>
+            <div class="col-lg-2"><button type="button" class="btn btn-danger btn_inpt_cancel">Cancel</button></div>
+        </div>
+    }
+</div>

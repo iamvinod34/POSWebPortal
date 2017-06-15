@@ -1,0 +1,574 @@
+﻿@using POS.Util.Model;
+@using POS.Entity.Entities;
+@using POS.Business.BusinessComponents;
+
+<!DOCTYPE html>
+@{
+    if (User.Identity.IsAuthenticated)
+    {
+        @model UserAuthenticationModel
+
+        LocationBL LocationBL = new LocationBL();
+        LocationBL.EmailID = User.Identity.Name;
+
+        UserAuthenticationModel UserAuthenticationMode = new UserAuthenticationModel();
+        AuthenticationBL AuthenticationBL = new AuthenticationBL();
+
+        string Email = User.Identity.Name;
+        List<AspNetUser> AspNetUser = AuthenticationBL.AspNetUserGetByUserEmail(Email);
+        if (AspNetUser != null)
+        {
+            if (AspNetUser.Count > 0)
+            {
+                string Id = AspNetUser.FirstOrDefault().Id;
+                Model.PublicUserAuthenticationModel = AuthenticationBL.SelectUserAuthentication(Id, Email);
+            }
+
+        }
+
+    }
+    else
+    {
+        Model.PublicUserAuthenticationModel = new UserAuthenticationModel();
+    }
+}
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Scripts/js")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Styles.Render("~/Content/themes/base/css")
+
+
+</head>
+<body>
+    <header>
+        <div id="stuck_container" class="stuck_container">
+            <div class="container">
+                <nav class="navbar navbar-default navbar-static-top ">
+                    <ul class="navbar-nav sf-menu" data-type="navbar">
+                        <li class="active">
+                            <a href="@Url.Action("Index","Home")">Home</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Master Data</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    
+                                    @if (Model.PublicUserAuthenticationModel.Location != null)
+                                    {
+                                        if (Model.PublicUserAuthenticationModel.Location)
+                                        {
+                                            <a href="../Location">Location</a>
+                                        }
+                                    }
+                                    
+                                </li>
+                                <li>
+
+                                    @if (Model.PublicUserAuthenticationModel.Terminal != null)
+                                    {
+                                        if (Model.PublicUserAuthenticationModel.Terminal)
+                                        {
+                                            <a href="../Terminal">Terminal</a>
+                                        }
+                                    }
+                                    
+                                </li>
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.Storage != null)
+                                    {
+                                        if (Model.PublicUserAuthenticationModel.Storage)
+                                        {
+                                            <a href="../Storage">Storage</a>
+                                        }
+                                    }
+                                    
+                                    
+                                </li>
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.Vendor)
+                                    {
+                                        <a href="../Vendor">Vendor</a>
+                                    }
+                                    
+                                </li>
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.Customer)
+                                    {
+                                        <a href="../Customer">Customer</a>
+                                    }
+                                    
+                                </li>
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.Category)
+                                    {
+                                        <a href="../Category">Category </a>
+                                    }
+                                    
+                                </li>
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.SubCategory)
+                                    {
+                                        <a href="../SubCategory">Sub Catergory</a>
+                                    }
+                                    
+                                </li>
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.UOM)
+                                    {
+                                        <a href="#">UOM</a>
+                                    }
+                                    
+                                </li>
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.Material)
+                                    {
+                                        <a href="../Material">Material</a>
+                                    }
+                                    
+                                </li>
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.Price)
+                                    {
+                                        <a href="#">Price</a>
+                                    }
+                                    
+                                </li>
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.LocationPrice)
+                                    {
+                                        <a href="../LocationPrice">Location Price</a>
+                                    }
+                                    
+                                </li>
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.Users)
+                                    {
+                                        <a href="#">Users (POS)</a>
+                                    }
+                                    
+                                </li>
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.City)
+                                    {
+                                        <a href="../City">City</a>
+                                    }
+                                    
+                                </li>
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.Region)
+                                    {
+                                        <a href="../Region">Region</a>
+                                    }
+                                    
+                                </li>
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.Country)
+                                    {
+                                        <a href="../Country">Country</a>
+                                    }
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Trasactions</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.TSalesOrder)
+                                    {
+                                        <a href="#">Sales Order</a>
+                                    }
+                                    
+                                </li>
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.TPOReceive)
+                                    {
+                                        <a href="/PORecieve">PO Recieve</a>
+                                    }
+                                    
+                                </li>
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.TReturnToSupplier)
+                                    {
+                                        <a href="/ReturnToSupplier">Return to Supplier</a>
+                                    }
+                                    
+                                </li>
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.TTranfterToDisplay)
+                                    {
+                                        <a href="/TransactionTransfterToDisplay">Transfer to Display</a>
+                                    }
+                                    
+                                </li>
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.TTransfterIN)
+                                    {
+                                        <a href="/TranfterIN">Transfer IN</a>
+                                    }
+                                    
+                                </li>
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.TTransfterOUT)
+                                    {
+                                        <a href="/TranfterOUT">Transfer OUT</a>
+                                    }
+                                    
+                                </li>
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.TPhysicalInventory)
+                                    {
+                                        <a href="/PhysicalInventory">Physical Inventory </a>
+                                    }
+                                    
+                                </li>
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.TPuchaseOrder)
+                                    {
+                                        <a href="/PurchaseOrder">Purchase Order</a>
+                                    }
+                                    
+                                </li>
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.TCashCollection)
+                                    {
+                                        <a href="/CashCollection">Cash Collection</a>
+                                    }
+                                    
+                                </li>
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.TProductionOrder)
+                                    {
+                                        <a href="/ProductionOrder">Production Order</a>
+                                    }
+                                    
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Enquiry</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.SalesOrder)
+                                    {
+                                        <a href="#">Sales Enquiry</a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="/Enquiry/GetEnquiry">Sales Invoice</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Enquiry/ReturnWithInvoice">Return With Invoice</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Enquiry/ReturnWithoutInvoice">Return Without Invoice</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Enquiry/GetUnHoldEnquiry">Hold Invoice</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Enquiry/SalesDelete">Delete Items</a>
+                                            </li>
+
+                                        </ul>
+                                    }
+                               
+                                </li>
+
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.POReceive)
+                                    {
+                                        <a href="/PO/Recieve">PO Recieve</a>
+                                    }
+                                    
+                                </li>
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.ReturnToSupplier)
+                                    {
+                                        <a href="/PO/ReturnToSupplier">Return to Supplier</a>
+                                    }
+                                    
+                                </li>
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.TranfterToDisplay)
+                                    {
+                                        <a href="/PO/TransfterToDisplay">Transfer to Display</a>
+                                    }
+                                    
+                                </li>
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.PhysicalInventory)
+                                    {
+                                        <a href="/PO/PhysicalInventory">Physical Inventory</a>
+                                    }
+                                    
+                                </li>
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.TransfterIN)
+                                    {
+                                        <a href="/PO/TransfterIN">Transfter IN</a>
+                                    }
+                                    
+                                </li>
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.TransfterOUT)
+                                    {
+                                        <a href="/PO/TransfterOUT">Transfter OUT</a>
+                                    }
+                                    
+                                </li>
+                                <li>
+                                    @if (Model.PublicUserAuthenticationModel.EOD)
+                                    {
+                                        <a href="/Enquiry/EnquiryEOD">EOD</a>
+                                    }
+                                    
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#">Reports</a>
+@if (Model.PublicUserAuthenticationModel.Reports)
+{
+    <ul class="dropdown-menu">
+        <li>
+            <a href="/ProductionOrderStatus">Production Order Status</a>
+        </li>
+        <li>
+            <a href="/ProfitShortage">Profit Shortage</a>
+        </li>
+        <li>
+            @Html.ActionLink("Category", "Index", "POSReport", new { name = "Report", Report = "Category" }, null)
+        </li>
+        <li>
+            @Html.ActionLink("Location", "Index", "POSReport", new { name = "Location", Report = "Location" }, null)
+        </li>
+        <li>
+            @Html.ActionLink("Material", "Index", "POSReport", new { name = "Material", Report = "Material" }, null)
+        </li>
+        <li>
+            @Html.ActionLink("Physical Inventory Details", "Index", "POSReport", new { name = "PhysicalInventoryDetails", Report = "PhysicalInventoryDetails" }, null)
+        </li>
+        <li>
+            @Html.ActionLink("Physical Inventory Differende Details", "Index", "POSReport", new { name = "PhysicalInventoryDifferendeDetails", Report = "PhysicalInventoryDifferendeDetails" }, null)
+        </li>
+        <li>
+            @Html.ActionLink("PO Receive", "Index", "POSReport", new { name = "POReceive", Report = "POReceive" }, null)
+        </li>
+        <li>
+            @Html.ActionLink("PriceFile", "Index", "POSReport", new { name = "PriceFile", Report = "PriceFile" }, null)
+        </li>
+        <li>
+            @Html.ActionLink("Return To Supplier", "Index", "POSReport", new { name = "ReturnToSupplier", Report = "ReturnToSupplier" }, null)
+        </li>
+        <li>
+            @Html.ActionLink("Stock Receive Details", "Index", "POSReport", new { name = "StockReceiveDetails", Report = "StockReceiveDetails" }, null)
+        </li>
+        <li>
+            @Html.ActionLink("Sub Category", "Index", "POSReport", new { name = "SubCategory", Report = "SubCategory" }, null)
+        </li>
+        <li>
+            @Html.ActionLink("Terminal", "Index", "POSReport", new { name = "Terminal", Report = "Terminal" }, null)
+        </li>
+        <li>
+            @Html.ActionLink("Transfer To Display", "Index", "POSReport", new { name = "TransferToDisplay", Report = "TransferToDisplay" }, null)
+        </li>
+        <li>
+            @Html.ActionLink("UOM", "Index", "POSReport", new { name = "UOM", Report = "UOM" }, null)
+        </li>
+        <li>
+            @Html.ActionLink("Vendor", "Index", "POSReport", new { name = "Vendor", Report = "Vendor" }, null)
+        </li>
+        <li>
+            @Html.ActionLink("Stock", "Index", "POSReport", new { name = "Stock", Report = "Stock" }, null)
+        </li>
+        <li>
+            @Html.ActionLink("Item Card", "Index", "POSReport", new { name = "ItemCard", Report = "ItemCard" }, null)
+        </li>
+
+    </ul>
+}
+                            
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Setup</a>
+                            <ul class="dropdown-menu">
+                                <li>
+@if (Model.PublicUserAuthenticationModel.ChangePassword)
+{
+    <a href="/ChangePassword">Change Password</a>
+}
+                                    
+                                </li>                                
+                                <li>
+@if (Model.PublicUserAuthenticationModel.AddUsers)
+{
+    <a href="/AddUsers">Add Users</a>
+}
+                                    
+                                </li>
+                                <li>
+@if (Model.PublicUserAuthenticationModel.UsersAuthentication)
+{
+    <a href="/UserAuthentication">User Authentication</a>
+}
+                                    
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            @if (Request.IsAuthenticated)
+                            {
+                                <a href="@Url.Action("LogOff", "Account")" title="LogOff" id="logoff"><span class="glyphicon glyphicon-off" aria-hidden="true"></span></a>
+                            }
+                            else
+                            {
+                                <a href="#loginForm" title="Sign in"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+
+                            }
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+
+            @*Main Menu*@
+        </div>
+
+        <section class="well well1 center991">
+            <div class="container">
+
+                <div class="navbar-header">
+                    <h1 class="navbar-brand">
+                        <a data-type='rd-navbar-brand' href="../">
+                            EasyPos
+                        </a>
+                        <small class="lead">
+                            best business<br />
+                            solutions
+                        </small>
+                    </h1>
+                </div>
+
+                @*<div class="search-form">
+                        <form id="search" action="search.php" method="GET" accept-charset="utf-8">
+                            <label class="search-form_label" for="in">
+                                <input id="in" class="search-form_input" type="text" name="s"
+                                       placeholder="" />
+                                <span class="search-form_liveout"></span>
+                            </label>
+                            <button type="submit" class="search-form_submit fa-search"></button>
+                        </form>
+                    </div>*@
+
+                <div class="social">
+
+                    <p class="lead">
+                        get in touch
+                    </p>
+
+                    <ul class="inline-list">
+                        <li>
+                            <a href="#" class="fa fa-facebook">facebook</a>
+                        </li>
+                        <li>
+                            <a href="#" class="fa fa-twitter">twitter</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+    </header>
+
+    <div class="container col-lg-12 col-sm-12 col-xs-12 col-md-12">
+        @RenderBody()
+        <footer>
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 col-xs-6">
+                            <h3>
+                                About us
+                            </h3>
+                            <ul class="marked-list">
+                                <li><a href="#">Market Research</a></li>
+                                <li><a href="#">Online Banking</a></li>
+                                <li><a href="#">Financial Services</a></li>
+                                <li><a href="#">Client Network Solutions</a></li>
+                                <li><a href="#">Testimonials</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 col-xs-6">
+                            <h3>
+                                Popular
+                            </h3>
+                            <ul class="marked-list">
+                                <li><a href="#">Solutions & Training</a></li>
+                                <li><a href="#">Affiliate Program</a></li>
+                                <li><a href="#">Production</a></li>
+                                <li><a href="#">Risk Management</a></li>
+                                <li><a href="#">Consultation</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-2 col-sm-6 col-xs-6">
+                            <h3>
+                                Links
+                            </h3>
+                            <ul class="marked-list">
+                                <li><a href="#">Strategies</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Recent Issues</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Solutions</a></li>
+                                <li><a href="#">Business Help</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-6 center500">
+                            <p class="rights">
+                                EASY POS &#169; @DateTime.Now.Year|
+                                <a href="index-5.html">Point of sales</a>
+                                <a rel="nofollow" href="www.easypos.com" target="_blank">
+                                    <br />More at
+                                    EASYPOS.com
+                                </a>
+                            </p>
+                            <address>
+                                Address
+                            </address>
+                            <dl class="phone">
+                                <dt>Freephone:</dt>
+                                <dd><a href="callto:#">+1 000000000</a></dd>
+                            </dl>
+                            <dl class="mail">
+                                <dt>E-mail:</dt>
+                                <dd><a href="mailto:#">testmail@easypos.com</a></dd>
+                            </dl>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </footer>
+    </div>
+    @Html.AntiForgeryToken()
+
+    @*@Scripts.Render("~/Scripts/bootstrap.min.js")
+        @Scripts.Render("~/Scripts/tm-scripts.js")
+        @Scripts.Render("~/Scripts/js")*@
+</body>
+</html>
+<script src="~/Scripts/tm-scripts.js"></script>

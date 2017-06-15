@@ -1,0 +1,184 @@
+﻿@using POS.Util.Model;
+@model TransactionModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btnSubmit").click(function () {
+            $("#Loading").show();
+            var LocationID = $('#fltrLocation').val();
+            var FromDate = $('#FromDate').val();
+            var ToDate = $('#ToDate').val();
+            $.ajax({
+                url: '../CashCollection/GetEodIDCashCollection',
+                data: { 'LocationID': LocationID,'FromDate':FromDate,'ToDate':ToDate},
+                type: "post",
+                cache: false,
+                success: function (data) {
+                    $('#tblCashCollectionBody').html(data);
+                    $("#Loading").hide();
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    var type = BootstrapDialog.TYPE_WARNING;
+                    BootstrapDialog.show({
+                        type: type,
+                        title: 'Error',
+                        message: 'Error in geting data from server. Please try again.'
+                    });
+                }
+            });
+        });
+       
+        $(document).on('click', "#btnCashCollection", function (e) {
+            debugger;
+            var textboxval = $(this).closest('tr').find('#CashCollectionTextBox').val();
+            if (textboxval == "") {
+                var type = BootstrapDialog.TYPE_WARNING;
+                BootstrapDialog.show({
+                    type: type,
+                    title: 'Error',
+                    message: 'Please Enter Value..'
+                });
+            }
+            else {
+
+                var eodidval = $(this).closest('tr').find('#EODID').text();
+                var LocationID = $('#fltrLocation').val();
+                $.ajax({
+                    url: '../CashCollection/UpdateCashCollection',
+                    data: { 'TextBoxVal': textboxval, 'EODIDVal': eodidval, 'LocationID': LocationID },
+                    type: "post",
+                    cache: false,
+                    success: function (data) {
+                         var type = BootstrapDialog.TYPE_SUCCESS;
+                            BootstrapDialog.show({
+                                type: type,
+                                title: 'Success',
+                                message: 'Successfully Updated..'
+                            });
+                            window.location.reload();
+                        
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        var type = BootstrapDialog.TYPE_WARNING;
+                        BootstrapDialog.show({
+                            type: type,
+                            title: 'Error',
+                            message: 'Error in geting data from server. Please try again.'
+                        });
+                    }
+                });
+            }
+            });
+        
+        $(document).on('keyup', "#CashCollectionTextBox", function (e) {
+            debugger;
+            var key = e.which;
+                if ($(this).val() == "") {
+                    alert('Please Enter Quantity...!!!');
+                }
+                else {
+                    var intRegex = /^\d+$/;
+                    var floatRegex = /^(\d+\.?\d{0,9}|\.\d{1,9})$/;
+                    var Value = $(this).val();
+                    if (intRegex.test(Value) || floatRegex.test(Value)) {
+                        if (Value.length > 0) {
+
+                        }
+                    }
+                    else {
+                        alert('Please Enter Valid Number...!!!');
+                        $(this).focus();
+                        $(this).val("");
+                    }
+                }
+            
+        });
+     
+        $('#FromDate').datepicker({
+            altFormat: "yy-mm-dd",
+            altField: "#FromDate"
+        });
+        $('#ToDate').datepicker({
+            altFormat: "yy-mm-dd",
+            altField: "#ToDate"
+        });
+    });
+
+   
+
+</script>
+<style>
+     #Loading {
+        color:white;
+        position: fixed;
+         z-index: 1000;
+         top: 0;
+         left: 0;
+         text-align:center;
+         height: 100%;
+         width: 100%;
+         background-size:200px,200px;
+         background: rgba( 255, 255, 255, 0.7 ) url(../../Images/Process.gif)  50% 50% no-repeat;
+         border-radius:10px;
+     }
+</style>
+
+<div class="container">
+    <span class="pad_1per">Transactions: Cash Collection</span>
+    <div class="col-lg-12 row">
+        <div class="pull-left  col-lg-3">
+            Location :
+            @Html.DropDownList("fltrLocation", (IEnumerable<SelectListItem>)ViewBag.Location, "--Select--", new { @class = "form-control" })
+        </div>
+        <div style="">
+            <input type="hidden" id="TempMasterIDFirst" />
+        </div>
+        <div class="pull-left col-lg-2">
+            <strong>From Date : </strong>
+            <input type="text" id="FromDate" class="datepicker form-control"   />
+        </div>
+        <div class="pull-left col-lg-2">
+            <strong>To Date : </strong>
+            <input type="text" id="ToDate" class="datepicker form-control" />
+        </div>
+        <div class="pull-left col-lg-2">
+            <strong></strong>
+            <input type="button" id="btnSubmit" class="btn btn-success" value="Submit" />
+        </div>
+    </div>
+    <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12" style="top:5px">
+        
+    </div>
+
+    <div id="dvReturntoSupplier" class="col-lg-12 row" style="top:10px;height:400px;overflow:scroll;background-color:white;">
+        <table id="tblCashCollection" class="table table-striped" style="border:1px solid #dddddd;">
+            <thead class="panel-heading tblHeader">
+                <tr>
+                    <th class="panel-title"><strong>EODID</strong></th>
+                    <th class="panel-title hidden-md hidden-xs" ><strong>Terminal ID</strong></th>
+                    <th class="panel-title hidden-md hidden-xs"><strong>Document Date</strong></th>
+                    <th class="panel-title"><strong>Loan Amount</strong></th>
+                    <th class="panel-title"><strong>System Cash</strong></th>
+                    <th class="panel-title"><strong>Actual Cash</strong></th>
+                    <th class="panel-title"><strong>Collect Cash</strong></th>
+                    <th class="panel-title"><strong>Collect Amount</strong></th>
+                    <th class="panel-title"><strong>Accecpt Button</strong></th>
+                </tr>
+            </thead>
+            <tbody id="tblCashCollectionBody" class="tblBody"></tbody>
+        </table>
+    </div>
+</div>
+
+<div id="Loading" style="display:none">
+
+</div>
+
+

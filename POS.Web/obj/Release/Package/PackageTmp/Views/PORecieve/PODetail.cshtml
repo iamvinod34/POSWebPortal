@@ -1,0 +1,91 @@
+﻿@using POS.Entity.Entities
+@model List<pxSelectPurchaseOrderDetailByDocId_Result>
+<style>
+
+tbody {
+    height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+ #Loading {
+        color:white;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        text-align:center;
+        height: 100%;
+        width: 100%;
+        background-size:200px,200px;
+        background: rgba( 255, 255, 255, 0.7 ) url(../../Images/Process.gif)  50% 50% no-repeat;
+        border-radius:10px;
+    }
+
+</style>
+
+<script>
+    function OnSuccess()
+    {
+        var dilog = BootstrapDialog.TYPE_SUCCESS;
+        BootstrapDialog.alert('Successfully Received In Transfter IN...');
+        window.location.reload();
+    }
+</script>
+
+@{
+    string ActionName = "";
+}
+@if (ViewBag.Page == "Transfter IN")
+{
+    ActionName = "TIRecieve";
+}
+else
+{
+    ActionName = "PORecieve";
+}
+@using (Ajax.BeginForm(ActionName, "PORecieve", new AjaxOptions
+{
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "updatedMessage",
+    LoadingElementId = "Loading",
+    OnSuccess = "OnSuccess"
+
+}))
+{
+    <input type="submit" value="Accept" class="btn btn-success btnblock-class pull-right btn-block"   /><br /><br />
+<table id="tblPODetail" class="table table-striped" style="border:1px solid #dddddd;">
+    <thead class="panel-heading tblHeader">
+        <tr>
+            <th class="panel-title"><strong>StorageID</strong></th>
+            <th class="panel-title"><strong>MaterialID</strong></th>
+            <th class="panel-title"><strong>Material Desc</strong></th>
+            <th class="panel-title"><strong>UOM</strong></th>
+            <th class="panel-title"><strong>PO Qty</strong></th>
+            <th class="panel-title"><strong>Recvd Qty</strong></th>
+        </tr>
+    </thead>
+    <tbody id="tbEnquiryGrid" class="tblBody">
+        @if (Model.Count() != 0)
+        {
+            foreach (pxSelectPurchaseOrderDetailByDocId_Result sales in Model)
+            {
+                <tr>
+                    <td class="panel-body">@sales.StorageID</td>
+                    <td class="panel-body">@sales.MaterialID</td>
+                    <td class="panel-body">@sales.MaterialDesc1</td>
+                    <td class="panel-body">@sales.UOM</td>
+                    <td class="panel-body">@sales.TranQty</td>
+                    <td class="panel-body">@Html.TextBox(sales.MaterialID, sales.TranQty) </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td class="panel-body" colspan="6">No Records Found.</td>
+            </tr>
+        }
+    </tbody>
+</table>
+}

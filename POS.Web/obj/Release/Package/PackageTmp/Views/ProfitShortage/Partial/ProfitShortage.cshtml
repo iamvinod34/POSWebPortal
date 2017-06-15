@@ -1,0 +1,22 @@
+﻿@using POS.Util.Model
+@using POS.Entity.Entities
+@model List<Proc_ProfitShortageReport_Result>
+
+    @if (Model != null)
+    {
+            foreach (Proc_ProfitShortageReport_Result item in Model)
+            {
+            <tr>
+                <td class="panel-body">@item.ID</td>
+                <td class="panel-body">@item.CategotyDesc</td>
+                <td class="panel-body">@item.TotalTransAmount</td>
+                <td class="panel-body">@item.TotalTransDelAmont</td>
+                <td class="panel-body">@item.DeliveredPer</td>
+                <td class="panel-body">@item.ShortageAmount</td>
+                @*<td class="panel-body">@item.ShortagePer</td>*@
+                <td class="panel-body">@item.ProfitAmount</td>
+                <td class="panel-body">@item.ShareOnShortPer</td>
+                <td class="panel-body">@item.ShareonProfitPer</td>
+            </tr>
+            }
+   }

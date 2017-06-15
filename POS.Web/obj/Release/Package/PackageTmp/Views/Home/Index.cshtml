@@ -1,0 +1,250 @@
+﻿@{
+    ViewBag.Title = "EasyPOS";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+
+}
+@using POS.Web.Models
+@model LoginViewModel
+@*<script src="~/Scripts/jquery-1.12.4.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.0.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>*@
+
+
+
+<div class="col-lg-12 col-sm-12 col-xs-12 col-md-12">
+    <header>
+        <section class="slider">
+            <div class="container">
+                <div class="camera_container" style="background-image: url('../Images/page-1_slide1.jpg');">
+                    <div class="jumbotron">
+                        <em>
+                            EasyPos
+                            <small>
+                                retail business solution
+                            </small>
+                        </em>
+                    </div>
+                    <a class="cam-btn" href="#">start today</a>
+
+                    <div id="camera" class="camera_wrap">
+                        <div src='../Images/page-1_slide1.jpg'>
+                            <div class="camera_caption fadeIn">
+                            </div>
+                        </div>
+                        <div data-src="../Images/page-1_slide2.jpg">
+                            <div class="camera_caption fadeIn">
+                            </div>
+                        </div>
+                        <div data-src="../Images/page-1_slide1.jpg">
+                            <div class="camera_caption fadeIn">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </header>
+</div>
+<div class="col-lg-12">
+    <div class="">
+        <section class="well well2 bot-line">
+            <div class="container">
+                <div class="">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <h2>
+                            Welcome,
+                            @if (Request.IsAuthenticated)
+                            {
+                                string[] UserName=User.Identity.Name.Split('@');
+                                @UserName[0]
+                            }
+                            else
+                            {
+                                <span>EASYPOS</span>
+                            }
+                        </h2>
+                        <h4 class="ins_r">
+                            Data Analysis and Reporting with transaction entry is allowed in this webportal design. It is a central application link with POS Server and POS Terminals.
+                        </h4>
+
+                        <p class="ins_r">
+                            The EASYPOS Webportal is built to provide information from POS System and the
+                            POS Server Back End. This webportal provide management users to maintain
+                            master data and do all types of transactions from central application. Also allow
+                            the user to inquire all types of transactions done from webportal or desktop
+                            application. Business Intelligence reporting is also available to help reporting
+                            analysis to get leverage from data information. Master data information can be
+                            entered from webportal or can be integrated with backend ERP system to fetch
+                            the data into POS Server and the Inbound and outbound data can be tracked from
+                            webportal. Webportal can also generate alerts to send notification on some data
+                            movement or on certain events. Notification can be send through Email or Mobile
+                            SMS.
+                        </p>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <h3 class="offs1">
+                            Key Reports
+                        </h3>
+                        <ul class="marked-list-1">
+                            <li><a href="#">Price (List)</a></li>
+                            <li><a href="#">Sales Order </a></li>
+                            <li><a href="#">PO Receive </a></li>
+                            <li><a href="#">Return to Supplier </a></li>
+                            <li><a href="#">Transfer to Display </a></li>
+                            <li><a href="#">Physical Inventory </a></li>
+                        </ul>
+                    </div>
+
+                    @if (!Request.IsAuthenticated)
+                    {
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <section id="loginForm">
+                                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <h3 class="form-signin-heading">sign in</h3>
+                                    <hr />
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <label class="control-label">Enter Email :</label>
+                                    <div class="form-group">
+                                        @*@Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })*@
+                                        <div class="col-md-10">
+                                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <label class="control-label">Enter Password :</label>
+                                    <div class="form-group">
+                                        @*@Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })*@
+                                        <div class="col-md-10">
+                                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <div class="checkbox">
+                                                @Html.CheckBoxFor(m => m.RememberMe)
+                                                @Html.LabelFor(m => m.RememberMe)
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class=" col-md-10">
+                                            <input type="submit" value="Login" class="btn btn-success btn-lg" />
+                                            <button type="reset" name="BtnCancel" class="btn btn-default btn-lg" title="Cancel" id="BtnCancel" style="margin:0">Clear</button>
+                                        </div>
+                                    </div>
+                                    <p>
+                                        @Html.ActionLink("Register as a new user", "Register","Account")
+                                    </p>
+                                    @* Enable this once you have account confirmation enabled for password reset functionality
+                                        <p>
+                                            @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                                        </p>*@
+                                }
+                            </section>
+                        </div>
+                    }
+
+
+                </div>
+            </div>
+        </section>
+        @if (Request.IsAuthenticated)
+        {
+            <section class="well bot-line" style="padding-top:56px;padding-bottom:56px">
+                <div class="container">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <h3 class="offs1">
+                            Sales Chart
+                        </h3>
+                    </div>
+                    <div class="container">
+                        <script src="~/Scripts/Chart/highcharts.js"></script>
+                        <script src="~/Scripts/Chart/exporting.js"></script>
+
+                        <div id="piechart" style="min-width: 310px; padding-bottom:10px; max-width: 1000px; margin: 0 auto"></div>
+                    </div>
+                </div>
+                <div id="RecentSales" class="container">
+                    <h4>Loading Recent Sales details...</h4>
+                </div>
+            </section>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    var d = new Date();
+                    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                    var month = d.getMonth();
+                    loadRecentPieChart();
+                    var timeoutPieChart = setInterval(loadRecentPieChart, 60000 * 5);
+                    function loadRecentPieChart() {
+                        $.ajax({
+                            url: '../CategoriesSold/ThisMonth',
+                            type: "post",
+                            cache: false,
+                            success: function (data) {
+                                var categoryData = data;
+                                $('#piechart').highcharts({
+                                    chart: {
+                                        plotBackgroundColor: null,
+                                        plotBorderWidth: null,
+                                        plotShadow: false,
+                                        type: 'pie'
+                                    },
+                                    title: {
+                                        text: 'Category Sales ' + months[month] + ' -'+@DateTime.Now.Year,
+                                    },
+                                    tooltip: {
+                                        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                                    },
+                                    plotOptions: {
+                                        pie: {
+                                            allowPointSelect: true,
+                                            cursor: 'pointer',
+                                            dataLabels: {
+                                                enabled: true,
+                                                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                                                style: {
+                                                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                                                }
+                                            },
+                                            showInLegend: true
+                                        }
+                                    },
+                                    series: [{
+                                        name: 'Sales',
+                                        colorByPoint: true,
+                                        data: categoryData
+                                    }]
+                                });
+                            },
+                            error: function (xhr, ajaxOptions, thrownError) {
+                                console.log("Error in geting sales pie chart data from server. Please try again.");
+                            }
+                        });
+                    }
+                    loadRecentGrid();
+                    var timeoutGrid = setInterval(loadRecentGrid, 60000 * 5);
+                    function loadRecentGrid() {
+                        $.ajax({
+                            url: '../Enquiry/GetRecentSales',
+                            type: "post",
+                            cache: false,
+                            success: function (data) {
+                                $('#RecentSales').html(data);
+                            },
+                            error: function (xhr, ajaxOptions, thrownError) {
+                                console.log("Error in geting recent sales data from server. Please try again.");
+                            }
+                        });
+                    }
+                });
+            </script>
+        }
+    </div>
+    @*<script src="js/bootstrap.min.js"></script>
+        <script src="js/tm-scripts.js"></script>*@
+</div>

@@ -25,3 +25,10 @@ C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Repository\bin\Release\POS.Entity.pd
 C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Repository\obj\Release\POS.Repository.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Repository\obj\Release\POS.Repository.dll
 C:\Users\Admin\Documents\GitHub\EASYPOS\POS.Repository\obj\Release\POS.Repository.pdb
+D:\POSWebPortal\POS.Repository\bin\Release\POS.Repository.dll
+D:\POSWebPortal\POS.Repository\bin\Release\POS.Repository.pdb
+D:\POSWebPortal\POS.Repository\bin\Release\POS.Entity.dll
+D:\POSWebPortal\POS.Repository\bin\Release\POS.Entity.pdb
+D:\POSWebPortal\POS.Repository\obj\Release\POS.Repository.csprojResolveAssemblyReference.cache
+D:\POSWebPortal\POS.Repository\obj\Release\POS.Repository.dll
+D:\POSWebPortal\POS.Repository\obj\Release\POS.Repository.pdb

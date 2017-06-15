@@ -1,0 +1,175 @@
+﻿@using POS.Util.Model
+@using POS.Entity.Entities
+@model  List<Proc_DocumentdetailsTenderDetails_Result>
+
+<div class="container">
+    @if (Model != null && Model.Count!=0)
+    {
+    <div class="col-lg-12" id="">
+        <div class="col-lg-6">
+            <div class="col-lg-offset-1"><img src="~/Images/NukalyReceiptLogo.png" /></div>
+            <div class="col-lg-12"><div class="col-lg-offset-1">Cashier Walk in</div></div>
+            <div class="col-lg-12"> <div class="col-lg-offset-1">Cashier : @Model.FirstOrDefault().UserID</div></div>
+            <div class="col-lg-12"><div class="col-lg-offset-1">*** @Model.FirstOrDefault().DocDetail ***</div></div>
+            <div class="col-lg-12">________________________________________</div>
+            <div class="col-lg-12">
+                <table style="width:50%">
+                        @foreach (Proc_DocumentdetailsTenderDetails_Result MaterialDetails in Model)
+                        {
+                            <tr>
+                                <td style="width:60%">
+                                    <div class="col-lg-12" style="overflow:visible">@MaterialDetails.MaterialDesc1 </div>
+                                    1 @MaterialDetails.UOM @@ @string.Format("{0:0.00}", Convert.ToDecimal(MaterialDetails.Price))
+                                </td>
+                                <td style="width:40%">
+                                        @if (MaterialDetails.SDAmount == null)
+                                        {
+                                            <div style="width:100%" class="col-lg-12">SAR @string.Format("{0:0.00}", Convert.ToDecimal(MaterialDetails.Amount))</div>
+                                        }
+                                        else
+                                        {
+                                            <div style="width:100%" class="col-lg-12">SAR @string.Format("{0:0.00}", Convert.ToDecimal(MaterialDetails.SDAmount))</div>
+                                        }
+                                </td>
+                            </tr>
+                        }
+                </table>
+            </div>
+            <div class="col-lg-12">________________________________________</div>
+            <div class="col-lg-12">
+                <table style="width:50%">
+                    <tr>
+                        <td>
+                                <div class="col-lg-12">TOTAL </div>
+                        </td>
+                        <td>
+                            @if (Model.FirstOrDefault().SDAmount == null)
+                            {
+                                <div class="col-lg-12">SAR @string.Format("{0:0.00}", Convert.ToDecimal(Model.Sum(e => e.Amount)))</div>
+                            }
+                            else
+                            {
+                                <div class="col-lg-12">SAR @string.Format("{0:0.00}", Convert.ToDecimal(Model.Sum(e => e.SDAmount)))</div>
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                            @{
+                                List<Proc_DocumentdetailsTenderDetails_Result> ODD = new List<Proc_DocumentdetailsTenderDetails_Result>();
+
+                                var DOCDetails = Model.GroupBy(e => e.TenderID).Select(grp => grp.ToList()).ToList();
+
+                                Proc_DocumentdetailsTenderDetails_Result addlist = new Proc_DocumentdetailsTenderDetails_Result();
+                                if (DOCDetails.Count > 0)
+                                {
+
+                                    for (int i = 0; i < DOCDetails.Count; i++)
+                                    {
+                                        decimal? _val = DOCDetails[0][i].PaidAmount;
+                                        string _tender = DOCDetails[0][i].TenderID;
+                                        addlist.PaidAmount = _val;
+                                        if (_tender == "CA")
+                                        {
+                                            _tender = "Cash";
+                                        }
+                                        else if (_tender == "DC")
+                                        {
+                                            _tender = "Span";
+                                        }
+                                        else if (_tender == "CC")
+                                        {
+                                            _tender = "Credit";
+                                        }
+                                        else if (_tender == "OA")
+                                        {
+                                            _tender = "OnAccount";
+                                        }
+                                        addlist.TenderID = _tender;
+                                        ODD.Add(addlist);
+                                    }
+                                }
+
+                            }
+                            <table style="width:100%">
+                                @foreach (Proc_DocumentdetailsTenderDetails_Result item in ODD)
+                                {
+                                    <tr>
+                                        @if (item.TenderID != null)
+                                        {
+                                        <td style="width:70%">@item.TenderID </td>
+                                        }
+                                        else
+                                        {
+                                            <td class="col-lg-4">SalesOrder No : </td>
+                                        }
+                                    </tr>
+                                }
+                            </table>
+                        </td>
+                        <td>
+                            <table style="width:100%">
+                                @foreach (Proc_DocumentdetailsTenderDetails_Result item in ODD)
+                                {
+                                    <tr>
+                                        @if (item.TenderID != null)
+                                        {
+                                            <td>SAR @string.Format("{0:0.00}", Convert.ToDecimal(item.PaidAmount))</td>
+                                        }
+                                        else
+                                        {
+                                            <td class="col-lg-3"> &nbsp;&nbsp;&nbsp;&nbsp; @item.SalesOrder</td>
+                                        }
+                                    </tr>
+                                }
+                            </table>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @if (Model.FirstOrDefault().ChangeAmount == 0.00M || Model.FirstOrDefault().ChangeAmount == null)
+                            {
+
+                            }
+                            else
+                            {
+                                <div class="">Change Amount </div>
+                            }
+                        </td>
+                        <td>
+                            @if (Model.FirstOrDefault().ChangeAmount == 0.00M || Model.FirstOrDefault().ChangeAmount == null)
+                            {
+
+                            }
+                            else
+                            {
+                                <div class="">SAR @string.Format("{0:0.00}", Convert.ToDecimal(Model.FirstOrDefault().ChangeAmount))</div>
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            DocumentID
+                        </td>
+                        <td>
+                            @Model.FirstOrDefault().DocumentID
+                        </td>
+                    <tr>
+                        <td>
+                            <div class="col-lg-offset-1">Customter Copy</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="col-lg-offset-1">@Model.FirstOrDefault().DocumentDate</div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+                                }
+</div>

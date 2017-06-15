@@ -1,0 +1,20 @@
+﻿@using POS.Entity.Entities;
+@model List<pxSelectDocumentMaterial_Result>
+<div>
+    <table class="popupGrid table">
+        <thead ><tr><td>Material ID</td><td>Material Description</td><td>Category Description</td><td>UOM</td><td>Transaction Qty</td><td>Amount</td></tr></thead>
+        <tbody>
+            @foreach (pxSelectDocumentMaterial_Result material  in Model)
+            {
+                <tr>
+                    <td>@material.MaterialID</td>
+                    <td>@material.MaterialDesc1</td>
+                    <td>@material.CategoryDesc</td>
+                    <td>@material.UOM</td>
+                    <td>@material.TranQty</td>
+                    <td>@material.Amount</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

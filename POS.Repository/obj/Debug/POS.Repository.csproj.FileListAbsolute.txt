@@ -55,3 +55,10 @@ D:\WebPortal\POS.Repository\bin\Debug\POS.Entity.pdb
 D:\WebPortal\POS.Repository\obj\Debug\POS.Repository.csprojResolveAssemblyReference.cache
 D:\WebPortal\POS.Repository\obj\Debug\POS.Repository.dll
 D:\WebPortal\POS.Repository\obj\Debug\POS.Repository.pdb
+D:\POSWebPortal\POS.Repository\bin\Debug\POS.Repository.dll
+D:\POSWebPortal\POS.Repository\bin\Debug\POS.Repository.pdb
+D:\POSWebPortal\POS.Repository\bin\Debug\POS.Entity.dll
+D:\POSWebPortal\POS.Repository\bin\Debug\POS.Entity.pdb
+D:\POSWebPortal\POS.Repository\obj\Debug\POS.Repository.csprojResolveAssemblyReference.cache
+D:\POSWebPortal\POS.Repository\obj\Debug\POS.Repository.dll
+D:\POSWebPortal\POS.Repository\obj\Debug\POS.Repository.pdb

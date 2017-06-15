@@ -8,3 +8,13 @@ D:\WebPortal\POS.Entity\bin\Debug\EntityFramework.SqlServer.xml
 D:\WebPortal\POS.Entity\obj\Debug\POS.Entity.dll
 D:\WebPortal\POS.Entity\obj\Debug\POS.Entity.pdb
 D:\WebPortal\POS.Entity\obj\Debug\POS.Entity.csprojResolveAssemblyReference.cache
+D:\POSWebPortal\POS.Entity\bin\Debug\POS.Entity.dll.config
+D:\POSWebPortal\POS.Entity\bin\Debug\POS.Entity.dll
+D:\POSWebPortal\POS.Entity\bin\Debug\POS.Entity.pdb
+D:\POSWebPortal\POS.Entity\bin\Debug\EntityFramework.dll
+D:\POSWebPortal\POS.Entity\bin\Debug\EntityFramework.SqlServer.dll
+D:\POSWebPortal\POS.Entity\bin\Debug\EntityFramework.xml
+D:\POSWebPortal\POS.Entity\bin\Debug\EntityFramework.SqlServer.xml
+D:\POSWebPortal\POS.Entity\obj\Debug\POS.Entity.csprojResolveAssemblyReference.cache
+D:\POSWebPortal\POS.Entity\obj\Debug\POS.Entity.dll
+D:\POSWebPortal\POS.Entity\obj\Debug\POS.Entity.pdb

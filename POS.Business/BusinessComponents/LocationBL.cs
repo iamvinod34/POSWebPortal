@@ -44,41 +44,52 @@ namespace POS.Business.BusinessComponents
             try
             {
                 EmailID = System.Web.HttpContext.Current.User.Identity.Name.ToString();
-                if(UserAuthentication== "UserAuthentication")
+                if (EmailID == "admin@pinkyz.com")
                 {
-
-                    List<Proc_AspNetManagerLocations_Result> Proc_AspNetManagerLocations_Result = new List<Entity.Entities.Proc_AspNetManagerLocations_Result>();
-                    Proc_AspNetManagerLocations_Result = AuthenticationBL.AspNetManagerLocationAuthentication(EmailID);
-
-                    foreach (Proc_AspNetManagerLocations_Result item in Proc_AspNetManagerLocations_Result)
+                    if (Locations == null)
                     {
-                        tbl_Location UserLocation = new tbl_Location();
-                        UserLocation.LocationID = item.LocationID;
-                        UserLocation.LocationDesc = item.LocationDesc;
-                        Locations.Add(UserLocation);
+                        if (Locations.Count == 0)
+                        {
+                            Locations = Context.Location.Get().ToList();
+                        }
+                    }
+                    else
+                    {
+                        Locations = new List<tbl_Location>();
+                        Locations = Context.Location.Get().ToList();
                     }
                 }
                 else
                 {
-                    List<Proc_AspNetUsersLocations_Result> Proc_AspNetUsersLocations_Result = new List<Entity.Entities.Proc_AspNetUsersLocations_Result>();
-                    Proc_AspNetUsersLocations_Result = AuthenticationBL.AspNetUserLocationAuthentication(EmailID);
+                    if (UserAuthentication == "UserAuthentication")
+                    {
 
-                    foreach (Proc_AspNetUsersLocations_Result item in Proc_AspNetUsersLocations_Result)
+                        List<Proc_AspNetManagerLocations_Result> Proc_AspNetManagerLocations_Result = new List<Entity.Entities.Proc_AspNetManagerLocations_Result>();
+                        Proc_AspNetManagerLocations_Result = AuthenticationBL.AspNetManagerLocationAuthentication(EmailID);
+
+                        foreach (Proc_AspNetManagerLocations_Result item in Proc_AspNetManagerLocations_Result)
+                        {
+                            tbl_Location UserLocation = new tbl_Location();
+                            UserLocation.LocationID = item.LocationID;
+                            UserLocation.LocationDesc = item.LocationDesc;
+                            Locations.Add(UserLocation);
+                        }
+                    }
+                    else
                     {
-                        tbl_Location UserLocation = new tbl_Location();
-                        UserLocation.LocationID = item.LocationID;
-                        UserLocation.LocationDesc = item.LocationDesc;
-                        Locations.Add(UserLocation);
+                        List<Proc_AspNetUsersLocations_Result> Proc_AspNetUsersLocations_Result = new List<Entity.Entities.Proc_AspNetUsersLocations_Result>();
+                        Proc_AspNetUsersLocations_Result = AuthenticationBL.AspNetUserLocationAuthentication(EmailID);
+
+                        foreach (Proc_AspNetUsersLocations_Result item in Proc_AspNetUsersLocations_Result)
+                        {
+                            tbl_Location UserLocation = new tbl_Location();
+                            UserLocation.LocationID = item.LocationID;
+                            UserLocation.LocationDesc = item.LocationDesc;
+                            Locations.Add(UserLocation);
+                        }
                     }
                 }
-                
-                if(Locations==null)
-                {
-                    if(Locations.Count==0)
-                    {
-                        Locations = Context.Location.Get().ToList();
-                    }
-                }
+               
                 
                 return Locations;
             }

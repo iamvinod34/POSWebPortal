@@ -1,0 +1,111 @@
+﻿@using POS.Util.Model
+@model UserAuthenticationModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+<style type="text/css">
+    #Loading {
+        color: white;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+        background-size: 200px,200px;
+        background: rgba( 255, 255, 255, 0.7 ) url(../../Images/Loading.gif) 50% 50% no-repeat;
+        border-radius: 10px;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#drpEmail').change(function () {
+            var EmailId = $("#drpEmail option:selected").text();
+            $('#Email').val(EmailId);
+            var UserId = $("#drpEmail option:selected").val();
+
+
+            //ajax calling
+            $.ajax({
+                url: '../UserAuthentication/Select',
+                data: { 'UserId': UserId, 'Email': EmailId },
+                type: "post",
+                cache: true,
+                success: function (data) {
+                    $("#PartialView").html();
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    var type = BootstrapDialog.TYPE_WARNING;
+                    BootstrapDialog.show({
+                        type: type,
+                        title: 'Error',
+                        message: 'Error in geting data  from server. Please try again.'
+                    });
+                }
+            });
+        });
+
+        
+
+        $('#divManger').hide();
+
+        $('input[type=radio][Name=Manager]').change(function () {
+            debugger;
+            var Checked = $('input[Name=Manager]:checked').val();
+            if(Checked=="Yes")
+            {
+                $('#divManger').show();
+            }
+            else
+            {
+                $('#divManger').hide();
+            }
+        });
+    });
+
+    function OnSuccess(data) {
+        var type = BootstrapDialog.TYPE_SUCCESS;
+        BootstrapDialog.alert({
+            type: type,
+            title: 'User Authentication',
+            message: 'User Security Updated....',
+            callback: function (result) {
+                if (result) {
+                    window.location.reload();
+                }
+                else {
+                    window.location.reload();
+                }
+            }
+        });
+        
+    }
+
+
+    function OnFailure() {
+        var type = BootstrapDialog.TYPE_DANGER;
+        BootstrapDialog.alert({
+            type: type,
+            title: 'User Authentication',
+            message: 'User Security Not Updated....'
+        });
+        window.location.reload();
+    }
+</script>
+
+<div class="container">
+    <h5>User Authentication</h5>
+    <div class="col-lg-12" id="PartialView1">
+        </div>
+        <div class="col-lg-12" id="PartialView">
+            @Html.Partial("~/Views/UserAuthentication/Partial/UserLocations.cshtml", Model)
+        </div>
+        <div id="Loading" style="display:none">
+            <h5>Saving data......</h5>
+        </div>
+    
+    </div>
+

@@ -1,0 +1,69 @@
+﻿@using POS.Util.Model
+@model List<ProductionOrderStatusModel>
+
+@if(Model != null)
+{
+        <div class="col-lg-12">
+            <div class="text-center alert-success">STATUS BETWEEN KITCHEN ORDER AND DELIVERY</div>
+        </div>
+        <div class="col-lg-12">
+            <div class="col-lg-6">
+
+            </div>
+            <div class="col-lg-6">
+                <table class="table table-bordered">
+                    <tr>
+                        <td>LocationId :</td>
+                        <td><label id="SpanLocationID"></label></td>
+                    </tr>
+                    <tr>
+                        <td>Location Desc :</td>
+                        <td><label id="SpanLocationDesc"></label></td>
+                    </tr>
+                    <tr>
+                        <td>From Date :</td>
+                        <td><label id="SpanFromDate"></label></td>
+                    </tr>
+                    <tr>
+                        <td>To Date :</td>
+                        <td><label id="SpanToDate"></label></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <td>MaterialID</td>
+                        <td>Description</td>
+                        <td>UOM</td>
+                        <td>Order Quantity</td>
+                        <td>Delivery Quantity</td>
+                        <td>Shortage Quantity</td>
+                    </tr>
+                </thead>
+                <tbody>
+              @foreach (ProductionOrderStatusModel item in Model)
+              {
+                <tr>
+                    <td>@item.MaterialID</td>
+                    <td>@item.MaterialDesc1</td>
+                    <td>@item.UOM</td>
+                    <td>@item.TotalTransQty</td>
+                    <td>@item.TotalDeliveryQty</td>
+                    <td>@(Convert.ToDecimal(item.TotalTransQty) - Convert.ToDecimal(item.TotalDeliveryQty))</td>
+                </tr>
+              }
+                    <tr>
+                        <td>Total :</td>
+                        <td></td>
+                        <td></td>
+                        <td>@Model.Sum(e=>e.TotalTransQty)</td>
+                        <td>@Model.Sum(e=>e.TotalDeliveryQty)</td>
+                        <td>@(Convert.ToDecimal(Model.Sum(e => e.TotalTransQty)) - Convert.ToDecimal(Model.Sum(e => e.TotalDeliveryQty)))</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+}

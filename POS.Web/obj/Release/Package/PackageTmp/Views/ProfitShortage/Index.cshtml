@@ -1,0 +1,134 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+<link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+<script src="~/Scripts/html2canvas.js"></script>
+<script src="~/Scripts/html2canvas.svg.js"></script>
+<script src="~/Scripts/jquery.PrintArea.js"></script>
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/DatatableExport/dataTables.buttons.min.js"></script>
+<script src="~/Scripts/DatatableExport/buttons.flash.min.js"></script>
+<script src="~/Scripts/DatatableExport/jszip.min.js"></script>
+<script src="~/Scripts/DatatableExport/pdfmake.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+      //  $('#ProfitShortageDataTable').DataTable();
+
+        $("#btnSubmit").click(function () {
+            var LocationId = $('#fltrLocation').val();
+            var FromDate = $('#FromDate').val();
+            var ToDate = $('#ToDate').val();
+            var LocationDesc = $('#fltrLocation option:selected').text();
+            $('#ProfitShortageDataTable').html('');
+            $.ajax({
+                type: "POST",
+                url: "../ProfitShortage/GetProfitShort",
+                data: { 'LocationID': LocationId, 'FromDate': FromDate, 'ToDate': ToDate },
+                success: function (data) {
+                    debugger;
+                    $('#ProfitShortageDataTable').html(data);
+                    //$('#SpanLocationID').text(LocationId);
+                    //$('#SpanLocationDesc ').text(LocationDesc);
+                    //$('#SpanFromDate').text(FromDate);
+                    //$('#SpanToDate').text(ToDate);
+                },
+                failure: function () {
+                    var type = BootstrapDialog.TYPE_WARNING;
+                    BootstrapDialog.show({
+                        type: type,
+                        title: 'Error',
+                        message: 'Geting Data Error.Please try again.'
+                    });
+                }
+            });
+        });
+
+        $('#FromDate').datepicker({
+            altFormat: "yy-mm-dd",
+            altField: "#FromDate"
+        });
+        $('#ToDate').datepicker({
+            altFormat: "yy-mm-dd",
+            altField: "#ToDate"
+        });
+
+        $('#Print').click(function () {
+            printContent('PrintDocument');
+        });
+
+        function printContent(el) {
+            //var restorepage = document.body.innerHTML;
+            var printcontent = document.getElementById(el).innerHTML;
+            //document.body.innerHTML = printcontent;
+            //window.print();
+            //document.body.innerHTML = restorepage;
+
+            html2canvas($("#PrintDocument"), {
+                onrendered: function (canvas) {
+                    debugger;
+                    canvas.id = "AllDocumentcanvas"
+                    canvas.width = 1200;
+                    theCanvas = canvas;
+                    var myImage = canvas.toDataURL();
+                    $('<img>', { src: myImage }).appendTo($('#PrintDocument'));
+                    debugger;
+                    $('#PrintDocument').printArea();
+                }
+            });
+        }
+    });
+
+
+
+</script>
+<div class="container">
+    <span class="pad_1per">Report: Profit Shortage</span>
+    <div class="col-lg-12 row">
+        <div class="pull-left  col-lg-3">
+            Location :
+            @Html.DropDownList("fltrLocation", (IEnumerable<SelectListItem>)ViewBag.Location, "--Select--", new { @class = "form-control" })
+        </div>
+        <div class="pull-left col-lg-2">
+            <strong>From Date : </strong>
+            <input type="text" id="FromDate" class="datepicker form-control" />
+        </div>
+        <div class="pull-left col-lg-2">
+            <strong>To Date : </strong>
+            <input type="text" id="ToDate" class="datepicker form-control" />
+        </div>
+        <div class="pull-left col-lg-2">
+            <strong></strong>
+            <input type="button" id="btnSubmit" class="btn btn-success" value="Submit" />
+        </div>
+        </div>
+    <div class="col-lg-12">
+        <span class="glyphicon glyphicon-print pull-right" id="Print" style="font-size:30px;cursor:pointer"></span><br /><br />
+    </div>
+    <div id="PrintDocument">
+        <div id="DataTable">
+            <table class="table">
+                <thead class="panel-heading tblHeader">
+                    <tr>
+                        <th class="panel-title"><strong>ID</strong></th>
+                        <th class="panel-title"><strong>Categoty Desc</strong></th>
+                        <th class="panel-title"><strong>Order Amount</strong></th>
+                        <th class="panel-title"><strong>Delivered Amount</strong></th>
+                        <th class="panel-title"><strong>Delivered %</</strong></th>
+                        <th class="panel-title"><strong>Shortage Amount</strong></th>
+                        <th class="panel-title"><strong>Lost Opp. of Profit Amount</strong></th>
+                        <th class="panel-title"><strong>Share on Short</strong></th>
+                        <th class="panel-title"><strong>Share on Profit</strong></th>
+                    </tr>
+                </thead>
+                <tbody id="ProfitShortageDataTable">
+
+                </tbody>
+            </table>
+</div>
+    </div>
+    </div>
+

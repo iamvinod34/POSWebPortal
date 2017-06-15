@@ -1,0 +1,258 @@
+﻿@using POS.Util.Model
+@model UserAuthenticationModel
+
+<div class="col-lg-12">
+    @using (Ajax.BeginForm("Save", "UserAuthentication", new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace,
+        LoadingElementId = "Loading",
+        OnSuccess = "OnSuccess(data)",
+    }, new { }))
+    {
+        <div class="col-lg-12">
+            <div class="col-lg-3">
+                <strong>Select One User :</strong>
+                @Html.DropDownListFor(m => m.UserId, new SelectList(Model.lstUseridsbyManager, "Id", "Email"), "--Select Email--", new { @class = "form-control", id = "drpEmail" })
+                @Html.ValidationMessageFor(m => m.UserId, null, new { @class = "err_mgs" })
+                @Html.HiddenFor(m => m.Email)
+            </div>
+            @*<div class="col-lg-6">
+                    <strong></strong>
+                    <button type="button" value="Search" id="Search" class="btn btn-success">Search</button>
+                </div>*@
+        </div>
+        <div class="col-lg-12">
+            <div class="">
+                <div class="panel-body">
+                    <h4>Roles</h4>
+                    <span>Select User Role :</span>
+                    @Html.DropDownListFor(m => m.RoleId, new SelectList(Model.lstAspNetRole, "Id", "Name", "--Select User EmailId--"), "--Select Role--", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.RoleId, null, new { @class = "err_mgs" })
+                    <br />  <a href="#" style="font-size:15px;color:blue;"> + Add Role</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="">
+                <div class="panel-body">
+                    <h4>User Locations :</h4>
+                    <div id="divUserLocations">
+                        <div class="checkbox checkbox-inline col-lg-12" style="color:black;">
+                            @*@Html.Partial("~/Views/UserAuthentication/Partial/UserLocations.cshtml", Model)*@
+
+                            @if (Model.lstLocations != null)
+                            {
+                                int i = 0;
+                                foreach (var item in Model.lstLocations)
+                                {
+                                    <div class="col-lg-3">
+                                        <label>@Html.CheckBox(item.LocationID.Trim() + "UL" + i, new { }) @item.LocationDesc.Trim() </label>
+                                    </div>
+                                    i++;
+                                }
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="">
+                <div class="panel-body">
+                    <div class="col-lg-12 radio radio-inline">
+                        <h4>
+                            This User are Manager :
+                            <label><input type="radio" value="Yes" name="Manager" /> Yes</label>
+                            <label><input type="radio" value="No" checked="checked" name="Manager" /> No</label>
+                        </h4>
+                    </div>
+                    <div class="" id="divManger">
+                        <div class="">
+                            <h4>Manager Locations :</h4>
+                            <div class="checkbox checkbox-inline col-lg-12" style="color:black;">
+                                @if (Model.lstLocations != null)
+                                {
+                                    int i = 0;
+                                    foreach (var item in Model.lstLocations)
+                                    {
+                                        <div class="col-lg-3">
+                                            <label>@Html.CheckBox(item.LocationID.Trim() + "ML" + i, new { }) @item.LocationDesc.Trim() </label>
+                                        </div>
+                                        i++;
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="">
+                <div class="panel-body">
+                    <h4>Master Data :</h4>
+                    <div class="checkbox checkbox-inline col-lg-12" style="color:black;">
+                        <div class="col-lg-3">
+                                <label> @Html.CheckBoxFor(m => m.Location, new { @class = "", @checked = "checked" }) Location </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.Terminal, new { @class = "" }) Terminal </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.Storage, new { @class = "" }) Storage </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.Vendor, new { @class = "" }) Vendor </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.Customer, new { @class = "" }) Customer </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.Category, new { @class = "" }) Category </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.SubCategory, new { @class = "" }) Sub Category </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.UOM, new { @class = "" }) UOM </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.Material, new { @class = "" }) Material </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.Price, new { @class = "" }) Price </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.LocationPrice, new { @class = "" }) Location Price </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.Users, new { @class = "" }) Users </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.City, new { @class = "" }) City </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.Region, new { @class = "" }) Region </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.Country, new { @class = "" }) Country </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="">
+                <div class="panel-body">
+                    <h4>Tractions :</h4>
+                    <div class="checkbox checkbox-inline col-lg-12" style="color:black;">
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.TSalesOrder, new { @class = "" }) Sales Order </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.TPOReceive, new { @class = "" }) PO Receive </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.TReturnToSupplier, new { @class = "" }) Return To Supplier </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.TTranfterToDisplay, new { @class = "" }) Transfter To Display </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.TTransfterIN, new { @class = "" }) Transfter IN </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.TTransfterOUT, new { @class = "" }) Transfter OUT </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.TPhysicalInventory, new { @class = "" }) Physical Inventory </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.TPuchaseOrder, new { @class = "" }) Purchase Order </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.TCashCollection, new { @class = "" }) Cash Collection </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.TProductionOrder, new { @class = "" }) Procdution Order </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="">
+                <div class="panel-body">
+                    <h4>Enquiry :</h4>
+                    <div class="checkbox checkbox-inline col-lg-12" style="color:black;">
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.SalesOrder, new { @class = "" }) Sales Order </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.POReceive, new { @class = "" }) PO Receive </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.ReturnToSupplier, new { @class = "" }) Return To Supplier </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.TranfterToDisplay, new { @class = "" }) Transfter To Display </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.TransfterIN, new { @class = "" }) Transfter IN </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.TransfterOUT, new { @class = "" }) Transfter OUT </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.PhysicalInventory, new { @class = "" }) Physical Inventory </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.EOD, new { @class = "" }) EOD </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="">
+                <div class="panel-body">
+                    <h4>Reports :</h4>
+                    <div class="checkbox checkbox-inline col-lg-12" style="color:black;">
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.Reports, new { @class = "" }) Reports </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.ProductionOrderStatusReport, new { @class = "" }) Production Order Status Report </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.LostOpporTunitySalesReport, new { @class = "" }) Lost OpporTunity Sales Report  </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="">
+                <div class="panel-body">
+                    <h4>SetUp :</h4>
+                    <div class="checkbox checkbox-inline col-lg-12" style="color:black;">
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.ChangePassword, new { @class = "" }) Change Password </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.AddUsers, new { @class = "" }) Add Users </label>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>@Html.CheckBoxFor(m => m.UsersAuthentication, new { @class = "" }) Users Authentication  </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <input type="submit" class="btn btn-lg btn-success" value="Save" style="font-size:20px" />
+        </div>
+    }
+</div>
+

@@ -1,0 +1,46 @@
+﻿@using POS.Entity.Entities;
+@using POS.Util.Model;
+@model LocationModel
+
+@*View for Location/Store list. Created by Srikanth *@
+@{
+    ViewBag.Title = "Location";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<script src="~/Scripts/jsLocation.js"></script>
+<div class="col-lg-12">
+    <h2 class="pad_1per ">Stores <button id="btnNewStore" title="Add New Store!" class="btn btn-default pull-right mar_top_1per bckcolor_green" type="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button></h2>
+</div>
+<div class="col-lg-12 mgn_0">
+    <div class="col-lg-3 noPadBrd">
+        <div class="input-group col-lg-12 ">
+            <input id="txtLocationSearch" type="text" class="form-control col-lg-12 stre_maxWth  ht40" placeholder="Search for  Store / Location / LocationID">
+
+        </div>
+        <div class="ovrflow">
+            @if (Model != null)
+            {
+                foreach (tbl_Location location in Model.MLocation)
+                {
+                    <div class="locData pad_1per bg_blue">
+                        <a class="pointer MasterStore" data-LocationID="@location.LocationID" data-City="@location.City"><span class="">@location.LocationDesc</span></a>
+                    </div>
+                }
+                <small id="NoRecords" class="lead" style="display:none">
+                    No records found.
+                </small>
+            }
+            else
+            {
+                <small class="lead">
+                    No records found.
+                </small>
+            }
+        </div>
+    </div>
+    <div id="LocationDetails" class="col-lg-9 noPadBrd">
+        @Html.Partial("~/Views/Location/Partial/_LocationDetailsPartial.cshtml", Model)
+    </div>
+
+</div>

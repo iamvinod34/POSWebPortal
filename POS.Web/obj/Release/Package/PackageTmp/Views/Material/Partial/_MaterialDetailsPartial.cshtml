@@ -1,0 +1,105 @@
+﻿@using POS.Entity.Entities;
+@using POS.Util.Model;
+@model MaterialModel
+
+
+
+@{ string disabled = string.Empty;}
+@if (Model.GetByIDMaterial != null)
+{
+    if (!string.IsNullOrEmpty(Model.MaterialID))
+    {
+        disabled = "disabled";
+        <div class="mrg_left_5per"><h3>Update "@Model.MaterialDesc1" Details</h3> </div>
+    }
+    else
+    {
+        <div class="mrg_left_5per"><span class="font_med">Add New Material</span></div>
+    }
+}
+else
+{
+    <div class="mrg_left_5per"><h3>Add New Material</h3></div>
+
+    <script type="text/javascript">
+        $(function () {
+            $(document).on('change', '#file', function () {
+                var Path = $('#file').val().split('\\').pop();
+                $('#Pathval').val(Path);
+            });
+        });
+        function Success(data) {
+            alert(data);
+            window.location.reload();
+        }
+
+    </script>
+}
+@using (Html.BeginForm("InsertUpdate", "Material",FormMethod.Post,new AjaxOptions() {OnSuccess= "Success(data)"}))
+{
+    <div class="col-lg-12">
+        <div class="col-lg-12 pad_2per">
+            <div class="col-lg-12 pad_1perdiv spn_lebl">
+                <div class="col-lg-12">
+                    <div class="col-lg-10 pad_1perdiv spn_lebl">
+                        <div class="col-lg-12"><div class="col-lg-4"><span>Material ID :</span></div><div class="col-lg-6">@Html.TextBoxFor(e => e.MaterialID, null, new { @class = "form-control" })</div>@Html.ValidationMessageFor(e => e.MaterialID, null, new { @class = "err_mgs" })</div>
+                        <div class="col-lg-12"><div class="col-lg-4"><span>Description :</span></div><div class="col-lg-6">@Html.TextBoxFor(e => e.MaterialDesc1, new { @class = "form-control" })</div>@Html.ValidationMessageFor(e => e.MaterialDesc1, null, new { @class = "err_mgs" })</div>
+                        <div class="col-lg-12"><div class="col-lg-4"><span></span></div><div class="col-lg-6">@Html.TextBoxFor(e => e.MaterialDesc2, new { @class = "form-control" })</div>@Html.ValidationMessageFor(e => e.MaterialDesc2, null, new { @class = "err_mgs" })</div>
+                        <div class="col-lg-12"><div class="col-lg-4"><span>Categoty :</span></div><div class="col-lg-6">@Html.DropDownListFor(e => e.CategoryID, new SelectList(Model.GetAllCategory, "CategoryID", "CategoryDesc"), new { @class = "form-control" })</div>@Html.ValidationMessageFor(e => e.CategoryID, null, new { @class = "err_mgs" })</div>
+                        <div class="col-lg-12">
+                            <div class="col-lg-4"><span>Sub Categoty :</span></div><div class="col-lg-6">@Html.DropDownListFor(e => e.SubCategoryID, new SelectList(Model.GetAllSubCategory, "SubCategoryID", "SubCategoryDesc"), new { @class = "form-control" })</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="col-lg-12">
+            <div class="col-lg-12 pad_2per">
+                <div class="col-lg-12 pad_1perdiv spn_lebl">
+                    <div class="col-lg-12">
+                        <div class="col-lg-10 pad_1perdiv spn_lebl">
+                            <div class="col-lg-12"><div class="col-lg-4"><span>Url :</span></div><div class="col-lg-6">@Html.TextBoxFor(e => e.ProductURL, new { @class = "form-control" })</div>@Html.ValidationMessageFor(e => e.ProductURL, null, new { @class = "err_mgs" })</div>
+                            <div class="col-lg-12"><div class="col-lg-4"><span>Vendor ID :</span></div><div class="col-lg-6">@Html.DropDownListFor(e => e.VendorID, new SelectList(Model.GetAllVendor, "VendorID", "Name1"), new { @class = "form-control" })</div>@Html.ValidationMessageFor(e => e.VendorID, null, new { @class = "err_mgs" })</div>
+                            <div class="col-lg-12"><div class="col-lg-4"><span>Base UOM :</span></div><div class="col-lg-6">@Html.TextBoxFor(e => e.BaseUOM, new { @class = "form-control" })</div>@Html.ValidationMessageFor(e => e.BaseUOM, null, new { @class = "err_mgs" })</div>
+                            <div class="col-lg-12"><div class="col-lg-4"><span></span>Cost SAR :</div><div class="col-lg-6">@Html.TextBoxFor(e => e.Cost, new { @class = "form-control" })</div>@Html.ValidationMessageFor(e => e.Cost, null, new { @class = "err_mgs" })</div>
+                            <div class="col-lg-12"><div class="col-lg-4"></div><div class="col-lg-8 input-group input-group-btn"><label class="btn btn-primary  glyphicon glyphicon-folder-open"><input type="file" style="display:none" name="file" id="file" /> Browse...</label>@Html.TextBoxFor(e=>e.filePath, new {@class="form-control",id= "Pathval",style= "height: 34px;top: 1px;", placeholder = "File name..." })</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="input-group">
+
+
+            </div>
+        </div>
+        <div class="col-lg-12 " style="font-weight:500;">
+            <table class="table_new">
+                <tr>
+                    <td class="col-sm-1 img-responsive glyphicon glyphicon-plus td_new add" id="NewMaterialEAN" title="Add New Row"></td>
+                    <td class="col-lg-1">Material EAN</td>
+                    <td class="col-lg-1">UOM</td>
+                    <td class="col-lg-1">Convert Value</td>
+                    <td class="col-lg-1">BaseUOM</td>
+                    <td class="col-lg-1">Material Mix</td>
+                    <td class="col-lg-1">Price</td>
+                    <td class="col-lg-1">Prefer UOM</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-lg-12" id="NewRows" style="margin-bottom:2px">
+            @Html.Partial("~/Views/Material/Partial/_MaterialNewEANEntries.cshtml", Model)
+        </div>
+
+                <div class="col-lg-12">
+                    <div class="col-lg-3"><h5></h5></div>
+                    <div class="btn-group-lg" role="group" aria-label="Large button group">
+                        <div class="col-lg-1"><input type="submit" id="btnSaveMaterialDetails" class="btn btn-default btn_inpt_sumbit" value="Save"></div>
+                        <div class="col-lg-2"><button type="button" class="btn btn-danger btn_inpt_cancel">Cancel</button></div>
+                    </div>
+                </div>
+                <div style="display:table-row">@Html.Hidden("Valueindex", "0")</div>
+}
+

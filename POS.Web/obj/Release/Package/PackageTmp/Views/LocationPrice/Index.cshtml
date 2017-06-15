@@ -1,0 +1,48 @@
+﻿@u
+sing POS.Entity.Entities;
+@using POS.Util.Model;
+@model LocationPriceModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+<script src="~/Scripts/jsLocationPrice.js"></script>
+<div class="col-lg-12">
+    <h2 class="pad_1per ">Location Price <button id="btnNewLocationPriceStore" title="Add New Store!" class="btn btn-default pull-right mar_top_1per bckcolor_green" type="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button></h2>
+</div>
+<div class="col-lg-12 mgn_0">
+    <div class="col-lg-3 noPadBrd">
+        <div class="input-group col-lg-12 ">
+            <input id="txtLocationPrice" type="text" class="form-control col-lg-12 stre_maxWth  ht40" placeholder="Search for  Material  ID / Material Name">
+
+        </div>
+        <div class="ovrflow">
+            @if (Model.MMaterial != null)
+            {
+                foreach (tbl_LocationPrice LocationPrice in Model.MLocationPrice)
+                {
+                    <div class="locData pad_1per bg_blue">
+                        <a class="pointer MasterLocationPriceStore" data-LocationID="@LocationPrice.LocationID"  data-EAN13="@LocationPrice.EAN13"><span class="">@LocationPrice.LocationID</span></a>
+                    </div>
+                }
+                <small id="NoRecords" class="lead" style="display:none">
+                    No records found.
+                </small>
+            }
+            else
+            {
+                <small class="lead">
+                    No records found.
+                </small>
+            }
+        </div>
+    </div>
+    <div id="LocationPriceDetails" class="col-lg-9 noPadBrd">
+        @Html.Partial("~/Views/LocationPrice/Partial/_LocationPriceDetailsPartial.cshtml", Model)
+    </div>
+
+</div>
+
+
+

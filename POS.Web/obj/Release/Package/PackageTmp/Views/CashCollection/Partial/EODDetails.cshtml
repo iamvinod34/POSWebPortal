@@ -1,0 +1,49 @@
+﻿@using POS.Entity.Entities
+@using POS.Business.BusinessComponents
+@model List<Proc_CashCollection_Result>
+
+@if (Model != null)
+{
+    foreach (Proc_CashCollection_Result cash in Model)
+    {
+        decimal _ActLoan = 0;
+        decimal _CollectCash = 0;
+        <tr>
+            <td class="panel-body"><label id="EODID" data-EODID="@cash.EODID">@cash.EODID</label></td>
+            <td class="panel-body hidden-md hidden-xs">@cash.TerminialID</td>
+            <td class="panel-body hidden-md hidden-xs">@cash.DocDate</td>
+            <td class="panel-body">@cash.Loan</td>
+            <td class="panel-body">@cash.SystemCash</td>
+            <td class="panel-body">@cash.ActualCash</td>
+            @{
+                decimal _Act = Convert.ToDecimal(cash.ActualCash);
+                decimal _Loan = Convert.ToDecimal(cash.Loan);
+                decimal _SysCash = Convert.ToDecimal(cash.SystemCash);
+
+                _ActLoan = _Act - _Loan;
+
+                _CollectCash = Math.Max(_ActLoan, _SysCash);
+            }
+            <td class="panel-body">@_CollectCash</td>
+            @if (cash.Cash_Collection.ToString() == string.Empty)
+            {
+                <td class="panel-body"><input id="CashCollectionTextBox" class="form-control" value="@_CollectCash" required="required"></td>
+                <td class="panel-body"><button id="btnCashCollection" class="btn btn-success btn-lg">Save</button></td>
+            }
+            else
+
+            {
+                <td class="panel-body"><input  value="@cash.Cash_Collection" disabled="disabled" class="form-control"></td>
+                <td class="panel-body"><button  disabled="disabled" class="btn btn-danger btn-lg" style="cursor:not-allowed">Saved</button></td>
+            }
+        </tr>
+    }
+}
+else
+{
+    <tr>
+        <td>
+            no records found...
+        </td>
+    </tr>
+}

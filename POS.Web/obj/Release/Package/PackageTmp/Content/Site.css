@@ -1,0 +1,463 @@
+﻿
+
+body {
+    /*padding-top: 50px;*/
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+.udrline{
+    text-decoration:underline;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+
+.mgn_0 {
+    margin: 0;
+}
+
+.pad_1per {
+    padding-left: 1%;
+}
+
+.mar_top_1per {
+    margin-top: 1%;
+}
+
+.stre_maxWth {
+    width: 100%;
+    max-width: 410px !important;
+}
+
+.pad_0 {
+    padding: 0;
+}
+
+.noPadBrd {
+    border: 1px solid #c0c0c0;
+    padding: 0;
+}
+
+.font_med {
+    font-size: medium;
+}
+
+.bg_blue:hover {
+    color: #ffffff;
+    background-color: #7ac1e6;
+}
+
+.ht40 {
+    height: 40px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.pad_1perdiv > div {
+    padding: 0.5%;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.tblHeader {
+    color: #ffffff;
+    background-color: #7ac1e6;
+    border-color: #337ab7;
+}
+
+.tblBody {
+    background-color: #ffffff;
+}
+
+#EnquiryGrid td {
+    border: 1px solid !important;
+}
+
+th.panel-title {
+    border-right: 1px solid;
+    text-align: center;
+}
+
+.tblBase {
+    margin: 1%;
+    /*border: 1px solid #337ab7;*/
+}
+
+::-webkit-input-placeholder {
+    text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    text-align: center;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+    text-align: center;
+}
+
+:-ms-input-placeholder {
+    text-align: center;
+}
+
+.dataTables_length > label {
+    letter-spacing: 1px;
+}
+
+.btn-success:hover {
+    color: #ffffff;
+    background-color: #39b628;
+    border-color: #46a938;
+}
+
+.btn-filter {
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.panel-body.form-group > div {
+    padding: 0.8%;
+}
+
+.small_ddl_menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    margin: 2px 0 0;
+    list-style: none;
+    font-size: 12px;
+    line-height: 35px;
+    text-transform: uppercase;
+    background-color: #7ac1e6;
+    -moz-box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.37);
+    -webkit-box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.37);
+    box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.37);
+    padding: 0px 5px 0px;
+    width: 113px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+}
+
+    .small_ddl_menu > li > a {
+        color: #404040;
+        margin-left "1";
+    }
+
+.wdAmountSlider {
+    width: 35%;
+    margin-top: 0.8%;
+}
+
+#slider-range > .ui-state-default {
+    height: 29px !important;
+    background: #1f7eaf;
+            border: 1px solid #0b5479!important;
+}
+
+.BtnTrm {
+    height: 26px;
+    padding-top: 2px;
+}
+
+.ui-widget.ui-widget-content {
+    border: 1px solid #999999 !important;
+}
+
+.btnGridTender {
+    margin: 0;
+    background: #f6931f;
+    color: #fff;
+    float: right;
+    margin-left: 5px;
+}
+
+.btnGridMaterial {
+    background: #7ac1e6;
+    color: #fff;
+    float: right;
+    margin: 0;
+}
+
+.orange-bg {
+    background-color: #f6931f;
+}
+
+.blue-bg {
+    background-color: #337ab7;
+}
+
+.popupGrid {
+}
+
+    .popupGrid > thead {
+        border: 1px solid #999999 !important;
+    }
+
+        .popupGrid > thead > tr > td {
+            font-size: medium;
+            font-weight: bold;
+            border: 1px solid #e5e5e5;
+        }
+
+    .popupGrid > tbody > tr > td {
+        border: 1px solid #e5e5e5;
+    }
+
+.dt-button {
+    font-size: medium;
+}
+
+    .dt-button > span {
+        margin-right: 5px;
+    }
+
+a.dt-button {
+    margin-right: 2%;
+}
+
+.buttons-print {
+    color: #337ab7;
+}
+
+.buttons-excel {
+    color: #1d8c0d;
+}
+
+.buttons-pdf {
+    color: #c9302c;
+}
+
+.dt-buttons {
+    position: absolute;
+    width: 50%;
+}
+
+.ui-datepicker {
+    z-index: 2 !important;
+}
+
+.purplebg {
+    background-color: #0078d7;
+}
+.purplebg:hover {
+    background-color: #053155;
+}
+
+.dulldarkbluebg {
+    background-color: #5133ab;
+}
+.dulldarkbluebg:hover {
+    background-color: #190655;
+}
+.saffronbg {
+    background-color: #d24726;
+}
+.saffronbg:hover {
+    background-color: #5f1908;
+}
+.floroGreenbg {
+    background-color: darkgreen;
+}
+.floroGreenbg:hover {
+    background-color: #033319;
+}
+
+.lightPurplebg
+{
+    background-color: #563d7c
+}
+.lightPurplebg:hover
+{
+    background-color: #4b0847
+}
+.white>a:hover{
+    color: white!important;
+}
+.plainBlue{
+    background-color: #094ab2
+}
+.plainBlue:hover{
+    background-color: #061f48
+}
+.quick-links {
+    margin: 3px;
+}
+.darkbrown {
+    background-color: #802909;
+}
+.darkbrown:hover {
+    background-color: #411403;
+}
+/*.marked-list-1 >li > a{
+    font-size: medium;
+}*/
+.tblBody>tr{
+    text-align:center;
+}
+
+td.panel-body {
+    border-left: 1px solid #f5f5f5;
+}
+
+.ui-widget-header{
+        background: #7ac1e6!important;
+}
+
+/*Master data script -9/8  -vinod*/
+
+.pad_0 {
+    padding: 0;
+}
+
+.noPadBrd {
+    border: 1px solid #c0c0c0;
+    padding: 0;
+}
+
+.font_med {
+    font-size: 24px;
+}
+
+.bg_blue {
+    padding: 5px;
+    color: black;
+    padding: 5px 5px 5px;
+    width: 100%;
+}
+
+    .bg_blue:hover {
+        color: #ffffff;
+        background-color: #7ac1e6;
+    }
+
+.ht40 {
+    height: 40px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.pad_1perdiv > div {
+    padding: 0.5%;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.ovrflow {
+    max-height: 623px;
+    overflow-y: auto;
+}
+
+.bckcolor_green {
+    background-color: green;
+}
+
+.mrg_left_5per {
+    margin-left: 5%;
+}
+
+.pad_2per {
+    padding: 2%;
+}
+
+.btn_inpt_sumbit {
+    background-color: #7ac1e6;
+    color: white;
+    float: none;
+}
+
+.btn_inpt_cancel {
+    background-color: #e45b5b;
+    color: white;
+    float: none;
+}
+
+/*input {
+    font-size: medium;
+    color: black;
+    months
+}*/
+
+.err_mgs {
+    color: red;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.stng_text {
+    text-align: center;
+    color: black;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.stng_Hdr {
+    color: white;
+    font-size: 20px;
+    background-color: #7ac1e6;
+    font-weight: bold;
+}
+
+.ovrflow_Stng {
+    max-height: 837px;
+    overflow-y: auto;
+}
+
+.hed_add {
+    font-size: 25px;
+}
+
+.spn_lebl {
+    font-size: 14px;
+    color: #464646;
+}
+.td_new{
+    background-color: #7ac1e6;
+    color: white;
+    font-size: 24px;
+    width: 1%;
+    padding: .5%;
+    padding-left: .5%;
+    margin-left: 10px;
+}
+.table_new{
+    background-color: #7ac1e6;
+    color: white;
+    font-size: 14px;
+    width: 1%;
+    padding: 5%;
+    width:100%;
+}
+.upp_case{
+    text-transform: uppercase;
+}
+/*Master data script -9/8  -vinod*/

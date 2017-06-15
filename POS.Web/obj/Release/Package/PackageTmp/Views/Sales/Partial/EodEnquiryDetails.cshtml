@@ -1,0 +1,96 @@
+﻿@using POS.Entity.Entities
+@model List<pxSelectFilterEodEnquiry_Result>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+    });
+</script>
+<table id="EnquiryGrid" class="table ">
+    <thead class="panel-heading tblHeader">
+        <tr>
+            <th class="panel-title" title="EOD ID"><strong>EODID</strong></th>
+            <th class="panel-title" title="Location Description"><strong>Location</strong></th>
+            <th class="panel-title" title="Document Date"><strong>Date</strong></th>
+            <th class="panel-title" title="Loan"><strong>Loan</strong></th>
+            <th class="panel-title" title="System Cash"><strong>System</strong></th>
+            <th class="panel-title" title="Actual Cash"><strong>Actual</strong></th>
+            <th class="panel-title" title="SAR 1"><strong>1</strong></th>
+            <th class="panel-title" title="SAR 5"><strong>5</strong></th>
+            <th class="panel-title" title="SAR 10"><strong>10</strong></th>
+            <th class="panel-title" title="SAR 20"><strong>20</strong></th>
+            <th class="panel-title" title="SAR 50"><strong>50</strong></th>
+            <th class="panel-title" title="SAR 100"><strong>100</strong></th>
+            <th class="panel-title" title="SAR 500"><strong>500</strong></th>
+            <th class="panel-title" title="Credit Amount"><strong>CC</strong></th>
+            <th class="panel-title" title="Debit Amount"><strong>DC</strong></th>
+            <th class="panel-title" title="On Account"><strong>OA</strong></th>
+            <th class="panel-title" title="Amount"><strong>Amount</strong></th>
+        </tr>
+    </thead>
+    <tbody id="tbEnquiryGrid" class="tblBody">
+        @if (Model != null)
+        {
+            foreach (pxSelectFilterEodEnquiry_Result enquiry in Model)
+            {
+                <tr class="rowSearch">
+                    <td class="panel-body">
+                        <a href="../Enquiry/GetByEodFile?docid=@enquiry.EODID" style="text-decoration:underline" data-DocID="@enquiry.EODID" class="SalesDocumentDetails">@enquiry.EODID</a>
+                    </td>
+                    <td class="panel-body" title="Location Description">@enquiry.LocationDesc.Replace("Store",string.Empty)</td>
+                    <td class="panel-body" title="Document Date">@Convert.ToDateTime(enquiry.DocDate).ToShortDateString()</td>
+                    <td class="panel-body" title="Loan">@enquiry.Loan</td>
+                    <td class="panel-body" title="System Cash">@enquiry.SystemCash</td>
+                    <td class="panel-body" title="Actual Cash">@enquiry.ActualCash</td>
+                    <td class="panel-body" title="SAR 1 is @enquiry.C_1">@enquiry.C_1</td>
+                    <td class="panel-body" title="SAR 5 is @enquiry.C_5">@enquiry.C_5</td>
+                    <td class="panel-body" title="SAR 10 is @enquiry.C_10">@enquiry.C_10</td>
+                    <td class="panel-body" title="SAR 20 is @enquiry.C_20">@enquiry.C_20</td>
+                    <td class="panel-body" title="SAR 50 is @enquiry.C_50">@enquiry.C_50</td>
+                    <td class="panel-body" title="SAR 100 is @enquiry.C_100">@enquiry.C_100</td>
+                    <td class="panel-body" title="SAR 500 is @enquiry.C_500" >@enquiry.C_500</td>
+                    <td class="panel-body" title="Credit Amount">@enquiry.CreditAmt</td>
+                    <td class="panel-body" title="Debit Amount">@enquiry.DebitAmt</td>
+                    <td class="panel-body" title="On Account">@enquiry.OnAccAmt</td>
+                    <td class="panel-body">@string.Format("{0:0.00}", Convert.ToDecimal(enquiry.Amount))ريال</td>
+                </tr>
+            }
+
+        }
+        else
+        {
+            <tr class="lead">
+                <td colspan="6"> No records found.</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="col-lg-12">
+    <div class="pull-right pad_1per">
+        Total Amount : SAR  @string.Format("{0:0.00}", Convert.ToDecimal(Model.Sum(e => e.Amount)))
+    </div>
+
+</div>
+
+<!--Material Modal -->
+<div id="ModalMaterialDetail" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="width:  65%;">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header blue-bg">
+                <button type="button" class="close " data-dismiss="modal">&times;</button>
+                <h3 class="modal-title text-center white">Material Details</h3>
+            </div>
+            <div id="ModalMaterialBody" class="modal-body">
+                Loading...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--Tender Modal -->

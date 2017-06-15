@@ -1,0 +1,47 @@
+﻿@using POS.Entity.Entities;
+@using POS.Util.Model;
+@model RegionModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+<script src="~/Scripts/jsRegion.js"></script>
+<div class="col-lg-12">
+    <h2 class="pad_1per ">Region <button id="btnNewRegionStore" title="Add New Store!" class="btn btn-default pull-right mar_top_1per bckcolor_green" type="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button></h2>
+</div>
+<div class="col-lg-12 mgn_0">
+    <div class="col-lg-3 noPadBrd">
+        <div class="input-group col-lg-12 ">
+            <input id="txtRegion" type="text" class="form-control col-lg-12 stre_maxWth  ht40" placeholder="Search for  Region ID / Region Name">
+
+        </div>
+        <div class="ovrflow">
+            @if (Model.Region != null)
+            {
+                foreach (tbl_Region region in Model.Region)
+                {
+                    <div class="locData pad_1per bg_blue">
+                        <a class="pointer MasterRegionStore" data-RegionID="@region.RegionID" data-RegionName="@region.RegionName"><span class="">@region.RegionName</span></a>
+                    </div>
+                }
+                <small id="NoRecords" class="lead" style="display:none">
+                    No records found.
+                </small>
+            }
+            else
+            {
+                <small class="lead">
+                    No records found.
+                </small>
+            }
+        </div>
+    </div>
+    <div id="RegionDetails" class="col-lg-9 noPadBrd">
+        @Html.Partial("~/Views/Region/Partial/_RegionDetailsPartial.cshtml", Model)
+    </div>
+
+</div>
+
+
+

@@ -1,0 +1,20 @@
+﻿@using POS.Entity.Entities;
+@model List<pxSelectDocumentTender_Result>
+<div>
+    <table class="popupGrid table">
+        <thead ><tr><td>Tender Name</td><td>Amount</td><td>Paid Amount</td><td>Change Amount</td><td>Transaction Code</td></tr></thead>
+        <tbody>
+            @foreach (pxSelectDocumentTender_Result tender in Model)
+            {
+                <tr>
+                    <td>@tender.TenderName</td>
+                    <td>@tender.Amount</td>
+                    <td>@tender.PaidAmount</td>
+                    <td>@tender.ChangeAmount</td>
+                    <td>@tender.TransCode</td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div> 

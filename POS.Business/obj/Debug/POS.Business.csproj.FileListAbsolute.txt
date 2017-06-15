@@ -11,3 +11,16 @@ D:\WebPortal\POS.Business\bin\Debug\POS.Util.pdb
 D:\WebPortal\POS.Business\bin\Debug\EntityFramework.xml
 D:\WebPortal\POS.Business\obj\Debug\POS.Business.dll
 D:\WebPortal\POS.Business\obj\Debug\POS.Business.pdb
+D:\POSWebPortal\POS.Business\bin\Debug\POS.Business.dll
+D:\POSWebPortal\POS.Business\bin\Debug\POS.Business.pdb
+D:\POSWebPortal\POS.Business\bin\Debug\POS.Entity.dll
+D:\POSWebPortal\POS.Business\bin\Debug\POS.Repository.dll
+D:\POSWebPortal\POS.Business\bin\Debug\POS.Util.dll
+D:\POSWebPortal\POS.Business\bin\Debug\EntityFramework.dll
+D:\POSWebPortal\POS.Business\bin\Debug\POS.Entity.pdb
+D:\POSWebPortal\POS.Business\bin\Debug\POS.Repository.pdb
+D:\POSWebPortal\POS.Business\bin\Debug\POS.Util.pdb
+D:\POSWebPortal\POS.Business\bin\Debug\EntityFramework.xml
+D:\POSWebPortal\POS.Business\obj\Debug\POS.Business.csprojResolveAssemblyReference.cache
+D:\POSWebPortal\POS.Business\obj\Debug\POS.Business.dll
+D:\POSWebPortal\POS.Business\obj\Debug\POS.Business.pdb

@@ -1,0 +1,19 @@
+﻿@model POS.Entity.Entities.Proc_MaterialBarcodeSearch_Result
+<tr>
+    <td class="panel-body"><button id="Deleterow" style="">Delete</button></td>
+    <td class="panel-body">@Model.MaterialID</td>
+    <td class="panel-body hidden-md hidden-sm hidden-xs" >@Model.MaterialDesc1</td>
+    <td class="panel-body">@Model.MaterialEANUOM</td>
+    <td class="panel-body " id="txtQty">@Html.TextBox(Model.MaterialID + "&" + Model.MaterialEANUOM, "", new { @class = "txtFoucs", id = Model.MaterialEANUOM })</td>
+    @if (ViewBag.Page == "Transfter OUT")
+    {
+
+    }
+    else
+    {
+        <td class="panel-body hidden-md hidden-sm hidden-xs">@Model.Price </td>
+    }
+    
+</tr>
+}
+

@@ -1,0 +1,196 @@
+﻿@model POS.Util.Model.TransferDisplayModel
+@using POS.Util.Model;
+@using System.Web.Mvc;
+@{
+    ViewBag.Title = ViewBag.Page;
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    string filterActionName = "Filter";
+    string ControllerName = "TransferToDisplay";
+    string ViewHeader = string.Empty;
+        ViewHeader = ViewBag.Page;
+}
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+<link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+@*<script src="~/Scripts/jquery-1.12.4.min.js"></script>*@
+@*<script src="~/Scripts/superfish.js"></script>*@
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="~/Scripts/jquery.dataTables.min.js"></script>
+@*<script src="~/Scripts/jquery-ui-1.12.0.js"></script>*@
+@*<script src="~/Scripts/bootstrap.js"></script>*@
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.btn-load').on('click', function () {
+            var $this = $(this);
+            $this.button('loading');
+            setTimeout(function () {
+                $this.button('reset');
+            }, 8000);
+        });
+        $(".datepicker").datepicker();
+        var hdnTermnl = '';
+        $('.terminalSelect').click(function (e) {
+            hdnTermnl = hdnTermnl + ',' + $(this).val();
+            $('#hdnTerminal').val(hdnTermnl);
+            e.stopPropagation();
+        });
+        $('.page-refresh').click(function () {
+            window.location.reload();
+        });
+
+        $("#slider-range").slider({
+            range: true,
+            min: 0,
+            max: 100000,
+            values: [0, 100000],
+            slide: function (event, ui) {
+                $("#Amount").val(ui.values[0] + " - " + ui.values[1]);
+            }
+        });
+        $("#slider-range").addClass('pull-left wdAmountSlider');
+        $("#Amount").val($("#slider-range").slider("values", 0) +
+          " - " + $("#slider-range").slider("values", 1));
+
+        $('.fltrTerminal').click(function () {
+            $('#ulTerminal').toggle();
+        });
+
+        $("#fltrCategory").change(function () {
+            var id = $('#fltrCategory').val();
+            $.ajax({
+                url: '../Enquiry/GetSubCategory',
+                data: { 'categoryID': id },
+                type: "post",
+                cache: false,
+                success: function (data) {
+                    $('#dvSubCategory').html(data);
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    var type = BootstrapDialog.TYPE_WARNING;
+                    BootstrapDialog.show({
+                        type: type,
+                        title: 'Error',
+                        message: 'Error in geting data from server. Please try again.'
+                    });
+                }
+            });
+        });
+
+    });
+    function CloseModalLoading() {
+        $('#ModalLoading').modal('hide');
+    }
+
+</script>
+<input id="ViewCategory" type="hidden" value="@ViewBag.Page" />
+<div>
+    <div>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <h3 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="" aria-expanded="true" aria-controls="collapseOne">
+                            @ViewHeader
+                        </a>
+                        <a role="button" class="pull-right data-toggle=" collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Advance Search
+                        </a>
+                    </h3>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    @using (Ajax.BeginForm(filterActionName, ControllerName, new AjaxOptions
+                    {
+                        InsertionMode = InsertionMode.Replace,
+                        UpdateTargetId = "SalesGrid",
+                        OnSuccess = "CloseModalLoading"
+                    }))
+                    {
+                        @*<h3 class="panel-heading">@ViewHeader</h3>*@
+                        <div class="panel-body form-group" style="margin-bottom: 0;margin-top: 0;padding-top: 0;">
+                            <div class="pull-left">
+                                @Html.TextBoxFor(e => e.FromDate, new { @class = "datepicker", @placeholder = "Date From" })
+                                @*<input id="frmDateEnquiry" type="text" placeholder="Date From" class="datepicker" />*@
+                            </div>
+                            <div class="pull-left">
+                                @Html.TextBoxFor(e => e.ToDate, new { @class = "datepicker", @placeholder = "Date To" })
+                                @*<input id="toDateEnquiry" type="text" placeholder="Date To" class="datepicker" />*@
+                            </div>
+                            <div class="pull-left">
+                                <div class="btn-group">
+                                    <button id="fltrTerminal" type="button" class="btn btn-primary BtnTrm fltrTerminal">Terminal</button>
+                                    @Html.HiddenFor(e => e.Terminal, new { @id = "hdnTerminal" })
+                                    <button type="button" class="BtnTrm fltrTerminal" style="margin:0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> <span class="caret"></span> <span class="sr-only">Toggle Dropdown</span> </button>
+                                    <ul id="ulTerminal" class="dropdown-menu small_ddl_menu">
+                                        <li><input type="checkbox" class="terminalSelect" value="01" /><span class="badge">01</span></li>
+                                        <li><input type="checkbox" class="terminalSelect" value="02" /><span class="badge">02</span></li>
+                                        <li><input type="checkbox" class="terminalSelect" value="03" /><span class="badge">03</span></li>
+                                        <li><input type="checkbox" class="terminalSelect" value="04" /><span class="badge">04</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="pull-left">
+                                @Html.TextBoxFor(e => e.Material, new { @class = "", @placeholder = "Material" })
+                                @*<input id="fltrMaterial" type="text" placeholder="Material" class="" />*@
+                            </div>
+                            <div class="pull-left">
+                                @Html.TextBoxFor(e => e.EAN, new { @class = "", @placeholder = "EAN" })
+                                @*<input id="fltrEAN" type="text" placeholder="EAN" class="" />*@
+                            </div>
+                            <div class="pull-left">
+                                Category
+
+                                @Html.DropDownList("fltrCategory", (IEnumerable<SelectListItem>)ViewBag.Categories, "--Select--")
+                            </div>
+                            <div id="dvSubCategory" class="pull-left" style="min-width: 160px;min-height: 48px;">
+                                Sub Category
+                                <select style="width: 144px;">
+                                    <option>--Select--</option>
+                                </select>
+
+                            </div>
+                            <div class="pull-left">
+
+                                <p>
+                                    <label for="amount">Amount range:</label>
+                                    @Html.TextBoxFor(e => e.Amount, new { @class = "", @readonly = "true", @style = "border:0; color:#f6931f; font-weight:bold;max-width:72px" })
+                                </p>
+                            </div>
+                            <div id="slider-range"></div>
+                            <div class="pull-left" style="margin-left:1.4%">
+                                @Html.DropDownList("fltrLocation", (IEnumerable<SelectListItem>)ViewBag.Locations, "--Select--")
+                                @*<input type="text" placeholder="User" class="" />*@
+                            </div>
+                            <div class="pull-left" style="margin-left:0.2%">
+                                @Html.TextBoxFor(e => e.User, new { @class = "", @placeholder = "User" })
+                                @*<input type="text" placeholder="User" class="" />*@
+                            </div>
+                            <div class="pull-left">
+                                <input id="btnFilterSales" type="submit" data-toggle="modal" data-target="#ModalLoading" class="btn-filter" aria-haspopup="true" aria-expanded="false" value="Filter" />
+                            </div>
+                            <div class="pull-left">
+                                <button type="button" style="color:white" class="btn page-refresh btn-load" aria-haspopup="true" aria-expanded="false" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Removing all Filters..."> <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Remove Filter</button>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="SalesGrid" class="tblBase table-responsive">
+        @Html.Partial("~/Views/TransferToDisplay/Partial/_TransferToDisplayGrid.cshtml", Model.TransferDocuments)
+    </div>
+</div>
+
+<!--Loading Modal -->
+<div id="ModalLoading" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header orange-bg col-lg-3" style="border:0;margin-top: 27%;margin-left: 29%;">
+                <h3 class="modal-title text-center white"><i class="fa fa-repeat fa-spin" style="font-size:-webkit-xxx-large;animation: fa-spin 1s infinite linear;"></i>Loading...</h3>
+            </div>
+        </div>
+
+    </div>
+</div>

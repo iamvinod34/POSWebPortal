@@ -1,0 +1,47 @@
+.thumbnail {
+  margin-left: auto;
+  margin-right: auto;
+}
+.thumbnail * + .img {
+  margin-top: 37px;
+}
+.thumbnail .img + * {
+  margin-top: 28px;
+}
+.thumbnail h3 {
+  position: relative;
+  padding-left: 58px;
+  line-height: 1;
+}
+.thumbnail h3:before {
+  content: "";
+  position: absolute;
+  width: 36px;
+  height: 39px;
+  background: url("../images/page-1_img5.png");
+  left: 2px;
+  top: 3px;
+}
+.thumbnail h3.icon:before {
+  background: url("../images/page-1_img6.png");
+}
+.thumbnail h3.icon1:before {
+  background: url("../images/page-1_img7.png");
+}
+.thumbnail h3.icon2:before {
+  background: url("../images/page-1_img8.png");
+}
+.thumbnail .caption {
+  margin-top: 15px;
+}
+.thumbnail3 {
+  max-width: 270px;
+}
+.thumbnail4 {
+  max-width: 370px;
+}
+@media (max-width: 991px) {
+  .thumbnail6 {
+    max-width: 370px;
+  }
+}

@@ -1,0 +1,15 @@
+﻿@if (ViewBag.SubCategories != null && ViewBag.SubCategories.Count>0)
+{
+    <label>Sub Category</label>
+    @Html.DropDownList("fltrSubCategory", (IEnumerable<SelectListItem>)ViewBag.SubCategories, "--Select--", new { @style = "width: 144px;", @class = "form-control"  })
+}
+else if (ViewBag.Storages != null && ViewBag.Storages.Count>0)
+{
+    <span>Storage ID </span>
+    @Html.DropDownList("fltrStorage", (IEnumerable<SelectListItem>)ViewBag.Storages, "--Select--", new { @style = "width: 144px;" ,@class= "form-control" })
+}
+else if (ViewBag.Categorie != null && ViewBag.Categorie.Count > 0)
+{
+    @Html.DropDownList("fltrCategory", (IEnumerable<SelectListItem>)ViewBag.Categorie, "--Select--", new { @style = "width: 144px;", @class = "form-control" })
+}
+
